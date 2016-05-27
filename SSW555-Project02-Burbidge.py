@@ -33,7 +33,15 @@ for line in filehandle:
 
     separated_line = line[:-1].split(' ', 2)
     level = separated_line[0]
-    tag = separated_line[1]
+
+    if int(level) > 0:
+        tag = separated_line[1]
+    elif (len(separated_line) == 3 and
+          (separated_line[2] == 'FAM' or
+           separated_line[2] == 'INDI')):
+        tag = separated_line[2]
+    else:
+        tag = separated_line[1]
 
     # If the line's Tag is one of the valid tags we identified for this project, print it.
     # If not, print "Invalid tag"

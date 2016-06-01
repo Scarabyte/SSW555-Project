@@ -1,5 +1,5 @@
-# Adam Burbidge
-# SSW 555 Project 2
+# SSW555 GEDCOM Parsing Project
+# Team 02 - Adam Burbidge; Constantine Davantzis; Vibha Ravi
 
 fname = raw_input('Enter the file name to open: ')
 try:

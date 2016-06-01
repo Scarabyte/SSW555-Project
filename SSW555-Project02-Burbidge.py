@@ -53,3 +53,7 @@ for line in filehandle:
 
     # Just as a separator to make the output easier to read, let's add a newline.
     print
+
+
+# Close the file when done
+filehandle.close()

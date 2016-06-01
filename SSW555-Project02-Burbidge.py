@@ -22,17 +22,22 @@ for line in filehandle:
     #  -All arguments are in the proper format
     #  -One blank space separates the fields (level, tag, arguments)
 
-    print line[0] # The level number, which we assumed to be the first character
-    # (Note that we could also do this after we separate the line below.)
 
     # Separate the line into three parts: Level, Tag, Arguments
     # Each field is separated by a single space.
-    # Use -1 as the index to remove the newline character.
+    # Use line.strip() to remove leading and trailing whitespace.
     # Also note that not all tags have an argument. But for this assignment,
     # we're not required to do anything with the argument, just print the tag.
+    separated_line = (line.strip()).split(' ', 2)
 
-    separated_line = line[:-1].split(' ', 2)
-    level = separated_line[0]
+    # Check if the first element in separated_line has a length greater than 0
+    # If not, assume it's a blank spacer line in the GEDCOM file and continue.
+    if len(separated_line[0]) > 0:
+        level = separated_line[0]
+    else:
+        continue
+
+    print level
 
     if int(level) > 0:
         tag = separated_line[1]

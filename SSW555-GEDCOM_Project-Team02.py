@@ -4,6 +4,8 @@
 """
 
 import gedcom
+import stories
+
 
 def project_03(g):
     print " - Individuals - "
@@ -17,3 +19,4 @@ def project_03(g):
 if __name__ == "__main__":
     g = gedcom.File("Test_Files/GEDCOM.ged")
     project_03(g)
+    

@@ -30,7 +30,7 @@ def birth_before_death():
     """ Birth before death
     Description: Birth should occur before death of an individual
     story_id: US03
-    author: vr
+    author: vibharavi
     sprint: 1
     """
     pass
@@ -40,7 +40,7 @@ def marriage_before_divorce():
     """ Marriage before divorce
     Description: Marriage should occur before divorce of spouses, and divorce can only occur after marriage
     story_id: US04
-    author: vr
+    author: vibharavi
     sprint: 1
     """
     pass

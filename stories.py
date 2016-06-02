@@ -2,13 +2,7 @@
 Story Functions
 """
 
-from datetime import datetime
-
-
-def date(s):
-    """
-    """
-    return datetime.strptime(s, '%d %b %Y')
+import tools
 
 
 def dates_before_current_date():

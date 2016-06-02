@@ -5,11 +5,10 @@ Story Functions
 from datetime import datetime
 
 
-def parse_date(date_string):
+def date(s):
     """
     """
-    # not tested
-    return datetime.strptime(date_string, '%d %b %Y')
+    return datetime.strptime(s, '%d %b %Y')
 
 
 def dates_before_current_date():
@@ -19,6 +18,7 @@ def dates_before_current_date():
     author: cd
     sprint: 1
     """
+    print datetime.now()
     pass
 
 

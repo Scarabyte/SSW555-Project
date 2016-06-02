@@ -138,7 +138,7 @@ class Line(dict):
 
 
 def demo():
-    g = File("GEDCOM.ged")
+    g = File("Test_Files/GEDCOM.ged")
 
     # - Demonstrate printing text of file -
     # print g.text

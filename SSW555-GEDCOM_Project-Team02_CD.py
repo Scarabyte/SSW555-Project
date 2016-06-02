@@ -7,7 +7,7 @@ Assignment Description:
 Write a program that asks the user for a quiz score and converts that numeric score to a letter grade.
 
 """
-#Import regular expression operations
+# Import regular expression operations
 import re 
 
 #Pre-Compile Regex for GEDCOM Line.

@@ -183,8 +183,7 @@ class Line(dict):
         return map(lambda line: line.get("line_number"), filter(lambda line: self["line_number"] in line.get("children_line_numbers",[]), self.file.lines))
 
 
-def demo():
-    g = File("Test_Files/GEDCOM.ged")
+def demo(g):
 
     # - Demonstrate printing text of file -
     print g.text
@@ -213,5 +212,6 @@ def demo():
     print g.find('xref_ID', '@I1@')
 
 if __name__ == "__main__":
-    demo()
+    g = File("Test_Files/GEDCOM.ged")
+    demo(g)
 

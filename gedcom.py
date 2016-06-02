@@ -58,18 +58,6 @@ class Line(dict):
         d["level"] = int(d["level"])
         return d
 
-    def pprint(self):
-        """Prints the GEDCOM line nicely. 
-
-        :returns: None
-        :rtype: None
-
-        """
-        print self
-        string = "level: {level}\nxref_ID: {xref_ID}\ntag: {tag}\nline_value: {line_value}"
-        formatted_string = string.format(**self)
-        print formatted_string
-        print 
 
 
 class File():
@@ -85,6 +73,9 @@ class File():
 
     def __iter__(self):
         return iter(self.lines)
+    
+    def __getitem__(self, key):
+        return self.list[key]
 
     def __open(self,filename):
         f = open(filename)
@@ -111,12 +102,19 @@ class File():
 if __name__ == "__main__":
     """ Parse and print each line of of the GEDCOM.ged file in the same folder as this script """
     g = File("GEDCOM.ged")
-
     print " ------------ Print Text ------------ "
     print g.text
     print 
     print
 
-    print " ------------ Print Lines Dictionary ------------ "
+    print " ------------ Print Lines Individually ------------ "
     for line in g:
         print line
+    print 
+    print
+    print " ------------ Print Lines Dictionary ------------ "
+    import json
+    print g.lines == list(g)
+    print json.dumps(list(g), sort_keys=True, indent=4, separators=(',', ': '))
+
+    

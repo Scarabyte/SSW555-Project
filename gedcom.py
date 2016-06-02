@@ -1,11 +1,13 @@
 """
-Gedcom classes and functions 
+Gedcom classes and functions
+Author: Constantine Davantzis
 
 """
 
 import re
 import json
-
+import tools
+from collections import OrderedDict
 # Pre-Compile Regex for GEDCOM Line.
 match_line = re.compile(
     r"(?P<level>[0-9]|[1-9][0-9])\s(?P<xref_ID>@\S+@)?\s?(?P<tag>\S+)\s*(?P<line_value>(.+))?").match
@@ -69,6 +71,34 @@ class File:
 
     def find(self, key, args):
         return SubFile(filter(lambda d: d.get(key) == args, self.lines))
+
+    def find_one(self, key, args):
+        f = self.find(key, args)
+        return f[0] if len(f.lines) else {}
+
+    @property
+    def individuals(self):
+        results = []
+        for line in self.find("tag", "INDI"):
+            xref = line.get("xref_ID")
+            name = line.children.find("tag", "NAME")[0].get('line_value')
+            if xref and name:
+                results.append((xref, name.replace("/", "")))
+        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
+
+    @property
+    def families(self):
+        results = []
+        individuals = self.individuals
+        for FAM in self.find("tag", "FAM"):
+            fam_xref = FAM.get("xref_ID")
+            husb_xref = FAM.children.find_one("tag", "HUSB").get('line_value')
+            husb_name = individuals.get(husb_xref)
+            wife_xref = FAM.children.find_one("tag", "WIFE").get('line_value')
+            wife_name = individuals.get(wife_xref)
+            results.append((fam_xref, {"husband": {"xref": husb_xref, "name": husb_name},
+                                       "wife": {"husband": {"xref": wife_xref, "name": wife_name}}}))
+        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
     @property
     def json(self):

@@ -17,6 +17,11 @@ def project_03(g):
         print family
 
 if __name__ == "__main__":
-    g = gedcom.File("Test_Files/GEDCOM.ged")
-    project_03(g)
-    
+    print "TESTING FIRST FILE:"
+    g1 = gedcom.File("Test_Files/GEDCOM.ged")
+    project_03(g1)
+    print
+
+    print "TESTING SECOND FILE:"
+    g2 = gedcom.File("Test_Files/My-Family-20-May-2016-697-Simplified.ged")
+    project_03(g2)

@@ -4,6 +4,7 @@ Gedcom classes and functions
 """
 
 import re
+import json
 
 # Pre-Compile Regex for GEDCOM Line.
 match_line = re.compile(
@@ -47,6 +48,9 @@ class File:
     def __getitem__(self, key):
         return self.lines[key]
 
+    def __repr__(self):
+        return str(self.lines)
+
     @property
     def text(self):
         return "\n".join(line.text for line in self.lines)
@@ -63,8 +67,20 @@ class File:
         """
         [d.refresh() for d in self.lines]
 
-    def get(self, key, args):
-        return filter(lambda d: d[key] == args, self.lines)
+    def find(self, key, args):
+        return SubFile(filter(lambda d: d.get(key) == args, self.lines))
+
+    @property
+    def json(self):
+        return json.dumps(self.lines, sort_keys=True, indent=4, separators=(',', ': '))
+
+
+class SubFile(File):
+    """ Class to represent GEDCOM File
+    """
+
+    def __init__(self, lines):
+        self.lines = lines
 
 
 class Line(dict):
@@ -97,7 +113,7 @@ class Line(dict):
 
         """
         if self.file:
-            return map(self.file.lines.__getitem__, self.get('children_line_numbers', []))
+            return SubFile(map(self.file.lines.__getitem__, self.get('children_line_numbers', [])))
         return None
 
     @property
@@ -106,7 +122,7 @@ class Line(dict):
 
         """
         if self.file:
-            return map(self.file.lines.__getitem__, self.get('parent_line_numbers', []))
+            return SubFile(map(self.file.lines.__getitem__, self.get('parent_line_numbers', [])))
         return None
 
     def refresh(self):
@@ -141,38 +157,30 @@ def demo():
     g = File("Test_Files/GEDCOM.ged")
 
     # - Demonstrate printing text of file -
-    # print g.text
-    # - or -
-    # for line in g:
-    #   print line.text
+    print g.text
+    print
 
     # - Demonstrate printing the line dictionary -
-    # print g.lines
-    # - or -
-    # print list(g)
-    # - or -
-    # for line in g:
-    #    print line
+    for line in g:
+        print line
+    print
 
     # - Demonstrate printing file as json -
-    # import json
-    # print json.dumps(list(g), sort_keys=True, indent=4, separators=(',', ': '))
-
+    print g.json
+    print
     # - Demonstrate getting a line -
-    # print g[5]
-    # - or -
-    # print g.lines[5]
+    print g[5]  # - or - g.lines[5]
+    print
 
-    # - Demonstrate that a line item can access the parent file -
-    # print  g is g[0].file
+    # - Demonstrate getting line children and parents "
+    print g[0]
+    print g[0].children
+    print g[0].children[3]
+    print g[0].children[3].parent
+    print
 
-    # - Demonstrate getting line children "
-    # print g[0]
-    # print g[0].children
-    # print g[0].children[3].parent
-
-    # - Demonstrate getting a line from dictionary value "
-    # print g.get('xref_ID','@I1@')
+    # - Demonstrate filtering the list of lines from dictionary value "
+    print g.find('xref_ID', '@I1@')
 
 if __name__ == "__main__":
     demo()

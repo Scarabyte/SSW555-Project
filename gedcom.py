@@ -81,7 +81,7 @@ class File:
         results = []
         for line in self.find("tag", "INDI"):
             xref = line.get("xref_ID")
-            name = line.children.find("tag", "NAME")[0].get('line_value')
+            name = line.children.find_one("tag", "NAME").get('line_value')
             if xref and name:
                 results.append((xref, name.replace("/", "")))
         return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))

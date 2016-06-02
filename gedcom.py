@@ -149,11 +149,10 @@ if __name__ == "__main__":
     # - Demonstrate that a line item can access the parent file -
     # print  g is g[0].file
 
-
     # - Demonstrate getting line children "
     # print g[0]
     # print g[0].children
 
-    # - Demonstrate getting line children "
+    # - Demonstrate getting a line from dictionary value "
     # print g.get('xref_ID','@I1@')
 

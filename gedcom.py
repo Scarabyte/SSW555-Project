@@ -14,12 +14,68 @@ SUPPORTED_TAGS = ["INDI", "NAME", "SEX", "BIRT", "DEAT", "FAMC", "FAMS", "FAM", 
                   "DATE", "HEAD", "TRLR", "NOTE"]
 
 
+def parse_line(s):
+    """Parse GEDCOM line into dictionary
+
+    :param s: The GEDCOM line string to parse.
+    :type s: str
+
+    :returns: GEDCOM line dictionary
+    :rtype: dict
+
+    """
+    m = match_line(s)
+    if not m:
+        # Raise exception of regex could not match line.
+        raise SyntaxError('gedcom_line does not have syntax: "level + delim + [optional_xref_ID] + tag + [optional_line_value] + terminator"')
+    d = m.groupdict()
+    d["isTagSupported"] = d["tag"] in SUPPORTED_TAGS
+    d["level"] = int(d["level"])
+    return d
+
+
+class File:
+    """ Class to represent GEDCOM File
+    """
+
+    def __init__(self, filename):
+        self.__open(filename)
+
+    def __iter__(self):
+        return iter(self.lines)
+
+    def __getitem__(self, key):
+        return self.lines[key]
+
+    @property
+    def text(self):
+        return "\n".join(line.text for line in self.lines)
+
+    def __open(self, filename):
+        """ Open GEDCOM File """
+        f = open(filename)
+        # Parse Lines
+        self.lines = [Line(line, self, i) for i, line in enumerate(f)]
+        self.refresh()  # Must be refreshed initially.
+
+    def refresh(self):
+        """ Refresh Each Line
+        """
+        [d.refresh() for d in self.lines]
+
+    def get(self, key, args):
+        return filter(lambda d: d[key] == args, self.lines)
+
+
 class Line(dict):
     """ Class to represent GEDCOM line. """
 
-    def __init__(self, line):
-        self.__text = line.strip()
-        self.update(**self._parse(line))
+    def __init__(self, line_string, file_class=None, line_number=None):
+        self.file = file_class
+        self.__text = line_string.strip()
+        self.update(**parse_line(line_string))
+        self.update({"line_number": line_number})
+        self.update({"children_line_numbers": [], "parent_line_numbers": []})
 
     @property
     def text(self):
@@ -40,85 +96,48 @@ class Line(dict):
         :rtype: list
 
         """
-        return map(self.file.__getitem__, self.get('children_line_numbers', []))
+        if self.file:
+            return map(self.file.lines.__getitem__, self.get('children_line_numbers', []))
+        return None
 
-    @staticmethod
-    def _parse(line):
-        """Parse GEDCOM line into dictionary
-
-        :param s: The GEDCOM line string to parse.
-        :type s: str
-
-        :returns: GEDCOM line dictionary
-        :rtype: dict
+    @property
+    def parent(self):
+        """ gets parent
 
         """
-        m = match_line(line)
-        if not m:
-            # Raise exception of regex could not match line.
-            raise SyntaxError(
-                'gedcom_line does not have syntax: "level + delim + [optional_xref_ID] + tag + [optional_line_value] + terminator"')
-        d = m.groupdict()
-        d["isTagSupported"] = d["tag"] in SUPPORTED_TAGS
-        d["level"] = int(d["level"])
-        return d
+        if self.file:
+            return map(self.file.lines.__getitem__, self.get('parent_line_numbers', []))
+        return None
 
+    def refresh(self):
+        if self.file:
+            # Refresh Children Line Numbers
+            self.update({"children_line_numbers": self.__find_children_line_numbers()})
+            # Refresh Parent Line Numbers. (Relies on Parent Line Number Being Accurate)
+            self.update({"parent_line_numbers": self.__find_parent_line_numbers()})
 
-class File():
-    """ Class to represent GEDCOM File
-    """
-
-    def __init__(self, filename):
-        self.__open(filename)
-        # Add line number to dictionaries
-        [d.update({"line_number": i}) for i, d in enumerate(self.lines)]
-        # Add children line numbers to dictonaries
-        [d.update({"children_line_numbers": self.__get_children_ln(d["line_number"])}) for d in self.lines]
-        # Link back to this class
-        for d in self.lines:
-            d.file = self
-
-    def __iter__(self):
-        return iter(self.lines)
-
-    def __getitem__(self, key):
-        return self.lines[key]
-
-    def __open(self, filename):
-        """ Open GEDCOM File """
-        f = open(filename)
-        self.lines = [Line(line) for line in f]
-
-    def __get_children_ln(self, ln):
+    def __find_children_line_numbers(self):
         """ get children line numbers """
         results = []
-        if ln < len(self.lines) - 1:
-            if self.lines[ln + 1].get("level") > self.lines[ln]["level"]:
-                for u in self.lines[ln + 1:]:
-                    if u["level"] == self.lines[ln + 1]["level"]:
+        lines = self.file.lines
+        line_number = self.get("line_number")
+        if line_number < len(lines) - 1:
+            if lines[line_number + 1].get("level") > lines[line_number]["level"]:
+                for u in lines[line_number + 1:]:
+                    if u["level"] == lines[line_number + 1]["level"]:
                         results.append(u.get('line_number'))
-                    if u["level"] > self.lines[ln + 1]["level"]:
+                    if u["level"] > lines[line_number + 1]["level"]:
                         pass
-                    if u["level"] < self.lines[ln + 1]["level"]:
+                    if u["level"] < lines[line_number + 1]["level"]:
                         break
         return results
 
-    def __get_parent_ln(self, ln):
+    def __find_parent_line_numbers(self):
         """ get parent line numbers """
-        # this method needs to be completed 
-        pass
-
-    @property
-    def text(self):
-        return "\n".join(line.text for line in self.lines)
-
-    def get(self, key, args):
-        return filter(lambda d: d[key] == args, self.lines)
+        return map(lambda line: line.get("line_number"), filter(lambda line: self["line_number"] in line.get("children_line_numbers",[]), self.file.lines))
 
 
-if __name__ == "__main__":
-    """ Parse GEDCOM.ged """
-
+def demo():
     g = File("GEDCOM.ged")
 
     # - Demonstrate printing text of file -
@@ -128,10 +147,10 @@ if __name__ == "__main__":
     #   print line.text
 
     # - Demonstrate printing the line dictionary -
-    # print g.lines 
+    # print g.lines
     # - or -
     # print list(g)
-    # - or - 
+    # - or -
     # for line in g:
     #    print line
 
@@ -141,7 +160,7 @@ if __name__ == "__main__":
 
     # - Demonstrate getting a line -
     # print g[5]
-    # - or - 
+    # - or -
     # print g.lines[5]
 
     # - Demonstrate that a line item can access the parent file -
@@ -150,6 +169,11 @@ if __name__ == "__main__":
     # - Demonstrate getting line children "
     # print g[0]
     # print g[0].children
+    # print g[0].children[3].parent
 
     # - Demonstrate getting a line from dictionary value "
     # print g.get('xref_ID','@I1@')
+
+if __name__ == "__main__":
+    demo()
+

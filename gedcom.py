@@ -37,6 +37,15 @@ class Line(dict):
         # TODO: have text string show changes made to dictionary
         return self.__text
 
+    @property
+    def children(self):
+        """ gets a list of GEDCOM lines children in the file
+
+        :returns: list of GEDCOM Lines
+        :rtype: list
+
+        """
+        return map(self.file.__getitem__, self.get('children_line_numbers',[]))
 
     @staticmethod
     def _parse(line):
@@ -59,7 +68,6 @@ class Line(dict):
         return d
 
 
-
 class File():
     """ Class to represent GEDCOM File
     """
@@ -69,19 +77,24 @@ class File():
         # Add line number to dictionaries
         [d.update({"line_number":i}) for i,d in enumerate(self.lines)]
         # Add children line numbers to dictonaries
-        [d.update({"children_line_numbers":self.get_children_ln(d["line_number"])}) for d in self.lines]
+        [d.update({"children_line_numbers":self.__get_children_ln(d["line_number"])}) for d in self.lines]
+        # Link back to this class
+        for d in self.lines:
+            d.file = self
 
     def __iter__(self):
         return iter(self.lines)
     
     def __getitem__(self, key):
-        return self.list[key]
+        return self.lines[key]
 
     def __open(self,filename):
+        """ Open GEDCOM File """
         f = open(filename)
         self.lines = [Line(line) for line in f]
 
-    def get_children_ln(self,ln):
+    def __get_children_ln(self,ln):
+        """ get children line numbers """
         results = []
         if ln < len(self.lines)-1:
             if self.lines[ln+1].get("level") > self.lines[ln]["level"]:
@@ -94,27 +107,53 @@ class File():
                         break
         return results
 
+    def __get_parent_ln(self,ln):
+        """ get parent line numbers """
+        # this method needs to be completed 
+        pass
     @property
     def text(self):
         return "\n".join(line.text for line in self.lines)
 
+    def get(self, key, args):
+        return filter(lambda d: d[key] == args, self.lines)
 
 if __name__ == "__main__":
-    """ Parse and print each line of of the GEDCOM.ged file in the same folder as this script """
+    """ Parse GEDCOM.ged """
+   
     g = File("GEDCOM.ged")
-    print " ------------ Print Text ------------ "
-    print g.text
-    print 
-    print
 
-    print " ------------ Print Lines Individually ------------ "
-    for line in g:
-        print line
-    print 
-    print
-    print " ------------ Print Lines Dictionary ------------ "
-    import json
-    print g.lines == list(g)
-    print json.dumps(list(g), sort_keys=True, indent=4, separators=(',', ': '))
+    # - Demonstrate printing text of file -
+    #print g.text
+    # - or -
+    # for line in g:
+    #   print line.text
 
-    
+    # - Demonstrate printing the line dictionary -
+    # print g.lines 
+    # - or -
+    # print list(g)
+    # - or - 
+    # for line in g:
+    #    print line
+     
+    # - Demonstrate printing file as json -
+    # import json
+    # print json.dumps(list(g), sort_keys=True, indent=4, separators=(',', ': '))
+
+    # - Demonstrate getting a line -
+    # print g[5]
+    # - or - 
+    # print g.lines[5]
+
+    # - Demonstrate that a line item can access the parent file -
+    # print  g is g[0].file
+
+
+    # - Demonstrate getting line children "
+    # print g[0]
+    # print g[0].children
+
+    # - Demonstrate getting line children "
+    # print g.get('xref_ID','@I1@')
+

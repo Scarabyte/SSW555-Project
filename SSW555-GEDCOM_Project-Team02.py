@@ -1,19 +1,37 @@
 """
- SSW555 GEDCOM Parsing Project
- Team 02 - Adam Burbidge; Constantine Davantzis; Vibha Ravi
+SSW555 GEDCOM Parsing Project - Team02
+This is the main file for the project
 """
 
+__author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
+__status__ = "Development"
+
 import gedcom
-import stories
+import stories  # Will be used once we start completing stories.
 
 
-def project_03(g):
+def project_03(gedcom_file):
+    """ function to perform point 5 of the Project03 Assignment
+
+    Print the unique identifiers and names of each of the individuals in
+    order by their unique identifiers. Then, for each family, print the
+    unique identifiers and names of the husbands and wives, in order by
+    unique family identifiers.
+
+    :param gedcom_file: The GEDCOM File object to perform assignment on
+    :type gedcom_file: gedcom.File
+
+    :Examples:
+        g = gedcom.File("Test_Files/GEDCOM.ged")
+        project_03(g)
+
+    """
     print " - Individuals - "
-    for individual in g.individuals.iteritems():
+    for individual in gedcom_file.individuals.iteritems():
         print individual
     print
     print " - Families - "
-    for family in g.families.iteritems():
+    for family in gedcom_file.families.iteritems():
         print family
 
 if __name__ == "__main__":
@@ -33,10 +51,10 @@ if __name__ == "__main__":
     # project description says it has to be requested at the command line
     fname = raw_input('Enter the file name to open: ')
     try:
-        g_file = gedcom.File(fname)
+        g = gedcom.File(fname)
     except:
         print 'Invalid file name: ', fname
         exit()
 
-    project_03(g_file)
+    project_03(g)
 

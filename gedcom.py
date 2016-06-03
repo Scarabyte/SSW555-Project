@@ -479,7 +479,7 @@ def demo(gedcom_file):
     print gedcom_file.json
     print
     # - Demonstrate getting a line -
-    print gedcom_file[5]  # - or - g.lines[5]
+    print gedcom_file[5]  # - or - gedcom_file.lines[5]
     print
 
     # - Demonstrate getting line children and parents "
@@ -491,16 +491,16 @@ def demo(gedcom_file):
     print
 
     # - Demonstrate filtering the list of lines from dictionary value "
-    print g.find('xref_ID', '@I1@')
-    print g.find('tag', 'HUSB')
-    print g.find('tag', 'a_value_that_will_never_be_found')
-    print g.find('tag', 'HUSB').text
-    print g.find('tag', 'HUSB').json
+    print gedcom_file.find('xref_ID', '@I1@')
+    print gedcom_file.find('tag', 'HUSB')
+    print gedcom_file.find('tag', 'a_value_that_will_never_be_found')
+    print gedcom_file.find('tag', 'HUSB').text
+    print gedcom_file.find('tag', 'HUSB').json
 
     print
-    print g.find_one('xref_ID', '@I1@')
-    print g.find_one('tag', 'HUSB')
-    print g.find_one('tag', 'a_value_that_will_never_be_found')
+    print gedcom_file.find_one('xref_ID', '@I1@')
+    print gedcom_file.find_one('tag', 'HUSB')
+    print gedcom_file.find_one('tag', 'a_value_that_will_never_be_found')
 
 if __name__ == "__main__":
     """ Open Test File and Carry Out Demos

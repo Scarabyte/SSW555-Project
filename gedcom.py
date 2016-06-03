@@ -7,7 +7,7 @@ This module provides a way of parsing and traversing through a GEDCOM file.
 import re
 import json
 from collections import OrderedDict
-from itertools import ifilter
+from itertools import ifilter, imap
 # Project Imports
 import tools
 
@@ -45,23 +45,18 @@ class File:
 
     """GEDCOM File Class
 
+    A representation of a GEDCOM file as a list of lines.
     This class allows a GEDCOM file to be easily traversed.
 
     :note: this is not a FileHandler, it is an Object representing the GEDCOM file.
 
     """
 
-    def __init__(self, filename):
+    def __init__(self):
         """Initiate GEDCOM File Class
-
-        Initiating the GEDCOM File Class will open the provided filename or file path
-
-        :param filename: A GEDCOM filename or file path.
-        :type filename: str
 
         """
         self.lines = []
-        self.__open(filename)
 
     def __iter__(self):
         """ Return iterator for GEDCOM File Lines.
@@ -113,12 +108,11 @@ class File:
         """
         return str(self.lines)
 
-    def __open(self, filename):
-        """ Private method to open the GEDCOM File.
+    def read_file(self, filename):
+        """Method to read to read in file from filename or file path
 
-        This method is called by __class__.__init__()
-
-        :note: this is used when the class is initiated and should not be used after initiation.
+            :param filename: A GEDCOM filename or file path.
+            :type filename: str
 
         """
         f = open(filename)
@@ -136,8 +130,8 @@ class File:
 
         Currently this determines which lines are parents and children of one another.
 
-        :note: Currently this only needs to be called when the class is initiated, however if we want to support adding
-        and removing line, this class will need to be called again.
+        :note: Currently this only needs to be called when the class is initiated, however
+        if we want to support adding and removing line, this class will need to be called again.
 
         """
         [d.refresh() for d in self.lines]
@@ -207,8 +201,23 @@ class File:
         return "\n".join(line.text for line in self.lines)
 
     @property
+    def json(self):
+        """ returns the contents of the GEDCOM file as as pretty printed JSON structure.
+
+        :return: Formatted JSON String
+        :rtype: str
+
+        :Example:
+            print gedcom_file.json
+
+        """
+        return json.dumps(self.lines, sort_keys=True, indent=4, separators=(',', ': '))
+
+    @property
     def individuals(self):
         """ Unique identifiers and names of each of the individuals in order by their unique identifiers.
+
+        :note: The code used for stories will be similar to the code that makes up this method.
 
         :return: An ordered dictionary of individuals
         :rtype: OrderedDict
@@ -229,6 +238,8 @@ class File:
     def families(self):
         """ unique identifiers and names of the husbands and wives, in order by unique family identifiers.
 
+        :note: The code used for stories will be similar to the code that makes up this method.
+
         :return: An ordered dictionary of families
         :rtype: OrderedDict
 
@@ -237,66 +248,127 @@ class File:
 
         """
         results = []
+        # The individuals ordered dictionary will be used to get the HUSB/WIFE name from there xref ID
         individuals = self.individuals
-        for FAM in self.find("tag", "FAM"):
-            fam_xref = FAM.get("xref_ID")
-            husb_xref = FAM.children.find_one("tag", "HUSB").get('line_value')
+        for line in self.find("tag", "FAM"):
+            fam_xref = line.get("xref_ID")
+            husb_xref = line.children.find_one("tag", "HUSB").get('line_value')
+            wife_xref = line.children.find_one("tag", "WIFE").get('line_value')
             husb_name = individuals.get(husb_xref)
-            wife_xref = FAM.children.find_one("tag", "WIFE").get('line_value')
             wife_name = individuals.get(wife_xref)
             results.append((fam_xref, {"husband": {"xref": husb_xref, "name": husb_name},
                                        "wife": {"xref": wife_xref, "name": wife_name}}))
         return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
-    @property
-    def json(self):
-        """ Return pretty print formatted string representing the GEDCOM lines in JSON format.
-
-        :return: Formatted JSON String
-        :rtype: str
-
-        :Example:
-            print gedcom_file.json
-
-        """
-        return json.dumps(self.lines, sort_keys=True, indent=4, separators=(',', ': '))
-
 
 class SubFile(File):
-    """ Class to represent GEDCOM File
+    """GEDCOM SubFile Class
+
+    :warning: This object should only be called on a list of objects that were initiated by the File class,
+    this is due to the line objects having access the the rest of the file, and there line numbers updated.
+
+    A representation of a part of a GEDCOM file as a list of lines.
+    This class is used to give a list of Line objects the same features
+    of the File object.
+
+    For example without this class we wouldn't be to call the "find" or the "find_one" method on the results
+    of the "find" or the "find_one" method, because the results would just be a normal line.
+
+    Another example is that we can represent a list we find as text or json.
+
+    :Example:
+        print g.find('tag', 'HUSB').text
+        print g.find('tag', 'HUSB').json
+
+    This class is important for being able to continually traverse through the File object without
+    going back to the original File instance.
+
     """
 
     def __init__(self, lines):
+        """GEDCOM SubFile Class
+
+        This initialization override the initialization of the File object so instead of passing in
+        the location of a GEDCOM object to open a file all you need is to pass in a list of GEDCOM
+        Lines.
+
+        :warning: This object should only be called on a list of objects that were initiated by the File class,
+        this is due to the line objects having access the the rest of the file, and there line numbers updated.
+
+        """
+
         self.lines = lines
 
 
 class Line(dict):
-    """ Class to represent GEDCOM line. """
+    """GEDCOM Line Class
 
-    def __init__(self, line_string, file_class=None, line_number=None):
+    This class is a subclass of dict. This class was made to give extra
+    features to dictionaries to make them more suitable for representing
+    GEDCOM Lines.
+
+    """
+
+    def __init__(self, line_string, file_class, line_number):
+        """Initiate GEDCOM Line Class
+
+        :param line_string: The string of the gedcom line
+        :type line_string: str
+        :note line_string: This is a benefit of using a subclass because a dictionary can be created from a string
+
+        :param file_class: The instance of the File object that created this line
+        :type file_class: File
+        :note file_class: This allows the line object to access the instance of the File that crated it.
+
+        :param line_number: The line number of this line
+        :type file_class: int
+        :note file_class: Specifying line number on initiation is more useful than having to continually check where
+        a line is located in a list.
+
+        """
         self.file = file_class
+        # Set the private variable __text to the string provided, stripped of white space.
         self.__text = line_string.strip()
+        # Set the update the dictionary object key values based on the string provided
+        # This is a benefit of using a subclass because the user doesn't have to pass in
+        # a dictionary
         self.update(**parse_line(line_string))
+        # Add line number to the dictionary. This is more useful on continuously checking
+        # where this object is in a list of Line objects
         self.update({"line_number": line_number})
+        # Add empty children_line_numbers and parent_line_number keys to this dictionary.
+        # This will be updated if this object was generated by the File class
         self.update({"children_line_numbers": [], "parent_line_numbers": []})
 
     @property
     def text(self):
-        """Print Line Text
+        """Print GEDCOM Line as Text
 
-        :returns: GEDCOM line text
+        :note: this method currently returns the text string that was initially
+        passed to create this object. This function may need to be updated to
+        represent the string based on the dictionary if we want to support alteration
+        to the GEDCOM file.
+
+        :note: this function also provides a way of preventing the user from changing self.text
+
+        :returns: GEDCOM line as text
         :rtype: string
 
         """
-        # TODO: have text string show changes made to dictionary
         return self.__text
 
     @property
     def children(self):
-        """ gets a list of GEDCOM lines children in the file
+        """ Returns a list of GEDCOM lines objects that are children of this line.
 
-        :returns: list of GEDCOM Lines
-        :rtype: list
+        :note: This class makes use of the 'children_line_numbers' value in this
+        class that was updated when the GEDCOM File Class was initiated
+
+        :return: A list of matched lines, as a SubFile
+        :rtype: SubFile
+
+        :note: This method returns a SubFile object so that the returned object can
+        continue to use methods defined in the File class.
 
         """
         if self.file:
@@ -305,72 +377,137 @@ class Line(dict):
 
     @property
     def parent(self):
-        """ gets parent
+        """Returns the parent line of this line
+
+        :note: This class makes use of the 'parent_line_numbers' value in this
+        class that was updated when the GEDCOM File Class was initiated
+
+        :return: The Line object of the parent line
+        :rtype: Line
+
+        :note: This method only returns one value because a line can only have one parent.
+
+        :note: This method will return None if line has no parent, i.e. the line level is 0.
 
         """
-        if self.file:
-            return SubFile(map(self.file.lines.__getitem__, self.get('parent_line_numbers', [])))
-        return None
+        return next(imap(self.file.lines.__getitem__, self.get('parent_line_numbers', [])), None)
 
     def refresh(self):
-        if self.file:
-            # Refresh Children Line Numbers
-            self.update({"children_line_numbers": self.__find_children_line_numbers()})
-            # Refresh Parent Line Numbers. (Relies on Parent Line Number Being Accurate)
-            self.update({"parent_line_numbers": self.__find_parent_line_numbers()})
+        """ Refresh this line
+
+        Currently this determines which lines are parents and children of one another.
+
+        :note: Currently this only needs to be called when the class is initiated, however
+        if we want to support adding and removing line, this class will need to be called again.
+        The calling of this method is handled by the File class once all Line ojects are created.
+
+        """
+        # Refresh Children Line Numbers.
+        self.update({"children_line_numbers": self.__find_children_line_numbers()})
+        # Refresh Parent Line Numbers.
+        self.update({"parent_line_numbers": self.__find_parent_line_numbers()})
 
     def __find_children_line_numbers(self):
-        """ get children line numbers """
-        results = []
+        """ Determine the line numbers of the children of this line.
+
+        :returns: list of children line numbers
+        :rtype: list of integers
+
+        """
+        child_line_numbers = []
         lines = self.file.lines
         line_number = self.get("line_number")
+        #  if the line of this object isn't the last line in the file.
         if line_number < len(lines) - 1:
+            #  if the line right after the line of this object has a greater level.
             if lines[line_number + 1].get("level") > lines[line_number]["level"]:
-                for u in lines[line_number + 1:]:
-                    if u["level"] == lines[line_number + 1]["level"]:
-                        results.append(u.get('line_number'))
-                    if u["level"] > lines[line_number + 1]["level"]:
+                # for the lines after the line of this object.
+                for next_line in lines[line_number + 1:]:
+                    # If the next_line we are on is on the same level
+                    # as the first line after the line of this object.
+                    if next_line["level"] == lines[line_number + 1]["level"]:
+                        # Add this line number to the list of child line numbers
+                        child_line_numbers.append(next_line.get('line_number'))
+                    # Else if the next_line we are on has a greater level
+                    # as the first line after the line of this object.
+                    elif next_line["level"] > lines[line_number + 1]["level"]:
+                        # We will ignore it because it is further down the tree.
+                        # We will continue searching through lines though because
+                        # there is still a possibility of finding more children of
+                        # this object.
                         pass
-                    if u["level"] < lines[line_number + 1]["level"]:
+                    # Else if the next_line we are on has a lower level
+                    # as the first line after the line of this object.
+                    elif next_line["level"] < lines[line_number + 1]["level"]:
+                        # We will stop looking for children because we are done
+                        # searching through this branch. All additional children
+                        # will not be a child of this object.
                         break
-        return results
+        return child_line_numbers
 
     def __find_parent_line_numbers(self):
-        """ get parent line numbers """
-        return map(lambda line: line.get("line_number"), filter(lambda line: self["line_number"] in line.get("children_line_numbers",[]), self.file.lines))
+        """Determine the line numbers of the children of this line.
+
+        :note: children_line_numbers must be accurate for this method to work properly.
+        This is handled by updating the children_line_numbers before the parent_line_numbers in this.refresh
+
+        :returns: list of parent line numbers
+        :rtype: list of integers
+
+        """
+        lines = filter(lambda line: self["line_number"] in line.get("children_line_numbers", []), self.file.lines)
+        line_numbers = map(lambda line: line.get("line_number"), lines)
+        return line_numbers
 
 
-def demo(g):
+def demo(gedcom_file):
+    """Demonstrate the capabilities of the module
 
+    :param gedcom_file: The GEDCOM File object to perform assignment on
+    :type gedcom_file: gedcom.File
+
+    """
     # - Demonstrate printing text of file -
-    print g.text
+    print gedcom_file.text
     print
 
     # - Demonstrate printing the line dictionary -
-    for line in g:
+    for line in gedcom_file:
         print line
     print
 
     # - Demonstrate printing file as json -
-    print g.json
+    print gedcom_file.json
     print
     # - Demonstrate getting a line -
-    print g[5]  # - or - g.lines[5]
+    print gedcom_file[5]  # - or - g.lines[5]
     print
 
     # - Demonstrate getting line children and parents "
-    print g[0]
-    print g[0].children
-    print g[0].children[3]
-    print g[0].children[3].parent
+    print gedcom_file[0]
+    print gedcom_file[0].children
+    print gedcom_file[0].children[3]
+    print gedcom_file[0].children[3].parent
+    print gedcom_file[0].parent
     print
 
     # - Demonstrate filtering the list of lines from dictionary value "
     print g.find('xref_ID', '@I1@')
+    print g.find('tag', 'HUSB')
+    print g.find('tag', 'a_value_that_will_never_be_found')
+    print g.find('tag', 'HUSB').text
+    print g.find('tag', 'HUSB').json
+
+    print
+    print g.find_one('xref_ID', '@I1@')
+    print g.find_one('tag', 'HUSB')
+    print g.find_one('tag', 'a_value_that_will_never_be_found')
 
 if __name__ == "__main__":
-    g = File("Test_Files/GEDCOM.ged")
-    #demo(g)
-    ##print str(g)
-    print type(g.json)
+    """ Open Test File and Carry Out Demos
+
+    """
+    g = File()
+    g.read_file("Test_Files/GEDCOM.ged")
+    demo(g)
 

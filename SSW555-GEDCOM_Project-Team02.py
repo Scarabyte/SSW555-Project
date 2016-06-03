@@ -35,26 +35,26 @@ def project_03(gedcom_file):
         print family
 
 if __name__ == "__main__":
+    g = gedcom.File()
+
     # For testing purposes only -
     # remove before submitting assignment
     # print "TESTING FIRST FILE:"
-    # g1 = gedcom.File("Test_Files/GEDCOM.ged")
-    # project_03(g1)
+    # g.read_file("Test_Files/GEDCOM.ged")
+    # project_03(g)
     # print
-
     # print "TESTING SECOND FILE:"
-    # g2 = gedcom.File("Test_Files/My-Family-20-May-2016-697-Simplified.ged")
-    # project_03(g2)
+    # g.read_file("Test_Files/My-Family-20-May-2016-697-Simplified.ged")
+    # project_03(g)
     # print
 
     # Don't hard code filenames;
     # project description says it has to be requested at the command line
     fname = raw_input('Enter the file name to open: ')
     try:
-        g = gedcom.File(fname)
+        g.read_file(fname)
     except:
         print 'Invalid file name: ', fname
         exit()
-
     project_03(g)
 

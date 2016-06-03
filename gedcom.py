@@ -47,6 +47,8 @@ class File:
 
     This class allows a GEDCOM file to be easily traversed.
 
+    :note: this is not a FileHandler, it is an Object representing the GEDCOM file.
+
     """
 
     def __init__(self, filename):

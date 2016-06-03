@@ -296,7 +296,6 @@ class SubFile(File):
         this is due to the line objects having access the the rest of the file, and there line numbers updated.
 
         """
-
         self.lines = lines
 
 

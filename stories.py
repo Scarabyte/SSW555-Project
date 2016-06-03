@@ -2,8 +2,11 @@
 Story Functions
 """
 
+__author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
+
 import tools
 from datetime import datetime
+
 
 def dates_before_current_date():
     """ Dates before current date

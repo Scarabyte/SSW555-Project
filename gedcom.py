@@ -271,7 +271,7 @@ class SubFile(File):
     This class is used to give a list of Line objects the same features
     of the File object.
 
-    For example without this class we wouldn't be to call the "find" or the "find_one" method on the results
+    For example without this class we wouldn't be able to call the "find" or the "find_one" method on the results
     of the "find" or the "find_one" method, because the results would just be a normal line.
 
     Another example is that we can represent a list we find as text or json.

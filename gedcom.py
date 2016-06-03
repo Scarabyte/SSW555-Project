@@ -13,8 +13,8 @@ match_line = re.compile(
     r"(?P<level>[0-9]|[1-9][0-9])\s(?P<xref_ID>@\S+@)?\s?(?P<tag>\S+)\s*(?P<line_value>(.+))?").match
 
 # Declare valid line tags for our project
-SUPPORTED_TAGS = ["INDI", "NAME", "SEX", "BIRT", "DEAT", "FAMC", "FAMS", "FAM", "MARR", "HUSB", "WIFE", "CHIL", "DIV",
-                  "DATE", "HEAD", "TRLR", "NOTE"]
+SUPPORTED_TAGS = ["INDI", "NAME", "SEX", "BIRT", "DEAT", "FAMC", "FAMS", "FAM",
+                  "MARR", "HUSB", "WIFE", "CHIL", "DIV", "DATE", "HEAD", "TRLR", "NOTE"]
 
 
 def parse_line(s):
@@ -44,6 +44,9 @@ class File:
     def __init__(self, filename):
         self.__open(filename)
 
+    def __close__(self, filename):
+        self.__close(filename)
+
     def __iter__(self):
         return iter(self.lines)
 
@@ -61,9 +64,13 @@ class File:
         """ Open GEDCOM File """
         f = open(filename)
         # Parse Lines
-        self.lines = [Line(line, self, i) for i, line in enumerate(f)]
+        self.lines = [Line(line.strip(), self, i) for i, line in enumerate(f)]
         self.refresh()  # Must be refreshed initially.
 
+    def __close(self, filename):
+        """ Close GEDCOM File """
+        filename.close
+    
     def refresh(self):
         """ Refresh Each Line
         """
@@ -97,7 +104,7 @@ class File:
             wife_xref = FAM.children.find_one("tag", "WIFE").get('line_value')
             wife_name = individuals.get(wife_xref)
             results.append((fam_xref, {"husband": {"xref": husb_xref, "name": husb_name},
-                                       "wife": {"husband": {"xref": wife_xref, "name": wife_name}}}))
+                                       "wife": {"xref": wife_xref, "name": wife_name}}))
         return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
     @property

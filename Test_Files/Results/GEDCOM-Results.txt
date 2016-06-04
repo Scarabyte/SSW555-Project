@@ -1,0 +1,26 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:40:30) [MSC v.1500 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\Adam\Documents\GitHub\SSW555-Project\SSW555-GEDCOM_Project-Team02.py 
+Enter the file name to open: Test_Files/GEDCOM.ged
+ - Individuals - 
+('@I1@', 'Randy Smith')
+('@I2@', 'Jacob Smith')
+('@I3@', 'Caroll Rodriguez')
+('@I4@', 'Rachel Smith')
+('@I5@', 'Greg Smith')
+('@I6@', 'Marry Anderson')
+('@I7@', 'Frank Rodriguez')
+('@I8@', 'Sammy Santiago')
+('@I9@', 'Rita Jones')
+('@I10@', 'Mike Jones')
+('@I11@', 'Aubry Conan')
+('@I12@', 'Frank Smith')
+
+ - Families - 
+('@F1@', {'husband': {'xref': '@I2@', 'name': 'Jacob Smith'}, 'wife': {'xref': '@I3@', 'name': 'Caroll Rodriguez'}})
+('@F2@', {'husband': {'xref': '@I2@', 'name': 'Jacob Smith'}, 'wife': {'xref': '@I9@', 'name': 'Rita Jones'}})
+('@F3@', {'husband': {'xref': '@I5@', 'name': 'Greg Smith'}, 'wife': {'xref': '@I6@', 'name': 'Marry Anderson'}})
+('@F4@', {'husband': {'xref': '@I7@', 'name': 'Frank Rodriguez'}, 'wife': {'xref': '@I8@', 'name': 'Sammy Santiago'}})
+('@F5@', {'husband': {'xref': '@I10@', 'name': 'Mike Jones'}, 'wife': {'xref': '@I11@', 'name': 'Aubry Conan'}})
+>>> 

@@ -1,0 +1,28 @@
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:40:30) [MSC v.1500 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\Adam\Documents\GitHub\SSW555-Project\SSW555-GEDCOM_Project-Team02.py 
+Enter the file name to open: Test_Files/GEDCOM+Assignment-VibhaRavi.txt
+ - Individuals - 
+('@I6000000042491407663@', 'Son')
+('@I6000000042491517676@', "Father's Mother")
+('@I6000000042491568596@', "Father's Father")
+('@I6000000042491586545@', 'Mother')
+('@I6000000042491602502@', 'daughter')
+('@I6000000042491622542@', 'Mothers Father')
+('@I6000000042491681353@', 'Person')
+('@I6000000042491685528@', "Mother's Fathers Current Wife")
+('@I6000000042491756113@', 'Father')
+('@I6000000042491801035@', 'Daughters Daughter')
+('@I6000000042491832131@', "Mother's Mother Deceased")
+('@I6000000042492052937@', "Mother's Fathers Current Wife's Daughter")
+('@I6000000042492057855@', "Mother's Mother  Son")
+
+ - Families - 
+('@F6000000042491407666@', {'husband': {'xref': None, 'name': None}, 'wife': {'xref': '@I6000000042491681353@', 'name': 'Person'}})
+('@F6000000042491568599@', {'husband': {'xref': '@I6000000042491568596@', 'name': "Father's Father"}, 'wife': {'xref': '@I6000000042491517676@', 'name': "Father's Mother"}})
+('@F6000000042491685531@', {'husband': {'xref': '@I6000000042491622542@', 'name': 'Mothers Father'}, 'wife': {'xref': '@I6000000042491685528@', 'name': "Mother's Fathers Current Wife"}})
+('@F6000000042491756116@', {'husband': {'xref': '@I6000000042491756113@', 'name': 'Father'}, 'wife': {'xref': '@I6000000042491586545@', 'name': 'Mother'}})
+('@F6000000042491801038@', {'husband': {'xref': None, 'name': None}, 'wife': {'xref': '@I6000000042491602502@', 'name': 'daughter'}})
+('@F6000000042491832134@', {'husband': {'xref': '@I6000000042491622542@', 'name': 'Mothers Father'}, 'wife': {'xref': '@I6000000042491832131@', 'name': "Mother's Mother Deceased"}})
+>>> 

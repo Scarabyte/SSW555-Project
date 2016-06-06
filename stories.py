@@ -8,25 +8,57 @@ import tools
 from datetime import datetime
 
 
-def dates_before_current_date():
+def dates_before_current_date(gedcom_file, find_cases_that_are):
     """ Dates before current date
+
     Description: Dates (birth, marriage, divorce, death) should not be after the current date
     story_id: US01
-    author: cd
+    author: Constantine Davantzis
     sprint: 1
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
+    :param find_cases_that_are: Specify which cases to return.
+    :type find_cases_that_are: bool
+
+    :Example:
+        print list(dates_before_current_date(g, True))
+        print list(dates_before_current_date(g, False))
+
     """
-    print datetime.now()
-    pass
+    for date in gedcom_file.find("tag", "DATE"):
+        value = date.get('line_value')
+        if (tools.parse_date(value) < datetime.now()) == find_cases_that_are:
+            yield {"xref_ID": date.parent.parent.get("xref_ID"), "tag": date.parent.get("tag"), "date": value}
 
 
-def birth_before_marriage():
+def birth_before_marriage(gedcom_file, find_cases_that_are):
     """ Birth before marriage
     Description: Birth should occur before marriage of an individual
     story_id: US02
-    author: cd
+    author: Constantine Davantzis
     sprint: 1
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
+    :param find_cases_that_are: Specify which cases to return.
+    :type find_cases_that_are: bool
+
+    :Example:
+        print list(birth_before_marriage(g, True))
+        print list(birth_before_marriage(g, False))
+
     """
-    pass
+    for individual in gedcom_file.find("tag", "INDI"):
+        birt_date = tools.get_birth_date(individual)
+        marr_date = tools.get_marriage_date(individual)
+        if birt_date and marr_date:
+            birt_value = birt_date.get("line_value")
+            marr_value = marr_date.get("line_value")
+            if (tools.parse_date(birt_value) < tools.parse_date(marr_value)) == find_cases_that_are:
+                yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "marr_value": marr_value}
 
 
 def birth_before_death():

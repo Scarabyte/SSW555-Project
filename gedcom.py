@@ -467,8 +467,6 @@ class Line(dict):
         return self.file.find_one('xref_ID', self.get("line_value"))
 
 
-
-
 def demo(gedcom_file):
     """Demonstrate the capabilities of the module
 

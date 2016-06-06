@@ -15,7 +15,43 @@ def human_sort(s, _re=re.compile('([0-9]+)')):
     except:
         return s
 
+
 def parse_date(s):
-    """
+    """ parse linedate string into datetime object
     """
     return datetime.strptime(s, '%d %b %Y')
+
+
+def get_birth_date(individual):
+    """ Return the birth date line of an individual line
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: The birth date line
+    :rtype: Line
+    """
+    birth = individual.children.find_one("tag", "BIRT")
+    if birth:
+        return birth.children.find_one('tag', 'DATE')
+
+
+def get_marriage_date(individual):
+    """ Return the marriage date line of an individual line
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: The marriage date line
+    :rtype: Line
+
+    """
+    family_spouse = individual.children.find_one("tag", "FAMS")
+    if family_spouse:
+        family = family_spouse.follow_xref()
+        if family:
+            marriage = family.children.find_one('tag', 'MARR')
+            if marriage:
+                return marriage.children.find_one('tag', 'DATE')
+
+

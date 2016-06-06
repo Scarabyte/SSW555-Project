@@ -458,6 +458,16 @@ class Line(dict):
         line_numbers = map(lambda line: line.get("line_number"), lines)
         return line_numbers
 
+    def follow_xref(self):
+        """ Search file lines with an xref_id equal to this lines line_value
+
+        :returns: matching line
+        :rtype: GEDCOM Line
+        """
+        return self.file.find_one('xref_ID', self.get("line_value"))
+
+
+
 
 def demo(gedcom_file):
     """Demonstrate the capabilities of the module

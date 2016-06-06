@@ -389,7 +389,7 @@ class Line(dict):
         :note: This method will return None if line has no parent, i.e. the line level is 0.
 
         """
-        return next(imap(self.file.lines.__getitem__, self.get('parent_line_numbers', [])), None)
+        return next(imap(self.file.lines.__getitem__, self.get('parent_line_numbers', [])), {})
 
     def refresh(self):
         """ Refresh this line

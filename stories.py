@@ -81,14 +81,21 @@ def marriage_before_divorce():
     pass
 
 
-def marriage_before_death():
+def marriage_before_death(gedcom_file, find_cases_that_are):
     """ Marriage before death
     Description: Marriage should occur before death of either spouse
     story_id: US05
     author: ab
     sprint: 1
     """
-    pass
+    for individual in gedcom_file.find("tag", "INDI"):
+        marr_date = tools.get_marriage_date(individual)
+        deat_date = tools.get_death_date(individual)
+        if marr_date and deat_date:
+            marr_value = marr_date.get("line_value")
+            deat_value = deat_date.get("line_value")
+            if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) == find_cases_that_are:
+                yield {"xref_ID": individual.get("xref_ID"), "Marriage: ": birt_value, "Death:    ": marr_value}
 
 
 def divorce_before_death():

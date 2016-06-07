@@ -37,8 +37,7 @@ def project_03(gedcom_file):
 if __name__ == "__main__":
     g = gedcom.File()
 
-    # For testing purposes only -
-    # remove before submitting assignment
+    # For testing purposes only
     # print "TESTING FIRST FILE:"
     # g.read_file("Test_Files/GEDCOM.ged")
     # project_03(g)
@@ -48,13 +47,14 @@ if __name__ == "__main__":
     # project_03(g)
     # print
 
-    # Don't hard code filenames;
-    # project description says it has to be requested at the command line
+    # Request file name from user
     fname = raw_input('Enter the file name to open: ')
     try:
         g.read_file(fname)
     except:
         print 'Invalid file name: ', fname
         exit()
-    project_03(g)
 
+    # project_03(g)
+    
+    stories.marriage_before_death(fname, True)

@@ -55,3 +55,17 @@ def get_marriage_date(individual):
                 return marriage.children.find_one('tag', 'DATE')
 
 
+def get_death_date(individual):
+    """ Return the death date (if any) of an individual
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: The death date line
+    :rtype: Line
+    """
+    death = individual.children.find_one("tag", "DEAT")
+    if death:
+        return death.children.find_one("tag", "DEAT")
+
+

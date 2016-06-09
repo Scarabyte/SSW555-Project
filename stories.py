@@ -68,6 +68,16 @@ def birth_before_death():
     author: vibharavi
     sprint: 1
     """
+    for individual in gedcom_file.find("tag", "INDI"):
+        birt_date = tools.get_birth_date(individual)
+        deat_date = tools.get_death_date(individual)
+        if birt_date and deat_date:
+            birt_value = birt_date.get("line_value")
+            deat_value = deat_date.get("line_value")
+            if (tools.parse_date(birt_value) < tools.parse_date(deat_value)) == find_cases_that_are:
+                yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "deat_value":deat_value}
+    
+    
     pass
 
 

@@ -57,4 +57,4 @@ if __name__ == "__main__":
 
     # project_03(g)
     
-    stories.marriage_before_death(fname, True)
+    stories.marriage_before_death(g, True)

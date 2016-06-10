@@ -61,7 +61,7 @@ def birth_before_marriage(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "marr_value": marr_value}
 
 
-def birth_before_death():
+def birth_before_death(gedcom_file, find_cases_that_are):
     """ Birth before death
     Description: Birth should occur before death of an individual
     story_id: US03
@@ -76,12 +76,10 @@ def birth_before_death():
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(birt_value) < tools.parse_date(deat_value)) == find_cases_that_are:
                 yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "deat_value":deat_value}
-    
-    
-    pass
 
 
-def marriage_before_divorce():
+
+def marriage_before_divorce(gedcom_file, find_cases_that_are):
     """ Marriage before divorce
     Description: Marriage should occur before divorce of spouses, and divorce can only occur after marriage
     story_id: US04
@@ -108,7 +106,7 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "Marriage: ": birt_value, "Death:    ": marr_value}
 
 
-def divorce_before_death():
+def divorce_before_death(gedcom_file, find_cases_that_are):
     """ Divorce before death
     Description: Divorce can only occur before death of both spouses
     story_id: US06

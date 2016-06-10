@@ -80,7 +80,7 @@ def get_divorce_date(individual):
     :param individual: The individual line
     :type individual: Line
 
-    :return: The death date line
+    :return: The divorce date line
     :rtype: Line
 
     auther: Constantine Davantzis

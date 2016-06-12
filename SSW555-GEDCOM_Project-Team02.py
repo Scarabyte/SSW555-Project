@@ -34,18 +34,21 @@ def project_03(gedcom_file):
     for family in gedcom_file.families.iteritems():
         print family
 
+def project_04(gedcom_file):
+    """ Function to perform the Project04 Tasks: Print the results of Sprint 1
+
+    :param gedcom_file: The GEDCOM File object to perform assignment on
+    :type gedcom_file: gedcom.File
+
+    :Examples:
+        myfile = gedcom.File("Test_Files/GEDCOM.ged")
+        project_04(myfile)
+
+    """
+    pass
+
 if __name__ == "__main__":
     g = gedcom.File()
-
-    # For testing purposes only
-    # print "TESTING FIRST FILE:"
-    # g.read_file("Test_Files/GEDCOM.ged")
-    # project_03(g)
-    # print
-    # print "TESTING SECOND FILE:"
-    # g.read_file("Test_Files/My-Family-20-May-2016-697-Simplified.ged")
-    # project_03(g)
-    # print
 
     # Request file name from user
     fname = raw_input('Enter the file name to open: ')
@@ -56,5 +59,5 @@ if __name__ == "__main__":
         exit()
 
     # project_03(g)
-    
-    stories.marriage_before_death(g, True)
+    # project_04(g)
+

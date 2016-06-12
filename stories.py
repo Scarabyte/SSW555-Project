@@ -93,7 +93,7 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
     """ Marriage before death
     Description: Marriage should occur before death of either spouse
     story_id: US05
-    author: ab
+    author: Adam Burbidge
     sprint: 1
     """
     for individual in gedcom_file.find("tag", "INDI"):
@@ -103,17 +103,24 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
             marr_value = marr_date.get("line_value")
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "Marriage: ": birt_value, "Death:    ": marr_value}
+                yield {"xref_ID": individual.get("xref_ID"), "Marriage: ": marr_value, "Death:    ": deat_value}
 
 
 def divorce_before_death(gedcom_file, find_cases_that_are):
     """ Divorce before death
     Description: Divorce can only occur before death of both spouses
     story_id: US06
-    author: ab
+    author: Adam Burbidge
     sprint: 1
     """
-    pass
+    for individual in gedcom_file.find("tag", "INDI"):
+        divo_date = tools.get_divorce_date(individual)
+        deat_date = tools.get_death_date(individual)
+        if divo_date and deat_date:
+            divo_value = divo_date.get("line_value")
+            deat_value = deat_date.get("line_value")
+            if (tools.parse_date(divo_value) < tools.parse_date(deat_value)) == find_cases_that_are:
+                yield {"xref_ID": individual.get("xref_ID"), "Divorce: ": divo_value, "Death:     ": deat_value}
 
 
 def less_then_150_years_old():

@@ -130,7 +130,7 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
             marr_value = marr_date.get("line_value")
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "Marriage: ": marr_value, "Death:    ": deat_value}
+                yield {"xref_ID": individual.get("xref_ID"), "marr_value": marr_value, "deat_value": deat_value}
 
 
 def divorce_before_death(gedcom_file, find_cases_that_are):
@@ -154,7 +154,7 @@ def divorce_before_death(gedcom_file, find_cases_that_are):
             div_value = div_date.get("line_value")
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(div_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "Divorce: ": div_value, "Death:     ": deat_value}
+                yield {"xref_ID": individual.get("xref_ID"), "div_value": div_value, "deat_value": deat_value}
 
 
 def less_then_150_years_old():

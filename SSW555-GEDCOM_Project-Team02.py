@@ -2,12 +2,12 @@
 SSW555 GEDCOM Parsing Project - Team02
 This is the main file for the project
 """
+import json
+import gedcom
+import stories
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 __status__ = "Development"
-
-import gedcom
-import stories  # Will be used once we start completing stories.
 
 
 def project_03(gedcom_file):
@@ -34,6 +34,7 @@ def project_03(gedcom_file):
     for family in gedcom_file.families.iteritems():
         print family
 
+
 def project_04(gedcom_file):
     """ Function to perform the Project04 Tasks: Print the results of Sprint 1
 
@@ -42,10 +43,39 @@ def project_04(gedcom_file):
 
     :Examples:
         myfile = gedcom.File("Test_Files/GEDCOM.ged")
-        project_04(myfile)
+        print project_04(myfile)
 
     """
-    pass
+    return {
+        "Sprint Number": 1,
+        "Stories": {
+            "US01": {"1. title": "dates_before_current_date",
+                     "2. desired_case": True,
+                     "3. cases": {True: list(stories.dates_before_current_date(gedcom_file, True)),
+                                  False: list(stories.dates_before_current_date(gedcom_file, False))}},
+            "US02": {"1. title": "birth_before_marriage",
+                     "2. desired_case": True,
+                     "3. cases": {True: list(stories.birth_before_marriage(gedcom_file, True)),
+                                  False: list(stories.birth_before_marriage(gedcom_file, False))}},
+            "US03": {"1. title": "birth_before_death",
+                     "2. desired_case": True,
+                     "3. cases": {True: list(stories.birth_before_death(gedcom_file, True)),
+                                  False: list(stories.birth_before_death(gedcom_file, False))}},
+            "US04": {"1. title": "marriage_before_divorce",
+                     "2. desired_case": True,
+                     "3. cases": {True: list(stories.marriage_before_divorce(gedcom_file, True)),
+                                  False: list(stories.marriage_before_divorce(gedcom_file, False))}},
+            "US05": {"1. title": "marriage_before_death",
+                     "2. desired_case": True,
+                     "3. cases": {True: list(stories.marriage_before_death(gedcom_file, True)),
+                                  False: list(stories.marriage_before_death(gedcom_file, False))}},
+            "US06": {"1. title": "divorce_before_death",
+                     "2. desired_case": True,
+                     "3. cases": {True: list(stories.divorce_before_death(gedcom_file, True)),
+                                  False: list(stories.divorce_before_death(gedcom_file, False))}},
+        }
+    }
+
 
 if __name__ == "__main__":
     g = gedcom.File()
@@ -58,6 +88,6 @@ if __name__ == "__main__":
         print 'Invalid file name: ', fname
         exit()
 
-    # project_03(g)
-    # project_04(g)
-
+    # Save Project04 results to file
+    with open('project_04_results.json', 'w') as outfile:
+        json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))

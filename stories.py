@@ -100,13 +100,13 @@ def marriage_before_divorce(gedcom_file, find_cases_that_are):
 
     """
     for individual in gedcom_file.find("tag", "INDI"):
-        divo_date = tools.get_divorce_date(individual)
+        div_date = tools.get_divorce_date(individual)
         marr_date = tools.get_marriage_date(individual)
-        if divo_date and marr_date:
-            divo_value = divo_date.get("line_value")
+        if div_date and marr_date:
+            div_value = div_date.get("line_value")
             marr_value = marr_date.get("line_value")
-            if (tools.parse_date(marr_value) < tools.parse_date(divo_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "divo_value": divo_value, "marr_value": marr_value}
+            if (tools.parse_date(marr_value) < tools.parse_date(div_value)) == find_cases_that_are:
+                yield {"xref_ID": individual.get("xref_ID"), "div_value": div_value, "marr_value": marr_value}
 
 
 def marriage_before_death(gedcom_file, find_cases_that_are):

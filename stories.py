@@ -148,13 +148,13 @@ def divorce_before_death(gedcom_file, find_cases_that_are):
 
     """
     for individual in gedcom_file.find("tag", "INDI"):
-        divo_date = tools.get_divorce_date(individual)
+        div_date = tools.get_divorce_date(individual)
         deat_date = tools.get_death_date(individual)
-        if divo_date and deat_date:
-            divo_value = divo_date.get("line_value")
+        if div_date and deat_date:
+            div_value = div_date.get("line_value")
             deat_value = deat_date.get("line_value")
-            if (tools.parse_date(divo_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "Divorce: ": divo_value, "Death:     ": deat_value}
+            if (tools.parse_date(div_value) < tools.parse_date(deat_value)) == find_cases_that_are:
+                yield {"xref_ID": individual.get("xref_ID"), "Divorce: ": div_value, "Death:     ": deat_value}
 
 
 def less_then_150_years_old():

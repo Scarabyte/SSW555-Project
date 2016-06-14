@@ -89,7 +89,7 @@ def marriage_before_divorce(gedcom_file, find_cases_that_are):
     """ Marriage before divorce
     Description: Marriage should occur before divorce of spouses, and divorce can only occur after marriage
     story_id: US04
-    author: vibharavi
+    author: vr
     sprint: 1
 
     :param gedcom_file: GEDCOM File to check

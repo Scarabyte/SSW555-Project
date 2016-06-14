@@ -85,7 +85,6 @@ def birth_before_death(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "deat_value":deat_value}
 
 
-
 def marriage_before_divorce(gedcom_file, find_cases_that_are):
     """ Marriage before divorce
     Description: Marriage should occur before divorce of spouses, and divorce can only occur after marriage

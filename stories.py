@@ -67,6 +67,13 @@ def birth_before_death(gedcom_file, find_cases_that_are):
     story_id: US03
     author: vibharavi
     sprint: 1
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
+    :param find_cases_that_are: Specify which cases to return.
+    :type find_cases_that_are: bool
+
     """
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
@@ -85,6 +92,13 @@ def marriage_before_divorce(gedcom_file, find_cases_that_are):
     story_id: US04
     author: vibharavi
     sprint: 1
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
+    :param find_cases_that_are: Specify which cases to return.
+    :type find_cases_that_are: bool
+
     """
     for individual in gedcom_file.find("tag", "INDI"):
         divo_date = tools.get_divorce_date(individual)
@@ -102,6 +116,13 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
     story_id: US05
     author: Adam Burbidge
     sprint: 1
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
+    :param find_cases_that_are: Specify which cases to return.
+    :type find_cases_that_are: bool
+
     """
     for individual in gedcom_file.find("tag", "INDI"):
         marr_date = tools.get_marriage_date(individual)
@@ -119,6 +140,13 @@ def divorce_before_death(gedcom_file, find_cases_that_are):
     story_id: US06
     author: Adam Burbidge
     sprint: 1
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
+    :param find_cases_that_are: Specify which cases to return.
+    :type find_cases_that_are: bool
+
     """
     for individual in gedcom_file.find("tag", "INDI"):
         divo_date = tools.get_divorce_date(individual)

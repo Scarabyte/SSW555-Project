@@ -71,7 +71,7 @@ def get_death_date(individual):
     """
     death = individual.children.find_one("tag", "DEAT")
     if death:
-        return death.children.find_one("tag", "DEAT")
+        return death.children.find_one("tag", "DATE")
 
 
 def get_divorce_date(individual):

@@ -3,6 +3,8 @@ SSW555 GEDCOM Parsing Project - Team02
 This is the main file for the project
 """
 import json
+import logging
+
 import gedcom
 import stories
 
@@ -46,7 +48,7 @@ def project_04(gedcom_file):
         print project_04(myfile)
 
     """
-    return {
+    r = {
         "Sprint Number": 1,
         "Stories": {
             "US01": {"1. title": "dates_before_current_date",
@@ -76,6 +78,28 @@ def project_04(gedcom_file):
         }
     }
 
+    logger = logging.getLogger("simple_example")
+    logger.setLevel(logging.DEBUG)
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+    formatter = logging.Formatter("%(levelname)s - %(message)s")
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
+
+    for story, info in r["Stories"].iteritems():
+        desired_case = info["2. desired_case"]
+        undesired_case = not desired_case
+        desired_cases = info["3. cases"][desired_case]
+        undesired_cases = info["3. cases"][undesired_case]
+        for case in desired_cases:
+            logger.info("".join(
+                    [story, " - ", info["1. title"], " - DESIRED_CASE(", str(undesired_case), ") - ",
+                     str(case)]))
+        for case in undesired_cases:
+            logger.warn("".join(
+                    [story, " - ", info["1. title"], " - UNDESIRED_CASE(", str(undesired_case), ") - ",
+                     str(case)]))
+    return r
 
 if __name__ == "__main__":
     g = gedcom.File()

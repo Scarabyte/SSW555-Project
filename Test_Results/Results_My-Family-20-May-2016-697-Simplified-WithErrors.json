@@ -232,45 +232,45 @@
             "output": {
                 "failed": [
                     {
-                        "birt_value": "10 FEB 1980",
-                        "marr_value": "26 MAR 1976",
+                        "birt": "10 FEB 1980",
+                        "marr": "26 MAR 1976",
                         "xref_ID": "@I2@"
                     },
                     {
-                        "birt_value": "24 JAN 1973",
-                        "marr_value": "4 SEP 1970",
+                        "birt": "24 JAN 1973",
+                        "marr": "4 SEP 1970",
                         "xref_ID": "@I10@"
                     },
                     {
-                        "birt_value": "1 AUG 1990",
-                        "marr_value": "12 OCT 1986",
+                        "birt": "1 AUG 1990",
+                        "marr": "12 OCT 1986",
                         "xref_ID": "@I21@"
                     },
                     {
-                        "birt_value": "2 MAY 1993",
-                        "marr_value": "1 MAY 1973",
+                        "birt": "2 MAY 1993",
+                        "marr": "1 MAY 1973",
                         "xref_ID": "@I24@"
                     }
                 ],
                 "passed": [
                     {
-                        "birt_value": "24 NOV 1848",
-                        "marr_value": "26 MAR 1976",
+                        "birt": "24 NOV 1848",
+                        "marr": "26 MAR 1976",
                         "xref_ID": "@I3@"
                     },
                     {
-                        "birt_value": "3 JUN 1954",
-                        "marr_value": "19 MAR 1990",
+                        "birt": "3 JUN 1954",
+                        "marr": "19 MAR 1990",
                         "xref_ID": "@I13@"
                     },
                     {
-                        "birt_value": "16 DEC 1951",
-                        "marr_value": "1 MAY 1973",
+                        "birt": "16 DEC 1951",
+                        "marr": "1 MAY 1973",
                         "xref_ID": "@I14@"
                     },
                     {
-                        "birt_value": "5 JUN 1957",
-                        "marr_value": "19 MAR 1990",
+                        "birt": "5 JUN 1957",
+                        "marr": "19 MAR 1990",
                         "xref_ID": "@I22@"
                     }
                 ]
@@ -282,50 +282,50 @@
             "output": {
                 "failed": [
                     {
-                        "birt_value": "24 JAN 1973",
-                        "deat_value": "16 MAY 1946",
+                        "birt": "24 JAN 1973",
+                        "deat": "16 MAY 1946",
                         "xref_ID": "@I10@"
                     }
                 ],
                 "passed": [
                     {
-                        "birt_value": "10 FEB 1980",
-                        "deat_value": "24 AUG 1994",
+                        "birt": "10 FEB 1980",
+                        "deat": "24 AUG 1994",
                         "xref_ID": "@I2@"
                     },
                     {
-                        "birt_value": "24 NOV 1848",
-                        "deat_value": "12 JUL 1988",
+                        "birt": "24 NOV 1848",
+                        "deat": "12 JUL 1988",
                         "xref_ID": "@I3@"
                     },
                     {
-                        "birt_value": "23 AUG 2005",
-                        "deat_value": "4 MAY 2006",
+                        "birt": "23 AUG 2005",
+                        "deat": "4 MAY 2006",
                         "xref_ID": "@I5@"
                     },
                     {
-                        "birt_value": "27 MAR 1920",
-                        "deat_value": "27 FEB 2002",
+                        "birt": "27 MAR 1920",
+                        "deat": "27 FEB 2002",
                         "xref_ID": "@I11@"
                     },
                     {
-                        "birt_value": "14 JAN 1922",
-                        "deat_value": "4 APR 1997",
+                        "birt": "14 JAN 1922",
+                        "deat": "4 APR 1997",
                         "xref_ID": "@I12@"
                     },
                     {
-                        "birt_value": "3 JUN 1954",
-                        "deat_value": "10 AUG 1994",
+                        "birt": "3 JUN 1954",
+                        "deat": "10 AUG 1994",
                         "xref_ID": "@I13@"
                     },
                     {
-                        "birt_value": "8 APR 1918",
-                        "deat_value": "10 OCT 1995",
+                        "birt": "8 APR 1918",
+                        "deat": "10 OCT 1995",
                         "xref_ID": "@I15@"
                     },
                     {
-                        "birt_value": "5 JUN 1957",
-                        "deat_value": "12 SEP 1989",
+                        "birt": "5 JUN 1957",
+                        "deat": "12 SEP 1989",
                         "xref_ID": "@I22@"
                     }
                 ]
@@ -337,20 +337,20 @@
             "output": {
                 "failed": [
                     {
-                        "div_value": "17 NOV 1978",
-                        "marr_value": "12 OCT 1986",
+                        "div": "17 NOV 1978",
+                        "marr": "12 OCT 1986",
                         "xref_ID": "@I21@"
                     }
                 ],
                 "passed": [
                     {
-                        "div_value": "13 NOV 1992",
-                        "marr_value": "26 MAR 1976",
+                        "div": "13 NOV 1992",
+                        "marr": "26 MAR 1976",
                         "xref_ID": "@I2@"
                     },
                     {
-                        "div_value": "13 NOV 1992",
-                        "marr_value": "26 MAR 1976",
+                        "div": "13 NOV 1992",
+                        "marr": "26 MAR 1976",
                         "xref_ID": "@I3@"
                     }
                 ]
@@ -362,30 +362,30 @@
             "output": {
                 "failed": [
                     {
-                        "deat_value": "16 MAY 1946",
-                        "marr_value": "4 SEP 1970",
+                        "deat": "16 MAY 1946",
+                        "marr": "4 SEP 1970",
                         "xref_ID": "@I10@"
                     },
                     {
-                        "deat_value": "12 SEP 1989",
-                        "marr_value": "19 MAR 1990",
+                        "deat": "12 SEP 1989",
+                        "marr": "19 MAR 1990",
                         "xref_ID": "@I22@"
                     }
                 ],
                 "passed": [
                     {
-                        "deat_value": "24 AUG 1994",
-                        "marr_value": "26 MAR 1976",
+                        "deat": "24 AUG 1994",
+                        "marr": "26 MAR 1976",
                         "xref_ID": "@I2@"
                     },
                     {
-                        "deat_value": "12 JUL 1988",
-                        "marr_value": "26 MAR 1976",
+                        "deat": "12 JUL 1988",
+                        "marr": "26 MAR 1976",
                         "xref_ID": "@I3@"
                     },
                     {
-                        "deat_value": "10 AUG 1994",
-                        "marr_value": "19 MAR 1990",
+                        "deat": "10 AUG 1994",
+                        "marr": "19 MAR 1990",
                         "xref_ID": "@I13@"
                     }
                 ]
@@ -397,15 +397,15 @@
             "output": {
                 "failed": [
                     {
-                        "deat_value": "12 JUL 1988",
-                        "div_value": "13 NOV 1992",
+                        "deat": "12 JUL 1988",
+                        "div": "13 NOV 1992",
                         "xref_ID": "@I3@"
                     }
                 ],
                 "passed": [
                     {
-                        "deat_value": "24 AUG 1994",
-                        "div_value": "13 NOV 1992",
+                        "deat": "24 AUG 1994",
+                        "div": "13 NOV 1992",
                         "xref_ID": "@I2@"
                     }
                 ]

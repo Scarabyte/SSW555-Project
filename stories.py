@@ -18,9 +18,9 @@ def log(func):
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
         for entry in r["output"]["passed"]:
-            logger.info(entry, extra=dict(story_outcome="PASSED", story_id=r["id"],story_name=r["name"]))
+            logger.info(entry, extra=dict(story_outcome="PASSED", story_id=r["id"], story_name=r["name"]))
         for entry in r["output"]["failed"]:
-            logger.warning(entry, extra=dict(story_outcome="FAILED",story_id=r["id"],story_name=r["name"]))
+            logger.warning(entry, extra=dict(story_outcome="FAILED", story_id=r["id"], story_name=r["name"]))
         return r
     return func_wrapper
 
@@ -46,7 +46,7 @@ def dates_before_current_date(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed":[],"failed":[]}
+    r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
         value = date.get('line_value')
         output = {"xref_ID": date.parent.parent.get("xref_ID"), "tag": date.parent.get("tag"), "date": value}
@@ -65,7 +65,7 @@ def birth_before_marriage(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed":[],"failed":[]}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
         marr_date = tools.get_marriage_date(individual)
@@ -88,7 +88,7 @@ def birth_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed":[],"failed":[]}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
@@ -111,7 +111,7 @@ def marriage_before_divorce(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed":[],"failed":[]}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         div_date = tools.get_divorce_date(individual)
         marr_date = tools.get_marriage_date(individual)
@@ -134,7 +134,7 @@ def marriage_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed":[],"failed":[]}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         marr_date = tools.get_marriage_date(individual)
         deat_date = tools.get_death_date(individual)
@@ -157,7 +157,7 @@ def divorce_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed":[],"failed":[]}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         div_date = tools.get_divorce_date(individual)
         deat_date = tools.get_death_date(individual)

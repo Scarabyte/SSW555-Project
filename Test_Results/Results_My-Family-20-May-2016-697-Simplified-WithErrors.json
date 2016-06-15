@@ -1,18 +1,18 @@
 {
     "Sprint Number": 1,
-    "Stories": {
-        "US01": {
-            "1. title": "dates_before_current_date",
-            "2. desired_case": true,
-            "3. cases": {
-                "false": [
+    "Stories": [
+        {
+            "id": "US01",
+            "name": "dates_before_current_date",
+            "output": {
+                "failed": [
                     {
                         "date": "4 SEP 2017",
                         "tag": "BIRT",
                         "xref_ID": "@I6@"
                     }
                 ],
-                "true": [
+                "passed": [
                     {
                         "date": "20 MAY 2016",
                         "tag": "HEAD",
@@ -226,11 +226,11 @@
                 ]
             }
         },
-        "US02": {
-            "1. title": "birth_before_marriage",
-            "2. desired_case": true,
-            "3. cases": {
-                "false": [
+        {
+            "id": "US02",
+            "name": "birth_before_marriage",
+            "output": {
+                "failed": [
                     {
                         "birt_value": "10 FEB 1980",
                         "marr_value": "26 MAR 1976",
@@ -252,7 +252,7 @@
                         "xref_ID": "@I24@"
                     }
                 ],
-                "true": [
+                "passed": [
                     {
                         "birt_value": "24 NOV 1848",
                         "marr_value": "26 MAR 1976",
@@ -276,18 +276,18 @@
                 ]
             }
         },
-        "US03": {
-            "1. title": "birth_before_death",
-            "2. desired_case": true,
-            "3. cases": {
-                "false": [
+        {
+            "id": "US03",
+            "name": "birth_before_death",
+            "output": {
+                "failed": [
                     {
                         "birt_value": "24 JAN 1973",
                         "deat_value": "16 MAY 1946",
                         "xref_ID": "@I10@"
                     }
                 ],
-                "true": [
+                "passed": [
                     {
                         "birt_value": "10 FEB 1980",
                         "deat_value": "24 AUG 1994",
@@ -331,18 +331,18 @@
                 ]
             }
         },
-        "US04": {
-            "1. title": "marriage_before_divorce",
-            "2. desired_case": true,
-            "3. cases": {
-                "false": [
+        {
+            "id": "US04",
+            "name": "marriage_before_divorce",
+            "output": {
+                "failed": [
                     {
                         "div_value": "17 NOV 1978",
                         "marr_value": "12 OCT 1986",
                         "xref_ID": "@I21@"
                     }
                 ],
-                "true": [
+                "passed": [
                     {
                         "div_value": "13 NOV 1992",
                         "marr_value": "26 MAR 1976",
@@ -356,11 +356,11 @@
                 ]
             }
         },
-        "US05": {
-            "1. title": "marriage_before_death",
-            "2. desired_case": true,
-            "3. cases": {
-                "false": [
+        {
+            "id": "US05",
+            "name": "marriage_before_death",
+            "output": {
+                "failed": [
                     {
                         "deat_value": "16 MAY 1946",
                         "marr_value": "4 SEP 1970",
@@ -372,7 +372,7 @@
                         "xref_ID": "@I22@"
                     }
                 ],
-                "true": [
+                "passed": [
                     {
                         "deat_value": "24 AUG 1994",
                         "marr_value": "26 MAR 1976",
@@ -391,18 +391,18 @@
                 ]
             }
         },
-        "US06": {
-            "1. title": "divorce_before_death",
-            "2. desired_case": true,
-            "3. cases": {
-                "false": [
+        {
+            "id": "US06",
+            "name": "divorce_before_death",
+            "output": {
+                "failed": [
                     {
                         "deat_value": "12 JUL 1988",
                         "div_value": "13 NOV 1992",
                         "xref_ID": "@I3@"
                     }
                 ],
-                "true": [
+                "passed": [
                     {
                         "deat_value": "24 AUG 1994",
                         "div_value": "13 NOV 1992",
@@ -411,5 +411,5 @@
                 ]
             }
         }
-    }
+    ]
 }

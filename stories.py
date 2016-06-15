@@ -15,7 +15,6 @@ logger = logging.getLogger(__name__)
 
 def log(func):
     """ Function decarator used by the story decorator inorder to log the results of a story """
-    @wraps(func)
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
         for entry in r["output"]["passed"]:
@@ -30,17 +29,14 @@ def story(id_):
     """ Function decarator used to find both outcomes of a story, and log and return the results """
     def story_decorator(func):
         @log
-        @wraps(func)
         def func_wrapper(gedcom_file):
-            return {"id": id_,
-                    "name": func.__name__,
-                    "output": {"passed":list(func(gedcom_file, True)), "failed":list(func(gedcom_file, False))}}
+            return {"id": id_, "name": func.__name__, "output": func(gedcom_file)}
         return func_wrapper
     return story_decorator
 
 
 @story("US01")
-def dates_before_current_date(gedcom_file, find_cases_that_are):
+def dates_before_current_date(gedcom_file):
     """ Dates (birth, marriage, divorce, death) should not be after the current date
     
     :sprint: 1
@@ -49,18 +45,17 @@ def dates_before_current_date(gedcom_file, find_cases_that_are):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
-    :param find_cases_that_are: Specify which cases to return.
-    :type find_cases_that_are: bool
-
     """
+    r = {"passed":[],"failed":[]}
     for date in gedcom_file.find("tag", "DATE"):
         value = date.get('line_value')
-        if (tools.parse_date(value) < datetime.now()) == find_cases_that_are:
-            yield {"xref_ID": date.parent.parent.get("xref_ID"), "tag": date.parent.get("tag"), "date": value}
+        output = {"xref_ID": date.parent.parent.get("xref_ID"), "tag": date.parent.get("tag"), "date": value}
+        r["passed"].append(output) if (tools.parse_date(value) < datetime.now()) else r["failed"].append(output)
+    return r
 
 
 @story("US02")
-def birth_before_marriage(gedcom_file, find_cases_that_are):
+def birth_before_marriage(gedcom_file):
     """ Birth should occur before marriage of an individual
     
     :sprint: 1
@@ -69,22 +64,21 @@ def birth_before_marriage(gedcom_file, find_cases_that_are):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
-    :param find_cases_that_are: Specify which cases to return.
-    :type find_cases_that_are: bool
-
     """
+    r = {"passed":[],"failed":[]}
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
         marr_date = tools.get_marriage_date(individual)
         if birt_date and marr_date:
             birt_value = birt_date.get("line_value")
             marr_value = marr_date.get("line_value")
-            if (tools.parse_date(birt_value) < tools.parse_date(marr_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "marr": marr_value}
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "marr": marr_value}
+            r["passed"].append(output) if (tools.parse_date(birt_value) < tools.parse_date(marr_value)) else r["failed"].append(output)
+    return r
 
 
 @story("US03")
-def birth_before_death(gedcom_file, find_cases_that_are):
+def birth_before_death(gedcom_file):
     """ Birth should occur before death of an individual
 
     :sprint: 1
@@ -93,22 +87,21 @@ def birth_before_death(gedcom_file, find_cases_that_are):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
-    :param find_cases_that_are: Specify which cases to return.
-    :type find_cases_that_are: bool
-
     """
+    r = {"passed":[],"failed":[]}
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
         if birt_date and deat_date:
             birt_value = birt_date.get("line_value")
             deat_value = deat_date.get("line_value")
-            if (tools.parse_date(birt_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "deat":deat_value}
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "deat":deat_value}
+            r["passed"].append(output) if (tools.parse_date(birt_value) < tools.parse_date(deat_value)) else r["failed"].append(output)
+    return r
 
 
 @story("US04")
-def marriage_before_divorce(gedcom_file, find_cases_that_are):
+def marriage_before_divorce(gedcom_file):
     """ Marriage should occur before divorce of spouses, and divorce can only occur after marriage
     
     :sprint: 1
@@ -117,22 +110,21 @@ def marriage_before_divorce(gedcom_file, find_cases_that_are):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
-    :param find_cases_that_are: Specify which cases to return.
-    :type find_cases_that_are: bool
-
     """
+    r = {"passed":[],"failed":[]}
     for individual in gedcom_file.find("tag", "INDI"):
         div_date = tools.get_divorce_date(individual)
         marr_date = tools.get_marriage_date(individual)
         if div_date and marr_date:
             div_value = div_date.get("line_value")
             marr_value = marr_date.get("line_value")
-            if (tools.parse_date(marr_value) < tools.parse_date(div_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "div": div_value, "marr": marr_value}
+            output = {"xref_ID": individual.get("xref_ID"), "div": div_value, "marr": marr_value}
+            r["passed"].append(output) if (tools.parse_date(marr_value) < tools.parse_date(div_value)) else r["failed"].append(output)
+    return r
 
 
 @story("US05")
-def marriage_before_death(gedcom_file, find_cases_that_are):
+def marriage_before_death(gedcom_file):
     """ Marriage should occur before death of either spouse
 
     :sprint: 1
@@ -141,22 +133,21 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
-    :param find_cases_that_are: Specify which cases to return.
-    :type find_cases_that_are: bool
-
     """
+    r = {"passed":[],"failed":[]}
     for individual in gedcom_file.find("tag", "INDI"):
         marr_date = tools.get_marriage_date(individual)
         deat_date = tools.get_death_date(individual)
         if marr_date and deat_date:
             marr_value = marr_date.get("line_value")
             deat_value = deat_date.get("line_value")
-            if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "marr": marr_value, "deat": deat_value}
+            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_value, "deat": deat_value}
+            r["passed"].append(output) if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) else r["failed"].append(output)
+    return r
 
 
 @story("US06")
-def divorce_before_death(gedcom_file, find_cases_that_are):
+def divorce_before_death(gedcom_file):
     """ Divorce can only occur before death of both spouses
     
     :sprint: 1
@@ -165,18 +156,17 @@ def divorce_before_death(gedcom_file, find_cases_that_are):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
-    :param find_cases_that_are: Specify which cases to return.
-    :type find_cases_that_are: bool
-
     """
+    r = {"passed":[],"failed":[]}
     for individual in gedcom_file.find("tag", "INDI"):
         div_date = tools.get_divorce_date(individual)
         deat_date = tools.get_death_date(individual)
         if div_date and deat_date:
             div_value = div_date.get("line_value")
             deat_value = deat_date.get("line_value")
-            if (tools.parse_date(div_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "div": div_value, "deat": deat_value}
+            output = {"xref_ID": individual.get("xref_ID"), "div": div_value, "deat": deat_value}
+            r["passed"].append(output) if (tools.parse_date(div_value) < tools.parse_date(deat_value)) else r["failed"].append(output)
+    return r
 
 
 def less_then_150_years_old():

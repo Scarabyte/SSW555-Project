@@ -80,7 +80,7 @@ def birth_before_marriage(gedcom_file, find_cases_that_are):
             birt_value = birt_date.get("line_value")
             marr_value = marr_date.get("line_value")
             if (tools.parse_date(birt_value) < tools.parse_date(marr_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "marr_value": marr_value}
+                yield {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "marr": marr_value}
 
 
 @story("US03")
@@ -104,7 +104,7 @@ def birth_before_death(gedcom_file, find_cases_that_are):
             birt_value = birt_date.get("line_value")
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(birt_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "deat_value":deat_value}
+                yield {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "deat":deat_value}
 
 
 @story("US04")
@@ -128,7 +128,7 @@ def marriage_before_divorce(gedcom_file, find_cases_that_are):
             div_value = div_date.get("line_value")
             marr_value = marr_date.get("line_value")
             if (tools.parse_date(marr_value) < tools.parse_date(div_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "div_value": div_value, "marr_value": marr_value}
+                yield {"xref_ID": individual.get("xref_ID"), "div": div_value, "marr": marr_value}
 
 
 @story("US05")
@@ -152,7 +152,7 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
             marr_value = marr_date.get("line_value")
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "marr_value": marr_value, "deat_value": deat_value}
+                yield {"xref_ID": individual.get("xref_ID"), "marr": marr_value, "deat": deat_value}
 
 
 @story("US06")
@@ -176,7 +176,7 @@ def divorce_before_death(gedcom_file, find_cases_that_are):
             div_value = div_date.get("line_value")
             deat_value = deat_date.get("line_value")
             if (tools.parse_date(div_value) < tools.parse_date(deat_value)) == find_cases_that_are:
-                yield {"xref_ID": individual.get("xref_ID"), "div_value": div_value, "deat_value": deat_value}
+                yield {"xref_ID": individual.get("xref_ID"), "div": div_value, "deat": deat_value}
 
 
 def less_then_150_years_old():

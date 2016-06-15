@@ -1,30 +1,56 @@
 """
 Story Functions
 """
+import tools
+import logging
+from functools import wraps
+
+from datetime import datetime
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 
-import tools
-from datetime import datetime
+logging.basicConfig(format="%(levelname)s:%(story_outcome)s - %(story_id)s - %(story_name)-s - %(message)s", level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
+def log(func):
+    """ Function decarator used by the story decorator inorder to log the results of a story """
+    @wraps(func)
+    def func_wrapper(gedcom_file):
+        r = func(gedcom_file)
+        for entry in r["output"]["passed"]:
+            logger.info(entry, extra=dict(story_outcome="PASSED", story_id=r["id"],story_name=r["name"]))
+        for entry in r["output"]["failed"]:
+            logger.warning(entry, extra=dict(story_outcome="FAILED",story_id=r["id"],story_name=r["name"]))
+        return r
+    return func_wrapper
+
+
+def story(id_):
+    """ Function decarator used to find both outcomes of a story, and log and return the results """
+    def story_decorator(func):
+        @log
+        @wraps(func)
+        def func_wrapper(gedcom_file):
+            return {"id": id_,
+                    "name": func.__name__,
+                    "output": {"passed":list(func(gedcom_file, True)), "failed":list(func(gedcom_file, False))}}
+        return func_wrapper
+    return story_decorator
+
+
+@story("US01")
 def dates_before_current_date(gedcom_file, find_cases_that_are):
-    """ Dates before current date
-
-    Description: Dates (birth, marriage, divorce, death) should not be after the current date
-    story_id: US01
-    author: Constantine Davantzis
-    sprint: 1
+    """ Dates (birth, marriage, divorce, death) should not be after the current date
+    
+    :sprint: 1
+    :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
     :param find_cases_that_are: Specify which cases to return.
     :type find_cases_that_are: bool
-
-    :Example:
-        print list(dates_before_current_date(g, True))
-        print list(dates_before_current_date(g, False))
 
     """
     for date in gedcom_file.find("tag", "DATE"):
@@ -33,22 +59,18 @@ def dates_before_current_date(gedcom_file, find_cases_that_are):
             yield {"xref_ID": date.parent.parent.get("xref_ID"), "tag": date.parent.get("tag"), "date": value}
 
 
+@story("US02")
 def birth_before_marriage(gedcom_file, find_cases_that_are):
-    """ Birth before marriage
-    Description: Birth should occur before marriage of an individual
-    story_id: US02
-    author: Constantine Davantzis
-    sprint: 1
+    """ Birth should occur before marriage of an individual
+    
+    :sprint: 1
+    :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
 
     :param find_cases_that_are: Specify which cases to return.
     :type find_cases_that_are: bool
-
-    :Example:
-        print list(birth_before_marriage(g, True))
-        print list(birth_before_marriage(g, False))
 
     """
     for individual in gedcom_file.find("tag", "INDI"):
@@ -61,12 +83,12 @@ def birth_before_marriage(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "marr_value": marr_value}
 
 
+@story("US03")
 def birth_before_death(gedcom_file, find_cases_that_are):
-    """ Birth before death
-    Description: Birth should occur before death of an individual
-    story_id: US03
-    author: vibharavi
-    sprint: 1
+    """ Birth should occur before death of an individual
+
+    :sprint: 1
+    :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
@@ -85,12 +107,12 @@ def birth_before_death(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "birt_value": birt_value, "deat_value":deat_value}
 
 
+@story("US04")
 def marriage_before_divorce(gedcom_file, find_cases_that_are):
-    """ Marriage before divorce
-    Description: Marriage should occur before divorce of spouses, and divorce can only occur after marriage
-    story_id: US04
-    author: vr
-    sprint: 1
+    """ Marriage should occur before divorce of spouses, and divorce can only occur after marriage
+    
+    :sprint: 1
+    :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
@@ -109,12 +131,12 @@ def marriage_before_divorce(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "div_value": div_value, "marr_value": marr_value}
 
 
+@story("US05")
 def marriage_before_death(gedcom_file, find_cases_that_are):
-    """ Marriage before death
-    Description: Marriage should occur before death of either spouse
-    story_id: US05
-    author: Adam Burbidge
-    sprint: 1
+    """ Marriage should occur before death of either spouse
+
+    :sprint: 1
+    :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
@@ -133,12 +155,12 @@ def marriage_before_death(gedcom_file, find_cases_that_are):
                 yield {"xref_ID": individual.get("xref_ID"), "marr_value": marr_value, "deat_value": deat_value}
 
 
+@story("US06")
 def divorce_before_death(gedcom_file, find_cases_that_are):
-    """ Divorce before death
-    Description: Divorce can only occur before death of both spouses
-    story_id: US06
-    author: Adam Burbidge
-    sprint: 1
+    """ Divorce can only occur before death of both spouses
+    
+    :sprint: 1
+    :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
@@ -515,3 +537,6 @@ def reject_illegitimate_dates():
     sprint: TBD
     """
     pass
+
+
+

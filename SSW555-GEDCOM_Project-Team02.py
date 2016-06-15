@@ -48,64 +48,24 @@ def project_04(gedcom_file):
         print project_04(myfile)
 
     """
-    r = {
+    return {
         "Sprint Number": 1,
-        "Stories": {
-            "US01": {"1. title": "dates_before_current_date",
-                     "2. desired_case": True,
-                     "3. cases": {True: list(stories.dates_before_current_date(gedcom_file, True)),
-                                  False: list(stories.dates_before_current_date(gedcom_file, False))}},
-            "US02": {"1. title": "birth_before_marriage",
-                     "2. desired_case": True,
-                     "3. cases": {True: list(stories.birth_before_marriage(gedcom_file, True)),
-                                  False: list(stories.birth_before_marriage(gedcom_file, False))}},
-            "US03": {"1. title": "birth_before_death",
-                     "2. desired_case": True,
-                     "3. cases": {True: list(stories.birth_before_death(gedcom_file, True)),
-                                  False: list(stories.birth_before_death(gedcom_file, False))}},
-            "US04": {"1. title": "marriage_before_divorce",
-                     "2. desired_case": True,
-                     "3. cases": {True: list(stories.marriage_before_divorce(gedcom_file, True)),
-                                  False: list(stories.marriage_before_divorce(gedcom_file, False))}},
-            "US05": {"1. title": "marriage_before_death",
-                     "2. desired_case": True,
-                     "3. cases": {True: list(stories.marriage_before_death(gedcom_file, True)),
-                                  False: list(stories.marriage_before_death(gedcom_file, False))}},
-            "US06": {"1. title": "divorce_before_death",
-                     "2. desired_case": True,
-                     "3. cases": {True: list(stories.divorce_before_death(gedcom_file, True)),
-                                  False: list(stories.divorce_before_death(gedcom_file, False))}},
-        }
+        "Stories": [stories.dates_before_current_date(gedcom_file),
+                    stories.birth_before_marriage(gedcom_file),
+                    stories.birth_before_death(gedcom_file),
+                    stories.marriage_before_divorce(gedcom_file),
+                    stories.marriage_before_death(gedcom_file),
+                    stories.divorce_before_death(gedcom_file)
+        ]
     }
 
-    logger = logging.getLogger("simple_example")
-    logger.setLevel(logging.DEBUG)
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.DEBUG)
-    formatter = logging.Formatter("%(levelname)s - %(message)s")
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-
-    for story, info in r["Stories"].iteritems():
-        desired_case = info["2. desired_case"]
-        undesired_case = not desired_case
-        desired_cases = info["3. cases"][desired_case]
-        undesired_cases = info["3. cases"][undesired_case]
-        for case in desired_cases:
-            logger.info("".join(
-                    [story, " - ", info["1. title"], " - DESIRED_CASE(", str(undesired_case), ") - ",
-                     str(case)]))
-        for case in undesired_cases:
-            logger.warn("".join(
-                    [story, " - ", info["1. title"], " - UNDESIRED_CASE(", str(undesired_case), ") - ",
-                     str(case)]))
-    return r
 
 if __name__ == "__main__":
     g = gedcom.File()
 
     # Request file name from user
-    fname = raw_input('Enter the file name to open: ')
+    # fname = raw_input('Enter the file name to open: ')
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
     try:
         g.read_file(fname)
     except:
@@ -114,4 +74,4 @@ if __name__ == "__main__":
 
     # Save Project04 results to file
     with open('project_04_results.json', 'w') as outfile:
-        json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+      json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))

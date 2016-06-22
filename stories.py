@@ -49,11 +49,10 @@ def dates_before_current_date(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
-        value = date.get('line_value')
         parent = date.parent
         xref_ID = parent.parent.get("xref_ID") if type(parent) is gedcom.Line else None
-        output = {"xref_ID": xref_ID, "tag": parent.get("tag"), "date": value}
-        r["passed"].append(output) if (tools.parse_date(value) < datetime.now()) else r["failed"].append(output)
+        output = {"xref_ID": xref_ID, "tag": parent.get("tag"), "date": date.story_dict}
+        r["passed"].append(output) if date.datetime < datetime.now() else r["failed"].append(output)
     return r
 
 
@@ -73,10 +72,8 @@ def birth_before_marriage(gedcom_file):
         birt_date = tools.get_birth_date(individual)
         marr_date = tools.get_marriage_date(individual)
         if birt_date and marr_date:
-            birt_value = birt_date.get("line_value")
-            marr_value = marr_date.get("line_value")
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "marr": marr_value}
-            r["passed"].append(output) if (tools.parse_date(birt_value) < tools.parse_date(marr_value)) else r["failed"].append(output)
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "marr": marr_date.story_dict}
+            r["passed"].append(output) if birt_date.datetime < marr_date.datetime else r["failed"].append(output)
     return r
 
 
@@ -96,10 +93,8 @@ def birth_before_death(gedcom_file):
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
         if birt_date and deat_date:
-            birt_value = birt_date.get("line_value")
-            deat_value = deat_date.get("line_value")
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_value, "deat":deat_value}
-            r["passed"].append(output) if (tools.parse_date(birt_value) < tools.parse_date(deat_value)) else r["failed"].append(output)
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "deat": deat_date.story_dict}
+            r["passed"].append(output) if birt_date.datetime < deat_date.datetime else r["failed"].append(output)
     return r
 
 
@@ -119,10 +114,8 @@ def marriage_before_divorce(gedcom_file):
         div_date = tools.get_divorce_date(individual)
         marr_date = tools.get_marriage_date(individual)
         if div_date and marr_date:
-            div_value = div_date.get("line_value")
-            marr_value = marr_date.get("line_value")
-            output = {"xref_ID": individual.get("xref_ID"), "div": div_value, "marr": marr_value}
-            r["passed"].append(output) if (tools.parse_date(marr_value) < tools.parse_date(div_value)) else r["failed"].append(output)
+            output = {"xref_ID": individual.get("xref_ID"), "div": div_date.story_dict, "marr": marr_date.story_dict}
+            r["passed"].append(output) if marr_date.datetime < div_date.datetime else r["failed"].append(output)
     return r
 
 
@@ -142,10 +135,8 @@ def marriage_before_death(gedcom_file):
         marr_date = tools.get_marriage_date(individual)
         deat_date = tools.get_death_date(individual)
         if marr_date and deat_date:
-            marr_value = marr_date.get("line_value")
-            deat_value = deat_date.get("line_value")
-            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_value, "deat": deat_value}
-            r["passed"].append(output) if (tools.parse_date(marr_value) < tools.parse_date(deat_value)) else r["failed"].append(output)
+            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_date.story_dict, "deat": deat_date.story_dict}
+            r["passed"].append(output) if marr_date.datetime < deat_date.datetime else r["failed"].append(output)
     return r
 
 
@@ -165,10 +156,8 @@ def divorce_before_death(gedcom_file):
         div_date = tools.get_divorce_date(individual)
         deat_date = tools.get_death_date(individual)
         if div_date and deat_date:
-            div_value = div_date.get("line_value")
-            deat_value = deat_date.get("line_value")
-            output = {"xref_ID": individual.get("xref_ID"), "div": div_value, "deat": deat_value}
-            r["passed"].append(output) if (tools.parse_date(div_value) < tools.parse_date(deat_value)) else r["failed"].append(output)
+            output = {"xref_ID": individual.get("xref_ID"), "div": div_date.story_dict, "deat": deat_date.story_dict}
+            r["passed"].append(output) if div_date.datetime < deat_date.datetime else r["failed"].append(output)
     return r
 
 
@@ -530,6 +519,4 @@ def reject_illegitimate_dates():
     sprint: TBD
     """
     pass
-
-
 

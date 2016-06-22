@@ -26,7 +26,7 @@ def parse_date(s):
             return datetime.strptime(s, fmt)
         except ValueError:
             pass
-    raise ValueError
+    raise ValueError("Unsupported Date Format")
 
 
 def get_birth_date(individual):

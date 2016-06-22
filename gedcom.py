@@ -33,7 +33,7 @@ def parse_line(s):
     """
     m = regex_line.match(s)
     if not m:
-        raise SyntaxError('gedcom_line does not have syntax:'
+        raise SyntaxError('gedcom_line "{0}" does not have syntax '.format(s) +
                           '"level + delim + [optional_xref_ID] + tag + [optional_line_value] + terminator"')
     d = m.groupdict()
     d['isTagSupported'] = d['tag'] in SUPPORTED_TAGS
@@ -119,7 +119,8 @@ class File:
         # Create a list of "Line" objects.
         # The text of the line, the instance of this class, and the line number are passed into each "Line" Object.
         # The instance of this class is passed in so that the line class can make calls to this class.
-        self.lines = [Line(line.strip(), self, i) for i, line in enumerate(f)]
+        # note: if line.strip() ensures that only non-blank lines are turned into Line objects.
+        self.lines = [Line(line.strip(), self, i) for i, line in enumerate(f) if line.strip()]
         # Refresh the file. Currently this determines which lines are parents and children of one another.
         self.__refresh()
         # Close the file here because we no longer need to read from the file.
@@ -331,7 +332,11 @@ class Line(dict):
         # Set the update the dictionary object key values based on the string provided
         # This is a benefit of using a subclass because the user doesn't have to pass in
         # a dictionary
-        self.update(**parse_line(line_string))
+        try:
+            self.update(**parse_line(self.__text))
+        except SyntaxError as e:
+            raise SyntaxError("LINE_NUMBER({0}): {1}".format(line_number, e.msg))
+
         # Add line number to the dictionary. This is more useful on continuously checking
         # where this object is in a list of Line objects
         self.update({"line_number": line_number})

@@ -10,6 +10,7 @@ from collections import OrderedDict
 from itertools import ifilter, imap
 # Project Imports
 import tools
+import sys
 
 __author__ = "Constantine Davantzis"
 
@@ -260,7 +261,6 @@ class File:
                                        "wife": {"xref": wife_xref, "name": wife_name}}))
         return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
-
 class SubFile(File):
     """GEDCOM SubFile Class
 
@@ -334,7 +334,7 @@ class Line(dict):
         try:
             self.update(**parse_line(self.__text))
         except SyntaxError as e:
-            raise SyntaxError("LINE_NUMBER({0}): {1}".format(line_number, e.msg))
+            sys.exit("line number {0}: {1}".format(line_number, e.msg))
 
         # Add line number to the dictionary. This is more useful on continuously checking
         # where this object is in a list of Line objects

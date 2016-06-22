@@ -470,6 +470,44 @@ class Line(dict):
         """
         return self.file.find_one('xref_ID', self.get("line_value"))
 
+    @property
+    def ln(self):
+        """ Line Number Property
+        :return: line number
+        """
+        return self.get("line_number")
+
+    @property
+    def tag(self):
+        """ Line tag Property
+        :return: line number
+        """
+        return self.get("tag")
+
+    @property
+    def val(self):
+        """ Line value Property
+        :return: line value
+        """
+        return self.get("line_value")
+
+    @property
+    def datetime(self):
+        """ Line value datetime
+        :return: datetime of value
+        """
+        if self.get("tag") == "DATE":
+            return tools.parse_date(self.get("line_value"))
+        return None
+
+    @property
+    def story_dict(self):
+        """ return line_number and value
+
+        """
+        return {"line_number": self.get("line_number"), "line_value": self.get("line_value")}
+
+
 
 def demo(gedcom_file):
     """Demonstrate the capabilities of the module

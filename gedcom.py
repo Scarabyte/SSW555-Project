@@ -119,8 +119,8 @@ class File:
         # Create a list of "Line" objects.
         # The text of the line, the instance of this class, and the line number are passed into each "Line" Object.
         # The instance of this class is passed in so that the line class can make calls to this class.
-        # note: if line.strip() ensures that only non-blank lines are turned into Line objects.
-        self.lines = [Line(line.strip(), self, i) for i, line in enumerate(f) if line.strip()]
+        self.lines = [Line(line.strip(), self, i) for i, line in enumerate(filter(str.strip, f))]
+        print len(self.lines)
         # Refresh the file. Currently this determines which lines are parents and children of one another.
         self.__refresh()
         # Close the file here because we no longer need to read from the file.

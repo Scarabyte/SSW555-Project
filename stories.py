@@ -6,6 +6,7 @@ import logging
 from functools import wraps
 
 from datetime import datetime
+import gedcom
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 
@@ -49,7 +50,9 @@ def dates_before_current_date(gedcom_file):
     r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
         value = date.get('line_value')
-        output = {"xref_ID": date.parent.parent.get("xref_ID"), "tag": date.parent.get("tag"), "date": value}
+        parent = date.parent
+        xref_ID = parent.parent.get("xref_ID") if type(parent) is gedcom.Line else None
+        output = {"xref_ID": xref_ID, "tag": parent.get("tag"), "date": value}
         r["passed"].append(output) if (tools.parse_date(value) < datetime.now()) else r["failed"].append(output)
     return r
 

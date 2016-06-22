@@ -3,6 +3,7 @@ Tools for gedcom project
 """
 import re
 from datetime import datetime
+import sys
 
 def human_sort(s, _re=re.compile('([0-9]+)')):
     """
@@ -17,9 +18,15 @@ def human_sort(s, _re=re.compile('([0-9]+)')):
 
 
 def parse_date(s):
-    """ parse linedate string into datetime object
     """
-    return datetime.strptime(s, '%d %b %Y')
+    parse linedate string into datetime object
+    """
+    for fmt in ('%d %b %Y', '%b %Y', '%Y'):
+        try:
+            return datetime.strptime(s, fmt)
+        except ValueError:
+            pass
+    raise ValueError
 
 
 def get_birth_date(individual):

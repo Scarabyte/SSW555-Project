@@ -64,13 +64,10 @@ if __name__ == "__main__":
     g = gedcom.File()
 
     # Request file name from user
-    fname = raw_input('Enter the file name to open: ')
-    # fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
-    try:
-        g.read_file(fname)
-    except:
-        print 'Invalid file name: ', fname
-        exit()
+    # fname = raw_input('Enter the file name to open: ')
+    fname = "GEDCOMErrors.txt"
+    g.read_file(fname)
+
 
     # Save Project04 results to file
     with open('project_04_results.json', 'w') as outfile:

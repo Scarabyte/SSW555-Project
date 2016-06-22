@@ -7,221 +7,51 @@
             "output": {
                 "failed": [
                     {
-                        "date": "4 SEP 2017",
+                        "date": "2020",
                         "tag": "BIRT",
-                        "xref_ID": "@I6@"
+                        "xref_ID": "@I6000000042491681353@"
+                    },
+                    {
+                        "date": "2018",
+                        "tag": "BIRT",
+                        "xref_ID": "@I6000000042491756113@"
                     }
                 ],
                 "passed": [
                     {
-                        "date": "20 MAY 2016",
-                        "tag": "HEAD",
-                        "xref_ID": null
-                    },
-                    {
-                        "date": "17 JUN 1945",
+                        "date": "2012",
                         "tag": "BIRT",
-                        "xref_ID": "@I1@"
+                        "xref_ID": "@I6000000042491407663@"
                     },
                     {
-                        "date": "10 FEB 1980",
+                        "date": "2015",
                         "tag": "BIRT",
-                        "xref_ID": "@I2@"
+                        "xref_ID": "@I6000000042491602502@"
                     },
                     {
-                        "date": "24 AUG 1994",
+                        "date": "1976",
+                        "tag": "BIRT",
+                        "xref_ID": "@I6000000042491586545@"
+                    },
+                    {
+                        "date": "1930",
+                        "tag": "BIRT",
+                        "xref_ID": "@I6000000042491622542@"
+                    },
+                    {
+                        "date": "1999",
+                        "tag": "BIRT",
+                        "xref_ID": "@I6000000042491832131@"
+                    },
+                    {
+                        "date": "1950",
                         "tag": "DEAT",
-                        "xref_ID": "@I2@"
+                        "xref_ID": "@I6000000042491832131@"
                     },
                     {
-                        "date": "24 NOV 1848",
+                        "date": "1950",
                         "tag": "BIRT",
-                        "xref_ID": "@I3@"
-                    },
-                    {
-                        "date": "12 JUL 1988",
-                        "tag": "DEAT",
-                        "xref_ID": "@I3@"
-                    },
-                    {
-                        "date": "18 JUL 1992",
-                        "tag": "BIRT",
-                        "xref_ID": "@I4@"
-                    },
-                    {
-                        "date": "23 AUG 2005",
-                        "tag": "BIRT",
-                        "xref_ID": "@I5@"
-                    },
-                    {
-                        "date": "4 MAY 2006",
-                        "tag": "DEAT",
-                        "xref_ID": "@I5@"
-                    },
-                    {
-                        "date": "26 MAR 1979",
-                        "tag": "BIRT",
-                        "xref_ID": "@I7@"
-                    },
-                    {
-                        "date": "4 OCT 2003",
-                        "tag": "BIRT",
-                        "xref_ID": "@I8@"
-                    },
-                    {
-                        "date": "15 OCT 1975",
-                        "tag": "BIRT",
-                        "xref_ID": "@I9@"
-                    },
-                    {
-                        "date": "24 JAN 1973",
-                        "tag": "BIRT",
-                        "xref_ID": "@I10@"
-                    },
-                    {
-                        "date": "16 MAY 1946",
-                        "tag": "DEAT",
-                        "xref_ID": "@I10@"
-                    },
-                    {
-                        "date": "27 MAR 1920",
-                        "tag": "BIRT",
-                        "xref_ID": "@I11@"
-                    },
-                    {
-                        "date": "27 FEB 2002",
-                        "tag": "DEAT",
-                        "xref_ID": "@I11@"
-                    },
-                    {
-                        "date": "14 JAN 1922",
-                        "tag": "BIRT",
-                        "xref_ID": "@I12@"
-                    },
-                    {
-                        "date": "4 APR 1997",
-                        "tag": "DEAT",
-                        "xref_ID": "@I12@"
-                    },
-                    {
-                        "date": "3 JUN 1954",
-                        "tag": "BIRT",
-                        "xref_ID": "@I13@"
-                    },
-                    {
-                        "date": "10 AUG 1994",
-                        "tag": "DEAT",
-                        "xref_ID": "@I13@"
-                    },
-                    {
-                        "date": "16 DEC 1951",
-                        "tag": "BIRT",
-                        "xref_ID": "@I14@"
-                    },
-                    {
-                        "date": "8 APR 1918",
-                        "tag": "BIRT",
-                        "xref_ID": "@I15@"
-                    },
-                    {
-                        "date": "10 OCT 1995",
-                        "tag": "DEAT",
-                        "xref_ID": "@I15@"
-                    },
-                    {
-                        "date": "23 OCT 1918",
-                        "tag": "BIRT",
-                        "xref_ID": "@I16@"
-                    },
-                    {
-                        "date": "30 OCT 1960",
-                        "tag": "BIRT",
-                        "xref_ID": "@I17@"
-                    },
-                    {
-                        "date": "11 JUN 1943",
-                        "tag": "BIRT",
-                        "xref_ID": "@I18@"
-                    },
-                    {
-                        "date": "7 SEP 1948",
-                        "tag": "BIRT",
-                        "xref_ID": "@I19@"
-                    },
-                    {
-                        "date": "24 JUL 1972",
-                        "tag": "BIRT",
-                        "xref_ID": "@I20@"
-                    },
-                    {
-                        "date": "1 AUG 1990",
-                        "tag": "BIRT",
-                        "xref_ID": "@I21@"
-                    },
-                    {
-                        "date": "5 JUN 1957",
-                        "tag": "BIRT",
-                        "xref_ID": "@I22@"
-                    },
-                    {
-                        "date": "12 SEP 1989",
-                        "tag": "DEAT",
-                        "xref_ID": "@I22@"
-                    },
-                    {
-                        "date": "7 JUL 1977",
-                        "tag": "BIRT",
-                        "xref_ID": "@I23@"
-                    },
-                    {
-                        "date": "2 MAY 1993",
-                        "tag": "BIRT",
-                        "xref_ID": "@I24@"
-                    },
-                    {
-                        "date": "4 AUG 1975",
-                        "tag": "BIRT",
-                        "xref_ID": "@I25@"
-                    },
-                    {
-                        "date": "9 SEP 1991",
-                        "tag": "BIRT",
-                        "xref_ID": "@I26@"
-                    },
-                    {
-                        "date": "26 MAR 1976",
-                        "tag": "MARR",
-                        "xref_ID": "@F2@"
-                    },
-                    {
-                        "date": "13 NOV 1992",
-                        "tag": "DIV",
-                        "xref_ID": "@F2@"
-                    },
-                    {
-                        "date": "4 SEP 1970",
-                        "tag": "MARR",
-                        "xref_ID": "@F4@"
-                    },
-                    {
-                        "date": "19 MAR 1990",
-                        "tag": "MARR",
-                        "xref_ID": "@F7@"
-                    },
-                    {
-                        "date": "12 OCT 1986",
-                        "tag": "MARR",
-                        "xref_ID": "@F8@"
-                    },
-                    {
-                        "date": "17 NOV 1978",
-                        "tag": "DIV",
-                        "xref_ID": "@F8@"
-                    },
-                    {
-                        "date": "1 MAY 1973",
-                        "tag": "MARR",
-                        "xref_ID": "@F9@"
+                        "xref_ID": "@I6000000042491568596@"
                     }
                 ]
             }
@@ -230,50 +60,8 @@
             "id": "US02",
             "name": "birth_before_marriage",
             "output": {
-                "failed": [
-                    {
-                        "birt": "10 FEB 1980",
-                        "marr": "26 MAR 1976",
-                        "xref_ID": "@I2@"
-                    },
-                    {
-                        "birt": "24 JAN 1973",
-                        "marr": "4 SEP 1970",
-                        "xref_ID": "@I10@"
-                    },
-                    {
-                        "birt": "1 AUG 1990",
-                        "marr": "12 OCT 1986",
-                        "xref_ID": "@I21@"
-                    },
-                    {
-                        "birt": "2 MAY 1993",
-                        "marr": "1 MAY 1973",
-                        "xref_ID": "@I24@"
-                    }
-                ],
-                "passed": [
-                    {
-                        "birt": "24 NOV 1848",
-                        "marr": "26 MAR 1976",
-                        "xref_ID": "@I3@"
-                    },
-                    {
-                        "birt": "3 JUN 1954",
-                        "marr": "19 MAR 1990",
-                        "xref_ID": "@I13@"
-                    },
-                    {
-                        "birt": "16 DEC 1951",
-                        "marr": "1 MAY 1973",
-                        "xref_ID": "@I14@"
-                    },
-                    {
-                        "birt": "5 JUN 1957",
-                        "marr": "19 MAR 1990",
-                        "xref_ID": "@I22@"
-                    }
-                ]
+                "failed": [],
+                "passed": []
             }
         },
         {
@@ -282,133 +70,36 @@
             "output": {
                 "failed": [
                     {
-                        "birt": "24 JAN 1973",
-                        "deat": "16 MAY 1946",
-                        "xref_ID": "@I10@"
+                        "birt": "1999",
+                        "deat": "1950",
+                        "xref_ID": "@I6000000042491832131@"
                     }
                 ],
-                "passed": [
-                    {
-                        "birt": "10 FEB 1980",
-                        "deat": "24 AUG 1994",
-                        "xref_ID": "@I2@"
-                    },
-                    {
-                        "birt": "24 NOV 1848",
-                        "deat": "12 JUL 1988",
-                        "xref_ID": "@I3@"
-                    },
-                    {
-                        "birt": "23 AUG 2005",
-                        "deat": "4 MAY 2006",
-                        "xref_ID": "@I5@"
-                    },
-                    {
-                        "birt": "27 MAR 1920",
-                        "deat": "27 FEB 2002",
-                        "xref_ID": "@I11@"
-                    },
-                    {
-                        "birt": "14 JAN 1922",
-                        "deat": "4 APR 1997",
-                        "xref_ID": "@I12@"
-                    },
-                    {
-                        "birt": "3 JUN 1954",
-                        "deat": "10 AUG 1994",
-                        "xref_ID": "@I13@"
-                    },
-                    {
-                        "birt": "8 APR 1918",
-                        "deat": "10 OCT 1995",
-                        "xref_ID": "@I15@"
-                    },
-                    {
-                        "birt": "5 JUN 1957",
-                        "deat": "12 SEP 1989",
-                        "xref_ID": "@I22@"
-                    }
-                ]
+                "passed": []
             }
         },
         {
             "id": "US04",
             "name": "marriage_before_divorce",
             "output": {
-                "failed": [
-                    {
-                        "div": "17 NOV 1978",
-                        "marr": "12 OCT 1986",
-                        "xref_ID": "@I21@"
-                    }
-                ],
-                "passed": [
-                    {
-                        "div": "13 NOV 1992",
-                        "marr": "26 MAR 1976",
-                        "xref_ID": "@I2@"
-                    },
-                    {
-                        "div": "13 NOV 1992",
-                        "marr": "26 MAR 1976",
-                        "xref_ID": "@I3@"
-                    }
-                ]
+                "failed": [],
+                "passed": []
             }
         },
         {
             "id": "US05",
             "name": "marriage_before_death",
             "output": {
-                "failed": [
-                    {
-                        "deat": "16 MAY 1946",
-                        "marr": "4 SEP 1970",
-                        "xref_ID": "@I10@"
-                    },
-                    {
-                        "deat": "12 SEP 1989",
-                        "marr": "19 MAR 1990",
-                        "xref_ID": "@I22@"
-                    }
-                ],
-                "passed": [
-                    {
-                        "deat": "24 AUG 1994",
-                        "marr": "26 MAR 1976",
-                        "xref_ID": "@I2@"
-                    },
-                    {
-                        "deat": "12 JUL 1988",
-                        "marr": "26 MAR 1976",
-                        "xref_ID": "@I3@"
-                    },
-                    {
-                        "deat": "10 AUG 1994",
-                        "marr": "19 MAR 1990",
-                        "xref_ID": "@I13@"
-                    }
-                ]
+                "failed": [],
+                "passed": []
             }
         },
         {
             "id": "US06",
             "name": "divorce_before_death",
             "output": {
-                "failed": [
-                    {
-                        "deat": "12 JUL 1988",
-                        "div": "13 NOV 1992",
-                        "xref_ID": "@I3@"
-                    }
-                ],
-                "passed": [
-                    {
-                        "deat": "24 AUG 1994",
-                        "div": "13 NOV 1992",
-                        "xref_ID": "@I2@"
-                    }
-                ]
+                "failed": [],
+                "passed": []
             }
         }
     ]

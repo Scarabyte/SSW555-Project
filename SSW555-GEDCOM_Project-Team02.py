@@ -7,7 +7,7 @@ import logging
 
 import gedcom
 import stories
-
+import sys
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 __status__ = "Development"
 
@@ -64,11 +64,15 @@ if __name__ == "__main__":
     g = gedcom.File()
 
     # Request file name from user
-    # fname = raw_input('Enter the file name to open: ')
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
-    g.read_file(fname)
+    fname = raw_input('Enter the file name to open: ')
 
+    try:
+        g.read_file(fname)
+    except IOError as e:
+        sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
-    # Save Project04 results to file
-    with open('project_04_results.json', 'w') as outfile:
-      json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    try:
+        with open('project_04_results.json', 'w') as outfile:
+            json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    except IOError as e:
+        sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))

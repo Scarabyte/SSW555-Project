@@ -201,24 +201,41 @@ def marriage_after_14():
     pass
 
 
+@story("US11")
 def no_bigamy():
     """ No bigamy
+
     Description: Marriage should not occur during marriage to another spouse
-    story_id: US11
-    author: ab
-    sprint: 2
+    
+    :sprint: 2
+    :author: Adam Burbidge
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # Do things
+    return r
 
 
+@story("US12")
 def parents_not_too_old():
     """ Parents not too old
-    Description: Mother should be less than 60 years older than her children and father should be less than 80 years older than his children
-    story_id: US12
-    author: ab
-    sprint: 2
+
+    Description: Mother should be less than 60 years older than her children and
+                 father should be less than 80 years older than his children
+    
+    :sprint: 2
+    :author: Adam Burbidge
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # Do things
+    return r
 
 
 def siblings_spacing():

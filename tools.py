@@ -38,7 +38,7 @@ def get_birth_date(individual):
     :return: The birth date line
     :rtype: Line
 
-    auther: Constantine Davantzis
+    author: Constantine Davantzis
     """
     birth = individual.children.find_one("tag", "BIRT")
     if birth:
@@ -54,7 +54,7 @@ def get_marriage_date(individual):
     :return: The marriage date line
     :rtype: Line
 
-    auther: Constantine Davantzis
+    author: Constantine Davantzis
     """
     family_spouse = individual.children.find_one("tag", "FAMS")
     if family_spouse:
@@ -74,7 +74,7 @@ def get_death_date(individual):
     :return: The death date line
     :rtype: Line
 
-    auther: Adam Burbidge
+    author: Adam Burbidge
     """
     death = individual.children.find_one("tag", "DEAT")
     if death:
@@ -90,7 +90,7 @@ def get_divorce_date(individual):
     :return: The divorce date line
     :rtype: Line
 
-    auther: Constantine Davantzis
+    author: Constantine Davantzis
     """
     family_spouse = individual.children.find_one("tag", "FAMS")
     if family_spouse:
@@ -99,6 +99,46 @@ def get_divorce_date(individual):
             divorce = family.children.find_one('tag', 'DIV')
             if divorce:
                 return divorce.children.find_one('tag', 'DATE')
+
+
+def get_parent_birth_date(family):
+    """ Return the birth dates of an family's father and mother
+    :param family
+    :type 
+
+    :return: 
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
+    pass
+
+
+def get_spouse_divorce_date(individual):
+    """ Return the divorce date of an individual's spouse
+    :param individual
+    :type 
+
+    :return: 
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
+    pass
+
+
+def get_spouse_death_date(individual):
+    """ Return the death date of an individual's spouse
+    :param individual
+    :type 
+
+    :return: 
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
+    pass
+
 
 
 if __name__ == "__main__":

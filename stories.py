@@ -206,7 +206,8 @@ def no_bigamy():
     """ No bigamy
 
     Description: Marriage should not occur during marriage to another spouse
-    
+
+    :story_id: US11
     :sprint: 2
     :author: Adam Burbidge
 
@@ -216,6 +217,10 @@ def no_bigamy():
     """
     r = {"passed": [], "failed": []}
     # Do things
+    # Get individual's marriage start dates
+    # Marriage ends with either divorce or death
+    # Get spouse's divorce or death dates
+    # Does a second marriage start before the divorce date or death of the other spouse?
     return r
 
 
@@ -225,7 +230,8 @@ def parents_not_too_old():
 
     Description: Mother should be less than 60 years older than her children and
                  father should be less than 80 years older than his children
-    
+
+    :story_id: US12
     :sprint: 2
     :author: Adam Burbidge
 
@@ -235,6 +241,10 @@ def parents_not_too_old():
     """
     r = {"passed": [], "failed": []}
     # Do things
+    # Get individual's birth date
+    # Get father and mother's birth dates
+    # Compare dates
+    # Repeat for both father and mother of all individuals
     return r
 
 

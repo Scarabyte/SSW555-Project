@@ -199,6 +199,9 @@ def get_spouse(individual):
 
     author: Adam Burbidge
     """
+    family_spouse = individual.children.find_one("tag", "FAMS")
+    if family_spouse:
+        family = family_spouse.follow_xref()
     pass
 
 

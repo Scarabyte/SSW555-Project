@@ -257,7 +257,20 @@ def no_bigamy():
     # Do things
     # Get individual's marriage start dates
     for individual in gedcom_file.find("tag", "INDI"):
-        marr_date = tools.get_marriage_date(individual)
+        marr_dates = tools.get_marriage_dates(individual)
+        spouse_list = get_spouses(individual)
+        for spouse in spouse_list:
+            div_date = tools.get_divorce_date(spouse)
+            deat_date = tools.get_death_date(spouse)
+            if div_date:
+                for marr_start in marr_dates:
+                    if (marr_start.datetime > div_date.datetime:
+                        r["failed"].append("TBD_OUTPUT")
+                    elif (marr_start.datetime > deat_date.datetime:
+                          r["failed"].append("TBD_OUTPUT")
+                    else:
+                          r["passed"].append("TBD_OUTPUT")
+                                              
     # Marriage ends with either divorce or death
     # Get spouse's divorce or death dates
     # Does a second marriage start before the divorce date or death of the other spouse?

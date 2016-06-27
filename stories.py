@@ -47,6 +47,8 @@ def dates_before_current_date(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
+    # TODO: Change datetime.now() to file date?
+    # TODO: provide info about current date.
     r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
         parent = date.parent
@@ -161,24 +163,60 @@ def divorce_before_death(gedcom_file):
     return r
 
 
-def less_then_150_years_old():
+@story("US07")
+def less_then_150_years_old(gedcom_file):
     """ Less then 150 years old
     Description: Death should be less than 150 years after birth for dead people, and current date should be less than 150 years after birth for all living people
     story_id: US07
     author: cd
     sprint: 2
     """
-    pass
+    # TODO: Change datetime.now() to file date?
+    # TODO: provide info about current date.
+    r = {"passed": [], "failed": []}
+    for individual in gedcom_file.find("tag", "INDI"):
+        birt_date = tools.get_birth_date(individual)
+        deat_date = tools.get_death_date(individual)
+        if birt_date and deat_date:
+            age = (deat_date.datetime - birt_date.datetime).days / 365
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "deat": deat_date.story_dict, "age": age}
+            r["passed"].append(output) if age < 150 else r["failed"].append(output)
+        elif birt_date:
+            age = (datetime.now() - birt_date.datetime).days / 365
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "age": age}
+            r["passed"].append(output) if age < 150 else r["failed"].append(output)
+    return r
 
 
-def birth_before_marriage_of_parents():
+@story("US08")
+def birth_before_marriage_of_parents(gedcom_file):
     """ Birth before marriage of parents
     Description: Child should be born after marriage of parents (and before their divorce)
     story_id: US08
     author: cd
     sprint: 2
     """
-    pass
+    # TODO: Determine how to record output
+    # TODO: Optimize logic
+    r = {"passed": [], "failed": []}
+    for individual in gedcom_file.find("tag", "INDI"):
+        marr_date = tools.get_marriage_date(individual)
+        div_date = tools.get_divorce_date(individual)
+        for child in tools.get_children(individual):
+            chil_birt_date = tools.get_birth_date(child)
+            if marr_date and chil_birt_date:
+                if div_date:
+                    if (marr_date.datetime < chil_birt_date.datetime) and (div_date.datetime > chil_birt_date.datetime):
+                        r["passed"].append("TBD_OUTPUT")
+                    else:
+                        r["failed"].append("TBD_OUTPUT")
+                else:
+                    if marr_date.datetime < chil_birt_date.datetime:
+                        r["passed"].append("TBD_OUTPUT")
+                    else:
+                        r["failed"].append("TBD_OUTPUT")
+                        print "here"
+    return r
 
 
 def birth_before_death_of_parents():

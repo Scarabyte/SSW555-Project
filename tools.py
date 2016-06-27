@@ -120,6 +120,24 @@ def get_divorce_date(individual):
                 return divorce.children.find_one('tag', 'DATE')
 
 
+def yield_families(individual):
+    """
+    author: Constantine Davantzis
+    """
+    family_spouses = individual.children.find("tag", "FAMS")
+    for family_spouse in family_spouses:
+        family = family_spouse.follow_xref()
+        if family:
+            yield family
+
+
+def get_families(individual):
+    """
+    author: Constantine Davantzis
+    """
+    return list(yield_families(individual))
+
+
 def get_parent_birth_date(family):
     """ Return the birth dates of an family's father and mother
     :param family
@@ -154,6 +172,25 @@ def get_spouse_divorce_date(individual):
 
 def get_spouse_death_date(individual):
     """ Return the death date of an individual's spouse
+    :param individual
+    :type 
+
+    :return: 
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
+    family_spouse = individual.children.find_one("tag", "FAMS")
+    if family_spouse:
+        family = family_spouse.follow_xref()
+        if family:
+            spouse = family.children.find_one("tag", "HUSB")
+
+    pass
+
+
+def get_spouse(individual):
+    """ Return an individual's spouse
     :param individual
     :type 
 

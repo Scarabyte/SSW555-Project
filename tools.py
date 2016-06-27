@@ -173,6 +173,26 @@ def yield_families(individual):
             yield family
 
 
+def yield_spouses(individual):
+    """
+    author: Constantine Davantzis
+    """
+    for family in yield_families(individual):
+        husband = family.children.find_one("tag", "HUSB")
+        if husband.get("line_value") != individual.get("xref_ID"):
+            yield husband.follow_xref()
+        wife = family.children.find_one("tag", "WIFE")
+        if wife.get("line_value") != individual.get("xref_ID"):
+            yield wife.follow_xref()
+
+
+def get_spouses(individual):
+    """
+    author: Constantine Davantzis
+    """
+    return list(yield_spouses(individual))
+
+
 def get_families(individual):
     """
     author: Constantine Davantzis

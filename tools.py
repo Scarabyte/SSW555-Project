@@ -45,6 +45,25 @@ def get_birth_date(individual):
         return birth.children.find_one('tag', 'DATE')
 
 
+def get_children(individual):
+    """ Return the children of an individual
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: List of Children Lines
+    :rtype: List of Children Lines
+
+    author: Constantine Davantzis
+    """
+    family_spouse = individual.children.find_one("tag", "FAMS")
+    if family_spouse:
+        family = family_spouse.follow_xref()
+        if family:
+            return [child.follow_xref() for child in family.children.find('tag', 'CHIL')]
+    return []
+
+
 def get_marriage_date(individual):
     """ Return the marriage date line of an individual line
 

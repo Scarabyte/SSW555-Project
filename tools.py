@@ -162,6 +162,25 @@ def get_spouse_death_date(individual):
 
     author: Adam Burbidge
     """
+    family_spouse = individual.children.find_one("tag", "FAMS")
+    if family_spouse:
+        family = family_spouse.follow_xref()
+        if family:
+            spouse = family.children.find_one("tag", "HUSB")
+
+    pass
+
+
+def get_spouse(individual):
+    """ Return an individual's spouse
+    :param individual
+    :type 
+
+    :return: 
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
     pass
 
 

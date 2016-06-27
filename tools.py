@@ -84,6 +84,27 @@ def get_marriage_date(individual):
                 return marriage.children.find_one('tag', 'DATE')
 
 
+def yield_marriage_dates(individual):
+    """
+
+    author: Constantine Davantzis
+    """
+    for family in yield_families(individual):
+        marriage = family.children.find_one('tag', 'MARR')
+        if marriage:
+            marriage_date = marriage.children.find_one('tag', 'DATE')
+            if marriage_date:
+                yield marriage_date
+
+
+def get_marriage_dates(individual):
+    """
+
+    author: Constantine Davantzis
+    """
+    return list(yield_marriage_dates(individual))
+
+
 def get_death_date(individual):
     """ Return the death date (if any) of an individual
 
@@ -118,6 +139,27 @@ def get_divorce_date(individual):
             divorce = family.children.find_one('tag', 'DIV')
             if divorce:
                 return divorce.children.find_one('tag', 'DATE')
+
+
+def yield_divorce_dates(individual):
+    """
+
+    author: Constantine Davantzis
+    """
+    for family in yield_families(individual):
+        divorce = family.children.find_one('tag', 'DIV')
+        if divorce:
+            divorce_date = divorce.children.find_one('tag', 'DATE')
+            if divorce_date:
+                yield divorce_date
+
+
+def get_divorce_dates(individual):
+    """
+
+    author: Constantine Davantzis
+    """
+    return list(yield_divorce_dates(individual))
 
 
 def yield_families(individual):

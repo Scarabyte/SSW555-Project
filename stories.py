@@ -218,6 +218,8 @@ def no_bigamy():
     r = {"passed": [], "failed": []}
     # Do things
     # Get individual's marriage start dates
+    for individual in gedcom_file.find("tag", "INDI"):
+        marr_date = tools.get_marriage_date(individual)
     # Marriage ends with either divorce or death
     # Get spouse's divorce or death dates
     # Does a second marriage start before the divorce date or death of the other spouse?
@@ -242,6 +244,8 @@ def parents_not_too_old():
     r = {"passed": [], "failed": []}
     # Do things
     # Get individual's birth date
+    for individual in gedcom_file.find("rag", "INDI"):
+        birt_date = tools.get_birth_date(individual)
     # Get father and mother's birth dates
     # Compare dates
     # Repeat for both father and mother of all individuals

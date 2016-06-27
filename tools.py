@@ -111,7 +111,13 @@ def get_parent_birth_date(family):
 
     author: Adam Burbidge
     """
+    family_child = individual.children.find_one("tag", "FAMC")
+    if family_child:
+        family = family_child.follow_xref()
+        if family:
+            pass
     pass
+
 
 
 def get_spouse_divorce_date(individual):

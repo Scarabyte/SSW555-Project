@@ -267,9 +267,9 @@ def no_bigamy():
                     if (marr_start.datetime > div_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
                     elif (marr_start.datetime > deat_date.datetime:
-                          r["failed"].append("TBD_OUTPUT")
+                        r["failed"].append("TBD_OUTPUT")
                     else:
-                          r["passed"].append("TBD_OUTPUT")
+                        r["passed"].append("TBD_OUTPUT")
                                               
     # Marriage ends with either divorce or death
     # Get spouse's divorce or death dates
@@ -297,6 +297,14 @@ def parents_not_too_old():
     # Get individual's birth date
     for individual in gedcom_file.find("rag", "INDI"):
         birt_date = tools.get_birth_date(individual)
+        parent_list = get_parents(individual)
+        for parent in parent_list:
+            parent_birt_date = tools.get_birth_date(parent)
+            age = (parent_birth_date.datetime - birt_date.datetime).days / 365
+            if parent.find_one("tag", "SEX") = "M"
+                r["passed"].append(output) if age < 80 else r["failed"].append(output)
+            else:
+                r["passed"].append(output) if age < 60 else r["failed"].append(output)
     # Get father and mother's birth dates
     # Compare dates
     # Repeat for both father and mother of all individuals

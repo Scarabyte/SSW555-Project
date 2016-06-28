@@ -173,6 +173,45 @@ def iter_family_dict(individual):
         yield d
 
 
+def iter_parent_family_dict(individual):
+    """ iterate through a list of dictionaries with family information for each family individual is a child of
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    xref_id = individual.get('xref_ID')
+    for fam in iter_families_child_of(individual):
+        d = {}
+
+        husb = fam.children.find_one('tag', 'HUSB')
+        d["husb"] = husb.follow_xref() if husb else None
+
+        wife = fam.children.find_one('tag', 'WIFE')
+        d["wife"] = wife.follow_xref() if husb else None
+
+        marr = fam.children.find_one('tag', 'MARR')
+        if marr:
+            d["marr"] = fam.children.find_one('tag', 'MARR')
+            d["marr_date"] = marr.children.find_one('tag', 'DATE') if marr else None
+        else:
+            d["marr"] = None
+            d["marr_date"] = None
+
+        div = fam.children.find_one('tag', 'DIV')
+        if div:
+            d["div"] = fam.children.find_one('tag', 'DIV')
+            d["div_date"] = div.children.find_one('tag', 'DATE') if div else None
+        else:
+            d["div"] = None
+            d["div_date"] = None
+
+        d["children"] = [child.follow_xref() for child in fam.children.find('tag', 'CHIL')]
+
+        yield d
+
+
 def iter_spouses(individual):
     """ Returns iterator this persons spouses.
 

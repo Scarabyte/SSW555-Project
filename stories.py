@@ -204,22 +204,21 @@ def birth_before_marriage_of_parents(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
-        print list(tools.iter_spouses(individual))
-        #birt_date = tools.get_birth_date(individual)
-        #p_marr_date = tools.get_parents_marriage_date(individual)
-        #p_div_date = tools.get_parents_divorce_date(individual)
-        #if birt_date and p_marr_date and p_div_date:
-        #    output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict, "parent_div": p_div_date.story_dict}
-        #    if (p_marr_date.datetime < birt_date.datetime) and (p_div_date.datetime > birt_date.datetime):
-        #        r["passed"].append(output)
-        #    else:
-        #        r["failed"].append(output)
-        #if birt_date and p_marr_date:
-        #    output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict}
-        #    if p_marr_date.datetime < birt_date.datetime:
-        #        r["passed"].append(output)
-        #    else:
-        #        r["failed"].append(output)
+        birt_date = tools.get_birth_date(individual)
+        p_marr_date = tools.get_parents_marriage_date(individual)
+        p_div_date = tools.get_parents_divorce_date(individual)
+        if birt_date and p_marr_date and p_div_date:
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict, "parent_div": p_div_date.story_dict}
+            if (p_marr_date.datetime < birt_date.datetime) and (p_div_date.datetime > birt_date.datetime):
+                r["passed"].append(output)
+            else:
+                r["failed"].append(output)
+        if birt_date and p_marr_date:
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict}
+            if p_marr_date.datetime < birt_date.datetime:
+                r["passed"].append(output)
+            else:
+                r["failed"].append(output)
     return r
 
 

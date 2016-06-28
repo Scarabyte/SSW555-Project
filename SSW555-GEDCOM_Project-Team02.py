@@ -60,6 +60,29 @@ def project_04(gedcom_file):
     }
 
 
+def project_06(gedcom_file):
+    """ Function to perform the Project06 Tasks: Print the results of Sprint 2
+
+    :param gedcom_file: The GEDCOM File object to perform assignment on
+    :type gedcom_file: gedcom.File
+
+    :Examples:
+        myfile = gedcom.File("Test_Files/GEDCOM.ged")
+        print project_06(myfile)
+
+    """
+    return {
+        "Sprint Number": 2,
+        "Stories": [stories.less_then_150_years_old(gedcom_file),
+                    stories.birth_before_marriage_of_parents(gedcom_file),
+                    stories.birth_before_death_of_parents(gedcom_file),
+                    stories.marriage_after_14(gedcom_file),
+                    stories.no_bigamy(gedcom_file),
+                    stories.parents_not_too_old(gedcom_file)
+        ]
+    }
+
+
 if __name__ == "__main__":
     g = gedcom.File()
 

@@ -235,9 +235,11 @@ def birth_before_death_of_parents():
                 for child in tools.get_children(individual):
                     child_birt_date = tools.get_birth_date(child)
             if parent.children.find_one("tag", "SEX") = "F"
+                output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict, "deat": parent_deat_date.story_dict}
                 r["passed"].append(output) if child_birt_date > parent_deat_date else  r["failed"].append(output)
             else:
                 father_age = (parent_deat_date.datetime).days / 12
+                output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict, "deat": parent_deat_date.story_dict}
                 r["passed"].append(output) if child_birt_date > father_age else r["failed"].append(output)
       return r
      
@@ -251,7 +253,21 @@ def marriage_after_14():
     author: vr
     sprint: 2
     """
-    pass
+     r = {"passed": [], "failed": []}
+    
+     for individual in gedcom_file.find("tag", "INDI"):
+        marr_dates = tools.get_marriage_dates(individual)
+        spouse_list = get_spouses(individual)
+        for spouse in spouse_list:
+            birth_date = tools.get_birth_date(spouse)
+        
+        if birt_date and marr_dates:
+            minimum_years = (birt_date.datetime).days / 365
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "marr": marr_dates.story_dict, "age": age}
+            r["passed"].append(output) if marr_dates < (14 + minimum_years) else r["failed"].append(output)
+        
+     return r
+
 
 
 @story("US11")

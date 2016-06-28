@@ -231,13 +231,13 @@ def birth_before_death_of_parents():
     for individual in gedcom_file.find("tag", "INDI"):
         parent_list = get_parents(individual)
         for parent in parent_list:
-            parent_birt_date = tools.get_birth_date(parent)
+            parent_deat_date = tools.get_deat_date(parent)
                 for child in tools.get_children(individual):
                     child_birt_date = tools.get_birth_date(child)
             if parent.children.find_one("tag", "SEX") = "F"
-                r["passed"].append(output) if child_birt_date > parent_birt_date else  r["failed"].append(output)
+                r["passed"].append(output) if child_birt_date > parent_deat_date else  r["failed"].append(output)
             else:
-                father_age = (parent_birth_date.datetime).days / 12
+                father_age = (parent_deat_date.datetime).days / 12
                 r["passed"].append(output) if child_birt_date > father_age else r["failed"].append(output)
       return r
      

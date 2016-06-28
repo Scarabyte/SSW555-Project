@@ -218,6 +218,21 @@ def get_parent_birth_date(family):
     pass
 
 
+def get_parent_deat_date(family):
+    """ Return the death dates of an family's father and mother
+    :param family
+    :type 
+
+    :return: 
+    :rtype: Line
+
+    author: vibha ravi
+    """
+    family_child = individual.children.find_one("tag", "FAMC")
+  
+    pass
+
+
 
 def get_spouse_divorce_date(individual):
     """ Return the divorce date of an individual's spouse

@@ -4,6 +4,7 @@ Tools for gedcom project
 import re
 from datetime import datetime
 import sys
+from itertools import ifilter
 
 def human_sort(s, _re=re.compile('([0-9]+)')):
     """
@@ -41,68 +42,7 @@ def get_birth_date(individual):
     author: Constantine Davantzis
     """
     birth = individual.children.find_one("tag", "BIRT")
-    if birth:
-        return birth.children.find_one('tag', 'DATE')
-
-
-def get_children(individual):
-    """ Return the children of an individual
-
-    :param individual: The individual line
-    :type individual: Line
-
-    :return: List of Children Lines
-    :rtype: List of Children Lines
-
-    author: Constantine Davantzis
-    """
-    family_spouse = individual.children.find_one("tag", "FAMS")
-    if family_spouse:
-        family = family_spouse.follow_xref()
-        if family:
-            return [child.follow_xref() for child in family.children.find('tag', 'CHIL')]
-    return []
-
-
-def get_marriage_date(individual):
-    """ Return the marriage date line of an individual line
-
-    :param individual: The individual line
-    :type individual: Line
-
-    :return: The marriage date line
-    :rtype: Line
-
-    author: Constantine Davantzis
-    """
-    family_spouse = individual.children.find_one("tag", "FAMS")
-    if family_spouse:
-        family = family_spouse.follow_xref()
-        if family:
-            marriage = family.children.find_one('tag', 'MARR')
-            if marriage:
-                return marriage.children.find_one('tag', 'DATE')
-
-
-def yield_marriage_dates(individual):
-    """
-
-    author: Constantine Davantzis
-    """
-    for family in yield_families(individual):
-        marriage = family.children.find_one('tag', 'MARR')
-        if marriage:
-            marriage_date = marriage.children.find_one('tag', 'DATE')
-            if marriage_date:
-                yield marriage_date
-
-
-def get_marriage_dates(individual):
-    """
-
-    author: Constantine Davantzis
-    """
-    return list(yield_marriage_dates(individual))
+    return birth.children.find_one('tag', 'DATE') if birth else None
 
 
 def get_death_date(individual):
@@ -119,6 +59,160 @@ def get_death_date(individual):
     death = individual.children.find_one("tag", "DEAT")
     if death:
         return death.children.find_one("tag", "DATE")
+
+
+def iter_families_spouse_of(individual):
+    """ Returns iterator of families where this person is a spouse.
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    return iter(FAMS.follow_xref() for FAMS in individual.children.find("tag", "FAMS"))
+
+
+def iter_families_child_of(individual):
+    """ Returns iterator of families where this person is a child.
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    return iter(FAMC.follow_xref() for FAMC in individual.children.find("tag", "FAMC"))
+
+
+def iter_marriages(individual):
+    """ Returns iterator this persons marriages.
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    return iter(marr for fam in iter_families_spouse_of(individual) for marr in fam.children.find('tag', 'MARR'))
+
+
+def get_marriage_dates(individual):
+    """
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    return [marr.children.find_one('tag', 'DATE') for marr in iter_marriages(individual)]
+
+
+def iter_divorces(individual):
+    """ Returns iterator this persons divorces.
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    return iter(div for fam in iter_families_spouse_of(individual) for div in fam.children.find('tag', 'DIV'))
+
+
+def get_divorce_dates(individual):
+    """
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    return [div.children.find_one('tag', 'DATE') for div in iter_divorces(individual)]
+
+
+def iter_spouses(individual):
+    """ Returns iterator this persons spouses.
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+
+    """
+    v = individual.get('xref_ID')
+    for f in iter_families_spouse_of(individual):
+        yield next(ifilter(lambda x: x.val != v, (f.children.find_one('tag', 'HUSB'), f.children.find_one('tag', 'WIFE'))))
+
+
+def iter_children(individual):
+    """ Return iterator of this persons children
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: List of Children Lines
+    :rtype: List of Children Lines
+
+    author: Constantine Davantzis
+    """
+    return iter(c.follow_xref() for f in iter_families_spouse_of(individual) for c in f.children.find('tag', 'CHIL'))
+
+
+def get_father(individual):
+    """
+    author: Constantine Davantzis
+    """
+    for fam in iter_families_child_of(individual):
+        husband = fam.children.find_one("tag", "HUSB")
+        return husband.follow_xref() if husband else None
+
+
+def get_mother(individual):
+    """
+    author: Constantine Davantzis
+    """
+    for fam in iter_families_child_of(individual):
+        wife = fam.children.find_one("tag", "WIFE")
+        return wife.follow_xref() if wife else None
+
+
+def get_parents_marriage_date(individual):
+    """
+    author: Constantine Davantzis
+    """
+    for fam in iter_families_child_of(individual):
+        marr = fam.children.find_one('tag', 'MARR')
+        return marr.children.find_one('tag', 'DATE') if marr else None
+
+
+def get_parents_divorce_date(individual):
+    """
+    author: Constantine Davantzis
+    """
+    for fam in iter_families_child_of(individual):
+        div = fam.children.find_one('tag', 'DIV')
+        return div.children.find_one('tag', 'DATE') if div else None
+
+
+# DEPRECATED Functions to be removed
+
+
+def get_marriage_date(individual):
+    """ Return the marriage date line of an individual line
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: The marriage date line
+    :rtype: Line
+
+    author: Constantine Davantzis
+
+    """
+    family_spouse = individual.children.find_one("tag", "FAMS")
+    if family_spouse:
+        family = family_spouse.follow_xref()
+        if family:
+            marriage = family.children.find_one('tag', 'MARR')
+            if marriage:
+                return marriage.children.find_one('tag', 'DATE')
 
 
 def get_divorce_date(individual):
@@ -139,115 +233,6 @@ def get_divorce_date(individual):
             divorce = family.children.find_one('tag', 'DIV')
             if divorce:
                 return divorce.children.find_one('tag', 'DATE')
-
-
-def yield_divorce_dates(individual):
-    """
-
-    author: Constantine Davantzis
-    """
-    for family in yield_families(individual):
-        divorce = family.children.find_one('tag', 'DIV')
-        if divorce:
-            divorce_date = divorce.children.find_one('tag', 'DATE')
-            if divorce_date:
-                yield divorce_date
-
-
-def get_divorce_dates(individual):
-    """
-
-    author: Constantine Davantzis
-    """
-    return list(yield_divorce_dates(individual))
-
-
-def yield_families(individual):
-    """
-    author: Constantine Davantzis
-    """
-    family_spouses = individual.children.find("tag", "FAMS")
-    for family_spouse in family_spouses:
-        family = family_spouse.follow_xref()
-        if family:
-            yield family
-
-
-def get_father(individual):
-    """
-    author: Constantine Davantzis
-    """
-    family_child = individual.children.find_one("tag", "FAMC")
-    if family_child:
-        family = family_spouse.follow_xref()
-        if family:
-            husband = family.children.find_one("tag", "HUSB")
-            if husband:
-                return husband.follow_xref()
-
-
-def get_mother(individual):
-    """
-    author: Constantine Davantzis
-    """
-    family_child = individual.children.find_one("tag", "FAMC")
-    if family_child:
-        family = family_spouse.follow_xref()
-        if family:
-            wife = family.children.find_one("tag", "HUSB")
-            if wife:
-                return wife.follow_xref()
-
-
-def get_parents_marriage_date(individual):
-    """
-    author: Constantine Davantzis
-    """
-    family_child = individual.children.find_one("tag", "FAMC")
-    if family_child:
-        family = family_child.follow_xref()
-        if family:
-            marriage = family.children.find_one('tag', 'MARR')
-            if marriage:
-                marriage_date = marriage.children.find_one('tag', 'DATE')
-                if marriage_date:
-                    return marriage_date
-
-
-def get_parents_divorce_date(individual):
-    """
-    author: Constantine Davantzis
-    """
-    family_child = individual.children.find_one("tag", "FAMC")
-    if family_child:
-        family = family_child.follow_xref()
-        if family:
-            divorce = family.children.find_one('tag', 'DIV')
-            if divorce:
-                divorce_date = divorce.children.find_one('tag', 'DATE')
-                if divorce_date:
-                    return divorce_date
-
-
-def yield_spouses(individual):
-    """
-    author: Constantine Davantzis
-    """
-    # TODO: Optimize
-    for family in yield_families(individual):
-        husband = family.children.find_one("tag", "HUSB")
-        if husband.get("line_value") != individual.get("xref_ID"):
-            yield husband.follow_xref()
-        wife = family.children.find_one("tag", "WIFE")
-        if wife.get("line_value") != individual.get("xref_ID"):
-            yield wife.follow_xref()
-
-
-def get_spouses(individual):
-    """
-    author: Constantine Davantzis
-    """
-    return list(yield_spouses(individual))
 
 
 if __name__ == "__main__":

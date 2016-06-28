@@ -264,9 +264,9 @@ def no_bigamy():
             deat_date = tools.get_death_date(spouse)
             if div_date:
                 for marr_start in marr_dates:
-                    if (marr_start.datetime > div_date.datetime:
+                    if marr_start.datetime > div_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
-                    elif (marr_start.datetime > deat_date.datetime:
+                    elif marr_start.datetime > deat_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
                     else:
                         r["passed"].append("TBD_OUTPUT")
@@ -301,7 +301,7 @@ def parents_not_too_old():
         for parent in parent_list:
             parent_birt_date = tools.get_birth_date(parent)
             age = (parent_birth_date.datetime - birt_date.datetime).days / 365
-            if parent.children.find_one("tag", "SEX") = "M"
+            if parent.children.find_one("tag", "SEX") == "M":
                 r["passed"].append(output) if age < 80 else r["failed"].append(output)
             else:
                 r["passed"].append(output) if age < 60 else r["failed"].append(output)

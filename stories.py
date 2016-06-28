@@ -336,8 +336,8 @@ def parents_not_too_old(gedcom_file):
         parent_list = tools.get_parents(individual)
         for parent in parent_list:
             parent_birt_date = tools.get_birth_date(parent)
-            age = (parent_birt_date.datetime - birt_date.datetime).days / 365
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "age": age}
+            parent_age = (parent_birt_date.datetime - birt_date.datetime).days / 365
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_age": parent_age}
             if parent.children.find_one("tag", "SEX") == "M":
                 r["passed"].append(output) if age < 80 else r["failed"].append(output)
             else:

@@ -307,7 +307,7 @@ def no_bigamy(gedcom_file):
                                   "spouse_deat": s_deat_date.story_dict}
                         r["failed"].append(output)
                     else:
-                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict)
+                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict}
                         r["passed"].append(output)
 
     # Marriage ends with either divorce or death

@@ -95,7 +95,7 @@ if __name__ == "__main__":
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
     try:
-        with open('project_04_results.json', 'w') as outfile:
-            json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+        with open('project_06_results.json', 'w') as outfile:
+            json.dump(project_06(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))

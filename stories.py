@@ -205,7 +205,7 @@ def birth_before_marriage_of_parents(gedcom_file):
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
-        p_marr_date =  tools.get_parents_marriage_date(individual)
+        p_marr_date = tools.get_parents_marriage_date(individual)
         p_div_date = tools.get_parents_divorce_date(individual)
         if birt_date and p_marr_date and p_div_date:
             output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict, "parent_div": p_div_date.story_dict}
@@ -215,14 +215,14 @@ def birth_before_marriage_of_parents(gedcom_file):
                 r["failed"].append(output)
         if birt_date and p_marr_date:
             output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict}
-            if (p_marr_date.datetime < birt_date.datetime):
+            if p_marr_date.datetime < birt_date.datetime:
                 r["passed"].append(output)
             else:
                 r["failed"].append(output)
     return r
 
-
-def birth_before_death_of_parents():
+@story("US09")
+def birth_before_death_of_parents(gedcom_file):
     """ Child should be born before death of mother and before 9 months after death of father
     
     :sprint: 2
@@ -233,24 +233,25 @@ def birth_before_death_of_parents():
 
     """
     r = {"passed": [], "failed": []}
-     
     for individual in gedcom_file.find("tag", "INDI"):
-        parent_list = get_parents(individual)
+        parent_list = tools.get_parents(individual)
         for parent in parent_list:
             parent_deat_date = tools.get_deat_date(parent)
             for child in tools.get_children(individual):
                 child_birt_date = tools.get_birth_date(child)
-            if parent.children.find_one("tag", "SEX") = "F"
-                output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict, "deat": parent_deat_date.story_dict}
-                r["passed"].append(output) if child_birt_date > parent_deat_date else  r["failed"].append(output)
-            else:
-                father_age = (parent_deat_date.datetime).days / 12
-                output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict, "deat": parent_deat_date.story_dict}
-                r["passed"].append(output) if child_birt_date > father_age else r["failed"].append(output)
-      return r
+                if parent.children.find_one("tag", "SEX") == "F":
+                    output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict,
+                              "deat": parent_deat_date.story_dict}
+                    r["passed"].append(output) if child_birt_date > parent_deat_date else  r["failed"].append(output)
+                else:
+                    father_age = parent_deat_date.datetime.days / 12
+                    output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict,
+                              "deat": parent_deat_date.story_dict}
+                    r["passed"].append(output) if child_birt_date > father_age else r["failed"].append(output)
+    return r
      
-
-def marriage_after_14():
+@story("US10")
+def marriage_after_14(gedcom_file):
     """ Marriage should be at least 14 years after birth of both spouses
     
     :sprint: 2
@@ -260,24 +261,21 @@ def marriage_after_14():
     :type gedcom_file: gedcom.File
 
     """
-     r = {"passed": [], "failed": []}
-    
-     for individual in gedcom_file.find("tag", "INDI"):
+    r = {"passed": [], "failed": []}
+    for individual in gedcom_file.find("tag", "INDI"):
         marr_dates = tools.get_marriage_dates(individual)
-        spouse_list = get_spouses(individual)
+        spouse_list = tools.get_spouses(individual)
         for spouse in spouse_list:
-            birth_date = tools.get_birth_date(spouse)
-        
-        if birt_date and marr_dates:
-            minimum_years = (birt_date.datetime).days / 365
-            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_dates.story_dict}
-            r["passed"].append(output) if marr_dates < (14 + minimum_years) else r["failed"].append(output)
-        
-     return r
+            birt_date = tools.get_birth_date(spouse)
+            if birt_date and marr_dates:
+                minimum_years = (birt_date.datetime).days / 365
+                output = {"xref_ID": individual.get("xref_ID"), "marr": marr_dates.story_dict}
+                r["passed"].append(output) if marr_dates < (14 + minimum_years) else r["failed"].append(output)
+    return r
 
 
 @story("US11")
-def no_bigamy():
+def no_bigamy(gedcom_file):
     """ Marriage should not occur during marriage to another spouse
 
     :sprint: 2
@@ -292,15 +290,15 @@ def no_bigamy():
     # Get individual's marriage start dates
     for individual in gedcom_file.find("tag", "INDI"):
         marr_dates = tools.get_marriage_dates(individual)
-        spouse_list = get_spouses(individual)
+        spouse_list = tools.get_spouses(individual)
         for spouse in spouse_list:
             div_date = tools.get_divorce_date(spouse)
             deat_date = tools.get_death_date(spouse)
             if div_date:
                 for marr_start in marr_dates:
-                    if (marr_start.datetime > div_date.datetime:
+                    if marr_start.datetime > div_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
-                    elif (marr_start.datetime > deat_date.datetime:
+                    elif marr_start.datetime > deat_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
                     else:
                         r["passed"].append("TBD_OUTPUT")
@@ -312,7 +310,7 @@ def no_bigamy():
 
 
 @story("US12")
-def parents_not_too_old():
+def parents_not_too_old(gedcom_file):
     """ Mother should be less than 60 years older than her children and
         father should be less than 80 years older than his children
 
@@ -328,11 +326,12 @@ def parents_not_too_old():
     # Get individual's birth date
     for individual in gedcom_file.find("rag", "INDI"):
         birt_date = tools.get_birth_date(individual)
-        parent_list = get_parents(individual)
+        parent_list = tools.get_parents(individual)
         for parent in parent_list:
             parent_birt_date = tools.get_birth_date(parent)
-            age = (parent_birth_date.datetime - birt_date.datetime).days / 365
-            if parent.children.find_one("tag", "SEX") = "M"
+            age = (parent_birt_date.datetime - birt_date.datetime).days / 365
+            output = {}
+            if parent.children.find_one("tag", "SEX") == "M":
                 r["passed"].append(output) if age < 80 else r["failed"].append(output)
             else:
                 r["passed"].append(output) if age < 60 else r["failed"].append(output)

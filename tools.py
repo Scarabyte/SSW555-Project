@@ -89,7 +89,7 @@ def yield_marriage_dates(individual):
 
     author: Constantine Davantzis
     """
-    for family in yield_families_SPOUSE(individual):
+    for family in yield_families(individual):
         marriage = family.children.find_one('tag', 'MARR')
         if marriage:
             marriage_date = marriage.children.find_one('tag', 'DATE')
@@ -146,7 +146,7 @@ def yield_divorce_dates(individual):
 
     author: Constantine Davantzis
     """
-    for family in yield_families_SPOUSE(individual):
+    for family in yield_families(individual):
         divorce = family.children.find_one('tag', 'DIV')
         if divorce:
             divorce_date = divorce.children.find_one('tag', 'DATE')
@@ -162,7 +162,7 @@ def get_divorce_dates(individual):
     return list(yield_divorce_dates(individual))
 
 
-def yield_families_SPOUSE(individual):
+def yield_families(individual):
     """
     author: Constantine Davantzis
     """
@@ -172,14 +172,6 @@ def yield_families_SPOUSE(individual):
         if family:
             yield family
 
-def yield_families_CHILD(individual):
-    """
-    author: Constantine Davantzis
-    """
-    for family_spouse in family_spouses:
-        family = family_spouse.follow_xref()
-        if family:
-            yield family
 
 def get_father(individual):
     """
@@ -192,6 +184,7 @@ def get_father(individual):
             husband = family.children.find_one("tag", "HUSB")
             if husband:
                 return husband.follow_xref()
+
 
 def get_mother(individual):
     """
@@ -220,6 +213,7 @@ def get_parents_marriage_date(individual):
                 if marriage_date:
                     return marriage_date
 
+
 def get_parents_divorce_date(individual):
     """
     author: Constantine Davantzis
@@ -234,11 +228,13 @@ def get_parents_divorce_date(individual):
                 if divorce_date:
                     return divorce_date
 
+
 def yield_spouses(individual):
     """
     author: Constantine Davantzis
     """
-    for family in yield_families_SPOUSE(individual):
+    # TODO: Optimize
+    for family in yield_families(individual):
         husband = family.children.find_one("tag", "HUSB")
         if husband.get("line_value") != individual.get("xref_ID"):
             yield husband.follow_xref()
@@ -252,90 +248,6 @@ def get_spouses(individual):
     author: Constantine Davantzis
     """
     return list(yield_spouses(individual))
-
-
-
-def get_parent_birth_date(family):
-    """ Return the birth dates of an family's father and mother
-    :param family
-    :type 
-
-    :return: 
-    :rtype: Line
-
-    author: Adam Burbidge
-    """
-    family_child = individual.children.find_one("tag", "FAMC")
-    if family_child:
-        family = family_child.follow_xref()
-        if family:
-            pass
-    pass
-
-
-def get_parent_deat_date(family):
-    """ Return the death dates of an family's father and mother
-    :param family
-    :type 
-
-    :return: 
-    :rtype: Line
-
-    author: vibha ravi
-    """
-    family_child = individual.children.find_one("tag", "FAMC")
-  
-    pass
-
-
-
-def get_spouse_divorce_date(individual):
-    """ Return the divorce date of an individual's spouse
-    :param individual
-    :type 
-
-    :return: 
-    :rtype: Line
-
-    author: Adam Burbidge
-    """
-    pass
-
-
-def get_spouse_death_date(individual):
-    """ Return the death date of an individual's spouse
-    :param individual
-    :type 
-
-    :return: 
-    :rtype: Line
-
-    author: Adam Burbidge
-    """
-    family_spouse = individual.children.find_one("tag", "FAMS")
-    if family_spouse:
-        family = family_spouse.follow_xref()
-        if family:
-            spouse = family.children.find_one("tag", "HUSB")
-
-    pass
-
-
-def get_spouse(individual):
-    """ Return an individual's spouse
-    :param individual
-    :type 
-
-    :return: 
-    :rtype: Line
-
-    author: Adam Burbidge
-    """
-    family_spouse = individual.children.find_one("tag", "FAMS")
-    if family_spouse:
-        family = family_spouse.follow_xref()
-    pass
-
 
 
 if __name__ == "__main__":

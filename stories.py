@@ -226,7 +226,22 @@ def birth_before_death_of_parents():
     author: vr
     sprint: 2
     """
-    pass
+     r = {"passed": [], "failed": []}
+     
+    for individual in gedcom_file.find("rag", "INDI"):
+        parent_list = get_parents(individual)
+        for parent in parent_list:
+            parent_birt_date = tools.get_birth_date(parent)
+                for child in tools.get_children(individual):
+                    chil_birt_date = tools.get_birth_date(child)
+            if parent.children.find_one("tag", "SEX") = "F"
+                r["passed"].append(output) if chil_birt_date > parent_birt_date else  r["failed"].append(output)
+            else:
+                father_age = (parent_birth_date.datetime).days / 12
+                r["passed"].append(output) if chil_birt_date > father_age else r["failed"].append(output)
+      return r
+     
+    
 
 
 def marriage_after_14():
@@ -264,9 +279,9 @@ def no_bigamy():
             deat_date = tools.get_death_date(spouse)
             if div_date:
                 for marr_start in marr_dates:
-                    if marr_start.datetime > div_date.datetime:
+                    if (marr_start.datetime > div_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
-                    elif marr_start.datetime > deat_date.datetime:
+                    elif (marr_start.datetime > deat_date.datetime:
                         r["failed"].append("TBD_OUTPUT")
                     else:
                         r["passed"].append("TBD_OUTPUT")
@@ -301,7 +316,7 @@ def parents_not_too_old():
         for parent in parent_list:
             parent_birt_date = tools.get_birth_date(parent)
             age = (parent_birth_date.datetime - birt_date.datetime).days / 365
-            if parent.children.find_one("tag", "SEX") == "M":
+            if parent.children.find_one("tag", "SEX") = "M"
                 r["passed"].append(output) if age < 80 else r["failed"].append(output)
             else:
                 r["passed"].append(output) if age < 60 else r["failed"].append(output)

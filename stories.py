@@ -289,13 +289,13 @@ def no_bigamy(gedcom_file):
         for spouse in spouse_list:
             s_div_date = tools.get_divorce_date(spouse)
             s_deat_date = tools.get_death_date(spouse)
-            if div_date or deat_date:
+            if s_div_date or s_deat_date:
                 for marr_start in marr_dates:
-                    if marr_start.datetime > div_date.datetime:
+                    if marr_start.datetime > s_div_date.datetime:
                         output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
                                   "spouse_div": s_div_date.story_dict}
                         r["failed"].append(output)
-                    elif marr_start.datetime > deat_date.datetime:
+                    elif marr_start.datetime > s_deat_date.datetime:
                         output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
                                   "spouse_deat": s_deat_date.story_dict}
                         r["failed"].append(output)
@@ -332,9 +332,9 @@ def parents_not_too_old(gedcom_file):
             parent_age = (parent_birt_date.datetime - birt_date.datetime).days / 365
             output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_age": parent_age}
             if parent.children.find_one("tag", "SEX") == "M":
-                r["passed"].append(output) if age < 80 else r["failed"].append(output)
+                r["passed"].append(output) if parent_age < 80 else r["failed"].append(output)
             else:
-                r["passed"].append(output) if age < 60 else r["failed"].append(output)
+                r["passed"].append(output) if parent_age < 60 else r["failed"].append(output)
     # Get father and mother's birth dates
     # Compare dates
     # Repeat for both father and mother of all individuals

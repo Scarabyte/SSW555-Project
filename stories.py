@@ -293,16 +293,21 @@ def no_bigamy(gedcom_file):
         marr_dates = tools.get_marriage_dates(individual)
         spouse_list = tools.get_spouses(individual)
         for spouse in spouse_list:
-            div_date = tools.get_divorce_date(spouse)
-            deat_date = tools.get_death_date(spouse)
-            if div_date:
+            s_div_date = tools.get_divorce_date(spouse)
+            s_deat_date = tools.get_death_date(spouse)
+            if div_date or deat_date:
                 for marr_start in marr_dates:
                     if marr_start.datetime > div_date.datetime:
-                        r["failed"].append("TBD_OUTPUT")
+                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
+                                  "spouse_div": s_div_date.story_dict}
+                        r["failed"].append(output)
                     elif marr_start.datetime > deat_date.datetime:
-                        r["failed"].append("TBD_OUTPUT")
+                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
+                                  "spouse_deat": s_deat_date.story_dict}
+                        r["failed"].append(output)
                     else:
-                        r["passed"].append("TBD_OUTPUT")
+                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict)
+                        r["passed"].append(output)
                                               
     # Marriage ends with either divorce or death
     # Get spouse's divorce or death dates

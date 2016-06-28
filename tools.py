@@ -127,6 +127,34 @@ def get_divorce_dates(individual):
     return [div.children.find_one('tag', 'DATE') for div in iter_divorces(individual)]
 
 
+def family_dict(family):
+    d = {}
+    husb = family.children.find_one('tag', 'HUSB')
+    d["husb"] = husb.follow_xref() if husb else None
+
+    wife = family.children.find_one('tag', 'WIFE')
+    d["wife"] = wife.follow_xref() if husb else None
+
+    marr = family.children.find_one('tag', 'MARR')
+    if marr:
+        d["marr"] = family.children.find_one('tag', 'MARR')
+        d["marr_date"] = marr.children.find_one('tag', 'DATE') if marr else None
+    else:
+        d["marr"] = None
+        d["marr_date"] = None
+
+    div = family.children.find_one('tag', 'DIV')
+    if div:
+        d["div"] = family.children.find_one('tag', 'DIV')
+        d["div_date"] = div.children.find_one('tag', 'DATE') if div else None
+    else:
+        d["div"] = None
+        d["div_date"] = None
+
+    d["children"] = [child.follow_xref() for child in family.children.find('tag', 'CHIL')]
+    return d
+
+
 def iter_family_dict(individual):
     """ iterate through a list of dictionaries with family information for each family individual is a spouse of
 
@@ -137,39 +165,13 @@ def iter_family_dict(individual):
     """
     xref_id = individual.get('xref_ID')
     for fam in iter_families_spouse_of(individual):
-        d = {}
-
-        husb = fam.children.find_one('tag', 'HUSB')
-        d["husb"] = husb.follow_xref() if husb else None
-
-        wife = fam.children.find_one('tag', 'WIFE')
-        d["wife"] = wife.follow_xref() if husb else None
-
-        if husb.val != xref_id:
+        d = family_dict(fam)
+        if d["husb"] and d["husb"].val != xref_id:
             d["spouse_is"] = "husb"
-        elif wife.val != xref_id:
+        elif d["wife"] and d["wife"].val != xref_id:
             d["spouse_is"] = "wife"
         else:
             d["spouse_is"] = None
-
-        marr = fam.children.find_one('tag', 'MARR')
-        if marr:
-            d["marr"] = fam.children.find_one('tag', 'MARR')
-            d["marr_date"] = marr.children.find_one('tag', 'DATE') if marr else None
-        else:
-            d["marr"] = None
-            d["marr_date"] = None
-
-        div = fam.children.find_one('tag', 'DIV')
-        if div:
-            d["div"] = fam.children.find_one('tag', 'DIV')
-            d["div_date"] = div.children.find_one('tag', 'DATE') if div else None
-        else:
-            d["div"] = None
-            d["div_date"] = None
-
-        d["children"] = [child.follow_xref() for child in fam.children.find('tag', 'CHIL')]
-
         yield d
 
 
@@ -181,35 +183,8 @@ def iter_parent_family_dict(individual):
 
     author: Constantine Davantzis
     """
-    xref_id = individual.get('xref_ID')
     for fam in iter_families_child_of(individual):
-        d = {}
-
-        husb = fam.children.find_one('tag', 'HUSB')
-        d["husb"] = husb.follow_xref() if husb else None
-
-        wife = fam.children.find_one('tag', 'WIFE')
-        d["wife"] = wife.follow_xref() if husb else None
-
-        marr = fam.children.find_one('tag', 'MARR')
-        if marr:
-            d["marr"] = fam.children.find_one('tag', 'MARR')
-            d["marr_date"] = marr.children.find_one('tag', 'DATE') if marr else None
-        else:
-            d["marr"] = None
-            d["marr_date"] = None
-
-        div = fam.children.find_one('tag', 'DIV')
-        if div:
-            d["div"] = fam.children.find_one('tag', 'DIV')
-            d["div_date"] = div.children.find_one('tag', 'DATE') if div else None
-        else:
-            d["div"] = None
-            d["div_date"] = None
-
-        d["children"] = [child.follow_xref() for child in fam.children.find('tag', 'CHIL')]
-
-        yield d
+        yield family_dict(fam)
 
 
 def iter_spouses(individual):

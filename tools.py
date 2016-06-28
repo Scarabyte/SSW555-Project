@@ -201,6 +201,18 @@ def iter_spouses(individual):
         yield next(ifilter(lambda x: x.val != v, (f.children.find_one('tag', 'HUSB'), f.children.find_one('tag', 'WIFE'))))
 
 
+def get_spouses(individual):
+    """ Returns list of this persons spouses.
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+
+    """
+    return list(iter_spouses)
+
+
 def iter_children(individual):
     """ Return iterator of this persons children
 

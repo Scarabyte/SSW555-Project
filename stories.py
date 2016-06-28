@@ -204,6 +204,7 @@ def birth_before_marriage_of_parents(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
+        print list(tools.iter_marr_and_div_date_pairs(individual))
         birt_date = tools.get_birth_date(individual)
         p_marr_date = tools.get_parents_marriage_date(individual)
         p_div_date = tools.get_parents_divorce_date(individual)
@@ -657,4 +658,4 @@ if __name__ == "__main__":
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
     
-    print json.dumps(birth_before_marriage_of_parents(g), sort_keys=True, indent=4, separators=(',', ': '))
+    birth_before_marriage_of_parents(g)

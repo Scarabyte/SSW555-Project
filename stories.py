@@ -301,7 +301,7 @@ def parents_not_too_old():
         for parent in parent_list:
             parent_birt_date = tools.get_birth_date(parent)
             age = (parent_birth_date.datetime - birt_date.datetime).days / 365
-            if parent.find_one("tag", "SEX") = "M"
+            if parent.children.find_one("tag", "SEX") = "M"
                 r["passed"].append(output) if age < 80 else r["failed"].append(output)
             else:
                 r["passed"].append(output) if age < 60 else r["failed"].append(output)

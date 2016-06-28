@@ -263,7 +263,7 @@ def marriage_after_14():
         
         if birt_date and marr_dates:
             minimum_years = (birt_date.datetime).days / 365
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "marr": marr_dates.story_dict, "age": age}
+            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_dates.story_dict}
             r["passed"].append(output) if marr_dates < (14 + minimum_years) else r["failed"].append(output)
         
      return r

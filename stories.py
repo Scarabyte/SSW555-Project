@@ -203,7 +203,7 @@ def birth_before_marriage_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in (tools.family_dict(line) for line in g.find("tag", "FAM")):
+    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
             if child_birt_date and family["marr_date"]:

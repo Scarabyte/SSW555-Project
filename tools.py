@@ -89,7 +89,7 @@ def yield_marriage_dates(individual):
 
     author: Constantine Davantzis
     """
-    for family in yield_families(individual):
+    for family in yield_families_SPOUSE(individual):
         marriage = family.children.find_one('tag', 'MARR')
         if marriage:
             marriage_date = marriage.children.find_one('tag', 'DATE')
@@ -146,7 +146,7 @@ def yield_divorce_dates(individual):
 
     author: Constantine Davantzis
     """
-    for family in yield_families(individual):
+    for family in yield_families_SPOUSE(individual):
         divorce = family.children.find_one('tag', 'DIV')
         if divorce:
             divorce_date = divorce.children.find_one('tag', 'DATE')
@@ -162,7 +162,7 @@ def get_divorce_dates(individual):
     return list(yield_divorce_dates(individual))
 
 
-def yield_families(individual):
+def yield_families_SPOUSE(individual):
     """
     author: Constantine Davantzis
     """
@@ -172,12 +172,73 @@ def yield_families(individual):
         if family:
             yield family
 
+def yield_families_CHILD(individual):
+    """
+    author: Constantine Davantzis
+    """
+    for family_spouse in family_spouses:
+        family = family_spouse.follow_xref()
+        if family:
+            yield family
+
+def get_father(individual):
+    """
+    author: Constantine Davantzis
+    """
+    family_child = individual.children.find_one("tag", "FAMC")
+    if family_child:
+        family = family_spouse.follow_xref()
+        if family:
+            husband = family.children.find_one("tag", "HUSB")
+            if husband:
+                return husband.follow_xref()
+
+def get_mother(individual):
+    """
+    author: Constantine Davantzis
+    """
+    family_child = individual.children.find_one("tag", "FAMC")
+    if family_child:
+        family = family_spouse.follow_xref()
+        if family:
+            wife = family.children.find_one("tag", "HUSB")
+            if wife:
+                return wife.follow_xref()
+
+
+def get_parents_marriage_date(individual):
+    """
+    author: Constantine Davantzis
+    """
+    family_child = individual.children.find_one("tag", "FAMC")
+    if family_child:
+        family = family_child.follow_xref()
+        if family:
+            marriage = family.children.find_one('tag', 'MARR')
+            if marriage:
+                marriage_date = marriage.children.find_one('tag', 'DATE')
+                if marriage_date:
+                    return marriage_date
+
+def get_parents_divorce_date(individual):
+    """
+    author: Constantine Davantzis
+    """
+    family_child = individual.children.find_one("tag", "FAMC")
+    if family_child:
+        family = family_child.follow_xref()
+        if family:
+            divorce = family.children.find_one('tag', 'DIV')
+            if divorce:
+                divorce_date = divorce.children.find_one('tag', 'DATE')
+                if divorce_date:
+                    return divorce_date
 
 def yield_spouses(individual):
     """
     author: Constantine Davantzis
     """
-    for family in yield_families(individual):
+    for family in yield_families_SPOUSE(individual):
         husband = family.children.find_one("tag", "HUSB")
         if husband.get("line_value") != individual.get("xref_ID"):
             yield husband.follow_xref()
@@ -192,12 +253,6 @@ def get_spouses(individual):
     """
     return list(yield_spouses(individual))
 
-
-def get_families(individual):
-    """
-    author: Constantine Davantzis
-    """
-    return list(yield_families(individual))
 
 
 def get_parent_birth_date(family):

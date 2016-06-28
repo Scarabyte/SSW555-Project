@@ -165,11 +165,14 @@ def divorce_before_death(gedcom_file):
 
 @story("US07")
 def less_then_150_years_old(gedcom_file):
-    """ Less then 150 years old
-    Description: Death should be less than 150 years after birth for dead people, and current date should be less than 150 years after birth for all living people
-    story_id: US07
-    author: cd
-    sprint: 2
+    """ Death should be less than 150 years after birth for dead people, and current date should be less than 150 years after birth for all living people
+    
+    :sprint: 2
+    :author: Constantine Davantzis
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
     # TODO: Change datetime.now() to file date?
     # TODO: provide info about current date.
@@ -190,34 +193,35 @@ def less_then_150_years_old(gedcom_file):
 
 @story("US08")
 def birth_before_marriage_of_parents(gedcom_file):
-    """ Birth before marriage of parents
-    Description: Child should be born after marriage of parents (and before their divorce)
-    story_id: US08
-    author: cd
-    sprint: 2
+    """ Child should be born after marriage of parents (and before their divorce)
+    
+    :sprint: 2
+    :author: Constantine Davantzis
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    # TODO: Determine how to record output
-    # TODO: Optimize logic
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
-        marr_date = tools.get_marriage_date(individual)
-        div_date = tools.get_divorce_date(individual)
-        for child in tools.get_children(individual):
-            chil_birt_date = tools.get_birth_date(child)
-            if marr_date and chil_birt_date:
-                if div_date:
-                    if (marr_date.datetime < chil_birt_date.datetime) and (div_date.datetime > chil_birt_date.datetime):
-                        r["passed"].append("TBD_OUTPUT")
-                    else:
-                        r["failed"].append("TBD_OUTPUT")
-                else:
-                    if marr_date.datetime < chil_birt_date.datetime:
-                        r["passed"].append("TBD_OUTPUT")
-                    else:
-                        r["failed"].append("TBD_OUTPUT")
-                        print "here"
+        birt_date = tools.get_birth_date(individual)
+        p_marr_date =  tools.get_parents_marriage_date(individual)
+        p_div_date = tools.get_parents_divorce_date(individual)
+        if birt_date and p_marr_date and p_div_date:
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict, "parent_div": p_div_date.story_dict}
+            if (p_marr_date.datetime < birt_date.datetime) and (p_div_date.datetime > birt_date.datetime):
+                r["passed"].append(output)
+            else:
+                r["failed"].append(output)
+        if birt_date and p_marr_date:
+            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict}
+            if (p_marr_date.datetime < birt_date.datetime):
+                r["passed"].append(output)
+            else:
+                r["failed"].append(output)
     return r
 
+   
 
 def birth_before_death_of_parents():
     """ Birth before death of parents
@@ -641,3 +645,15 @@ def reject_illegitimate_dates():
     """
     pass
 
+
+if __name__ == "__main__":
+    import json 
+    g = gedcom.File()
+
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified.ged"
+    try:
+        g.read_file(fname)
+    except IOError as e:
+        sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
+    
+    print json.dumps(birth_before_marriage_of_parents(g), sort_keys=True, indent=4, separators=(',', ': '))

@@ -309,7 +309,7 @@ def no_bigamy(gedcom_file):
                     else:
                         output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict)
                         r["passed"].append(output)
-                                              
+
     # Marriage ends with either divorce or death
     # Get spouse's divorce or death dates
     # Does a second marriage start before the divorce date or death of the other spouse?

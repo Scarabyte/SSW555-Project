@@ -127,6 +127,23 @@ def get_divorce_dates(individual):
     return [div.children.find_one('tag', 'DATE') for div in iter_divorces(individual)]
 
 
+def iter_marr_and_div_date_pairs(individual):
+    """
+
+    :param individual: The individual line
+    :type individual: Line
+
+    author: Constantine Davantzis
+    """
+    for fam in iter_families_spouse_of(individual):
+        marr = fam.children.find_one('tag', 'MARR')
+        div = fam.children.find_one('tag', 'DIV')
+        if marr or div:
+            marr_date = marr.children.find_one('tag', 'DATE') if marr else None
+            div_date = div.children.find_one('tag', 'DATE') if div else None
+            yield {"marr_date":  marr_date, "div_date": div_date}
+
+
 def iter_spouses(individual):
     """ Returns iterator this persons spouses.
 

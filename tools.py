@@ -127,21 +127,50 @@ def get_divorce_dates(individual):
     return [div.children.find_one('tag', 'DATE') for div in iter_divorces(individual)]
 
 
-def iter_marr_and_div_date_pairs(individual):
-    """
+def iter_family_dict(individual):
+    """ iterate through a list of dictionaries with family information for each family individual is a spouse of
 
     :param individual: The individual line
     :type individual: Line
 
     author: Constantine Davantzis
     """
+    xref_id = individual.get('xref_ID')
     for fam in iter_families_spouse_of(individual):
+        d = {}
+
+        husb = fam.children.find_one('tag', 'HUSB')
+        d["husb"] = husb.follow_xref() if husb else None
+
+        wife = fam.children.find_one('tag', 'WIFE')
+        d["wife"] = wife.follow_xref() if husb else None
+
+        if husb.val != xref_id:
+            d["spouse_is"] = "husb"
+        elif wife.val != xref_id:
+            d["spouse_is"] = "wife"
+        else:
+            d["spouse_is"] = None
+
         marr = fam.children.find_one('tag', 'MARR')
+        if marr:
+            d["marr"] = fam.children.find_one('tag', 'MARR')
+            d["marr_date"] = marr.children.find_one('tag', 'DATE') if marr else None
+        else:
+            d["marr"] = None
+            d["marr_date"] = None
+
         div = fam.children.find_one('tag', 'DIV')
-        if marr or div:
-            marr_date = marr.children.find_one('tag', 'DATE') if marr else None
-            div_date = div.children.find_one('tag', 'DATE') if div else None
-            yield {"marr_date":  marr_date, "div_date": div_date}
+        if div:
+            d["div"] = fam.children.find_one('tag', 'DIV')
+            d["div_date"] = div.children.find_one('tag', 'DATE') if div else None
+        else:
+            d["div"] = None
+            d["div_date"] = None
+
+        d["children"] = [child.follow_xref() for child in fam.children.find('tag', 'CHIL')]
+
+        yield d
 
 
 def iter_spouses(individual):

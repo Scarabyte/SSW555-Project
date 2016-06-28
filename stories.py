@@ -221,23 +221,25 @@ def birth_before_marriage_of_parents(gedcom_file):
                 r["failed"].append(output)
     return r
 
-   
 
 def birth_before_death_of_parents():
-    """ Birth before death of parents
-    Description: Child should be born before death of mother and before 9 months after death of father
-    story_id: US09
-    author: vr
-    sprint: 2
+    """ Child should be born before death of mother and before 9 months after death of father
+    
+    :sprint: 2
+    :author: vibharavi
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-     r = {"passed": [], "failed": []}
+    r = {"passed": [], "failed": []}
      
     for individual in gedcom_file.find("tag", "INDI"):
         parent_list = get_parents(individual)
         for parent in parent_list:
             parent_deat_date = tools.get_deat_date(parent)
-                for child in tools.get_children(individual):
-                    child_birt_date = tools.get_birth_date(child)
+            for child in tools.get_children(individual):
+                child_birt_date = tools.get_birth_date(child)
             if parent.children.find_one("tag", "SEX") = "F"
                 output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict, "deat": parent_deat_date.story_dict}
                 r["passed"].append(output) if child_birt_date > parent_deat_date else  r["failed"].append(output)
@@ -247,15 +249,16 @@ def birth_before_death_of_parents():
                 r["passed"].append(output) if child_birt_date > father_age else r["failed"].append(output)
       return r
      
-    
-
 
 def marriage_after_14():
-    """ Marriage after 14
-    Description: Marriage should be at least 14 years after birth of both spouses
-    story_id: US10
-    author: vr
-    sprint: 2
+    """ Marriage should be at least 14 years after birth of both spouses
+    
+    :sprint: 2
+    :author: vibharavi
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
      r = {"passed": [], "failed": []}
     
@@ -273,14 +276,10 @@ def marriage_after_14():
      return r
 
 
-
 @story("US11")
 def no_bigamy():
-    """ No bigamy
+    """ Marriage should not occur during marriage to another spouse
 
-    Description: Marriage should not occur during marriage to another spouse
-
-    :story_id: US11
     :sprint: 2
     :author: Adam Burbidge
 
@@ -314,12 +313,9 @@ def no_bigamy():
 
 @story("US12")
 def parents_not_too_old():
-    """ Parents not too old
+    """ Mother should be less than 60 years older than her children and
+        father should be less than 80 years older than his children
 
-    Description: Mother should be less than 60 years older than her children and
-                 father should be less than 80 years older than his children
-
-    :story_id: US12
     :sprint: 2
     :author: Adam Burbidge
 

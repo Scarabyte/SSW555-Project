@@ -203,23 +203,16 @@ def birth_before_marriage_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
-        print list(tools.iter_marr_and_div_date_pairs(individual))
-        birt_date = tools.get_birth_date(individual)
-        p_marr_date = tools.get_parents_marriage_date(individual)
-        p_div_date = tools.get_parents_divorce_date(individual)
-        if birt_date and p_marr_date and p_div_date:
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict, "parent_div": p_div_date.story_dict}
-            if (p_marr_date.datetime < birt_date.datetime) and (p_div_date.datetime > birt_date.datetime):
-                r["passed"].append(output)
-            else:
-                r["failed"].append(output)
-        if birt_date and p_marr_date:
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_marr": p_marr_date.story_dict}
-            if p_marr_date.datetime < birt_date.datetime:
-                r["passed"].append(output)
-            else:
-                r["failed"].append(output)
+    for family in (tools.family_dict(line) for line in g.find("tag", "FAM")):
+        for child in family["children"]:
+            child_birt_date = tools.get_birth_date(child)
+            if child_birt_date and family["marr_date"]:
+                output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "marr": family["marr_date"].story_dict}
+                passed = (family["marr_date"].datetime < child_birt_date.datetime)
+                if family["div_date"]:
+                    output["div"] = family["div_date"].story_dict
+                    passed = passed and (family["div_date"].datetime > child_birt_date.datetime)
+                r["passed"].append(output) if passed else r["failed"].append(output)
     return r
 
 
@@ -657,5 +650,6 @@ if __name__ == "__main__":
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
-    
-    birth_before_marriage_of_parents(g)
+
+
+

@@ -56,7 +56,7 @@ def project_04(gedcom_file):
                     stories.marriage_before_divorce(gedcom_file),
                     stories.marriage_before_death(gedcom_file),
                     stories.divorce_before_death(gedcom_file)
-        ]
+                    ]
     }
 
 
@@ -79,7 +79,7 @@ def project_06(gedcom_file):
                     stories.marriage_after_14(gedcom_file),
                     stories.no_bigamy(gedcom_file),
                     stories.parents_not_too_old(gedcom_file)
-        ]
+                    ]
     }
 
 

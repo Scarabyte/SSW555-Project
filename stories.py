@@ -240,8 +240,8 @@ def birth_before_death_of_parents(gedcom_file):
                 passed = (child_birt_date.datetime < mother_deat_date.datetime )
                 if child_birt_date and father_deat_date :
                     output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "fatherdeat": father_deat_date.story_dict}
-                    father_age = (father_deat_date.datetime - child_birt_date.datetime).days / 30
-                    passed = (father_age  > 9)  
+                    months_since_fathers_death = (father_deat_date.datetime - child_birt_date.datetime).days / 30
+                    passed = (months_since_fathers_death  > 9)  
                 r["passed"].append(output) if passed else r["failed"].append(output)
     return r
 

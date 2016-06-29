@@ -210,7 +210,7 @@ def get_spouses(individual):
     author: Constantine Davantzis
 
     """
-    return list(iter_spouses)
+    return list(iter_spouses(individual))
 
 
 def iter_children(individual):

@@ -291,21 +291,33 @@ def no_bigamy(gedcom_file):
         marr_dates = tools.get_marriage_dates(individual)
         spouse_list = tools.get_spouses(individual)
         for spouse in spouse_list:
-            s_div_date = tools.get_divorce_date(spouse)
-            s_deat_date = tools.get_death_date(spouse)
-            if s_div_date or s_deat_date:
-                for marr_start in marr_dates:
-                    if marr_start.datetime > s_div_date.datetime:
-                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
-                                  "spouse_div": s_div_date.story_dict}
-                        r["failed"].append(output)
-                    elif marr_start.datetime > s_deat_date.datetime:
-                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
-                                  "spouse_deat": s_deat_date.story_dict}
-                        r["failed"].append(output)
-                    else:
-                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict}
-                        r["passed"].append(output)
+##            s_div_date = tools.get_divorce_date(spouse)
+##            s_deat_date = tools.get_death_date(spouse)
+##            if s_div_date or s_deat_date:
+##                for marr_start in marr_dates:
+##                    if marr_start.datetime > s_div_date.datetime:
+##                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
+##                                  "spouse_div": s_div_date.story_dict}
+##                        r["failed"].append(output)
+##                    elif marr_start.datetime > s_deat_date.datetime:
+##                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
+##                                  "spouse_deat": s_deat_date.story_dict}
+##                        r["failed"].append(output)
+##                    else:
+##                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict}
+##                        r["passed"].append(output)
+            spouse_div_dates = tools.get_divorce_date(spouse)
+            for marr_start in marr_dates:
+                for spouse in spouse_list:
+                    spouse_div_dates = tools.get_divorce_date(spouse)
+                    for s_div_date in spouse_div_dates:
+                        if marr_start.datetime > s_div_date.datetime:
+                            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
+                                      "spouse_div": s_div_date.story_dict}
+                            r["failed"].append(output)
+                            
+            for s_div_date in spouse_div_dates:
+                
 
     # Marriage ends with either divorce or death
     # Get spouse's divorce or death dates
@@ -330,16 +342,32 @@ def parents_not_too_old(gedcom_file):
     # Get individual's birth date
     for individual in gedcom_file.find("tag", "INDI"):
         birt_date = tools.get_birth_date(individual)
-        parent_list = tools.get_parents(individual)
-        for parent in parent_list:
-            parent_birt_date = tools.get_birth_date(parent)
-            parent_age = (parent_birt_date.datetime - birt_date.datetime).days / 365
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_age": parent_age}
-            if parent.children.find_one("tag", "SEX") == "M":
-                r["passed"].append(output) if parent_age < 80 else r["failed"].append(output)
-            else:
-                r["passed"].append(output) if parent_age < 60 else r["failed"].append(output)
-    # Get father and mother's birth dates
+##        parent_list = tools.get_parents(individual)
+##        for parent in parent_list:
+##            parent_birt_date = tools.get_birth_date(parent)
+##            parent_age = (parent_birt_date.datetime - birt_date.datetime).days / 365
+##            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "parent_age": parent_age}
+##            if parent.children.find_one("tag", "SEX") == "M":
+##                r["passed"].append(output) if parent_age < 80 else r["failed"].append(output)
+##            else:
+##                r["passed"].append(output) if parent_age < 60 else r["failed"].append(output)
+##    # Get father and mother's birth dates
+        father = tools.get_father(individual)
+        mother = tools.get_mother(individual)
+        father_birt_date = tools.get_birth_date(father)
+        mother_birt_date = tools.get_birth_date(mother)
+        father_age = (father_birt_date.datetime - child_birt_date.datetime).days / 365
+        mother_age = (mother_birt_date.datetime - child_birt_date.datetime).days / 365
+        output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict,
+                  "father_birt_date": father_birt_date, "father_age": father_age,
+                  "mother_birt_date": mother_birt_date, "mother_age": mother_age}
+        if father_age > 80:
+            r["failed"].append(output)
+        elif mother_age> 60:
+            r["failed"].append(output)
+        else:
+            r["passed"].append(output)
+        
     # Compare dates
     # Repeat for both father and mother of all individuals
     return r

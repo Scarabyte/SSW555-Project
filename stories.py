@@ -230,8 +230,8 @@ def birth_before_death_of_parents(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
-        m_deat_date = tools.get_deat_date(family["mother"])
-        f_deat_date = tools.get_deat_date(family["father"])
+        mother_deat_date = tools.get_deat_date(family["mother"])
+        father_deat_date = tools.get_deat_date(family["father"])
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
         

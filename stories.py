@@ -341,7 +341,7 @@ def parents_not_too_old(gedcom_file):
     # Do things
     # Get individual's birth date
     for individual in gedcom_file.find("tag", "INDI"):
-        birt_date = tools.get_birth_date(individual)
+        child_birt_date = tools.get_birth_date(individual)
 ##        parent_list = tools.get_parents(individual)
 ##        for parent in parent_list:
 ##            parent_birt_date = tools.get_birth_date(parent)
@@ -352,21 +352,18 @@ def parents_not_too_old(gedcom_file):
 ##            else:
 ##                r["passed"].append(output) if parent_age < 60 else r["failed"].append(output)
 ##    # Get father and mother's birth dates
-        father = tools.get_father(individual)
         mother = tools.get_mother(individual)
-        father_birt_date = tools.get_birth_date(father)
+        father = tools.get_father(individual)
         mother_birt_date = tools.get_birth_date(mother)
-        father_age = (father_birt_date.datetime - child_birt_date.datetime).days / 365
+        father_birt_date = tools.get_birth_date(father)
         mother_age = (mother_birt_date.datetime - child_birt_date.datetime).days / 365
-        output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict,
-                  "father_birt_date": father_birt_date, "father_age": father_age,
-                  "mother_birt_date": mother_birt_date, "mother_age": mother_age}
-        if father_age > 80:
-            r["failed"].append(output)
-        elif mother_age> 60:
-            r["failed"].append(output)
-        else:
-            r["passed"].append(output)
+        father_age = (father_birt_date.datetime - child_birt_date.datetime).days / 365
+        
+        output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                  "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
+                  "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
+        
+        r["passed"].append(output) if (mother_age < 60) and (father_age < 80) else r["failed"].append(output)
         
     # Compare dates
     # Repeat for both father and mother of all individuals

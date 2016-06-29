@@ -1,3 +1,4 @@
+
 """
 Story Functions
 """
@@ -228,22 +229,24 @@ def birth_before_death_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
-        parent_list = tools.get_parents(individual)
-        for parent in parent_list:
-            parent_deat_date = tools.get_deat_date(parent)
-            for child in tools.iter_children(individual):
-                child_birt_date = tools.get_birth_date(child)
-                if parent.children.find_one("tag", "SEX") == "F":
-                    output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict,
-                              "deat": parent_deat_date.story_dict}
-                    r["passed"].append(output) if child_birt_date > parent_deat_date else  r["failed"].append(output)
-                else:
-                    father_age = parent_deat_date.datetime.days / 12
-                    output = {"xref_ID": individual.get("xref_ID"), "birt": child_birt_date.story_dict,
-                              "deat": parent_deat_date.story_dict}
-                    r["passed"].append(output) if child_birt_date > father_age else r["failed"].append(output)
+    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
+        for child in family["children"]:
+            child_birt_date = tools.get_birth_date(child)
+        for mother in family["mother"] : 
+            mother_deat_date = tools.get_deat_date(mother)
+        for father in family["father"] : 
+            father_deat_date = tools.get_deat_date(father)
+        
+            if child_birt_date and mother_deat_date :
+                output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "motherdeat": mother_deat_date.story_dict}
+                passed = (child_birt_date.datetime < mother_deat_date.datetime )
+                if child_birt_date and father_deat_date :
+                    output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "fatherdeat": father_deat_date.story_dict}
+                    father_age = 9- ((father_deat_date.datetime).days /  12)
+                    passed = (child_birt_date.datetime < father_age)  
+                r["passed"].append(output) if passed else r["failed"].append(output)
     return r
+
      
 @story("US10")
 def marriage_after_14(gedcom_file):

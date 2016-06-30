@@ -297,7 +297,12 @@ def no_bigamy(gedcom_file):
             # check if datetime of these marriages overlap
             # http://stackoverflow.com/questions/9044084/efficient-date-range-overlap-calculation-in-python
             # http://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap
-            pass
+            
+            # marriages start with marr_date
+            # marriages end with div_date, or (if no div_date) the first deat_date of either spouse
+            # if the marriage hasen't ended then datetime.max is used as the datetime
+			# (to simulate the ending being in the far future)
+            failed = (marr_1["start"]["dt"] <= marr_2["end"]["dt"]) and (marr_1["end"]["dt"] >= marr_2["start"]["dt"])
 
     return r
 

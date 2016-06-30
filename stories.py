@@ -4,9 +4,11 @@ Story Functions
 """
 import tools
 import logging
-from functools import wraps
 
+from functools import wraps
 from datetime import datetime
+from itertools import combinations
+
 import gedcom
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"

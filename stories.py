@@ -292,7 +292,12 @@ def no_bigamy(gedcom_file):
     # Does a second marriage start before the divorce date or death of the other spouse?
 
     for individual in gedcom_file.find("tag", "INDI"):
-        pass
+        # Get all combinations of marriages this individual is or has been in
+        for marr_1, marr_2 in combinations(tools.iter_marriage_timeframe_dict(individual), 2):
+            # check if datetime of these marriages overlap
+            # http://stackoverflow.com/questions/9044084/efficient-date-range-overlap-calculation-in-python
+            # http://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap
+            pass
 
     return r
 

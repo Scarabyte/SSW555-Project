@@ -284,49 +284,6 @@ def no_bigamy(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-##    # Do things
-
-####    for individual in gedcom_file.find("tag", "INDI"):
-####        marr_dates = tools.get_marriage_dates(individual)
-####        spouse_list = tools.get_spouses(individual)
-####        for spouse in spouse_list:
-######            s_div_date = tools.get_divorce_date(spouse)
-######            s_deat_date = tools.get_death_date(spouse)
-######            if s_div_date or s_deat_date:
-######                for marr_start in marr_dates:
-######                    if marr_start.datetime > s_div_date.datetime:
-######                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
-######                                  "spouse_div": s_div_date.story_dict}
-######                        r["failed"].append(output)
-######                    elif marr_start.datetime > s_deat_date.datetime:
-######                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
-######                                  "spouse_deat": s_deat_date.story_dict}
-######                        r["failed"].append(output)
-######                    else:
-######                        output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict}
-######                        r["passed"].append(output)
-####            spouse_div_dates = tools.get_divorce_date(spouse)
-####            for marr_start in marr_dates:
-####                for spouse in spouse_list:
-####                    spouse_div_dates = tools.get_divorce_date(spouse)
-####                    for s_div_date in spouse_div_dates:
-####                        if marr_start.datetime > s_div_date.datetime:
-####                            output = {"xref_ID": individual.get("xref_ID"), "marr": marr_start.story_dict,
-####                                      "spouse_div": s_div_date.story_dict}
-####                            r["failed"].append(output)
-####                            
-####            for s_div_date in spouse_div_dates:
-####
-##    for individual in gedcom_file.find("tag", "INDI"):
-##        marr_start_dates = tools.get_marriage_dates(individual)
-##        spouse_list = tools.get_spouses(individual)
-##        # Does a second marriage start before divorce or death of this spouse?
-##        for spouse in spouse_list:
-
-    
-#    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
-#        # If the family ends in divorce
-#        if family
 
     # Get individual's marriage start dates
     # Marriage ends with either divorce or death

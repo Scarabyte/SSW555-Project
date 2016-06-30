@@ -230,18 +230,19 @@ def birth_before_death_of_parents(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
-        mother_deat_date = tools.get_deat_date(family["mother"])
-        father_deat_date = tools.get_deat_date(family["father"])
+        mother_deat_date = tools.get_death_date(family["wife"])
+        father_deat_date = tools.get_death_date(family["husb"])
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
         
             if child_birt_date and mother_deat_date :
                 output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "motherdeat": mother_deat_date.story_dict}
-                passed = (child_birt_date.datetime < mother_deat_date.datetime )
-                if child_birt_date and father_deat_date :
-                    output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "fatherdeat": father_deat_date.story_dict}
+                passed = (child_birt_date.datetime < mother_deat_date.datetime)
+                if  father_deat_date :
+                    output["fatherdeat"] = father_deat_date.story_dict
+                    #output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict, "fatherdeat": father_deat_date.story_dict}
                     months_since_fathers_death = (father_deat_date.datetime - child_birt_date.datetime).days / 30
-                    passed = (months_since_fathers_death  > 9)  
+                    passed = passed and (months_since_fathers_death > 9)  
                 r["passed"].append(output) if passed else r["failed"].append(output)
     return r
 

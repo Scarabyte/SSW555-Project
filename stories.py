@@ -261,7 +261,6 @@ def marriage_after_14(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
-        Family = tools.iter_family_dict(individual)
         marr_dates = tools.get_marriage_dates(individual)
         spouse_list = tools.get_spouses(individual)
         for spouse in spouse_list:
@@ -272,11 +271,6 @@ def marriage_after_14(gedcom_file):
                 passed = (age > 14)
                 r["passed"].append(output) if passed else r["failed"].append(output)
     return r
-
-           
-           
-           
-           
 
 
 @story("US11")

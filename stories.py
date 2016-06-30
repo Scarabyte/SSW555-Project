@@ -285,7 +285,7 @@ def no_bigamy(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 ##    # Do things
-##    # Get individual's marriage start dates
+
 ####    for individual in gedcom_file.find("tag", "INDI"):
 ####        marr_dates = tools.get_marriage_dates(individual)
 ####        spouse_list = tools.get_spouses(individual)
@@ -328,9 +328,15 @@ def no_bigamy(gedcom_file):
 #        # If the family ends in divorce
 #        if family
 
+    # Get individual's marriage start dates
     # Marriage ends with either divorce or death
-    # Get spouse's divorce or death dates
+    # Get spouse's divorce date
+    # If spouse has no divorce date, get spouse death date
     # Does a second marriage start before the divorce date or death of the other spouse?
+
+    for individual in gedcom_file.find("tag", "INDI"):
+        pass
+
     return r
 
 

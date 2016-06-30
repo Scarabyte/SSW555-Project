@@ -303,6 +303,11 @@ def no_bigamy(gedcom_file):
             # if the marriage hasen't ended then datetime.max is used as the datetime
 			# (to simulate the ending being in the far future)
             failed = (marr_1["start"]["dt"] <= marr_2["end"]["dt"]) and (marr_1["end"]["dt"] >= marr_2["start"]["dt"])
+            # Don't include dt in user story
+            # https://docs.python.org/2/tutorial/datastructures.html
+            marr_1["start"].pop("dt"), marr_1["end"].pop("dt"), marr_2["start"].pop("dt"), marr_2["end"].pop("dt")
+            output =  {"marr_1":marr_1, "marr_2": marr_2}
+            r["failed"].append(output) if failed else r["passed"].append(output)
 
     return r
 

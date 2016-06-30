@@ -259,17 +259,18 @@ def marriage_after_14(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
-       Family = tools.iter_family_dict(individual)
-       marr_dates = tools.get_marriage_dates(individual)
-       spouse_list = tools.get_spouses(individual)
-       for spouse in spouse_list:
-           birth_date = tools.get_birth_date(spouse)
-           if marr_dates and birth_date :
-                    output = {"xref_ID": child.get("xref_ID"), "birt": birth_date.story_dict, "marr_date": marr_dates.story_dict}
-                    age = (birth_date.datetime).days / 30
-                    passed = (age  > 14)  
-            r["passed"].append(output) if passed else r["failed"].append(output)
+        Family = tools.iter_family_dict(individual)
+        marr_dates = tools.get_marriage_dates(individual)
+        spouse_list = tools.get_spouses(individual)
+        for spouse in spouse_list:
+            birth_date = tools.get_birth_date(spouse)
+            if marr_dates and birth_date :
+                output = {"xref_ID": child.get("xref_ID"), "birt": birth_date.story_dict, "marr_date": marr_dates.story_dict}
+                age = (marr_dates.datetime - birth_date.datetime).days / 365
+                passed = (age > 14)
+                r["passed"].append(output) if passed else r["failed"].append(output)
     return r
 
            

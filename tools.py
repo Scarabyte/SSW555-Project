@@ -175,6 +175,51 @@ def iter_family_dict(individual):
         yield d
 
 
+def iter_marriage_timeframe_dict(individual):
+    """
+    TODO: write docstring
+
+    # check if datetime of these marriages overlap
+    # marriages start with marr_date
+    # marriages end with div_date, or the first deat_date of either spouse
+    # if the marriage hasen't ended datetime.max is used as the datetime (to replicate the ending being in the future)
+
+    author: Constantine Davantzis
+
+    :param individual:
+    :return:
+    """
+    for family in iter_family_dict(individual):
+        marr_date = family["marr_date"]
+        div_date = family["div_date"]
+        wife_deat_date = get_death_date(family["wife"])
+        husb_deat_date = get_death_date(family["husb"])
+        if marr_date:
+            start_ln, start_val, start_dt = marr_date.ln, marr_date.val, marr_date.datetime
+            if div_date:
+                end_reason = "div"
+                end_ln, end_val, end_dt = div_date.ln, div_date.val, div_date.datetime
+            elif wife_deat_date and not husb_deat_date:
+                end_reason = "wife_deat"
+                end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val,  wife_deat_date.datetime
+            elif husb_deat_date and not wife_deat_date:
+                end_reason = "husb_deat"
+                end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val,  husb_deat_date.datetime
+            elif husb_deat_date and wife_deat_date:
+                if husb_deat_date.datetime < wife_deat_date.datetime:
+                    end_reason = "husb_deat"
+                    end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val,  husb_deat_date.datetime
+                else:
+                    end_reason = "wife_deat"
+                    end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val,  wife_deat_date.datetime
+            else:
+                end_reason = "Not Ended"
+                end_ln, end_val, end_dt = None, None, datetime.max
+
+            yield {"start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
+                   "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}
+                   }
+
 def iter_parent_family_dict(individual):
     """ iterate through a list of dictionaries with family information for each family individual is a child of
 

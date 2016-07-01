@@ -335,21 +335,27 @@ def parents_not_too_old(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
+        if individual["xref_ID"] == "@I4@":
+            print list(tools.iter_families_child_of(individual))
         # Get individual's birth date
-        child_birt_date = tools.get_birth_date(individual)
+        #child_birt_date = tools.get_birth_date(individual)
         # Get father and mother's birth dates
-        mother = tools.get_mother(individual)
-        father = tools.get_father(individual)
-        mother_birt_date = tools.get_birth_date(mother)
-        father_birt_date = tools.get_birth_date(father)
-        mother_age = (mother_birt_date.datetime - child_birt_date.datetime).days / 365
-        father_age = (father_birt_date.datetime - child_birt_date.datetime).days / 365
+        #mother = tools.get_mother(individual)
+        #father = tools.get_father(individual)
+        #if mother is None:
+        #    print individual
+        #mother_birt_date = tools.get_birth_date(mother)
+        #father_birt_date = tools.get_birth_date(father)
+        #print father
+        #print mother
+        #mother_age = (mother_birt_date.datetime - child_birt_date.datetime).days / 365
+        #father_age = (father_birt_date.datetime - child_birt_date.datetime).days / 365
+        #
+        #output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+        #          "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
+        #          "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
         
-        output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
-                  "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
-                  "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
-        
-        r["passed"].append(output) if (mother_age < 60) and (father_age < 80) else r["failed"].append(output)
+        #r["passed"].append(output) if (mother_age < 60) and (father_age < 80) else r["failed"].append(output)
         
     return r
 
@@ -658,11 +664,11 @@ if __name__ == "__main__":
     import json 
     g = gedcom.File()
 
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified.ged"
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
     try:
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
-
+    print no_bigamy(g)
 

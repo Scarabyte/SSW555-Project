@@ -224,7 +224,7 @@ def birth_before_death_of_parents(gedcom_file):
     """ Child should be born before death of mother and before 9 months after death of father
     
     :sprint: 2
-    :author: vibharavi
+    :author: vibha ravi
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File

@@ -248,7 +248,8 @@ def birth_before_death_of_parents(gedcom_file):
                 r["passed"].append(output) if passed else r["failed"].append(output)
     return r
 
-     
+  
+        
 @story("US10")
 def marriage_after_14(gedcom_file):
     """ Marriage should be at least 14 years after birth of both spouses
@@ -261,16 +262,22 @@ def marriage_after_14(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
-        marr_dates = tools.get_marriage_dates(individual)
-        spouse_list = tools.get_spouses(individual)
-        for spouse in spouse_list:
-            birth_date = tools.get_birth_date(spouse)
-            if marr_dates and birth_date :
-                output = {"xref_ID": child.get("xref_ID"), "birt": birth_date.story_dict, "marr_date": marr_dates.story_dict}
-                age = (marr_dates.datetime - birth_date.datetime).days / 365
-                passed = (age > 14)
-                r["passed"].append(output) if passed else r["failed"].append(output)
+    #For each family, check if the difference between marriage and birth dates of both spouses is more than 14 years
+    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
+        couple = []
+        couple.append(family["husb"])        
+        couple.append(family["wife"])
+        marr_date = family["marr_date"]
+        
+        for person in couple:
+            birth_date = tools.get_birth_date(person)
+            passed = False
+            output = {"xref_ID": person.get("xref_ID")}
+            if marr_date and birth_date :
+                output = {"xref_ID": person.get("xref_ID"), "birt": birth_date.story_dict, "marr_date": marr_date.story_dict}
+                age_during_marriage = (marr_date.datetime - birth_date.datetime).days / 365
+                passed = (age_during_marriage > 14)
+            r["passed"].append(output) if passed else r["failed"].append(output)
     return r
 
 

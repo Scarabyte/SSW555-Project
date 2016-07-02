@@ -227,13 +227,7 @@ class File:
             print gedcom_file.individuals
 
         """
-        results = []
-        for line in self.find("tag", "INDI"):
-            xref = line.get("xref_ID")
-            name = line.children.find_one("tag", "NAME").get('line_value')
-            if xref and name:
-                results.append((xref, name.replace("/", "")))
-        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
+        return self.find("tag", "INDI")
 
     @property
     def families(self):
@@ -248,18 +242,7 @@ class File:
             print gedcom_file.families
 
         """
-        results = []
-        # The individuals ordered dictionary will be used to get the HUSB/WIFE name from there xref ID
-        individuals = self.individuals
-        for line in self.find("tag", "FAM"):
-            fam_xref = line.get("xref_ID")
-            husb_xref = line.children.find_one("tag", "HUSB").get('line_value')
-            wife_xref = line.children.find_one("tag", "WIFE").get('line_value')
-            husb_name = individuals.get(husb_xref)
-            wife_name = individuals.get(wife_xref)
-            results.append((fam_xref, {"husband": {"xref": husb_xref, "name": husb_name},
-                                       "wife": {"xref": wife_xref, "name": wife_name}}))
-        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
+        return [tools.family_dict(line) for line in self.find("tag", "FAM")]
 
 class SubFile(File):
     """GEDCOM SubFile Class

@@ -337,24 +337,60 @@ def parents_not_too_old(gedcom_file):
     for individual in gedcom_file.find("tag", "INDI"):
         # Get individual's birth date
         child_birt_date = tools.get_birth_date(individual)
-        # Get father and mother's birth dates
-        mother_age, father_age = 0, 0
-        mother = tools.get_mother(individual)
-        father = tools.get_father(individual)
-        if mother:
-            mother_birt_date = tools.get_birth_date(mother)
-            mother_age = (child_birt_date.datetime - mother_birt_date.datetime).days / 365
-        if father:
-            father_birt_date = tools.get_birth_date(father)
-            father_age = (child_birt_date.datetime - father_birt_date.datetime).days / 365
-        
-        output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
-                  "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
-                  "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
-        
-        r["passed"].append(output) if (mother_age < 60) and (father_age < 80) \
-                                   and (mother_age > 0) and (father_age > 0) \
-                                   else r["failed"].append(output)
+        if child_birt_date:
+            print "~AB~ ", child_birt_date
+            # Get father and mother's birth dates
+            mother_age, father_age = 0, 0
+            mother_birt_date, father_birt_date = None, None
+            mother = tools.get_mother(individual)
+            father = tools.get_father(individual)
+            if mother:
+                mother_birt_date = tools.get_birth_date(mother)
+                if mother_birt_date:
+                    mother_age = (child_birt_date.datetime - mother_birt_date.datetime).days / 365
+            if father:
+                father_birt_date = tools.get_birth_date(father)
+                if father_birt_date:
+                    father_age = (child_birt_date.datetime - father_birt_date.datetime).days / 365
+
+            if mother_birt_date and father_birt_date:
+                if mother is None and father is None:
+                    output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                              "father_birt_date": None, "father_age": None,
+                              "mother_birt_date": None, "mother_age": None}
+                elif mother is None:
+                    output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                              "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
+                              "mother_birt_date": None, "mother_age": None}
+                elif father is None:
+                    output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                              "father_birt_date": None, "father_age": None,
+                              "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
+                else:
+                    output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                              "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
+                              "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
+
+            elif mother_birt_date is None and father_birt_date:
+                output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                          "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
+                          "mother_birt_date": None, "mother_age": None}
+
+            elif father_birt_date is None and mother_birt_date:
+                output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                          "father_birt_date": None, "father_age": None,
+                          "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
+            else:
+                output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
+                          "father_birt_date": None, "father_age": None,
+                          "mother_birt_date": None, "mother_age": None}
+            
+            r["passed"].append(output) if (mother_age < 60) and (father_age < 80) \
+                                       and (mother_age > 0) and (father_age > 0) \
+                                       else r["failed"].append(output)
+        else:
+            output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": "Unknown"}
+            r["failed"].append(output)
         
     return r
 

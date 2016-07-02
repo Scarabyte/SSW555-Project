@@ -19,6 +19,16 @@ def human_sort(s, _re=re.compile('([0-9]+)')):
         return s
 
 
+def years_between(a, b):
+    """
+
+    :param a:
+    :param b:
+    :return:
+    """
+    return abs(round(float((a - b).days) / 365, 2))
+
+
 def parse_date(s):
     """
     parse linedate string into datetime object

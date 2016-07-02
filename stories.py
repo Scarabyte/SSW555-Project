@@ -1,11 +1,9 @@
-
 """
 Story Functions
 """
 import tools
 import logging
-
-from functools import wraps
+import sys
 from datetime import datetime
 from itertools import combinations
 
@@ -39,7 +37,7 @@ def story(id_):
     return story_decorator
 
 
-@story("US01")
+@story("Error US01")
 def dates_before_current_date(gedcom_file):
     """ Dates (birth, marriage, divorce, death) should not be after the current date
     
@@ -50,17 +48,17 @@ def dates_before_current_date(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    # TODO: provide info about current date.
     r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
         parent = date.parent
-        xref_ID = parent.parent.get("xref_ID") if type(parent) is gedcom.Line else None
-        output = {"xref_ID": xref_ID, "tag": parent.get("tag"), "date": date.story_dict}
+        xref_id = parent.parent.get("xref_ID") if type(parent) is gedcom.Line else None
+        output = {"xref_ID": xref_id, "tag": parent.get("tag"), "date": date.story_dict,
+                  'current_date': datetime.now().strftime("%d %b %Y").upper()}
         r["passed"].append(output) if date.datetime < datetime.now() else r["failed"].append(output)
     return r
 
 
-@story("US02")
+@story("Error US02")
 def birth_before_marriage(gedcom_file):
     """ Birth should occur before marriage of an individual
     
@@ -81,7 +79,7 @@ def birth_before_marriage(gedcom_file):
     return r
 
 
-@story("US03")
+@story("Error US03")
 def birth_before_death(gedcom_file):
     """ Birth should occur before death of an individual
 
@@ -102,7 +100,7 @@ def birth_before_death(gedcom_file):
     return r
 
 
-@story("US04")
+@story("Anomaly US04")
 def marriage_before_divorce(gedcom_file):
     """ Marriage should occur before divorce of spouses, and divorce can only occur after marriage
     
@@ -123,7 +121,7 @@ def marriage_before_divorce(gedcom_file):
     return r
 
 
-@story("US05")
+@story("Error US05")
 def marriage_before_death(gedcom_file):
     """ Marriage should occur before death of either spouse
 
@@ -144,7 +142,7 @@ def marriage_before_death(gedcom_file):
     return r
 
 
-@story("US06")
+@story("Error US06")
 def divorce_before_death(gedcom_file):
     """ Divorce can only occur before death of both spouses
     
@@ -165,9 +163,10 @@ def divorce_before_death(gedcom_file):
     return r
 
 
-@story("US07")
+@story("Error US07")
 def less_then_150_years_old(gedcom_file):
-    """ Death should be less than 150 years after birth for dead people, and current date should be less than 150 years after birth for all living people
+    """ Death should be less than 150 years after birth for dead people, and
+        current date should be less than 150 years after birth for all living people
     
     :sprint: 2
     :author: Constantine Davantzis
@@ -176,23 +175,23 @@ def less_then_150_years_old(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    # TODO: provide info about current date.
     r = {"passed": [], "failed": []}
     for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
-        if birt_date and deat_date:
-            age = tools.years_between(birt_date.datetime, deat_date.datetime)
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "deat": deat_date.story_dict, "age": age}
-            r["passed"].append(output) if age < 150 else r["failed"].append(output)
-        elif birt_date:
-            age = tools.years_between(birt_date.datetime, datetime.now())
-            output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "age": age}
-            r["passed"].append(output) if age < 150 else r["failed"].append(output)
+        if birt_date:
+            if deat_date:
+                age = tools.years_between(birt_date.datetime, deat_date.datetime)
+                output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "deat": deat_date.story_dict, "age": age}
+                r["passed"].append(output) if age < 150 else r["failed"].append(output)
+            else:
+                age = tools.years_between(birt_date.datetime, datetime.now())
+                output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "age": age}
+                r["passed"].append(output) if age < 150 else r["failed"].append(output)
     return r
 
 
-@story("US08")
+@story("Anomaly US08")
 def birth_before_marriage_of_parents(gedcom_file):
     """ Child should be born after marriage of parents (and before their divorce)
     
@@ -217,7 +216,7 @@ def birth_before_marriage_of_parents(gedcom_file):
     return r
 
 
-@story("US09")
+@story("Error US09")
 def birth_before_death_of_parents(gedcom_file):
     """ Child should be born before death of mother and before 9 months after death of father
     
@@ -246,7 +245,7 @@ def birth_before_death_of_parents(gedcom_file):
     return r
 
 
-@story("US10")
+@story("Anomaly US10")
 def marriage_after_14(gedcom_file):
     """ Marriage should be at least 14 years after birth of both spouses
     
@@ -272,7 +271,7 @@ def marriage_after_14(gedcom_file):
     return r
 
 
-@story("US11")
+@story("Anomaly US11")
 def no_bigamy(gedcom_file):
     """ Marriage should not occur during marriage to another spouse
 
@@ -298,7 +297,7 @@ def no_bigamy(gedcom_file):
     return r
 
 
-@story("US12")
+@story("Anomaly US12")
 def parents_not_too_old(gedcom_file):
     """ Mother should be less than 60 years older than her children and
         father should be less than 80 years older than his children
@@ -633,11 +632,24 @@ if __name__ == "__main__":
     import json 
     g = gedcom.File()
 
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified.ged"
+    fname = "Test_Files/try.ged"
     try:
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
+    # Sprint 1
+    dates_before_current_date(g)
+    birth_before_marriage(g)
+    birth_before_death(g)
+    marriage_before_divorce(g)
+    marriage_before_death(g)
+    divorce_before_death(g)
 
-
+    # Sprint 2
+    less_then_150_years_old(g)
+    birth_before_marriage_of_parents(g)
+    birth_before_death_of_parents(g)
+    marriage_after_14(g)
+    no_bigamy(g)
+    parents_not_too_old(g)

@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 import sys
 from itertools import ifilter
+import gedcom
 
 def human_sort(s, _re=re.compile('([0-9]+)')):
     """
@@ -41,8 +42,11 @@ def get_birth_date(individual):
 
     author: Constantine Davantzis
     """
-    birth = individual.children.find_one("tag", "BIRT")
-    return birth.children.find_one('tag', 'DATE') if birth else None
+    if type(individual) is gedcom.Line:
+        birth = individual.children.find_one("tag", "BIRT")
+        return birth.children.find_one('tag', 'DATE') if birth else None
+    else:
+        raise TypeError("individual should be a gedcom.Line instance")
 
 
 def get_death_date(individual):

@@ -216,6 +216,16 @@ class File:
 
     @property
     def individuals(self):
+        # Todo: Write Docstring
+        return self.find("tag", "INDI")
+
+    @property
+    def families(self):
+        # Todo: Write Docstring
+        return [tools.family_dict(line) for line in self.find("tag", "FAM")]
+
+    @property
+    def p3_individuals(self):
         """ Unique identifiers and names of each of the individuals in order by their unique identifiers.
 
         :note: The code used for stories will be similar to the code that makes up this method.
@@ -227,10 +237,16 @@ class File:
             print gedcom_file.individuals
 
         """
-        return self.find("tag", "INDI")
+        results = []
+        for line in self.find("tag", "INDI"):
+            xref = line.get("xref_ID")
+            name = line.children.find_one("tag", "NAME").get('line_value')
+            if xref and name:
+                results.append((xref, name.replace("/", "")))
+        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
     @property
-    def families(self):
+    def p3_families(self):
         """ unique identifiers and names of the husbands and wives, in order by unique family identifiers.
 
         :note: The code used for stories will be similar to the code that makes up this method.
@@ -242,7 +258,19 @@ class File:
             print gedcom_file.families
 
         """
-        return [tools.family_dict(line) for line in self.find("tag", "FAM")]
+        results = []
+        # The individuals ordered dictionary will be used to get the HUSB/WIFE name from there xref ID
+        individuals = self.p3_individuals
+        for line in self.find("tag", "FAM"):
+            fam_xref = line.get("xref_ID")
+            husb_xref = line.children.find_one("tag", "HUSB").get('line_value')
+            wife_xref = line.children.find_one("tag", "WIFE").get('line_value')
+            husb_name = individuals.get(husb_xref)
+            wife_name = individuals.get(wife_xref)
+            results.append((fam_xref, {"husband": {"xref": husb_xref, "name": husb_name},
+                                       "wife": {"xref": wife_xref, "name": wife_name}}))
+        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
+
 
 class SubFile(File):
     """GEDCOM SubFile Class

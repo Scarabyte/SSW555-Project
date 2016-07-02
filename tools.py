@@ -19,16 +19,6 @@ def human_sort(s, _re=re.compile('([0-9]+)')):
         return s
 
 
-def years_between(a, b):
-    """
-
-    :param a:
-    :param b:
-    :return:
-    """
-    return abs(round(float((a - b).days) / 365, 2))
-
-
 def parse_date(s):
     """
     parse linedate string into datetime object
@@ -39,6 +29,16 @@ def parse_date(s):
         except ValueError:
             pass
     raise ValueError("Unsupported Date Format")
+
+
+def years_between(a, b):
+    """
+
+    :param a:
+    :param b:
+    :return:
+    """
+    return abs(round(float((a - b).days) / 365, 2))
 
 
 def get_birth_date(individual):
@@ -231,8 +231,8 @@ def iter_marriage_timeframe_dict(individual):
                 end_ln, end_val, end_dt = None, None, datetime.max
 
             yield {"start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
-                   "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}
-                   }
+                   "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}}
+
 
 def iter_parent_family_dict(individual):
     """ iterate through a list of dictionaries with family information for each family individual is a child of

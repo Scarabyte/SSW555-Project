@@ -29,11 +29,11 @@ def project_03(gedcom_file):
 
     """
     print " - Individuals - "
-    for individual in gedcom_file.individuals.iteritems():
+    for individual in gedcom_file.p3_individuals.iteritems():
         print individual
     print
     print " - Families - "
-    for family in gedcom_file.families.iteritems():
+    for family in gedcom_file.p3_families.iteritems():
         print family
 
 
@@ -88,7 +88,7 @@ if __name__ == "__main__":
 
     # Request file name from user
     fname = raw_input('Enter the file name to open: ')
-
+    # fname = "Test_Files/try.ged"
     try:
         g.read_file(fname)
     except IOError as e:
@@ -96,6 +96,6 @@ if __name__ == "__main__":
 
     try:
         with open('project_06_results.json', 'w') as outfile:
-            json.dump(project_06(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+            json.dump(project_03(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))

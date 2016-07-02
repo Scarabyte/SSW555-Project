@@ -72,7 +72,7 @@ def birth_before_marriage(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         marr_date = tools.get_marriage_date(individual)
         if birt_date and marr_date:
@@ -93,7 +93,7 @@ def birth_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
         if birt_date and deat_date:
@@ -114,7 +114,7 @@ def marriage_before_divorce(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for individual in gedcom_file.individuals:
         div_date = tools.get_divorce_date(individual)
         marr_date = tools.get_marriage_date(individual)
         if div_date and marr_date:
@@ -135,7 +135,7 @@ def marriage_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for individual in gedcom_file.individuals:
         marr_date = tools.get_marriage_date(individual)
         deat_date = tools.get_death_date(individual)
         if marr_date and deat_date:
@@ -156,7 +156,7 @@ def divorce_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for individual in gedcom_file.individuals:
         div_date = tools.get_divorce_date(individual)
         deat_date = tools.get_death_date(individual)
         if div_date and deat_date:
@@ -178,7 +178,7 @@ def less_then_150_years_old(gedcom_file):
     """
     # TODO: provide info about current date.
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
         if birt_date and deat_date:
@@ -204,7 +204,7 @@ def birth_before_marriage_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
+    for family in gedcom_file.families:
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
             if child_birt_date and family["marr_date"]:
@@ -229,12 +229,11 @@ def birth_before_death_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
+    for family in gedcom_file.families:
         mother_deat_date = tools.get_death_date(family["wife"])
         father_deat_date = tools.get_death_date(family["husb"])
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
-
             if child_birt_date and mother_deat_date:
                 output = {"xref_ID": child.get("xref_ID"), "birt": child_birt_date.story_dict,
                           "motherdeat": mother_deat_date.story_dict}
@@ -259,21 +258,17 @@ def marriage_after_14(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    #For each family, check if the difference between marriage and birth dates of both spouses is more than 14 years
-    for family in (tools.family_dict(line) for line in gedcom_file.find("tag", "FAM")):
-        couple = []
-        couple.append(family["husb"])        
-        couple.append(family["wife"])
-        marr_date = family["marr_date"]
-        for person in couple:
-            birth_date = tools.get_birth_date(person)
-            passed = False
-            output = {"xref_ID": person.get("xref_ID")}
-            if marr_date and birth_date :
-                output = {"xref_ID": person.get("xref_ID"), "birt": birth_date.story_dict, "marr_date": marr_date.story_dict}
-                age_during_marriage = (marr_date.datetime - birth_date.datetime).days / 365
-                passed = (age_during_marriage > 14)
-            r["passed"].append(output) if passed else r["failed"].append(output)
+    for family in gedcom_file.families:
+        if family["marr_date"] is not None:
+            w_birt_date = tools.get_birth_date(family["wife"])
+            h_birt_date = tools.get_birth_date(family["husb"])
+            w_marr_age = tools.years_between(family["marr_date"].datetime, w_birt_date.datetime) if w_birt_date else None
+            h_marr_age = tools.years_between(family["marr_date"].datetime, h_birt_date.datetime) if h_birt_date else None
+            output = {"wife_birt_date": w_birt_date.story_dict if w_birt_date else None,
+                      "husb_birt_date": h_birt_date.story_dict if h_birt_date else None,
+                      "wife_marriage_age": w_marr_age, "husb_marr_age": h_marr_age}
+            r["passed"].append(output) if ((w_marr_age is None) or (w_marr_age > 14)) and (
+                (h_marr_age is None) or (h_marr_age > 14)) else r["failed"].append(output)
     return r
 
 

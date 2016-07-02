@@ -182,11 +182,12 @@ def less_then_150_years_old(gedcom_file):
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
         if birt_date and deat_date:
-            age = (deat_date.datetime - birt_date.datetime).days / 365
+            age = tools.years_between(birt_date.datetime, deat_date.datetime)
             output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "deat": deat_date.story_dict, "age": age}
             r["passed"].append(output) if age < 150 else r["failed"].append(output)
         elif birt_date:
-            age = (datetime.now() - birt_date.datetime).days / 365
+            age = tools.years_between(birt_date.datetime, datetime.now())
+            print age
             output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "age": age}
             r["passed"].append(output) if age < 150 else r["failed"].append(output)
     return r

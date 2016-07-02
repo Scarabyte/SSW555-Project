@@ -338,18 +338,23 @@ def parents_not_too_old(gedcom_file):
         # Get individual's birth date
         child_birt_date = tools.get_birth_date(individual)
         # Get father and mother's birth dates
+        mother_age, father_age = 0, 0
         mother = tools.get_mother(individual)
         father = tools.get_father(individual)
-        mother_birt_date = tools.get_birth_date(mother)
-        father_birt_date = tools.get_birth_date(father)
-        mother_age = (mother_birt_date.datetime - child_birt_date.datetime).days / 365
-        father_age = (father_birt_date.datetime - child_birt_date.datetime).days / 365
+        if mother:
+            mother_birt_date = tools.get_birth_date(mother)
+            mother_age = (child_birt_date.datetime - mother_birt_date.datetime).days / 365
+        if father:
+            father_birt_date = tools.get_birth_date(father)
+            father_age = (child_birt_date.datetime - father_birt_date.datetime).days / 365
         
         output = {"xref_ID": individual.get("xref_ID"), "child_birt_date": child_birt_date.story_dict,
                   "father_birt_date": father_birt_date.story_dict, "father_age": father_age,
                   "mother_birt_date": mother_birt_date.story_dict, "mother_age": mother_age}
         
-        r["passed"].append(output) if (mother_age < 60) and (father_age < 80) else r["failed"].append(output)
+        r["passed"].append(output) if (mother_age < 60) and (father_age < 80) \
+                                   and (mother_age > 0) and (father_age > 0) \
+                                   else r["failed"].append(output)
         
     return r
 

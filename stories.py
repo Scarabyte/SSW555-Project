@@ -294,27 +294,18 @@ def no_bigamy(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 
-    # Get individual's marriage start dates
-    # Marriage ends with either divorce or death
-    # Get spouse's divorce date
-    # If spouse has no divorce date, get spouse death date
-    # Does a second marriage start before the divorce date or death of the other spouse?
-
     for individual in gedcom_file.find("tag", "INDI"):
         # Get all combinations of marriages this individual is or has been in
         for marr_1, marr_2 in combinations(tools.iter_marriage_timeframe_dict(individual), 2):
             # check if datetime of these marriages overlap
-            # http://stackoverflow.com/questions/9044084/efficient-date-range-overlap-calculation-in-python
-            # http://stackoverflow.com/questions/325933/determine-whether-two-date-ranges-overlap
             
             # marriages start with marr_date
             # marriages end with div_date, or (if no div_date) the first deat_date of either spouse
-            # if the marriage hasen't ended then datetime.max is used as the datetime
-			# (to simulate the ending being in the far future)
             failed = (marr_1["start"]["dt"] <= marr_2["end"]["dt"]) and (marr_1["end"]["dt"] >= marr_2["start"]["dt"])
+
             # Don't include dt in user story
-            # https://docs.python.org/2/tutorial/datastructures.html
             marr_1["start"].pop("dt"), marr_1["end"].pop("dt"), marr_2["start"].pop("dt"), marr_2["end"].pop("dt")
+
             output =  {"marr_1":marr_1, "marr_2": marr_2}
             r["failed"].append(output) if failed else r["passed"].append(output)
 
@@ -338,7 +329,6 @@ def parents_not_too_old(gedcom_file):
         # Get individual's birth date
         child_birt_date = tools.get_birth_date(individual)
         if child_birt_date:
-            print "~AB~ ", child_birt_date
             # Get father and mother's birth dates
             mother_age, father_age = 0, 0
             mother_birt_date, father_birt_date = None, None

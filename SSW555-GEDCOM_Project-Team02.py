@@ -96,6 +96,6 @@ if __name__ == "__main__":
 
     try:
         with open('project_06_results.json', 'w') as outfile:
-            json.dump(project_03(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+            json.dump(project_06(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))

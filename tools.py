@@ -390,5 +390,33 @@ def get_divorce_date(individual):
                 return divorce.children.find_one('tag', 'DATE')
 
 
+def indi_summary(line):
+    """ Returns the summary for individual
+
+    :param line: The individual or family line
+    :type line: Line
+
+    author: Constantine Davantzis
+
+    """
+    xref = line.get("xref_ID")
+    info = {"name": line.children.find_one("tag", "NAME").get('line_value', "").replace("/", ""),
+            "sex": line.children.find_one("tag", "SEX").get('line_value'),
+            "birth_date": get_birth_date(line).get('line_value')}
+    return xref, info
+
+
+def family_summary(family):
+    """ Returns the summary for family
+
+    author: Constantine Davantzis
+    """
+    xref = family["xref"]
+    info = {"husband": indi_summary(family["husb"]) if family["husb"] else None,
+            "wife": indi_summary(family["wife"]) if family["wife"] else None,
+            "children": [indi_summary(child) for child in family["children"]]}
+    return xref, info
+
+
 if __name__ == "__main__":
     pass

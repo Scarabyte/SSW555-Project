@@ -8,6 +8,7 @@ import logging
 import gedcom
 import stories
 import sys
+
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 __status__ = "Development"
 
@@ -92,7 +93,7 @@ if __name__ == "__main__":
     # Todo: include input filename in output filename
 
     try:
-        fname_out = 'Test_Results/project_03_results.json'
+        fname_out = 'Test_Results/project_03_summary_results.json'
         with open(fname_out, 'w') as outfile:
             json.dump(project_03(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
@@ -103,7 +104,7 @@ if __name__ == "__main__":
         print "Project 03: Successfully saved results to project_03_results.json"
 
     try:
-        fname_out = 'Test_Results/project_04_results.json'
+        fname_out = 'Test_Results/project_04_sprint1_results.json'
         with open(fname_out, 'w') as outfile:
             json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
@@ -114,7 +115,7 @@ if __name__ == "__main__":
         print "Project 04: Successfully saved results to project_04_results.json"
 
     try:
-        fname_out = 'Test_Results/project_06_results.json'
+        fname_out = 'Test_Results/project_06_sprint2_results.json'
         with open(fname_out, 'w') as outfile:
             json.dump(project_06(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
@@ -123,3 +124,4 @@ if __name__ == "__main__":
         sys.exit("Project 06: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
     else:
         print "Project 06: Successfully saved results to project_06_results.json"
+

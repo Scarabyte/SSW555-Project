@@ -32,11 +32,14 @@ def parse_date(s):
 
 
 def years_between(a, b):
-    """
+    """ Calculate the years between two dates
 
-    :param a:
-    :param b:
-    :return:
+    :param a: datetime 1
+    :param b: datetime 2
+
+    :return: years between two dates
+    :rtype: float
+
     """
     return abs(round(float((a - b).days) / 365, 2))
 
@@ -109,7 +112,7 @@ def iter_marriages(individual):
 
 
 def get_marriage_dates(individual):
-    """
+    """ Returns marriage_dates of individual
 
     :param individual: The individual line
     :type individual: Line
@@ -131,7 +134,7 @@ def iter_divorces(individual):
 
 
 def get_divorce_dates(individual):
-    """
+    """ Returns the divorce dates of an individual
 
     :param individual: The individual line
     :type individual: Line
@@ -142,6 +145,14 @@ def get_divorce_dates(individual):
 
 
 def family_dict(family):
+    """ Create dictionary of family info for a family line
+
+    :param family: The family line
+    :type family: Line
+
+    author: Constantine Davantzis
+
+    """
     d = {}
     husb = family.children.find_one('tag', 'HUSB')
     d["husb"] = husb.follow_xref() if husb else None
@@ -175,6 +186,8 @@ def iter_family_dict(individual):
     :param individual: The individual line
     :type individual: Line
 
+    :rtype: dict
+
     author: Constantine Davantzis
     """
     xref_id = individual.get('xref_ID')
@@ -190,18 +203,21 @@ def iter_family_dict(individual):
 
 
 def iter_marriage_timeframe_dict(individual):
-    """
-    TODO: write docstring
+    """ Returns dictionary with information about the start and the end of a marriage.
 
-    # check if datetime of these marriages overlap
-    # marriages start with marr_date
-    # marriages end with div_date, or the first deat_date of either spouse
-    # if the marriage hasen't ended datetime.max is used as the datetime (to replicate the ending being in the future)
+    Logic:
+        * check if datetime of these marriages overlap
+        * marriages start with marr_date
+        * marriages end with div_date, or the first deat_date of either spouse
+        * if the marriage hasen't ended datetime.max is used as the datetime
 
     author: Constantine Davantzis
 
     :param individual:
-    :return:
+    :type individual: Line
+
+    :rtype: dict
+
     """
     for family in iter_family_dict(individual):
         marr_date = family["marr_date"]
@@ -287,7 +303,8 @@ def iter_children(individual):
 
 
 def get_father(individual):
-    """
+    """ Get father of an individual
+
     author: Constantine Davantzis
     """
     for fam in iter_families_child_of(individual):
@@ -296,7 +313,8 @@ def get_father(individual):
 
 
 def get_mother(individual):
-    """
+    """ Get mother of an individual
+
     author: Constantine Davantzis
     """
     for fam in iter_families_child_of(individual):

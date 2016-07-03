@@ -304,27 +304,6 @@ def get_mother(individual):
         return wife.follow_xref() if wife else None
 
 
-def get_parents_marriage_date(individual):
-    """
-    author: Constantine Davantzis
-    """
-    for fam in iter_families_child_of(individual):
-        marr = fam.children.find_one('tag', 'MARR')
-        return marr.children.find_one('tag', 'DATE') if marr else None
-
-
-def get_parents_divorce_date(individual):
-    """
-    author: Constantine Davantzis
-    """
-    for fam in iter_families_child_of(individual):
-        div = fam.children.find_one('tag', 'DIV')
-        return div.children.find_one('tag', 'DATE') if div else None
-
-
-# DEPRECATED Functions to be removed
-
-
 def get_marriage_date(individual):
     """ Return the marriage date line of an individual line
 
@@ -335,6 +314,8 @@ def get_marriage_date(individual):
     :rtype: Line
 
     author: Constantine Davantzis
+
+    NOTE: this function only finds the first FAMS tag, will not work properly with multiple FAMS tags
 
     """
     family_spouse = individual.children.find_one("tag", "FAMS")
@@ -356,6 +337,9 @@ def get_divorce_date(individual):
     :rtype: Line
 
     author: Constantine Davantzis
+
+    NOTE: this function only finds the first FAMS tag, will not work properly with multiple FAMS tags
+
     """
     family_spouse = individual.children.find_one("tag", "FAMS")
     if family_spouse:

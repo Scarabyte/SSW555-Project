@@ -11,8 +11,18 @@ import gedcom
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 
-logging.basicConfig(format="%(levelname)s:%(story_outcome)s - %(story_id)s - %(story_name)-s - %(message)s", level=logging.INFO)
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+fh = logging.FileHandler('stories.log')
+fh.setLevel(logging.INFO)
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+formatter = logging.Formatter('%(levelname)s:%(story_outcome)s - %(story_id)s - %(story_name)-s - %(message)s')
+fh.setFormatter(formatter)
+ch.setFormatter(formatter)
+logger.addHandler(fh)
+logger.addHandler(ch)
 
 
 def log(func):

@@ -61,11 +61,14 @@ def dates_before_current_date(gedcom_file):
     r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
         now = datetime.now()
-        output = {"DATE": {"tag": date.parent.get("tag"), "value": date.story_dict},
-                  "CURRENT_DATE": now.strftime("%d %b %Y").upper()}
+        output = {"date": {"type": date.parent.get("tag"), "value": date.story_dict},
+                  "current_date": now.strftime("%d %b %Y").upper()}
         try:
-            # TODO: include information about INDI or FAM (Depending on Line Type) to match output requirements
-            output["INDI/FAM"] = date.parent.parent.get("xref_ID")
+            pp = date.parent.parent
+            if pp.tag == "INDI":
+                output["individual_id"] = date.parent.parent.get("xref_ID")
+            elif pp.tag == "FAM":
+                output["family_id"] = date.parent.parent.get("xref_ID")
         except AttributeError:
             pass
         r["passed"].append(output) if date.datetime < now else r["failed"].append(output)
@@ -88,9 +91,10 @@ def birth_before_marriage(gedcom_file):
         birt_date = tools.get_birth_date(individual)
         if birt_date:
             for marr_date in tools.get_marriage_dates(individual):
-                # TODO: include information about INDI and FAM to match output requirements
-                output = {"INDI": individual.get("xref_ID"), "FAM": marr_date.parent.parent.get('xref_ID'),
-                          "BIRT": birt_date.story_dict, "MARR": marr_date.story_dict}
+                output = {"individual_id": individual.get("xref_ID"),
+                          "family_id": marr_date.parent.parent.get('xref_ID'),
+                          "birth_date": birt_date.story_dict,
+                          "marriage_date": marr_date.story_dict}
                 r["passed"].append(output) if birt_date.datetime < marr_date.datetime else r["failed"].append(output)
     return r
 
@@ -111,13 +115,14 @@ def birth_before_death(gedcom_file):
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
         if birt_date and deat_date:
-            # TODO: include information about INDI to match output requirements
-            output = {"INDI": individual.get("xref_ID"), "BIRT": birt_date.story_dict, "DEAT": deat_date.story_dict}
+            output = {"individual_id": individual.get("xref_ID"),
+                      "birth_date": birt_date.story_dict,
+                      "death_date": deat_date.story_dict}
             r["passed"].append(output) if birt_date.datetime < deat_date.datetime else r["failed"].append(output)
     return r
 
 
-@story("Anomaly US04")
+@story("Error US04")
 def marriage_before_divorce(gedcom_file):
     """ Marriage should occur before divorce of spouses, and divorce can only occur after marriage
     
@@ -129,14 +134,14 @@ def marriage_before_divorce(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # Todo: switch to family loop
-    for individual in gedcom_file.individuals:
-        div_date = tools.get_divorce_date(individual)
-        marr_date = tools.get_marriage_date(individual)
-        if div_date and marr_date:
-            # TODO: include information about INDI (both wife and husb) and FAM to match output requirements
-            output = {"INDI": individual.get("xref_ID"), "DIV": div_date.story_dict, "MARR": marr_date.story_dict}
-            r["passed"].append(output) if marr_date.datetime < div_date.datetime else r["failed"].append(output)
+    for family in gedcom_file.families:
+        if family["div_date"] and family["marr_date"]:
+            output = {"family_id": family["xref"],
+                      "husband_id": family["husb"].get("xref_ID"),
+                      "wife_id": family["wife"].get("xref_ID"),
+                      "divorce_date": family["div_date"].story_dict,
+                      "marriage_date": family["marr_date"].story_dict}
+            r["passed"].append(output) if family["marr_date"].datetime < family["div_date"].datetime else r["failed"].append(output)
     return r
 
 
@@ -152,13 +157,16 @@ def marriage_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # Todo: switch to family loop
+    # Todo: switch to family loop **to catch multiple marriages
     for individual in gedcom_file.individuals:
         marr_date = tools.get_marriage_date(individual)
         deat_date = tools.get_death_date(individual)
         if marr_date and deat_date:
-            # TODO: include information about INDI (both wife and husb) and FAM to match output requirements
-            output = {"INDI": individual.get("xref_ID"), "MARR": marr_date.story_dict, "DEAT": deat_date.story_dict}
+            output = {"individual_id": individual.get("xref_ID"),
+                      "family_id": next(tools.iter_families_spouse_of(individual)).get("xref_ID"),
+                      "spouse_id": next(tools.iter_spouses(individual)).get("xref_ID"),
+                      "marriage_date": marr_date.story_dict,
+                      "death_date": deat_date.story_dict}
             r["passed"].append(output) if marr_date.datetime < deat_date.datetime else r["failed"].append(output)
     return r
 
@@ -175,13 +183,16 @@ def divorce_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # Todo: switch to family loop
+    # Todo: switch to family loop **to catch multiple marriages
     for individual in gedcom_file.individuals:
         div_date = tools.get_divorce_date(individual)
         deat_date = tools.get_death_date(individual)
         if div_date and deat_date:
-            # TODO: include information about INDI (both wife and husb) and FAM to match output requirements
-            output = {"INDI": individual.get("xref_ID"), "DIV": div_date.story_dict, "DEAT": deat_date.story_dict}
+            output = {"individual_id": individual.get("xref_ID"),
+                      "family_id": next(tools.iter_families_spouse_of(individual)).get("xref_ID"),
+                      "spouse_id": next(tools.iter_spouses(individual)).get("xref_ID"),
+                      "divorce_date": div_date.story_dict,
+                      "death_date": deat_date.story_dict}
             r["passed"].append(output) if div_date.datetime < deat_date.datetime else r["failed"].append(output)
     return r
 
@@ -205,13 +216,17 @@ def less_then_150_years_old(gedcom_file):
         if birt_date:
             if deat_date:
                 age = tools.years_between(birt_date.datetime, deat_date.datetime)
-                # TODO: include information about INDI to match output requirements
-                output = {"INDI": individual.get("xref_ID"), "BIRT": birt_date.story_dict, "DEAT": deat_date.story_dict, "age": age}
+                output = {"individual_id": individual.get("xref_ID"),
+                          "birth_date": birt_date.story_dict,
+                          "death_date": deat_date.story_dict,
+                          "age": age}
                 r["passed"].append(output) if age < 150 else r["failed"].append(output)
             else:
                 age = tools.years_between(birt_date.datetime, datetime.now())
-                # TODO: include information about INDI to match output requirements
-                output = {"xref_ID": individual.get("xref_ID"), "birt": birt_date.story_dict, "age": age}
+                output = {"individual_id": individual.get("xref_ID"),
+                          "birth_date": birt_date.story_dict,
+                          "current_date": datetime.now().strftime("%d %b %Y").upper(),
+                          "age": age}
                 r["passed"].append(output) if age < 150 else r["failed"].append(output)
     return r
 
@@ -232,8 +247,12 @@ def birth_before_marriage_of_parents(gedcom_file):
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
             if child_birt_date and family["marr_date"]:
-                # TODO: include information about CHILD HUSB WIFE and FAM to match output requirements
-                output = {"CHILD": child.get("xref_ID"), "BIRT": child_birt_date.story_dict, "MARR": family["marr_date"].story_dict}
+                output = {"family_id": family["xref"],
+                          "mother_id": family["wife"].get("xref_ID"),
+                          "father_id": family["husb"].get("xref_ID"),
+                          "child_id": child.get("xref_ID"),
+                          "child_birth_date": child_birt_date.story_dict,
+                          "marriage_date": family["marr_date"].story_dict}
                 passed = (family["marr_date"].datetime < child_birt_date.datetime)
                 if family["div_date"]:
                     output["div"] = family["div_date"].story_dict
@@ -258,17 +277,26 @@ def birth_before_death_of_parents(gedcom_file):
         mother_deat_date = tools.get_death_date(family["wife"])
         father_deat_date = tools.get_death_date(family["husb"])
         for child in family["children"]:
+            output = {"family_id": family["xref"],
+                      "mother_id": family["wife"].get("xref_ID"),
+                      "husband_id": family["husb"].get("xref_ID"),
+                      "child_id": child.get("xref_ID")}
             child_birt_date = tools.get_birth_date(child)
-            if child_birt_date and mother_deat_date:
-                # TODO: include information about CHILD HUSB WIFE and FAM to match output requirements
-                output = {"CHILD": child.get("xref_ID"), "BIRT": child_birt_date.story_dict,
-                          "WIFE_DEAT": mother_deat_date.story_dict}
-                passed = (child_birt_date.datetime < mother_deat_date.datetime)
+            if child_birt_date:
+                output["child_birth_date"] = child_birt_date.story_dict
+                b4_moms_death = None
+                b4_9_months_after_dads_death = None
+                if mother_deat_date:
+                    b4_moms_death = child_birt_date.datetime < mother_deat_date.datetime
+                    output["mother_death_date"] = mother_deat_date.story_dict
                 if father_deat_date:
-                    output["HUSB_DEAT"] = father_deat_date.story_dict
-                    months_since_fathers_death = (father_deat_date.datetime - child_birt_date.datetime).days / 30
-                    passed = passed and (months_since_fathers_death > 9)
-                r["passed"].append(output) if passed else r["failed"].append(output)
+                    b4_9_months_after_dads_death = ((father_deat_date.datetime - child_birt_date.datetime).days / 30) > 9
+                    output["husband_death_date"] = father_deat_date.story_dict
+                if ((b4_moms_death is True) or (b4_moms_death is None)) and (
+                            (b4_9_months_after_dads_death is True) or (b4_9_months_after_dads_death is None)):
+                    r["passed"].append(output)
+                else:
+                    r["failed"].append(output)
     return r
 
 
@@ -290,10 +318,13 @@ def marriage_after_14(gedcom_file):
             h_birt_date = tools.get_birth_date(family["husb"])
             w_marr_age = tools.years_between(family["marr_date"].datetime, w_birt_date.datetime) if w_birt_date else None
             h_marr_age = tools.years_between(family["marr_date"].datetime, h_birt_date.datetime) if h_birt_date else None
-            # TODO: include information about HUSB WIFE and FAM to match output requirements
-            output = {"wife_birt_date": w_birt_date.story_dict if w_birt_date else None,
-                      "husb_birt_date": h_birt_date.story_dict if h_birt_date else None,
-                      "wife_marriage_age": w_marr_age, "husb_marr_age": h_marr_age}
+            output = {"family_id": family["xref"],
+                      "wife_id": family["wife"].get("xref_ID"),
+                      "husband_id": family["husb"].get("xref_ID"),
+                      "wife_birth_date": w_birt_date.story_dict if w_birt_date else None,
+                      "husband_birth_date": h_birt_date.story_dict if h_birt_date else None,
+                      "wife_marriage_age": w_marr_age,
+                      "husband_marriage_age": h_marr_age}
             r["passed"].append(output) if ((w_marr_age is None) or (w_marr_age > 14)) and (
                 (h_marr_age is None) or (h_marr_age > 14)) else r["failed"].append(output)
     return r
@@ -320,7 +351,6 @@ def no_bigamy(gedcom_file):
             failed = (marr_1["start"]["dt"] <= marr_2["end"]["dt"]) and (marr_1["end"]["dt"] >= marr_2["start"]["dt"])
             # Don't include dt in user story
             marr_1["start"].pop("dt"), marr_1["end"].pop("dt"), marr_2["start"].pop("dt"), marr_2["end"].pop("dt")
-            # TODO: include information about HUSB WIFE and FAM to match output requirements
             output = {"marr_1": marr_1, "marr_2": marr_2}
             r["failed"].append(output) if failed else r["passed"].append(output)
     return r
@@ -342,17 +372,23 @@ def parents_not_too_old(gedcom_file):
     for family in gedcom_file.families:
         m_birt_date = tools.get_birth_date(family["wife"])
         f_birt_date = tools.get_birth_date(family["husb"])
-        for c_birt_date in filter(None, [tools.get_birth_date(child) for child in family["children"]]):
-            m_yrs_older = tools.years_between(c_birt_date.datetime, m_birt_date.datetime) if m_birt_date else None
-            f_yrs_older = tools.years_between(c_birt_date.datetime, f_birt_date.datetime) if f_birt_date else None
-            # TODO: include information about HUSB WIFE CHILD and FAM to match output requirements
-            output = {"child_birt_date": c_birt_date.story_dict,
-                      "father_birt_date": f_birt_date.story_dict if f_birt_date else None,
-                      "mother_birt_date": m_birt_date.story_dict if m_birt_date else None,
-                      "father_years_older": f_yrs_older, "mother_years_older": m_yrs_older}
+        for child in family["children"]:
+            c_birt_date = tools.get_birth_date(child)
+            if c_birt_date:
+                m_yrs_older = tools.years_between(c_birt_date.datetime, m_birt_date.datetime) if m_birt_date else None
+                f_yrs_older = tools.years_between(c_birt_date.datetime, f_birt_date.datetime) if f_birt_date else None
+                output = {"family_id": family["xref"],
+                          "child_id": child.get("xref_ID"),
+                          "father_id": family["husb"].get("xref_ID"),
+                          "mother_id": family["wife"].get("xref_ID"),
+                          "child_birt_date": c_birt_date.story_dict,
+                          "father_birt_date": f_birt_date.story_dict if f_birt_date else None,
+                          "mother_birt_date": m_birt_date.story_dict if m_birt_date else None,
+                          "father_years_older": f_yrs_older,
+                          "mother_years_older": m_yrs_older}
             try:  # Python 2.7 | (None < 60) and (None < 80) is True
                 r["passed"].append(output) if (m_yrs_older < 60) and (f_yrs_older < 80) else r["failed"].append(output)
-            except TypeError:  # Python 3.0 | (None < 60) and (None < 80) raises TypeError
+            except TypeError:  # Python 3.0l | (None < 60) and (None < 80) raises TypeError
                 r["passed"].append(output) if ((m_yrs_older is None) or (m_yrs_older < 60)) and (
                     (f_yrs_older is None) or (f_yrs_older < 80)) else r["failed"].append(output)
     return r

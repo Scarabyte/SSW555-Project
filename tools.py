@@ -154,6 +154,9 @@ def family_dict(family):
 
     """
     d = {}
+
+    d["xref"] = family.get('xref_ID')
+
     husb = family.children.find_one('tag', 'HUSB')
     d["husb"] = husb.follow_xref() if husb else None
 
@@ -246,7 +249,10 @@ def iter_marriage_timeframe_dict(individual):
                 end_reason = "Not Ended"
                 end_ln, end_val, end_dt = None, None, datetime.max
 
-            yield {"start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
+            yield {"family_id": family["xref"],
+                   "husband_id": family["husb"].get("xref_ID"),
+                   "wife_id": family["wife"].get("xref_ID"),
+                   "start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
                    "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}}
 
 

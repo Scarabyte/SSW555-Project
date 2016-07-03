@@ -8,64 +8,64 @@
                 "failed": [],
                 "passed": [
                     {
-                        "age": 65.61,
-                        "birt": {
+                        "BIRT": {
                             "line_number": 4,
                             "line_value": "3 NOV 1906"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 6,
                             "line_value": "29 MAY 1972"
                         },
-                        "xref_ID": "@I1@"
+                        "INDI": "@I1@",
+                        "age": 65.61
                     },
                     {
-                        "age": 64.04,
-                        "birt": {
+                        "BIRT": {
                             "line_number": 12,
                             "line_value": "1908"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 14,
                             "line_value": "1972"
                         },
-                        "xref_ID": "@I2@"
+                        "INDI": "@I2@",
+                        "age": 64.04
                     },
                     {
-                        "age": 63.51,
-                        "birt": {
+                        "BIRT": {
                             "line_number": 20,
                             "line_value": "14 DEC 1924"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 22,
                             "line_value": "2 JUN 1988"
                         },
-                        "xref_ID": "@I3@"
+                        "INDI": "@I3@",
+                        "age": 63.51
                     },
                     {
-                        "age": 79.87,
-                        "birt": {
+                        "BIRT": {
                             "line_number": 37,
                             "line_value": "21 OCT 1931"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 39,
                             "line_value": "14 AUG 2011"
                         },
-                        "xref_ID": "@I5@"
+                        "INDI": "@I5@",
+                        "age": 79.87
                     },
                     {
-                        "age": 35.02,
-                        "birt": {
+                        "BIRT": {
                             "line_number": 47,
                             "line_value": "1930"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 49,
                             "line_value": "JAN 1965"
                         },
-                        "xref_ID": "@I6@"
+                        "INDI": "@I6@",
+                        "age": 35.02
                     },
                     {
                         "age": 60.05,
@@ -92,16 +92,16 @@
                         "xref_ID": "@I10@"
                     },
                     {
-                        "age": 51.56,
-                        "birt": {
+                        "BIRT": {
                             "line_number": 79,
                             "line_value": "28 FEB 1933"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 81,
                             "line_value": "7 SEP 1984"
                         },
-                        "xref_ID": "@I11@"
+                        "INDI": "@I11@",
+                        "age": 51.56
                     },
                     {
                         "age": 69.43,
@@ -176,65 +176,65 @@
             "output": {
                 "failed": [
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 66,
                             "line_value": "1961"
                         },
-                        "marr": {
+                        "CHILD": "@I9@",
+                        "MARR": {
                             "line_number": 169,
                             "line_value": "27 JAN 1969"
-                        },
-                        "xref_ID": "@I9@"
+                        }
                     }
                 ],
                 "passed": [
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 60,
                             "line_value": "1 JUL 1956"
+                        },
+                        "CHILD": "@I8@",
+                        "MARR": {
+                            "line_number": 176,
+                            "line_value": "1955"
                         },
                         "div": {
                             "line_number": 179,
                             "line_value": "1964"
-                        },
-                        "marr": {
-                            "line_number": 176,
-                            "line_value": "1955"
-                        },
-                        "xref_ID": "@I8@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 141,
                             "line_value": "25 JUN 1974"
                         },
-                        "marr": {
+                        "CHILD": "@I19@",
+                        "MARR": {
                             "line_number": 193,
                             "line_value": "6 NOV 1971"
-                        },
-                        "xref_ID": "@I19@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 119,
                             "line_value": "15 SEP 1980"
                         },
-                        "marr": {
+                        "CHILD": "@I16@",
+                        "MARR": {
                             "line_number": 202,
                             "line_value": "1980"
-                        },
-                        "xref_ID": "@I16@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 127,
                             "line_value": "28 SEP 1982"
                         },
-                        "marr": {
+                        "CHILD": "@I17@",
+                        "MARR": {
                             "line_number": 202,
                             "line_value": "1980"
-                        },
-                        "xref_ID": "@I17@"
+                        }
                     }
                 ]
             }
@@ -246,64 +246,64 @@
                 "failed": [],
                 "passed": [
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 20,
                             "line_value": "14 DEC 1924"
                         },
-                        "fatherdeat": {
+                        "CHILD": "@I3@",
+                        "HUSB_DEAT": {
                             "line_number": 6,
                             "line_value": "29 MAY 1972"
                         },
-                        "motherdeat": {
+                        "WIFE_DEAT": {
                             "line_number": 14,
                             "line_value": "1972"
-                        },
-                        "xref_ID": "@I3@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 37,
                             "line_value": "21 OCT 1931"
                         },
-                        "fatherdeat": {
+                        "CHILD": "@I5@",
+                        "HUSB_DEAT": {
                             "line_number": 6,
                             "line_value": "29 MAY 1972"
                         },
-                        "motherdeat": {
+                        "WIFE_DEAT": {
                             "line_number": 14,
                             "line_value": "1972"
-                        },
-                        "xref_ID": "@I5@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 72,
                             "line_value": "18 MAR 1938"
                         },
-                        "fatherdeat": {
+                        "CHILD": "@I10@",
+                        "HUSB_DEAT": {
                             "line_number": 6,
                             "line_value": "29 MAY 1972"
                         },
-                        "motherdeat": {
+                        "WIFE_DEAT": {
                             "line_number": 14,
                             "line_value": "1972"
-                        },
-                        "xref_ID": "@I10@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 60,
                             "line_value": "1 JUL 1956"
                         },
-                        "fatherdeat": {
+                        "CHILD": "@I8@",
+                        "HUSB_DEAT": {
                             "line_number": 39,
                             "line_value": "14 AUG 2011"
                         },
-                        "motherdeat": {
+                        "WIFE_DEAT": {
                             "line_number": 49,
                             "line_value": "JAN 1965"
-                        },
-                        "xref_ID": "@I8@"
+                        }
                     }
                 ]
             }

@@ -8,283 +8,345 @@
                 "failed": [],
                 "passed": [
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 4,
-                            "line_value": "3 NOV 1906"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 4,
+                                "line_value": "3 NOV 1906"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I1@"
+                        "INDI/FAM": "@I1@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 6,
-                            "line_value": "29 MAY 1972"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DEAT",
+                            "value": {
+                                "line_number": 6,
+                                "line_value": "29 MAY 1972"
+                            }
                         },
-                        "tag": "DEAT",
-                        "xref_ID": "@I1@"
+                        "INDI/FAM": "@I1@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 12,
-                            "line_value": "1908"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 12,
+                                "line_value": "1908"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I2@"
+                        "INDI/FAM": "@I2@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 14,
-                            "line_value": "1972"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DEAT",
+                            "value": {
+                                "line_number": 14,
+                                "line_value": "1972"
+                            }
                         },
-                        "tag": "DEAT",
-                        "xref_ID": "@I2@"
+                        "INDI/FAM": "@I2@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 20,
-                            "line_value": "14 DEC 1924"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 20,
+                                "line_value": "14 DEC 1924"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I3@"
+                        "INDI/FAM": "@I3@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 22,
-                            "line_value": "2 JUN 1988"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DEAT",
+                            "value": {
+                                "line_number": 22,
+                                "line_value": "2 JUN 1988"
+                            }
                         },
-                        "tag": "DEAT",
-                        "xref_ID": "@I3@"
+                        "INDI/FAM": "@I3@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 37,
-                            "line_value": "21 OCT 1931"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 37,
+                                "line_value": "21 OCT 1931"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I5@"
+                        "INDI/FAM": "@I5@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 39,
-                            "line_value": "14 AUG 2011"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DEAT",
+                            "value": {
+                                "line_number": 39,
+                                "line_value": "14 AUG 2011"
+                            }
                         },
-                        "tag": "DEAT",
-                        "xref_ID": "@I5@"
+                        "INDI/FAM": "@I5@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 47,
-                            "line_value": "1930"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 47,
+                                "line_value": "1930"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I6@"
+                        "INDI/FAM": "@I6@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 49,
-                            "line_value": "JAN 1965"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DEAT",
+                            "value": {
+                                "line_number": 49,
+                                "line_value": "JAN 1965"
+                            }
                         },
-                        "tag": "DEAT",
-                        "xref_ID": "@I6@"
+                        "INDI/FAM": "@I6@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 60,
-                            "line_value": "1 JUL 1956"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 60,
+                                "line_value": "1 JUL 1956"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I8@"
+                        "INDI/FAM": "@I8@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 66,
-                            "line_value": "1961"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 66,
+                                "line_value": "1961"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I9@"
+                        "INDI/FAM": "@I9@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 72,
-                            "line_value": "18 MAR 1938"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 72,
+                                "line_value": "18 MAR 1938"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I10@"
+                        "INDI/FAM": "@I10@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 79,
-                            "line_value": "28 FEB 1933"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 79,
+                                "line_value": "28 FEB 1933"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I11@"
+                        "INDI/FAM": "@I11@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 81,
-                            "line_value": "7 SEP 1984"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DEAT",
+                            "value": {
+                                "line_number": 81,
+                                "line_value": "7 SEP 1984"
+                            }
                         },
-                        "tag": "DEAT",
-                        "xref_ID": "@I11@"
+                        "INDI/FAM": "@I11@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 87,
-                            "line_value": "14 FEB 1947"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 87,
+                                "line_value": "14 FEB 1947"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I12@"
+                        "INDI/FAM": "@I12@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 94,
-                            "line_value": "4 SEP 1952"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 94,
+                                "line_value": "4 SEP 1952"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I13@"
+                        "INDI/FAM": "@I13@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 103,
-                            "line_value": "25 AUG 1962"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 103,
+                                "line_value": "25 AUG 1962"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I14@"
+                        "INDI/FAM": "@I14@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 111,
-                            "line_value": "8 JUL 1958"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 111,
+                                "line_value": "8 JUL 1958"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I15@"
+                        "INDI/FAM": "@I15@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 119,
-                            "line_value": "15 SEP 1980"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 119,
+                                "line_value": "15 SEP 1980"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I16@"
+                        "INDI/FAM": "@I16@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 127,
-                            "line_value": "28 SEP 1982"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 127,
+                                "line_value": "28 SEP 1982"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I17@"
+                        "INDI/FAM": "@I17@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 135,
-                            "line_value": "20 APR 1948"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 135,
+                                "line_value": "20 APR 1948"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I18@"
+                        "INDI/FAM": "@I18@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 141,
-                            "line_value": "25 JUN 1974"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "BIRT",
+                            "value": {
+                                "line_number": 141,
+                                "line_value": "25 JUN 1974"
+                            }
                         },
-                        "tag": "BIRT",
-                        "xref_ID": "@I19@"
+                        "INDI/FAM": "@I19@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 169,
-                            "line_value": "27 JAN 1969"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "MARR",
+                            "value": {
+                                "line_number": 169,
+                                "line_value": "27 JAN 1969"
+                            }
                         },
-                        "tag": "MARR",
-                        "xref_ID": "@F3@"
+                        "INDI/FAM": "@F3@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 176,
-                            "line_value": "1955"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "MARR",
+                            "value": {
+                                "line_number": 176,
+                                "line_value": "1955"
+                            }
                         },
-                        "tag": "MARR",
-                        "xref_ID": "@F4@"
+                        "INDI/FAM": "@F4@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 179,
-                            "line_value": "1964"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DIV",
+                            "value": {
+                                "line_number": 179,
+                                "line_value": "1964"
+                            }
                         },
-                        "tag": "DIV",
-                        "xref_ID": "@F4@"
+                        "INDI/FAM": "@F4@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 185,
-                            "line_value": "JUL 1958"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "MARR",
+                            "value": {
+                                "line_number": 185,
+                                "line_value": "JUL 1958"
+                            }
                         },
-                        "tag": "MARR",
-                        "xref_ID": "@F5@"
+                        "INDI/FAM": "@F5@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 193,
-                            "line_value": "6 NOV 1971"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "MARR",
+                            "value": {
+                                "line_number": 193,
+                                "line_value": "6 NOV 1971"
+                            }
                         },
-                        "tag": "MARR",
-                        "xref_ID": "@F6@"
+                        "INDI/FAM": "@F6@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 202,
-                            "line_value": "1980"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "MARR",
+                            "value": {
+                                "line_number": 202,
+                                "line_value": "1980"
+                            }
                         },
-                        "tag": "MARR",
-                        "xref_ID": "@F7@"
+                        "INDI/FAM": "@F7@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 208,
-                            "line_value": "2003"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "MARR",
+                            "value": {
+                                "line_number": 208,
+                                "line_value": "2003"
+                            }
                         },
-                        "tag": "MARR",
-                        "xref_ID": "@F8@"
+                        "INDI/FAM": "@F8@"
                     },
                     {
-                        "current_date": "03 JUL 2016",
-                        "date": {
-                            "line_number": 210,
-                            "line_value": "2014"
+                        "CURRENT_DATE": "03 JUL 2016",
+                        "DATE": {
+                            "tag": "DIV",
+                            "value": {
+                                "line_number": 210,
+                                "line_value": "2014"
+                            }
                         },
-                        "tag": "DIV",
-                        "xref_ID": "@F8@"
+                        "INDI/FAM": "@F8@"
                     }
                 ]
             }
@@ -296,103 +358,124 @@
                 "failed": [],
                 "passed": [
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 37,
                             "line_value": "21 OCT 1931"
                         },
-                        "marr": {
+                        "FAM": "@F3@",
+                        "INDI": "@I5@",
+                        "MARR": {
                             "line_number": 169,
                             "line_value": "27 JAN 1969"
-                        },
-                        "xref_ID": "@I5@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "FAM": "@F4@",
+                        "INDI": "@I5@",
+                        "MARR": {
+                            "line_number": 176,
+                            "line_value": "1955"
+                        }
+                    },
+                    {
+                        "BIRT": {
                             "line_number": 47,
                             "line_value": "1930"
                         },
-                        "marr": {
+                        "FAM": "@F4@",
+                        "INDI": "@I6@",
+                        "MARR": {
                             "line_number": 176,
                             "line_value": "1955"
-                        },
-                        "xref_ID": "@I6@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 72,
                             "line_value": "18 MAR 1938"
                         },
-                        "marr": {
+                        "FAM": "@F5@",
+                        "INDI": "@I10@",
+                        "MARR": {
                             "line_number": 185,
                             "line_value": "JUL 1958"
-                        },
-                        "xref_ID": "@I10@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 79,
                             "line_value": "28 FEB 1933"
                         },
-                        "marr": {
+                        "FAM": "@F5@",
+                        "INDI": "@I11@",
+                        "MARR": {
                             "line_number": 185,
                             "line_value": "JUL 1958"
-                        },
-                        "xref_ID": "@I11@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 87,
                             "line_value": "14 FEB 1947"
                         },
-                        "marr": {
+                        "FAM": "@F6@",
+                        "INDI": "@I12@",
+                        "MARR": {
                             "line_number": 193,
                             "line_value": "6 NOV 1971"
-                        },
-                        "xref_ID": "@I12@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 94,
                             "line_value": "4 SEP 1952"
                         },
-                        "marr": {
+                        "FAM": "@F7@",
+                        "INDI": "@I13@",
+                        "MARR": {
                             "line_number": 202,
                             "line_value": "1980"
-                        },
-                        "xref_ID": "@I13@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 111,
                             "line_value": "8 JUL 1958"
                         },
-                        "marr": {
+                        "FAM": "@F7@",
+                        "INDI": "@I15@",
+                        "MARR": {
                             "line_number": 202,
                             "line_value": "1980"
-                        },
-                        "xref_ID": "@I15@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 135,
                             "line_value": "20 APR 1948"
                         },
-                        "marr": {
+                        "FAM": "@F6@",
+                        "INDI": "@I18@",
+                        "MARR": {
                             "line_number": 193,
                             "line_value": "6 NOV 1971"
-                        },
-                        "xref_ID": "@I18@"
+                        }
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 141,
                             "line_value": "25 JUN 1974"
                         },
-                        "marr": {
+                        "FAM": "@F8@",
+                        "INDI": "@I19@",
+                        "MARR": {
                             "line_number": 208,
                             "line_value": "2003"
-                        },
-                        "xref_ID": "@I19@"
+                        }
                     }
                 ]
             }
@@ -404,70 +487,70 @@
                 "failed": [],
                 "passed": [
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 4,
                             "line_value": "3 NOV 1906"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 6,
                             "line_value": "29 MAY 1972"
                         },
-                        "xref_ID": "@I1@"
+                        "INDI": "@I1@"
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 12,
                             "line_value": "1908"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 14,
                             "line_value": "1972"
                         },
-                        "xref_ID": "@I2@"
+                        "INDI": "@I2@"
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 20,
                             "line_value": "14 DEC 1924"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 22,
                             "line_value": "2 JUN 1988"
                         },
-                        "xref_ID": "@I3@"
+                        "INDI": "@I3@"
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 37,
                             "line_value": "21 OCT 1931"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 39,
                             "line_value": "14 AUG 2011"
                         },
-                        "xref_ID": "@I5@"
+                        "INDI": "@I5@"
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 47,
                             "line_value": "1930"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 49,
                             "line_value": "JAN 1965"
                         },
-                        "xref_ID": "@I6@"
+                        "INDI": "@I6@"
                     },
                     {
-                        "birt": {
+                        "BIRT": {
                             "line_number": 79,
                             "line_value": "28 FEB 1933"
                         },
-                        "deat": {
+                        "DEAT": {
                             "line_number": 81,
                             "line_value": "7 SEP 1984"
                         },
-                        "xref_ID": "@I11@"
+                        "INDI": "@I11@"
                     }
                 ]
             }
@@ -479,37 +562,37 @@
                 "failed": [],
                 "passed": [
                     {
-                        "div": {
+                        "DIV": {
                             "line_number": 179,
                             "line_value": "1964"
                         },
-                        "marr": {
+                        "INDI": "@I6@",
+                        "MARR": {
                             "line_number": 176,
                             "line_value": "1955"
-                        },
-                        "xref_ID": "@I6@"
+                        }
                     },
                     {
-                        "div": {
+                        "DIV": {
                             "line_number": 210,
                             "line_value": "2014"
                         },
-                        "marr": {
+                        "INDI": "@I19@",
+                        "MARR": {
                             "line_number": 208,
                             "line_value": "2003"
-                        },
-                        "xref_ID": "@I19@"
+                        }
                     },
                     {
-                        "div": {
+                        "DIV": {
                             "line_number": 210,
                             "line_value": "2014"
                         },
-                        "marr": {
+                        "INDI": "@I20@",
+                        "MARR": {
                             "line_number": 208,
                             "line_value": "2003"
-                        },
-                        "xref_ID": "@I20@"
+                        }
                     }
                 ]
             }
@@ -521,37 +604,37 @@
                 "failed": [],
                 "passed": [
                     {
-                        "deat": {
+                        "DEAT": {
                             "line_number": 39,
                             "line_value": "14 AUG 2011"
                         },
-                        "marr": {
+                        "INDI": "@I5@",
+                        "MARR": {
                             "line_number": 169,
                             "line_value": "27 JAN 1969"
-                        },
-                        "xref_ID": "@I5@"
+                        }
                     },
                     {
-                        "deat": {
+                        "DEAT": {
                             "line_number": 49,
                             "line_value": "JAN 1965"
                         },
-                        "marr": {
+                        "INDI": "@I6@",
+                        "MARR": {
                             "line_number": 176,
                             "line_value": "1955"
-                        },
-                        "xref_ID": "@I6@"
+                        }
                     },
                     {
-                        "deat": {
+                        "DEAT": {
                             "line_number": 81,
                             "line_value": "7 SEP 1984"
                         },
-                        "marr": {
+                        "INDI": "@I11@",
+                        "MARR": {
                             "line_number": 185,
                             "line_value": "JUL 1958"
-                        },
-                        "xref_ID": "@I11@"
+                        }
                     }
                 ]
             }
@@ -563,15 +646,15 @@
                 "failed": [],
                 "passed": [
                     {
-                        "deat": {
+                        "DEAT": {
                             "line_number": 49,
                             "line_value": "JAN 1965"
                         },
-                        "div": {
+                        "DIV": {
                             "line_number": 179,
                             "line_value": "1964"
                         },
-                        "xref_ID": "@I6@"
+                        "INDI": "@I6@"
                     }
                 ]
             }

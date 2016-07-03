@@ -1,0 +1,106 @@
+{
+    "Families": {
+        "@F1@": {
+            "husband": {
+                "name": "Prithvi Raj Kapoor",
+                "xref": "@I1@"
+            },
+            "wife": {
+                "name": "Ramsarni Mehra",
+                "xref": "@I2@"
+            }
+        },
+        "@F2@": {
+            "husband": {
+                "name": "Raj Kapoor",
+                "xref": "@I3@"
+            },
+            "wife": {
+                "name": "Krishna Kapoor",
+                "xref": "@I4@"
+            }
+        },
+        "@F3@": {
+            "husband": {
+                "name": "Shammi Kapoor",
+                "xref": "@I5@"
+            },
+            "wife": {
+                "name": "Neela Devi Gohil",
+                "xref": "@I7@"
+            }
+        },
+        "@F4@": {
+            "husband": {
+                "name": "Shammi Kapoor",
+                "xref": "@I5@"
+            },
+            "wife": {
+                "name": "Geeta Bali",
+                "xref": "@I6@"
+            }
+        },
+        "@F5@": {
+            "husband": {
+                "name": "Shashi Kapoor",
+                "xref": "@I10@"
+            },
+            "wife": {
+                "name": "Jennifer Kendal",
+                "xref": "@I11@"
+            }
+        },
+        "@F6@": {
+            "husband": {
+                "name": "Randhir Kapoor",
+                "xref": "@I12@"
+            },
+            "wife": {
+                "name": "Babita Shivdasani",
+                "xref": "@I18@"
+            }
+        },
+        "@F7@": {
+            "husband": {
+                "name": "Rishi Kapoor",
+                "xref": "@I13@"
+            },
+            "wife": {
+                "name": "Neetu Singh",
+                "xref": "@I15@"
+            }
+        },
+        "@F8@": {
+            "husband": {
+                "name": "Sanjay Kapur",
+                "xref": "@I20@"
+            },
+            "wife": {
+                "name": "Karisma Kapoor",
+                "xref": "@I19@"
+            }
+        }
+    },
+    "Individuals": {
+        "@I10@": "Shashi Kapoor",
+        "@I11@": "Jennifer Kendal",
+        "@I12@": "Randhir Kapoor",
+        "@I13@": "Rishi Kapoor",
+        "@I14@": "Rajiv Kapoor",
+        "@I15@": "Neetu Singh",
+        "@I16@": "Riddhima Kapoor",
+        "@I17@": "Ranbir Kapoor",
+        "@I18@": "Babita Shivdasani",
+        "@I19@": "Karisma Kapoor",
+        "@I1@": "Prithvi Raj Kapoor",
+        "@I20@": "Sanjay Kapur",
+        "@I2@": "Ramsarni Mehra",
+        "@I3@": "Raj Kapoor",
+        "@I4@": "Krishna Kapoor",
+        "@I5@": "Shammi Kapoor",
+        "@I6@": "Geeta Bali",
+        "@I7@": "Neela Devi Gohil",
+        "@I8@": "Aditya Raj Kapoor",
+        "@I9@": "Kanchan Kapoor"
+    }
+}

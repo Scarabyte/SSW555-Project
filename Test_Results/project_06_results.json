@@ -1,0 +1,595 @@
+{
+    "Sprint Number": 2,
+    "Stories": [
+        {
+            "id": "Error US07",
+            "name": "less_then_150_years_old",
+            "output": {
+                "failed": [],
+                "passed": [
+                    {
+                        "age": 65.61,
+                        "birt": {
+                            "line_number": 4,
+                            "line_value": "3 NOV 1906"
+                        },
+                        "deat": {
+                            "line_number": 6,
+                            "line_value": "29 MAY 1972"
+                        },
+                        "xref_ID": "@I1@"
+                    },
+                    {
+                        "age": 64.04,
+                        "birt": {
+                            "line_number": 12,
+                            "line_value": "1908"
+                        },
+                        "deat": {
+                            "line_number": 14,
+                            "line_value": "1972"
+                        },
+                        "xref_ID": "@I2@"
+                    },
+                    {
+                        "age": 63.51,
+                        "birt": {
+                            "line_number": 20,
+                            "line_value": "14 DEC 1924"
+                        },
+                        "deat": {
+                            "line_number": 22,
+                            "line_value": "2 JUN 1988"
+                        },
+                        "xref_ID": "@I3@"
+                    },
+                    {
+                        "age": 79.87,
+                        "birt": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "deat": {
+                            "line_number": 39,
+                            "line_value": "14 AUG 2011"
+                        },
+                        "xref_ID": "@I5@"
+                    },
+                    {
+                        "age": 35.02,
+                        "birt": {
+                            "line_number": 47,
+                            "line_value": "1930"
+                        },
+                        "deat": {
+                            "line_number": 49,
+                            "line_value": "JAN 1965"
+                        },
+                        "xref_ID": "@I6@"
+                    },
+                    {
+                        "age": 60.05,
+                        "birt": {
+                            "line_number": 60,
+                            "line_value": "1 JUL 1956"
+                        },
+                        "xref_ID": "@I8@"
+                    },
+                    {
+                        "age": 55.54,
+                        "birt": {
+                            "line_number": 66,
+                            "line_value": "1961"
+                        },
+                        "xref_ID": "@I9@"
+                    },
+                    {
+                        "age": 78.35,
+                        "birt": {
+                            "line_number": 72,
+                            "line_value": "18 MAR 1938"
+                        },
+                        "xref_ID": "@I10@"
+                    },
+                    {
+                        "age": 51.56,
+                        "birt": {
+                            "line_number": 79,
+                            "line_value": "28 FEB 1933"
+                        },
+                        "deat": {
+                            "line_number": 81,
+                            "line_value": "7 SEP 1984"
+                        },
+                        "xref_ID": "@I11@"
+                    },
+                    {
+                        "age": 69.43,
+                        "birt": {
+                            "line_number": 87,
+                            "line_value": "14 FEB 1947"
+                        },
+                        "xref_ID": "@I12@"
+                    },
+                    {
+                        "age": 63.87,
+                        "birt": {
+                            "line_number": 94,
+                            "line_value": "4 SEP 1952"
+                        },
+                        "xref_ID": "@I13@"
+                    },
+                    {
+                        "age": 53.9,
+                        "birt": {
+                            "line_number": 103,
+                            "line_value": "25 AUG 1962"
+                        },
+                        "xref_ID": "@I14@"
+                    },
+                    {
+                        "age": 58.03,
+                        "birt": {
+                            "line_number": 111,
+                            "line_value": "8 JUL 1958"
+                        },
+                        "xref_ID": "@I15@"
+                    },
+                    {
+                        "age": 35.82,
+                        "birt": {
+                            "line_number": 119,
+                            "line_value": "15 SEP 1980"
+                        },
+                        "xref_ID": "@I16@"
+                    },
+                    {
+                        "age": 33.79,
+                        "birt": {
+                            "line_number": 127,
+                            "line_value": "28 SEP 1982"
+                        },
+                        "xref_ID": "@I17@"
+                    },
+                    {
+                        "age": 68.25,
+                        "birt": {
+                            "line_number": 135,
+                            "line_value": "20 APR 1948"
+                        },
+                        "xref_ID": "@I18@"
+                    },
+                    {
+                        "age": 42.05,
+                        "birt": {
+                            "line_number": 141,
+                            "line_value": "25 JUN 1974"
+                        },
+                        "xref_ID": "@I19@"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "Anomaly US08",
+            "name": "birth_before_marriage_of_parents",
+            "output": {
+                "failed": [
+                    {
+                        "birt": {
+                            "line_number": 66,
+                            "line_value": "1961"
+                        },
+                        "marr": {
+                            "line_number": 169,
+                            "line_value": "27 JAN 1969"
+                        },
+                        "xref_ID": "@I9@"
+                    }
+                ],
+                "passed": [
+                    {
+                        "birt": {
+                            "line_number": 60,
+                            "line_value": "1 JUL 1956"
+                        },
+                        "div": {
+                            "line_number": 179,
+                            "line_value": "1964"
+                        },
+                        "marr": {
+                            "line_number": 176,
+                            "line_value": "1955"
+                        },
+                        "xref_ID": "@I8@"
+                    },
+                    {
+                        "birt": {
+                            "line_number": 141,
+                            "line_value": "25 JUN 1974"
+                        },
+                        "marr": {
+                            "line_number": 193,
+                            "line_value": "6 NOV 1971"
+                        },
+                        "xref_ID": "@I19@"
+                    },
+                    {
+                        "birt": {
+                            "line_number": 119,
+                            "line_value": "15 SEP 1980"
+                        },
+                        "marr": {
+                            "line_number": 202,
+                            "line_value": "1980"
+                        },
+                        "xref_ID": "@I16@"
+                    },
+                    {
+                        "birt": {
+                            "line_number": 127,
+                            "line_value": "28 SEP 1982"
+                        },
+                        "marr": {
+                            "line_number": 202,
+                            "line_value": "1980"
+                        },
+                        "xref_ID": "@I17@"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "Error US09",
+            "name": "birth_before_death_of_parents",
+            "output": {
+                "failed": [],
+                "passed": [
+                    {
+                        "birt": {
+                            "line_number": 20,
+                            "line_value": "14 DEC 1924"
+                        },
+                        "fatherdeat": {
+                            "line_number": 6,
+                            "line_value": "29 MAY 1972"
+                        },
+                        "motherdeat": {
+                            "line_number": 14,
+                            "line_value": "1972"
+                        },
+                        "xref_ID": "@I3@"
+                    },
+                    {
+                        "birt": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "fatherdeat": {
+                            "line_number": 6,
+                            "line_value": "29 MAY 1972"
+                        },
+                        "motherdeat": {
+                            "line_number": 14,
+                            "line_value": "1972"
+                        },
+                        "xref_ID": "@I5@"
+                    },
+                    {
+                        "birt": {
+                            "line_number": 72,
+                            "line_value": "18 MAR 1938"
+                        },
+                        "fatherdeat": {
+                            "line_number": 6,
+                            "line_value": "29 MAY 1972"
+                        },
+                        "motherdeat": {
+                            "line_number": 14,
+                            "line_value": "1972"
+                        },
+                        "xref_ID": "@I10@"
+                    },
+                    {
+                        "birt": {
+                            "line_number": 60,
+                            "line_value": "1 JUL 1956"
+                        },
+                        "fatherdeat": {
+                            "line_number": 39,
+                            "line_value": "14 AUG 2011"
+                        },
+                        "motherdeat": {
+                            "line_number": 49,
+                            "line_value": "JAN 1965"
+                        },
+                        "xref_ID": "@I8@"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "Anomaly US10",
+            "name": "marriage_after_14",
+            "output": {
+                "failed": [],
+                "passed": [
+                    {
+                        "husb_birt_date": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "husb_marr_age": 37.3,
+                        "wife_birt_date": null,
+                        "wife_marriage_age": null
+                    },
+                    {
+                        "husb_birt_date": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "husb_marr_age": 23.21,
+                        "wife_birt_date": {
+                            "line_number": 47,
+                            "line_value": "1930"
+                        },
+                        "wife_marriage_age": 25.02
+                    },
+                    {
+                        "husb_birt_date": {
+                            "line_number": 72,
+                            "line_value": "18 MAR 1938"
+                        },
+                        "husb_marr_age": 20.3,
+                        "wife_birt_date": {
+                            "line_number": 79,
+                            "line_value": "28 FEB 1933"
+                        },
+                        "wife_marriage_age": 25.35
+                    },
+                    {
+                        "husb_birt_date": {
+                            "line_number": 87,
+                            "line_value": "14 FEB 1947"
+                        },
+                        "husb_marr_age": 24.74,
+                        "wife_birt_date": {
+                            "line_number": 135,
+                            "line_value": "20 APR 1948"
+                        },
+                        "wife_marriage_age": 23.56
+                    },
+                    {
+                        "husb_birt_date": {
+                            "line_number": 94,
+                            "line_value": "4 SEP 1952"
+                        },
+                        "husb_marr_age": 27.34,
+                        "wife_birt_date": {
+                            "line_number": 111,
+                            "line_value": "8 JUL 1958"
+                        },
+                        "wife_marriage_age": 21.5
+                    },
+                    {
+                        "husb_birt_date": null,
+                        "husb_marr_age": null,
+                        "wife_birt_date": {
+                            "line_number": 141,
+                            "line_value": "25 JUN 1974"
+                        },
+                        "wife_marriage_age": 28.54
+                    }
+                ]
+            }
+        },
+        {
+            "id": "Anomaly US11",
+            "name": "no_bigamy",
+            "output": {
+                "failed": [],
+                "passed": [
+                    {
+                        "marr_1": {
+                            "end": {
+                                "line_number": 39,
+                                "line_value": "14 AUG 2011",
+                                "reason": "husb_deat"
+                            },
+                            "start": {
+                                "line_number": 169,
+                                "line_value": "27 JAN 1969",
+                                "reason": "marr_date"
+                            }
+                        },
+                        "marr_2": {
+                            "end": {
+                                "line_number": 179,
+                                "line_value": "1964",
+                                "reason": "div"
+                            },
+                            "start": {
+                                "line_number": 176,
+                                "line_value": "1955",
+                                "reason": "marr_date"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "Anomaly US12",
+            "name": "parents_not_too_old",
+            "output": {
+                "failed": [],
+                "passed": [
+                    {
+                        "child_birt_date": {
+                            "line_number": 20,
+                            "line_value": "14 DEC 1924"
+                        },
+                        "father_birt_date": {
+                            "line_number": 4,
+                            "line_value": "3 NOV 1906"
+                        },
+                        "father_years_older": 18.13,
+                        "mother_birt_date": {
+                            "line_number": 12,
+                            "line_value": "1908"
+                        },
+                        "mother_years_older": 16.96
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "father_birt_date": {
+                            "line_number": 4,
+                            "line_value": "3 NOV 1906"
+                        },
+                        "father_years_older": 24.98,
+                        "mother_birt_date": {
+                            "line_number": 12,
+                            "line_value": "1908"
+                        },
+                        "mother_years_older": 23.82
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 72,
+                            "line_value": "18 MAR 1938"
+                        },
+                        "father_birt_date": {
+                            "line_number": 4,
+                            "line_value": "3 NOV 1906"
+                        },
+                        "father_years_older": 31.39,
+                        "mother_birt_date": {
+                            "line_number": 12,
+                            "line_value": "1908"
+                        },
+                        "mother_years_older": 30.23
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 87,
+                            "line_value": "14 FEB 1947"
+                        },
+                        "father_birt_date": {
+                            "line_number": 20,
+                            "line_value": "14 DEC 1924"
+                        },
+                        "father_years_older": 22.18,
+                        "mother_birt_date": null,
+                        "mother_years_older": null
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 94,
+                            "line_value": "4 SEP 1952"
+                        },
+                        "father_birt_date": {
+                            "line_number": 20,
+                            "line_value": "14 DEC 1924"
+                        },
+                        "father_years_older": 27.74,
+                        "mother_birt_date": null,
+                        "mother_years_older": null
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 103,
+                            "line_value": "25 AUG 1962"
+                        },
+                        "father_birt_date": {
+                            "line_number": 20,
+                            "line_value": "14 DEC 1924"
+                        },
+                        "father_years_older": 37.72,
+                        "mother_birt_date": null,
+                        "mother_years_older": null
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 66,
+                            "line_value": "1961"
+                        },
+                        "father_birt_date": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "father_years_older": 29.22,
+                        "mother_birt_date": null,
+                        "mother_years_older": null
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 60,
+                            "line_value": "1 JUL 1956"
+                        },
+                        "father_birt_date": {
+                            "line_number": 37,
+                            "line_value": "21 OCT 1931"
+                        },
+                        "father_years_older": 24.71,
+                        "mother_birt_date": {
+                            "line_number": 47,
+                            "line_value": "1930"
+                        },
+                        "mother_years_older": 26.52
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 141,
+                            "line_value": "25 JUN 1974"
+                        },
+                        "father_birt_date": {
+                            "line_number": 87,
+                            "line_value": "14 FEB 1947"
+                        },
+                        "father_years_older": 27.38,
+                        "mother_birt_date": {
+                            "line_number": 135,
+                            "line_value": "20 APR 1948"
+                        },
+                        "mother_years_older": 26.2
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 119,
+                            "line_value": "15 SEP 1980"
+                        },
+                        "father_birt_date": {
+                            "line_number": 94,
+                            "line_value": "4 SEP 1952"
+                        },
+                        "father_years_older": 28.05,
+                        "mother_birt_date": {
+                            "line_number": 111,
+                            "line_value": "8 JUL 1958"
+                        },
+                        "mother_years_older": 22.21
+                    },
+                    {
+                        "child_birt_date": {
+                            "line_number": 127,
+                            "line_value": "28 SEP 1982"
+                        },
+                        "father_birt_date": {
+                            "line_number": 94,
+                            "line_value": "4 SEP 1952"
+                        },
+                        "father_years_older": 30.08,
+                        "mother_birt_date": {
+                            "line_number": 111,
+                            "line_value": "8 JUL 1958"
+                        },
+                        "mother_years_older": 24.24
+                    }
+                ]
+            }
+        }
+    ]
+}

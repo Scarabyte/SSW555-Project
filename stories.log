@@ -1,0 +1,97 @@
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 4, 'line_value': '3 NOV 1906'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I1@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 6, 'line_value': '29 MAY 1972'}, 'current_date': '03 JUL 2016', 'tag': 'DEAT', 'xref_ID': '@I1@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 12, 'line_value': '1908'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I2@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 14, 'line_value': '1972'}, 'current_date': '03 JUL 2016', 'tag': 'DEAT', 'xref_ID': '@I2@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I3@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 22, 'line_value': '2 JUN 1988'}, 'current_date': '03 JUL 2016', 'tag': 'DEAT', 'xref_ID': '@I3@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I5@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 39, 'line_value': '14 AUG 2011'}, 'current_date': '03 JUL 2016', 'tag': 'DEAT', 'xref_ID': '@I5@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 47, 'line_value': '1930'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I6@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 49, 'line_value': 'JAN 1965'}, 'current_date': '03 JUL 2016', 'tag': 'DEAT', 'xref_ID': '@I6@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 60, 'line_value': '1 JUL 1956'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I8@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 66, 'line_value': '1961'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I9@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 72, 'line_value': '18 MAR 1938'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I10@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 79, 'line_value': '28 FEB 1933'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I11@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 81, 'line_value': '7 SEP 1984'}, 'current_date': '03 JUL 2016', 'tag': 'DEAT', 'xref_ID': '@I11@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 87, 'line_value': '14 FEB 1947'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I12@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I13@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 103, 'line_value': '25 AUG 1962'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I14@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 111, 'line_value': '8 JUL 1958'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I15@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 119, 'line_value': '15 SEP 1980'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I16@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 127, 'line_value': '28 SEP 1982'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I17@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 135, 'line_value': '20 APR 1948'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I18@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 141, 'line_value': '25 JUN 1974'}, 'current_date': '03 JUL 2016', 'tag': 'BIRT', 'xref_ID': '@I19@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 169, 'line_value': '27 JAN 1969'}, 'current_date': '03 JUL 2016', 'tag': 'MARR', 'xref_ID': '@F3@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 176, 'line_value': '1955'}, 'current_date': '03 JUL 2016', 'tag': 'MARR', 'xref_ID': '@F4@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 179, 'line_value': '1964'}, 'current_date': '03 JUL 2016', 'tag': 'DIV', 'xref_ID': '@F4@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 185, 'line_value': 'JUL 1958'}, 'current_date': '03 JUL 2016', 'tag': 'MARR', 'xref_ID': '@F5@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 193, 'line_value': '6 NOV 1971'}, 'current_date': '03 JUL 2016', 'tag': 'MARR', 'xref_ID': '@F6@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 202, 'line_value': '1980'}, 'current_date': '03 JUL 2016', 'tag': 'MARR', 'xref_ID': '@F7@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 208, 'line_value': '2003'}, 'current_date': '03 JUL 2016', 'tag': 'MARR', 'xref_ID': '@F8@'}
+INFO:PASSED - Error US01 - dates_before_current_date - {'date': {'line_number': 210, 'line_value': '2014'}, 'current_date': '03 JUL 2016', 'tag': 'DIV', 'xref_ID': '@F8@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 169, 'line_value': '27 JAN 1969'}, 'birt': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'xref_ID': '@I5@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 176, 'line_value': '1955'}, 'birt': {'line_number': 47, 'line_value': '1930'}, 'xref_ID': '@I6@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 185, 'line_value': 'JUL 1958'}, 'birt': {'line_number': 72, 'line_value': '18 MAR 1938'}, 'xref_ID': '@I10@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 185, 'line_value': 'JUL 1958'}, 'birt': {'line_number': 79, 'line_value': '28 FEB 1933'}, 'xref_ID': '@I11@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 193, 'line_value': '6 NOV 1971'}, 'birt': {'line_number': 87, 'line_value': '14 FEB 1947'}, 'xref_ID': '@I12@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 202, 'line_value': '1980'}, 'birt': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'xref_ID': '@I13@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 202, 'line_value': '1980'}, 'birt': {'line_number': 111, 'line_value': '8 JUL 1958'}, 'xref_ID': '@I15@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 193, 'line_value': '6 NOV 1971'}, 'birt': {'line_number': 135, 'line_value': '20 APR 1948'}, 'xref_ID': '@I18@'}
+INFO:PASSED - Error US02 - birth_before_marriage - {'marr': {'line_number': 208, 'line_value': '2003'}, 'birt': {'line_number': 141, 'line_value': '25 JUN 1974'}, 'xref_ID': '@I19@'}
+INFO:PASSED - Error US03 - birth_before_death - {'deat': {'line_number': 6, 'line_value': '29 MAY 1972'}, 'birt': {'line_number': 4, 'line_value': '3 NOV 1906'}, 'xref_ID': '@I1@'}
+INFO:PASSED - Error US03 - birth_before_death - {'deat': {'line_number': 14, 'line_value': '1972'}, 'birt': {'line_number': 12, 'line_value': '1908'}, 'xref_ID': '@I2@'}
+INFO:PASSED - Error US03 - birth_before_death - {'deat': {'line_number': 22, 'line_value': '2 JUN 1988'}, 'birt': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'xref_ID': '@I3@'}
+INFO:PASSED - Error US03 - birth_before_death - {'deat': {'line_number': 39, 'line_value': '14 AUG 2011'}, 'birt': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'xref_ID': '@I5@'}
+INFO:PASSED - Error US03 - birth_before_death - {'deat': {'line_number': 49, 'line_value': 'JAN 1965'}, 'birt': {'line_number': 47, 'line_value': '1930'}, 'xref_ID': '@I6@'}
+INFO:PASSED - Error US03 - birth_before_death - {'deat': {'line_number': 81, 'line_value': '7 SEP 1984'}, 'birt': {'line_number': 79, 'line_value': '28 FEB 1933'}, 'xref_ID': '@I11@'}
+INFO:PASSED - Anomaly US04 - marriage_before_divorce - {'div': {'line_number': 179, 'line_value': '1964'}, 'marr': {'line_number': 176, 'line_value': '1955'}, 'xref_ID': '@I6@'}
+INFO:PASSED - Anomaly US04 - marriage_before_divorce - {'div': {'line_number': 210, 'line_value': '2014'}, 'marr': {'line_number': 208, 'line_value': '2003'}, 'xref_ID': '@I19@'}
+INFO:PASSED - Anomaly US04 - marriage_before_divorce - {'div': {'line_number': 210, 'line_value': '2014'}, 'marr': {'line_number': 208, 'line_value': '2003'}, 'xref_ID': '@I20@'}
+INFO:PASSED - Error US05 - marriage_before_death - {'deat': {'line_number': 39, 'line_value': '14 AUG 2011'}, 'marr': {'line_number': 169, 'line_value': '27 JAN 1969'}, 'xref_ID': '@I5@'}
+INFO:PASSED - Error US05 - marriage_before_death - {'deat': {'line_number': 49, 'line_value': 'JAN 1965'}, 'marr': {'line_number': 176, 'line_value': '1955'}, 'xref_ID': '@I6@'}
+INFO:PASSED - Error US05 - marriage_before_death - {'deat': {'line_number': 81, 'line_value': '7 SEP 1984'}, 'marr': {'line_number': 185, 'line_value': 'JUL 1958'}, 'xref_ID': '@I11@'}
+INFO:PASSED - Error US06 - divorce_before_death - {'div': {'line_number': 179, 'line_value': '1964'}, 'deat': {'line_number': 49, 'line_value': 'JAN 1965'}, 'xref_ID': '@I6@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'deat': {'line_number': 6, 'line_value': '29 MAY 1972'}, 'age': 65.61, 'birt': {'line_number': 4, 'line_value': '3 NOV 1906'}, 'xref_ID': '@I1@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'deat': {'line_number': 14, 'line_value': '1972'}, 'age': 64.04, 'birt': {'line_number': 12, 'line_value': '1908'}, 'xref_ID': '@I2@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'deat': {'line_number': 22, 'line_value': '2 JUN 1988'}, 'age': 63.51, 'birt': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'xref_ID': '@I3@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'deat': {'line_number': 39, 'line_value': '14 AUG 2011'}, 'age': 79.87, 'birt': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'xref_ID': '@I5@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'deat': {'line_number': 49, 'line_value': 'JAN 1965'}, 'age': 35.02, 'birt': {'line_number': 47, 'line_value': '1930'}, 'xref_ID': '@I6@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 60.05, 'birt': {'line_number': 60, 'line_value': '1 JUL 1956'}, 'xref_ID': '@I8@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 55.54, 'birt': {'line_number': 66, 'line_value': '1961'}, 'xref_ID': '@I9@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 78.35, 'birt': {'line_number': 72, 'line_value': '18 MAR 1938'}, 'xref_ID': '@I10@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'deat': {'line_number': 81, 'line_value': '7 SEP 1984'}, 'age': 51.56, 'birt': {'line_number': 79, 'line_value': '28 FEB 1933'}, 'xref_ID': '@I11@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 69.43, 'birt': {'line_number': 87, 'line_value': '14 FEB 1947'}, 'xref_ID': '@I12@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 63.87, 'birt': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'xref_ID': '@I13@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 53.9, 'birt': {'line_number': 103, 'line_value': '25 AUG 1962'}, 'xref_ID': '@I14@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 58.03, 'birt': {'line_number': 111, 'line_value': '8 JUL 1958'}, 'xref_ID': '@I15@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 35.82, 'birt': {'line_number': 119, 'line_value': '15 SEP 1980'}, 'xref_ID': '@I16@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 33.79, 'birt': {'line_number': 127, 'line_value': '28 SEP 1982'}, 'xref_ID': '@I17@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 68.25, 'birt': {'line_number': 135, 'line_value': '20 APR 1948'}, 'xref_ID': '@I18@'}
+INFO:PASSED - Error US07 - less_then_150_years_old - {'age': 42.05, 'birt': {'line_number': 141, 'line_value': '25 JUN 1974'}, 'xref_ID': '@I19@'}
+INFO:PASSED - Anomaly US08 - birth_before_marriage_of_parents - {'div': {'line_number': 179, 'line_value': '1964'}, 'marr': {'line_number': 176, 'line_value': '1955'}, 'birt': {'line_number': 60, 'line_value': '1 JUL 1956'}, 'xref_ID': '@I8@'}
+INFO:PASSED - Anomaly US08 - birth_before_marriage_of_parents - {'marr': {'line_number': 193, 'line_value': '6 NOV 1971'}, 'birt': {'line_number': 141, 'line_value': '25 JUN 1974'}, 'xref_ID': '@I19@'}
+INFO:PASSED - Anomaly US08 - birth_before_marriage_of_parents - {'marr': {'line_number': 202, 'line_value': '1980'}, 'birt': {'line_number': 119, 'line_value': '15 SEP 1980'}, 'xref_ID': '@I16@'}
+INFO:PASSED - Anomaly US08 - birth_before_marriage_of_parents - {'marr': {'line_number': 202, 'line_value': '1980'}, 'birt': {'line_number': 127, 'line_value': '28 SEP 1982'}, 'xref_ID': '@I17@'}
+WARNING:FAILED - Anomaly US08 - birth_before_marriage_of_parents - {'marr': {'line_number': 169, 'line_value': '27 JAN 1969'}, 'birt': {'line_number': 66, 'line_value': '1961'}, 'xref_ID': '@I9@'}
+INFO:PASSED - Error US09 - birth_before_death_of_parents - {'fatherdeat': {'line_number': 6, 'line_value': '29 MAY 1972'}, 'birt': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'xref_ID': '@I3@', 'motherdeat': {'line_number': 14, 'line_value': '1972'}}
+INFO:PASSED - Error US09 - birth_before_death_of_parents - {'fatherdeat': {'line_number': 6, 'line_value': '29 MAY 1972'}, 'birt': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'xref_ID': '@I5@', 'motherdeat': {'line_number': 14, 'line_value': '1972'}}
+INFO:PASSED - Error US09 - birth_before_death_of_parents - {'fatherdeat': {'line_number': 6, 'line_value': '29 MAY 1972'}, 'birt': {'line_number': 72, 'line_value': '18 MAR 1938'}, 'xref_ID': '@I10@', 'motherdeat': {'line_number': 14, 'line_value': '1972'}}
+INFO:PASSED - Error US09 - birth_before_death_of_parents - {'fatherdeat': {'line_number': 39, 'line_value': '14 AUG 2011'}, 'birt': {'line_number': 60, 'line_value': '1 JUL 1956'}, 'xref_ID': '@I8@', 'motherdeat': {'line_number': 49, 'line_value': 'JAN 1965'}}
+INFO:PASSED - Anomaly US10 - marriage_after_14 - {'wife_birt_date': None, 'husb_birt_date': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'wife_marriage_age': None, 'husb_marr_age': 37.3}
+INFO:PASSED - Anomaly US10 - marriage_after_14 - {'wife_birt_date': {'line_number': 47, 'line_value': '1930'}, 'husb_birt_date': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'wife_marriage_age': 25.02, 'husb_marr_age': 23.21}
+INFO:PASSED - Anomaly US10 - marriage_after_14 - {'wife_birt_date': {'line_number': 79, 'line_value': '28 FEB 1933'}, 'husb_birt_date': {'line_number': 72, 'line_value': '18 MAR 1938'}, 'wife_marriage_age': 25.35, 'husb_marr_age': 20.3}
+INFO:PASSED - Anomaly US10 - marriage_after_14 - {'wife_birt_date': {'line_number': 135, 'line_value': '20 APR 1948'}, 'husb_birt_date': {'line_number': 87, 'line_value': '14 FEB 1947'}, 'wife_marriage_age': 23.56, 'husb_marr_age': 24.74}
+INFO:PASSED - Anomaly US10 - marriage_after_14 - {'wife_birt_date': {'line_number': 111, 'line_value': '8 JUL 1958'}, 'husb_birt_date': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'wife_marriage_age': 21.5, 'husb_marr_age': 27.34}
+INFO:PASSED - Anomaly US10 - marriage_after_14 - {'wife_birt_date': {'line_number': 141, 'line_value': '25 JUN 1974'}, 'husb_birt_date': None, 'wife_marriage_age': 28.54, 'husb_marr_age': None}
+INFO:PASSED - Anomaly US11 - no_bigamy - {'marr_1': {'start': {'line_number': 169, 'reason': 'marr_date', 'line_value': '27 JAN 1969'}, 'end': {'line_number': 39, 'reason': 'husb_deat', 'line_value': '14 AUG 2011'}}, 'marr_2': {'start': {'line_number': 176, 'reason': 'marr_date', 'line_value': '1955'}, 'end': {'line_number': 179, 'reason': 'div', 'line_value': '1964'}}}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 18.13, 'mother_birt_date': {'line_number': 12, 'line_value': '1908'}, 'father_birt_date': {'line_number': 4, 'line_value': '3 NOV 1906'}, 'child_birt_date': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'mother_years_older': 16.96}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 24.98, 'mother_birt_date': {'line_number': 12, 'line_value': '1908'}, 'father_birt_date': {'line_number': 4, 'line_value': '3 NOV 1906'}, 'child_birt_date': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'mother_years_older': 23.82}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 31.39, 'mother_birt_date': {'line_number': 12, 'line_value': '1908'}, 'father_birt_date': {'line_number': 4, 'line_value': '3 NOV 1906'}, 'child_birt_date': {'line_number': 72, 'line_value': '18 MAR 1938'}, 'mother_years_older': 30.23}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 22.18, 'mother_birt_date': None, 'father_birt_date': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'child_birt_date': {'line_number': 87, 'line_value': '14 FEB 1947'}, 'mother_years_older': None}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 27.74, 'mother_birt_date': None, 'father_birt_date': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'child_birt_date': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'mother_years_older': None}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 37.72, 'mother_birt_date': None, 'father_birt_date': {'line_number': 20, 'line_value': '14 DEC 1924'}, 'child_birt_date': {'line_number': 103, 'line_value': '25 AUG 1962'}, 'mother_years_older': None}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 29.22, 'mother_birt_date': None, 'father_birt_date': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'child_birt_date': {'line_number': 66, 'line_value': '1961'}, 'mother_years_older': None}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 24.71, 'mother_birt_date': {'line_number': 47, 'line_value': '1930'}, 'father_birt_date': {'line_number': 37, 'line_value': '21 OCT 1931'}, 'child_birt_date': {'line_number': 60, 'line_value': '1 JUL 1956'}, 'mother_years_older': 26.52}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 27.38, 'mother_birt_date': {'line_number': 135, 'line_value': '20 APR 1948'}, 'father_birt_date': {'line_number': 87, 'line_value': '14 FEB 1947'}, 'child_birt_date': {'line_number': 141, 'line_value': '25 JUN 1974'}, 'mother_years_older': 26.2}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 28.05, 'mother_birt_date': {'line_number': 111, 'line_value': '8 JUL 1958'}, 'father_birt_date': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'child_birt_date': {'line_number': 119, 'line_value': '15 SEP 1980'}, 'mother_years_older': 22.21}
+INFO:PASSED - Anomaly US12 - parents_not_too_old - {'father_years_older': 30.08, 'mother_birt_date': {'line_number': 111, 'line_value': '8 JUL 1958'}, 'father_birt_date': {'line_number': 94, 'line_value': '4 SEP 1952'}, 'child_birt_date': {'line_number': 127, 'line_value': '28 SEP 1982'}, 'mother_years_older': 24.24}

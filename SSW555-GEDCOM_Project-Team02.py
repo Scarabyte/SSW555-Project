@@ -90,7 +90,8 @@ if __name__ == "__main__":
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
     try:
-        with open('project_03_results.json', 'w') as outfile:
+        fname_out = 'Test_Results/project_03_results_{0}.json'.format(fname)
+        with open(fname_out, 'w') as outfile:
             json.dump(project_03(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Project 03: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
@@ -100,7 +101,8 @@ if __name__ == "__main__":
         print "Project 03: Successfully saved results to project_03_results.json"
 
     try:
-        with open('project_04_results.json', 'w') as outfile:
+        fname_out = 'Test_Results/project_04_results_{0}.json'.format(fname)
+        with open(fname_out, 'w') as outfile:
             json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Project 04: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
@@ -110,7 +112,8 @@ if __name__ == "__main__":
         print "Project 04: Successfully saved results to project_04_results.json"
 
     try:
-        with open('project_06_results.json', 'w') as outfile:
+        fname_out = 'Test_Results/project_06_results_{0}.json'.format(fname)
+        with open(fname_out, 'w') as outfile:
             json.dump(project_06(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Project 06: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))

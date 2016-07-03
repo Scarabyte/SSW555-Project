@@ -44,6 +44,22 @@ def years_between(a, b):
     return abs(round(float((a - b).days) / 365, 2))
 
 
+def get_name(individual):
+    if type(individual) is gedcom.Line:
+        myname = individual.children.find_one("tag", "NAME").get('line_value')
+        return myname.replace("/", "") if myname else None
+    else:
+        raise TypeError("individual should be a gedcom.Line instance")
+
+
+def get_sex(individual):
+    if type(individual) is gedcom.Line:
+        mysex = individual.children.find_one("tag", "SEX").get('line_value')
+        return mysex if mysex else None
+    else:
+        raise TypeError("individual should be a gedcom.Line instance")
+
+
 def get_birth_date(individual):
     """ Return the birth date line of an individual line
 

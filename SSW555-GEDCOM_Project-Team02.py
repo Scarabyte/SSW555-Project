@@ -28,13 +28,8 @@ def project_03(gedcom_file):
         project_03(g)
 
     """
-    print " - Individuals - "
-    for individual in gedcom_file.p3_individuals.iteritems():
-        print individual
-    print
-    print " - Families - "
-    for family in gedcom_file.p3_families.iteritems():
-        print family
+    return {"Individuals": gedcom_file.p3_individuals,
+            "Families": gedcom_file.p3_families}
 
 
 def project_04(gedcom_file):
@@ -95,7 +90,31 @@ if __name__ == "__main__":
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
     try:
+        with open('project_03_results.json', 'w') as outfile:
+            json.dump(project_03(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    except IOError as e:
+        sys.exit("Project 03: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
+    except TypeError as e:
+        sys.exit("Project 03: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
+    else:
+        print "Project 03: Successfully saved results to project_03_results.json"
+
+    try:
+        with open('project_04_results.json', 'w') as outfile:
+            json.dump(project_04(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    except IOError as e:
+        sys.exit("Project 04: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
+    except TypeError as e:
+        sys.exit("Project 04: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
+    else:
+        print "Project 04: Successfully saved results to project_04_results.json"
+
+    try:
         with open('project_06_results.json', 'w') as outfile:
             json.dump(project_06(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
-        sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
+        sys.exit("Project 06: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
+    except TypeError as e:
+        sys.exit("Project 06: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
+    else:
+        print "Project 06: Successfully saved results to project_06_results.json"

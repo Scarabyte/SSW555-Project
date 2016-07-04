@@ -498,7 +498,9 @@
                         "marriage_date": {
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
-                        }
+                        },
+                        "name": "David Burbidge",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -510,7 +512,9 @@
                         "marriage_date": {
                             "line_number": 222,
                             "line_value": "4 SEP 1970"
-                        }
+                        },
+                        "name": "Jerry Briand",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -522,7 +526,9 @@
                         "marriage_date": {
                             "line_number": 244,
                             "line_value": "12 OCT 1986"
-                        }
+                        },
+                        "name": "Jack Cunningham",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -534,7 +540,9 @@
                         "marriage_date": {
                             "line_number": 252,
                             "line_value": "1 MAY 1973"
-                        }
+                        },
+                        "name": "Helen Trotter",
+                        "sex": "F"
                     }
                 ],
                 "passed": [
@@ -548,7 +556,9 @@
                         "marriage_date": {
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
-                        }
+                        },
+                        "name": "Wendy Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -560,7 +570,9 @@
                         "marriage_date": {
                             "line_number": 222,
                             "line_value": "4 SEP 1970"
-                        }
+                        },
+                        "name": "Wendy Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -572,7 +584,9 @@
                         "marriage_date": {
                             "line_number": 238,
                             "line_value": "19 MAR 1990"
-                        }
+                        },
+                        "name": "Jean Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -584,7 +598,9 @@
                         "marriage_date": {
                             "line_number": 244,
                             "line_value": "12 OCT 1986"
-                        }
+                        },
+                        "name": "Jean Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -596,7 +612,9 @@
                         "marriage_date": {
                             "line_number": 252,
                             "line_value": "1 MAY 1973"
-                        }
+                        },
+                        "name": "Martin Watson",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -608,7 +626,9 @@
                         "marriage_date": {
                             "line_number": 238,
                             "line_value": "19 MAR 1990"
-                        }
+                        },
+                        "name": "Brian Mayer",
+                        "sex": "M"
                     }
                 ]
             }
@@ -628,7 +648,9 @@
                             "line_number": 27,
                             "line_value": "24 AUG 1994"
                         },
-                        "individual_id": "@I2@"
+                        "individual_id": "@I2@",
+                        "name": "David Burbidge",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -639,7 +661,9 @@
                             "line_number": 36,
                             "line_value": "12 JUL 1988"
                         },
-                        "individual_id": "@I3@"
+                        "individual_id": "@I3@",
+                        "name": "Wendy Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -650,7 +674,9 @@
                             "line_number": 53,
                             "line_value": "4 MAY 2006"
                         },
-                        "individual_id": "@I5@"
+                        "individual_id": "@I5@",
+                        "name": "Angelica Burbidge",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -661,7 +687,9 @@
                             "line_number": 85,
                             "line_value": "16 MAY 2016"
                         },
-                        "individual_id": "@I10@"
+                        "individual_id": "@I10@",
+                        "name": "Jerry Briand",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -672,7 +700,9 @@
                             "line_number": 93,
                             "line_value": "27 FEB 2002"
                         },
-                        "individual_id": "@I11@"
+                        "individual_id": "@I11@",
+                        "name": "Cyril Watson",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -683,7 +713,9 @@
                             "line_number": 101,
                             "line_value": "4 APR 1997"
                         },
-                        "individual_id": "@I12@"
+                        "individual_id": "@I12@",
+                        "name": "Elizabeth Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -694,7 +726,9 @@
                             "line_number": 109,
                             "line_value": "10 AUG 1994"
                         },
-                        "individual_id": "@I13@"
+                        "individual_id": "@I13@",
+                        "name": "Jean Watson",
+                        "sex": "F"
                     },
                     {
                         "birth_date": {
@@ -705,7 +739,9 @@
                             "line_number": 126,
                             "line_value": "10 OCT 1995"
                         },
-                        "individual_id": "@I15@"
+                        "individual_id": "@I15@",
+                        "name": "Andrew Burbidge",
+                        "sex": "M"
                     },
                     {
                         "birth_date": {
@@ -716,7 +752,9 @@
                             "line_number": 170,
                             "line_value": "12 SEP 1989"
                         },
-                        "individual_id": "@I22@"
+                        "individual_id": "@I22@",
+                        "name": "Brian Mayer",
+                        "sex": "M"
                     }
                 ]
             }
@@ -733,11 +771,13 @@
                         },
                         "family_id": "@F8@",
                         "husband_id": "@I21@",
+                        "husband_name": "Jack Cunningham",
                         "marriage_date": {
                             "line_number": 244,
                             "line_value": "12 OCT 1986"
                         },
-                        "wife_id": "@I13@"
+                        "wife_id": "@I13@",
+                        "wife_name": "Jean Watson"
                     }
                 ],
                 "passed": [
@@ -748,11 +788,13 @@
                         },
                         "family_id": "@F2@",
                         "husband_id": "@I2@",
+                        "husband_name": "David Burbidge",
                         "marriage_date": {
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
                         },
-                        "wife_id": "@I3@"
+                        "wife_id": "@I3@",
+                        "wife_name": "Wendy Watson"
                     }
                 ]
             }
@@ -773,6 +815,8 @@
                             "line_number": 238,
                             "line_value": "19 MAR 1990"
                         },
+                        "name": "Brian Mayer",
+                        "sex": "M",
                         "spouse_id": null
                     }
                 ],
@@ -788,6 +832,8 @@
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
                         },
+                        "name": "David Burbidge",
+                        "sex": "M",
                         "spouse_id": null
                     },
                     {
@@ -801,6 +847,8 @@
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
                         },
+                        "name": "Wendy Watson",
+                        "sex": "F",
                         "spouse_id": null
                     },
                     {
@@ -814,6 +862,8 @@
                             "line_number": 222,
                             "line_value": "4 SEP 1970"
                         },
+                        "name": "Jerry Briand",
+                        "sex": "M",
                         "spouse_id": null
                     },
                     {
@@ -827,6 +877,8 @@
                             "line_number": 238,
                             "line_value": "19 MAR 1990"
                         },
+                        "name": "Jean Watson",
+                        "sex": "F",
                         "spouse_id": null
                     }
                 ]
@@ -848,6 +900,8 @@
                         },
                         "family_id": "@F2@",
                         "individual_id": "@I2@",
+                        "name": "David Burbidge",
+                        "sex": "M",
                         "spouse_id": null
                     },
                     {
@@ -861,6 +915,8 @@
                         },
                         "family_id": "@F2@",
                         "individual_id": "@I3@",
+                        "name": "Wendy Watson",
+                        "sex": "F",
                         "spouse_id": null
                     }
                 ],

@@ -45,6 +45,16 @@ def years_between(a, b):
 
 
 def get_name(individual):
+    """ Return the name line of an individual line
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: The name line
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
     if type(individual) is gedcom.Line:
         myname = individual.children.find_one("tag", "NAME").get('line_value')
         return myname.replace("/", "") if myname else None
@@ -53,6 +63,16 @@ def get_name(individual):
 
 
 def get_sex(individual):
+    """ Return the sex line of an individual line
+
+    :param individual: The individual line
+    :type individual: Line
+
+    :return: The sex line
+    :rtype: Line
+
+    author: Adam Burbidge
+    """
     if type(individual) is gedcom.Line:
         mysex = individual.children.find_one("tag", "SEX").get('line_value')
         return mysex if mysex else None

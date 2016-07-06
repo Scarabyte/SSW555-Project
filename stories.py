@@ -54,7 +54,8 @@ def dates_before_current_date(gedcom_file):
     r = STORY_RESULTS
     for date in gedcom_file.find("tag", "DATE"):
         now = datetime.now()
-        output = {"date": {"type": date.parent.get("tag"), "value": date.story_dict},
+        output = {"date_parent_tag": date.parent.get("tag"),
+                  "date": date.story_dict,
                   "current_date": now.strftime("%d %b %Y").upper()}
         try:
             pp = date.parent.parent

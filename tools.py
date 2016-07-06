@@ -313,7 +313,6 @@ class Individual(LineTool):
         l = self.death
         return Date(l.children.find_one('tag', 'DATE')) if type(l) is gedcom.Line else None
 
-    @cachemethod
     def families(self, tag):
         """ Returns iterator of families where this person is a spouse.
 

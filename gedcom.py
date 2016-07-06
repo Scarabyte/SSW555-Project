@@ -42,7 +42,8 @@ def parse_line(s):
     return d
 
 
-class File:
+
+class File(object):
 
     """GEDCOM File Class
 
@@ -505,6 +506,11 @@ class Line(dict):
         """
         return {"line_number": self.get("line_number"), "line_value": self.get("line_value")}
 
+    def ged(self):
+        if self.tag == "INDI":
+            pass
+        elif self.tag == "TEST":
+            pass
 
 
 def demo(gedcom_file):
@@ -556,5 +562,6 @@ if __name__ == "__main__":
     """
     g = File()
     g.read_file("Test_Files/GEDCOM.ged")
-    demo(g)
+    #demo(g)
+    print g.find_one('tag', 'a_value_that_will_never_be_found')
 

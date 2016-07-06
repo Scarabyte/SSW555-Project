@@ -12,27 +12,17 @@ import gedcom
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-fh = logging.FileHandler('stories.log')
-fh.setLevel(logging.INFO)
-ch = logging.StreamHandler()
-ch.setLevel(logging.INFO)
-formatter = logging.Formatter('%(levelname)s:%(story_outcome)s - %(story_id)s - %(story_name)-s - %(message)s')
-fh.setFormatter(formatter)
-ch.setFormatter(formatter)
-logger.addHandler(fh)
-logger.addHandler(ch)
+logging.basicConfig(format='%(story_id)s - %(story_name)-s - %(message)s', level=logging.DEBUG)
+
+STORY_RESULTS = {"passed": [], "failed": [], "user_output": []}
 
 
 def log(func):
     """ Function decarator used by the story decorator inorder to log the results of a story """
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
-        for entry in r["output"]["passed"]:
-            logger.info(entry, extra=dict(story_outcome="PASSED", story_id=r["id"], story_name=r["name"]))
         for entry in r["output"]["failed"]:
-            logger.warning(entry, extra=dict(story_outcome="FAILED", story_id=r["id"], story_name=r["name"]))
+            logging.info(entry.get("message", ""), extra=dict(story_id=r["id"], story_name=r["name"]))
         return r
     return func_wrapper
 
@@ -42,7 +32,9 @@ def story(id_):
     def story_decorator(func):
         @log
         def func_wrapper(gedcom_file):
-            return {"id": id_, "name": func.__name__, "output": func(gedcom_file)}
+            if type(gedcom_file) is not gedcom.File:
+                raise TypeError("Story function must be provided a gedcom file object.")
+            return {"id": id_, "name": func.__name__, "output":  func(gedcom_file)}
         return func_wrapper
     return story_decorator
 
@@ -58,7 +50,8 @@ def dates_before_current_date(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+
+    r = STORY_RESULTS
     for date in gedcom_file.find("tag", "DATE"):
         now = datetime.now()
         output = {"date": {"type": date.parent.get("tag"), "value": date.story_dict},
@@ -86,7 +79,7 @@ def birth_before_marriage(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         if birt_date:
@@ -113,7 +106,7 @@ def birth_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
@@ -139,7 +132,7 @@ def marriage_before_divorce(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for family in gedcom_file.families:
         if family["div_date"] and family["marr_date"]:
             output = {"family_id": family["xref"],
@@ -165,7 +158,7 @@ def marriage_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     # Todo: switch to family loop **to catch multiple marriages
     for individual in gedcom_file.individuals:
         marr_date = tools.get_marriage_date(individual)
@@ -194,7 +187,7 @@ def divorce_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     # Todo: switch to family loop **to catch multiple marriages
     for individual in gedcom_file.individuals:
         div_date = tools.get_divorce_date(individual)
@@ -224,7 +217,7 @@ def less_then_150_years_old(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for individual in gedcom_file.individuals:
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
@@ -263,7 +256,7 @@ def birth_before_marriage_of_parents(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for family in gedcom_file.families:
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
@@ -297,7 +290,7 @@ def birth_before_death_of_parents(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for family in gedcom_file.families:
         mother_deat_date = tools.get_death_date(family["wife"])
         father_deat_date = tools.get_death_date(family["husb"])
@@ -339,7 +332,7 @@ def marriage_after_14(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for family in gedcom_file.families:
         if family["marr_date"] is not None:
             w_birt_date = tools.get_birth_date(family["wife"])
@@ -372,7 +365,7 @@ def no_bigamy(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for individual in gedcom_file.find("tag", "INDI"):
         # Get all combinations of marriages this individual is or has been in
         for marr_1, marr_2 in combinations(tools.iter_marriage_timeframe_dict(individual), 2):
@@ -402,7 +395,7 @@ def parents_not_too_old(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": []}
+    r = STORY_RESULTS
     for family in gedcom_file.families:
         m_birt_date = tools.get_birth_date(family["wife"])
         f_birt_date = tools.get_birth_date(family["husb"])
@@ -741,18 +734,19 @@ if __name__ == "__main__":
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
+
     # Sprint 1
-    dates_before_current_date(g)
-    birth_before_marriage(g)
-    birth_before_death(g)
-    marriage_before_divorce(g)
-    marriage_before_death(g)
-    divorce_before_death(g)
+    #dates_before_current_date(g)
+    #birth_before_marriage(g)
+    #birth_before_death(g)
+    #marriage_before_divorce(g)
+    #marriage_before_death(g)
+    #divorce_before_death(g)
 
     # Sprint 2
-    less_then_150_years_old(g)
-    birth_before_marriage_of_parents(g)
-    birth_before_death_of_parents(g)
-    marriage_after_14(g)
-    no_bigamy(g)
-    parents_not_too_old(g)
+    #less_then_150_years_old(g)
+    #birth_before_marriage_of_parents(g)
+    #birth_before_death_of_parents(g)
+    #marriage_after_14(g)
+    #no_bigamy(g)
+    #parents_not_too_old(g)

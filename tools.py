@@ -7,6 +7,7 @@ import sys
 from itertools import ifilter
 import gedcom
 
+
 def human_sort(s, _re=re.compile('([0-9]+)')):
     """
     key for natural sorting
@@ -180,15 +181,158 @@ def get_divorce_dates(individual):
     return [div.children.find_one('tag', 'DATE') for div in iter_divorces(individual)]
 
 
+class Individual(object):
+    def __init__(self, line):
+        self.line = line
+
+    def __str__(self):
+        return "Individual({0})".format(self.line.get('xref_ID'))
+
+    @property
+    def ln(self):
+        return self.line.ln
+
+    @property
+    def xref(self):
+        return self.line.get('xref_ID')
+
+    @property
+    def name(self):
+        return self.line.children.find_one("tag", "NAME")
+
+    @property
+    def sex(self):
+        return self.line.children.find_one("tag", "SEX")
+
+    @property
+    def birth(self):
+        return self.line.children.find_one("tag", "BIRT")
+
+    @property
+    def birth_date(self):
+        l = self.birth
+        return l.children.find_one('tag', 'DATE') if type(l) is gedcom.Line else None
+
+    @property
+    def birth_datetime(self):
+        l = self.birth_date
+        return None if l is None else l.datetime
+
+    @property
+    def death(self):
+        return self.line.children.find_one("tag", "DEAT")
+
+    @property
+    def death_date(self):
+        l = self.birth
+        return l.children.find_one('tag', 'DATE') if type(l) is gedcom.Line else None
+
+    @property
+    def death_datetime(self):
+        l = self.death_date
+        return None if l is None else l.datetime
+
+
+class Family(object):
+    def __init__(self, line):
+        self.line = line
+
+    def __str__(self):
+        return "Family({0})".format(self.line.get('xref_ID'))
+
+    @property
+    def ln(self):
+        return self.line.ln
+
+    @property
+    def xref(self):
+        return self.line.get('xref_ID')
+
+    @property
+    def husband(self):
+        husb = self.line.children.find_one('tag', 'HUSB')
+        return Individual(husb.follow_xref()) if husb else None
+
+    @property
+    def wife(self):
+        wife = self.line.children.find_one('tag', 'WIFE')
+        return Individual(wife.follow_xref()) if wife else None
+
+    @property
+    def marriage(self):
+        return self.line.children.find_one('tag', 'MARR')
+
+    @property
+    def marriage_date(self):
+        marr = self.marriage
+        return marr.children.find_one('tag', 'DATE') if marr else None
+
+    @property
+    def marriage_datetime(self):
+        date = self.marriage_date
+        return date.datetime if date else None
+
+    @property
+    def marriage_timeframe(self):
+        m_date = self.marriage_date
+        d_date = self.divorce_date
+        w_d_date = self.wife.death_date
+        h_d_date = self.husband.death_date
+        if m_date:
+            start_ln, start_val, start_dt = m_date.ln, m_date.val, m_date.datetime
+            if d_date:
+                end_reason = "div"
+                end_ln, end_val, end_dt = d_date.ln, d_date.val, d_date.datetime
+            elif w_d_date and not h_d_date:
+                end_reason = "wife_deat"
+                end_ln, end_val, end_dt = w_d_date.ln, w_d_date.val, w_d_date.datetime
+            elif h_d_date and not w_d_date:
+                end_reason = "husb_deat"
+                end_ln, end_val, end_dt = h_d_date.ln, h_d_date.val, h_d_date.datetime
+            elif h_d_date and w_d_date:
+                if h_d_date.datetime < w_d_date.datetime:
+                    end_reason = "husb_deat"
+                    end_ln, end_val, end_dt = h_d_date.ln, h_d_date.val, h_d_date.datetime
+                else:
+                    end_reason = "wife_deat"
+                    end_ln, end_val, end_dt = w_d_date.ln, w_d_date.val, w_d_date.datetime
+            else:
+                end_reason = "Not Ended"
+                end_ln, end_val, end_dt = None, None, datetime.max
+            return {"start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
+                    "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}}
+    @property
+    def divorce(self):
+        return self.line.children.find_one('tag', 'DIV')
+
+    @property
+    def divorce_date(self):
+        div = self.divorce
+        return div.children.find_one('tag', 'DATE') if div else None
+
+    @property
+    def divorce_datetime(self):
+        date = self.divorce_date
+        return date.datetime if date else None
+
+    @property
+    def children(self):
+        return [child.follow_xref() for child in self.line.children.find('tag', 'CHIL')]
+
+    @property
+    def summary(self):
+        pass
+
+    @property
+    def dictionary(self):
+        """ Create dictionary of family info for a family line
+
+        :return:
+        """
+        return dict(xref=self.xref, ln=self.xref, husb=self.husband, wife=self.wife)
+
+
 def family_dict(family):
-    """ Create dictionary of family info for a family line
-
-    :param family: The family line
-    :type family: Line
-
-    author: Constantine Davantzis
-
-    """
     d = {}
 
     d["xref"] = family.get('xref_ID')
@@ -270,17 +414,17 @@ def iter_marriage_timeframe_dict(individual):
                 end_ln, end_val, end_dt = div_date.ln, div_date.val, div_date.datetime
             elif wife_deat_date and not husb_deat_date:
                 end_reason = "wife_deat"
-                end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val,  wife_deat_date.datetime
+                end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val, wife_deat_date.datetime
             elif husb_deat_date and not wife_deat_date:
                 end_reason = "husb_deat"
-                end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val,  husb_deat_date.datetime
+                end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val, husb_deat_date.datetime
             elif husb_deat_date and wife_deat_date:
                 if husb_deat_date.datetime < wife_deat_date.datetime:
                     end_reason = "husb_deat"
-                    end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val,  husb_deat_date.datetime
+                    end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val, husb_deat_date.datetime
                 else:
                     end_reason = "wife_deat"
-                    end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val,  wife_deat_date.datetime
+                    end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val, wife_deat_date.datetime
             else:
                 end_reason = "Not Ended"
                 end_ln, end_val, end_dt = None, None, datetime.max
@@ -315,7 +459,8 @@ def iter_spouses(individual):
     """
     v = individual.get('xref_ID')
     for f in iter_families_spouse_of(individual):
-        yield next(ifilter(lambda x: x.val != v, (f.children.find_one('tag', 'HUSB'), f.children.find_one('tag', 'WIFE'))))
+        yield next(
+            ifilter(lambda x: x.val != v, (f.children.find_one('tag', 'HUSB'), f.children.find_one('tag', 'WIFE'))))
 
 
 def get_spouses(individual):

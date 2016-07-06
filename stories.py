@@ -14,6 +14,9 @@ __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 
 logging.basicConfig(format='%(story_id)-13s| %(story_name)s (%(status)s) - %(message)s', level=logging.DEBUG)
 
+NOW = datetime.now()
+NOW_STRING = NOW.strftime("%d %b %Y").upper()
+
 
 def log(func):
     """ Function decarator used by the story decorator inorder to log the results of a story """
@@ -51,26 +54,24 @@ def dates_before_current_date(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-
     r = {"passed": [], "failed": []}
     for date in gedcom_file.find("tag", "DATE"):
-        now = datetime.now()
-        output = {"date_type": date.parent.get("tag"),
-                  "date": date.story_dict,
-                  "current_date": now.strftime("%d %b %Y").upper()}
-        try:
-            pp = date.parent.parent
-            if pp.tag == "INDI":
-                output["individual_id"] = date.parent.parent.get("xref_ID")
-            elif pp.tag == "FAM":
-                output["family_id"] = date.parent.parent.get("xref_ID")
-        except AttributeError:
-            pass
-
-        if date.datetime < now:
-            r["passed"].append(output)
+        out = {"current_date": NOW_STRING, "type": date.parent.get("tag"), "date": date.story_dict}
+        #TODO: Reimplement better
+        #try:
+        #    pp = date.parent.parent
+        #    if pp.tag == "INDI":
+        #        output["individual_id"] = date.parent.parent.get("xref_ID")
+        #    elif pp.tag == "FAM":
+        #        output["family_id"] = date.parent.parent.get("xref_ID")
+        #except AttributeError:
+        #    pass
+        if date.datetime < NOW:
+            out["message"] = "Date {0} is before the current date {1}".format(tools.Date(date), NOW_STRING)
+            r["passed"].append(out)
         else:
-            r["failed"].append(output)
+            out["message"] = "Date {0} is after the current date {1}".format(tools.Date(date), NOW_STRING)
+            r["failed"].append(out)
     return r
 
 
@@ -187,8 +188,10 @@ def marriage_before_death(gedcom_file):
                "marriage_date": fam.marriage_date.story_dict,
                "husband_xref": fam.husband.xref if fam.has("husband") else None,
                "wife_xref": fam.wife.xref if fam.has("wife") else None,
-               "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None,
-               "wife_death_date": fam.wife.death_date.story_dict if fam.has("wife") and fam.wife.has("death_date") else None}
+               "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has(
+                       "death_date") else None,
+               "wife_death_date": fam.wife.death_date.story_dict if fam.has("wife") and fam.wife.has(
+                       "death_date") else None}
         msg_intro = "{0} with marriage on {1} ".format(fam, fam.marriage_date)
         if fam.husband.has("death_date") and fam.wife.has("death_date"):
             if fam.marriage_date < fam.husband.death_date:
@@ -239,8 +242,10 @@ def divorce_before_death(gedcom_file):
                "divorce_date": fam.divorce_date.story_dict,
                "husband_xref": fam.husband.xref if fam.has("husband") else None,
                "wife_xref": fam.wife.xref if fam.has("wife") else None,
-               "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None,
-               "wife_death_date": fam.wife.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None}
+               "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has(
+                       "death_date") else None,
+               "wife_death_date": fam.wife.death_date.story_dict if fam.has("husband") and fam.husband.has(
+                       "death_date") else None}
         msg_intro = "{0} with divorce on {1} ".format(fam, fam.divorce_date)
         if fam.husband.has("death_date") and fam.wife.has("death_date"):
             if fam.husband.death_date < fam.divorce_date:
@@ -282,7 +287,7 @@ def less_then_150_years_old(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.individuals_dict:
         birt_date = tools.get_birth_date(individual)
         deat_date = tools.get_death_date(individual)
@@ -321,7 +326,7 @@ def birth_before_marriage_of_parents(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
+    r = {"passed": [], "failed": []}
     for family in gedcom_file.families_dict:
         for child in family["children"]:
             child_birt_date = tools.get_birth_date(child)
@@ -355,7 +360,7 @@ def birth_before_death_of_parents(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
+    r = {"passed": [], "failed": []}
     for family in gedcom_file.families_dict:
         mother_deat_date = tools.get_death_date(family["wife"])
         father_deat_date = tools.get_death_date(family["husb"])
@@ -397,7 +402,7 @@ def marriage_after_14(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
+    r = {"passed": [], "failed": []}
     for family in gedcom_file.families_dict:
         if family["marr_date"] is not None:
             w_birt_date = tools.get_birth_date(family["wife"])
@@ -430,7 +435,7 @@ def no_bigamy(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
+    r = {"passed": [], "failed": []}
     for individual in gedcom_file.find("tag", "INDI"):
         # Get all combinations of marriages this individual is or has been in
         for marr_1, marr_2 in combinations(tools.iter_marriage_timeframe_dict(individual), 2):
@@ -460,7 +465,7 @@ def parents_not_too_old(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
+    r = {"passed": [], "failed": []}
     for family in gedcom_file.families_dict:
         m_birt_date = tools.get_birth_date(family["wife"])
         f_birt_date = tools.get_birth_date(family["husb"])
@@ -801,7 +806,7 @@ if __name__ == "__main__":
 
 
     #Sprint 1
-    #dates_before_current_date(g)
+    dates_before_current_date(g)
     birth_before_marriage(g)
     birth_before_death(g)
     marriage_before_divorce(g)

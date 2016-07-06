@@ -19,10 +19,11 @@ def log(func):
     """ Function decarator used by the story decorator inorder to log the results of a story """
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
-        for entry in r["output"]["failed"]:
-            logging.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Failed", story_name=r["name"]))
         for entry in r["output"]["passed"]:
             logging.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Passed", story_name=r["name"]))
+        for entry in r["output"]["failed"]:
+            logging.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Failed", story_name=r["name"]))
+
         return r
     return func_wrapper
 
@@ -187,7 +188,7 @@ def marriage_before_death(gedcom_file):
                "husband_xref": fam.husband.xref if fam.has("husband") else None,
                "wife_xref": fam.wife.xref if fam.has("wife") else None,
                "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None,
-               "wife_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None}
+               "wife_death_date": fam.wife.death_date.story_dict if fam.has("wife") and fam.wife.has("death_date") else None}
         msg_intro = "{0} with marriage on {1} ".format(fam, fam.marriage_date)
         if fam.husband.has("death_date") and fam.wife.has("death_date"):
             if fam.marriage_date < fam.husband.death_date:
@@ -197,7 +198,7 @@ def marriage_before_death(gedcom_file):
             if fam.marriage_date < fam.wife.death_date:
                 passed, msg_wife = passed and True, pass_msg.format("wife", fam.wife, fam.wife.death_date)
             else:
-                passed, msg_wife = passed and False, pass_msg.format("wife", fam.wife, fam.wife.death_date)
+                passed, msg_wife = passed and False, fail_msg.format("wife", fam.wife, fam.wife.death_date)
             out["message"] = msg_intro + msg_husb + " and " + msg_wife
             r["passed"].append(out) if passed else r["failed"].append(out)
         elif fam.husband.has("death_date"):
@@ -212,7 +213,7 @@ def marriage_before_death(gedcom_file):
                 out["message"] = msg_intro + pass_msg.format("wife", fam.wife, fam.wife.death_date)
                 r["passed"].append(out)
             else:
-                out["message"] = msg_intro + pass_msg.format("wife", fam.wife, fam.wife.death_date)
+                out["message"] = msg_intro + fail_msg.format("wife", fam.wife, fam.wife.death_date)
                 r["failed"].append(out)
     return r
 
@@ -228,21 +229,44 @@ def divorce_before_death(gedcom_file):
     :type gedcom_file: gedcom.File
 
     """
-    r = {"passed": [], "failed": [], "user_output": []}
-    # Todo: switch to family loop **to catch multiple marriages
-    for individual in gedcom_file.individuals_dict:
-        div_date = tools.get_divorce_date(individual)
-        deat_date = tools.get_death_date(individual)
-        if div_date and deat_date:
-            output = {"individual_id": individual.get("xref_ID"),
-                      "family_id": next(tools.iter_families_spouse_of(individual)).get("xref_ID"),
-                      "spouse_id": next(tools.iter_spouses(individual)).get("xref_ID"),
-                      "divorce_date": div_date.story_dict,
-                      "death_date": deat_date.story_dict,
-                      "name": tools.get_name(individual),
-                      "sex": tools.get_sex(individual)
-                      }
-            r["passed"].append(output) if div_date.datetime < deat_date.datetime else r["failed"].append(output)
+    r = {"passed": [], "failed": []}
+
+    pass_msg = "has {0} {1} with death {2} before divorce"
+    fail_msg = "has {0} {1} with death {2} after divorce"
+
+    for fam in (f for f in gedcom_file.families if f.has("divorce_date")):
+        out = {"family_xref": fam.xref,
+               "divorce_date": fam.divorce_date.story_dict,
+               "husband_xref": fam.husband.xref if fam.has("husband") else None,
+               "wife_xref": fam.wife.xref if fam.has("wife") else None,
+               "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None,
+               "wife_death_date": fam.wife.death_date.story_dict if fam.has("husband") and fam.husband.has("death_date") else None}
+        msg_intro = "{0} with divorce on {1} ".format(fam, fam.divorce_date)
+        if fam.husband.has("death_date") and fam.wife.has("death_date"):
+            if fam.husband.death_date < fam.divorce_date:
+                passed, msg_husb = True, pass_msg.format("husband", fam.husband, fam.husband.death_date)
+            else:
+                passed, msg_husb = False, fail_msg.format("husband", fam.husband, fam.husband.death_date)
+            if fam.wife.death_date < fam.divorce_date:
+                passed, msg_wife = passed and True, pass_msg.format("wife", fam.wife, fam.wife.death_date)
+            else:
+                passed, msg_wife = passed and False, pass_msg.format("wife", fam.wife, fam.wife.death_date)
+            out["message"] = msg_intro + msg_husb + " and " + msg_wife
+            r["passed"].append(out) if passed else r["failed"].append(out)
+        elif fam.husband.has("death_date"):
+            if fam.husband.death_date < fam.divorce_date:
+                out["message"] = msg_intro + pass_msg.format("husband", fam.husband, fam.husband.death_date)
+                r["passed"].append(out)
+            else:
+                out["message"] = msg_intro + fail_msg.format("husband", fam.husband, fam.husband.death_date)
+                r["failed"].append(out)
+        elif fam.wife.has("death_date"):
+            if fam.wife.death_date < fam.divorce_date:
+                out["message"] = msg_intro + pass_msg.format("wife", fam.wife, fam.wife.death_date)
+                r["passed"].append(out)
+            else:
+                out["message"] = msg_intro + fail_msg.format("wife", fam.wife, fam.wife.death_date)
+                r["failed"].append(out)
     return r
 
 
@@ -782,7 +806,7 @@ if __name__ == "__main__":
     birth_before_death(g)
     marriage_before_divorce(g)
     marriage_before_death(g)
-    #divorce_before_death(g)
+    divorce_before_death(g)
 
     # Sprint 2
     #less_then_150_years_old(g)

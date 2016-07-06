@@ -6,6 +6,7 @@ from datetime import datetime
 import sys
 from itertools import ifilter
 import gedcom
+import time
 
 
 def human_sort(s, _re=re.compile('([0-9]+)')):
@@ -181,98 +182,178 @@ def get_divorce_dates(individual):
     return [div.children.find_one('tag', 'DATE') for div in iter_divorces(individual)]
 
 
-class Individual(object):
+def cachemethod(func):
+    def wrapper(self, *args):
+        if func.__name__ in self.cache:
+            return self.cache.get(func.__name__)
+        val = func(self, *args)
+        self.cache[func.__name__] = val
+        return val
+    return wrapper
+
+
+class LineTool(object):
     def __init__(self, line):
         self.line = line
-
-    def __str__(self):
-        return "Individual({0})".format(self.line.get('xref_ID'))
+        self.cache = {}
 
     @property
+    @cachemethod
     def ln(self):
         return self.line.ln
 
     @property
+    @cachemethod
+    def val(self):
+        return self.line.val
+
+    @property
+    @cachemethod
+    def story_dict(self):
+        return self.line.story_dict
+
+    def has(self, p):
+        return getattr(self, p) is not None
+
+
+class Date(LineTool):
+    def __str__(self):
+        return "{0} (line {1})".format(self.val, self.ln)
+
+    def __eq__(self, other):
+        return self.dt == other.dt
+
+    def __ne__(self, other):
+        return self.dt != other.dt
+
+    def __lt__(self, other):
+        return self.dt < other.dt
+
+    def __gt__(self, other):
+        return self.dt > other.dt
+
+    def __le__(self, other):
+        return self.dt <= other.dt
+
+    def __ge__(self, other):
+        return self.dt >= other.dt
+
+    @property
+    @cachemethod
+    def dt(self):
+        return self.line.datetime
+
+
+class Individual(LineTool):
+
+    def __str__(self):
+        name = self.name.val.replace("/", "") if self.has("name") else "N/A"
+        xref = self.xref
+        return "{0} ({1})".format(name, xref)
+
+    @property
+    @cachemethod
     def xref(self):
         return self.line.get('xref_ID')
 
     @property
+    @cachemethod
     def name(self):
         return self.line.children.find_one("tag", "NAME")
 
     @property
+    @cachemethod
     def sex(self):
         return self.line.children.find_one("tag", "SEX")
 
     @property
+    @cachemethod
+    def pronoun(self):
+        sex = self.sex.val if self.has("sex") else None
+        if sex == "M":
+            return "his"
+        if sex == "F":
+            return "her"
+        return "there"
+
+    @property
+    @cachemethod
     def birth(self):
         return self.line.children.find_one("tag", "BIRT")
 
     @property
+    @cachemethod
     def birth_date(self):
         l = self.birth
-        return l.children.find_one('tag', 'DATE') if type(l) is gedcom.Line else None
+        return Date(l.children.find_one('tag', 'DATE')) if type(l) is gedcom.Line else None
 
     @property
-    def birth_datetime(self):
-        l = self.birth_date
-        return None if l is None else l.datetime
-
-    @property
+    @cachemethod
     def death(self):
         return self.line.children.find_one("tag", "DEAT")
 
     @property
+    @cachemethod
     def death_date(self):
-        l = self.birth
-        return l.children.find_one('tag', 'DATE') if type(l) is gedcom.Line else None
+        l = self.death
+        return Date(l.children.find_one('tag', 'DATE')) if type(l) is gedcom.Line else None
 
-    @property
-    def death_datetime(self):
-        l = self.death_date
-        return None if l is None else l.datetime
+    @cachemethod
+    def families(self, tag):
+        """ Returns iterator of families where this person is a spouse.
+
+        Note: Tag should be FAMS or FAMC
+        """
+        if tag not in ["FAMS", "FAMC"]:
+            raise ValueError("families tag must be 'FAMS' or 'FAMC'")
+        return iter(Family(f.follow_xref()) for f in self.line.children.find("tag", tag))
 
 
-class Family(object):
-    def __init__(self, line):
-        self.line = line
-
+class Family(LineTool):
     def __str__(self):
-        return "Family({0})".format(self.line.get('xref_ID'))
+        return "Family ({0})".format(self.line.get('xref_ID'))
 
     @property
-    def ln(self):
-        return self.line.ln
-
-    @property
+    @cachemethod
     def xref(self):
         return self.line.get('xref_ID')
 
     @property
+    @cachemethod
     def husband(self):
         husb = self.line.children.find_one('tag', 'HUSB')
         return Individual(husb.follow_xref()) if husb else None
 
     @property
+    @cachemethod
     def wife(self):
         wife = self.line.children.find_one('tag', 'WIFE')
         return Individual(wife.follow_xref()) if wife else None
 
     @property
+    @cachemethod
     def marriage(self):
         return self.line.children.find_one('tag', 'MARR')
 
     @property
+    @cachemethod
     def marriage_date(self):
         marr = self.marriage
-        return marr.children.find_one('tag', 'DATE') if marr else None
+        return Date(marr.children.find_one('tag', 'DATE')) if marr else None
 
     @property
-    def marriage_datetime(self):
-        date = self.marriage_date
-        return date.datetime if date else None
+    @cachemethod
+    def divorce(self):
+        return self.line.children.find_one('tag', 'DIV')
 
     @property
+    @cachemethod
+    def divorce_date(self):
+        div = self.divorce
+        return Date(div.children.find_one('tag', 'DATE')) if div else None
+
+    @property
+    @cachemethod
     def marriage_timeframe(self):
         m_date = self.marriage_date
         d_date = self.divorce_date
@@ -301,35 +382,11 @@ class Family(object):
                 end_ln, end_val, end_dt = None, None, datetime.max
             return {"start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
                     "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}}
-    @property
-    def divorce(self):
-        return self.line.children.find_one('tag', 'DIV')
 
     @property
-    def divorce_date(self):
-        div = self.divorce
-        return div.children.find_one('tag', 'DATE') if div else None
-
-    @property
-    def divorce_datetime(self):
-        date = self.divorce_date
-        return date.datetime if date else None
-
-    @property
+    @cachemethod
     def children(self):
         return [child.follow_xref() for child in self.line.children.find('tag', 'CHIL')]
-
-    @property
-    def summary(self):
-        pass
-
-    @property
-    def dictionary(self):
-        """ Create dictionary of family info for a family line
-
-        :return:
-        """
-        return dict(xref=self.xref, ln=self.xref, husb=self.husband, wife=self.wife)
 
 
 def family_dict(family):

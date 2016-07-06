@@ -42,7 +42,6 @@ def parse_line(s):
     return d
 
 
-
 class File(object):
 
     """GEDCOM File Class
@@ -218,10 +217,20 @@ class File(object):
     @property
     def individuals(self):
         # Todo: Write Docstring
-        return self.find("tag", "INDI")
+        return [tools.Individual(line) for line in self.find("tag", "INDI")]
 
     @property
     def families(self):
+        # Todo: Write Docstring
+        return [tools.Family(line) for line in self.find("tag", "FAM")]
+
+    @property
+    def individuals_dict(self):
+        # Todo: Write Docstring
+        return self.find("tag", "INDI")
+
+    @property
+    def families_dict(self):
         # Todo: Write Docstring
         return [tools.family_dict(line) for line in self.find("tag", "FAM")]
 
@@ -256,7 +265,7 @@ class File(object):
         """
         results = []
         # The individuals ordered dictionary will be used to get the HUSB/WIFE name from there xref ID
-        results = [tools.family_summary(fam) for fam in self.families]
+        results = [tools.family_summary(fam) for fam in self.families_dict]
         return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
 
@@ -488,7 +497,7 @@ class Line(dict):
         """ Line value Property
         :return: line value
         """
-        return self.get("line_value")
+        return self.get("line_value", "")
 
     @property
     def datetime(self):

@@ -314,25 +314,24 @@ def birth_before_marriage_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in gedcom_file.families_dict:
-        for child in family["children"]:
-            child_birt_date = tools.get_birth_date(child)
-            if child_birt_date and family["marr_date"]:
-                output = {"family_id": family["xref"],
-                          "mother_id": family["wife"].get("xref_ID"),
-                          "father_id": family["husb"].get("xref_ID"),
-                          "child_id": child.get("xref_ID"),
-                          "child_birth_date": child_birt_date.story_dict,
-                          "marriage_date": family["marr_date"].story_dict,
-                          "father_name": tools.get_name(family["husb"]),
-                          "mother_name": tools.get_name(family["wife"]),
-                          "child_name": tools.get_name(child)
-                          }
-                passed = (family["marr_date"].datetime < child_birt_date.datetime)
-                if family["div_date"]:
-                    output["div"] = family["div_date"].story_dict
-                    passed = passed and (family["div_date"].datetime > child_birt_date.datetime)
-                r["passed"].append(output) if passed else r["failed"].append(output)
+
+    div_msg = "{0} with marriage date {1} and divorce date {2} has a child {3} born {4}"
+    mar_msg = "{0} with marriage date {1} has a child {2} born {3}"
+
+    for fam in (f for f in gedcom_file.families if f.has("marriage_date")):
+        for child in (c for c in fam.children if c.has("birth_date")):
+            out = {"family_xref": fam.xref, "child_xref": child.xref,
+                   "mother_xref": fam.wife.xref if fam.has("wife") else None,
+                   "father_xref": fam.husband.xref if fam.has("husband") else None,
+                   "child_birth_date": child.birth_date.story_dict, "marriage_date": fam.marriage_date.story_dict,
+                   "divorce_date": fam.divorce_date.story_dict if fam.has("divorce_date") else None}
+            passed = fam.marriage_date < child.birth_date
+            if fam.divorce_date:
+                out["message"] = div_msg.format(fam, fam.marriage_date, fam.divorce_date, child, child.birth_date)
+                passed = passed and (fam.divorce_date > child.birth_date)
+            else:
+                out["message"] = mar_msg.format(fam, fam.marriage_date, child, child.birth_date)
+            r["passed"].append(out) if passed else r["failed"].append(out)
     return r
 
 

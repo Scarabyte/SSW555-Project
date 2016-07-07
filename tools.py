@@ -412,7 +412,7 @@ class Family(LineTool):
     @property
     @cachemethod
     def children(self):
-        return [child.follow_xref() for child in self.line.children.find('tag', 'CHIL')]
+        return [Individual(child.follow_xref()) for child in self.line.children.find('tag', 'CHIL')]
 
 
 def family_dict(family):

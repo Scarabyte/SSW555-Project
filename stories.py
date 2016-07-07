@@ -46,7 +46,7 @@ def story(id_):
 @story("Error US01")
 def dates_before_current_date(gedcom_file):
     """ Dates (birth, marriage, divorce, death) should not be after the current date
-    
+
     :sprint: 1
     :author: Constantine Davantzis
 
@@ -78,7 +78,7 @@ def dates_before_current_date(gedcom_file):
 @story("Error US02")
 def birth_before_marriage(gedcom_file):
     """ Birth should occur before marriage of an individual
-    
+
     :sprint: 1
     :author: Constantine Davantzis
 
@@ -87,10 +87,8 @@ def birth_before_marriage(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
     passed_message = "Individual {0} born {1} before {2} marriage ({3}) on {4}"
     failed_message = "Individual {0} born {1} after {2} marriage ({3}) on {4}"
-
     for indi in (i for i in gedcom_file.individuals if i.has("birth_date")):
         for fam in (fam for fam in indi.families("FAMS") if fam.has("marriage_date")):
             out = {"indi": {"xref": indi.xref, "birth_date": indi.birth_date.story_dict},
@@ -102,7 +100,6 @@ def birth_before_marriage(gedcom_file):
             else:
                 out["message"] = failed_message.format(*msg_out)
                 r["failed"].append(out)
-
     return r
 
 
@@ -118,10 +115,8 @@ def birth_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
     passed_message = "Individual {0} born {1} before {2} death on {3}"
     failed_message = "Individual {0} born {1} after {2} death on {3}"
-
     for indi in (i for i in gedcom_file.individuals if (i.has("birth_date") and i.has("death_date"))):
         out = {"xref": indi.xref, "birth_date": indi.birth_date.story_dict, "death_date": indi.death_date.story_dict}
         msg_out = (indi, indi.birth_date, indi.pronoun, indi.death_date)
@@ -131,14 +126,13 @@ def birth_before_death(gedcom_file):
         else:
             out["message"] = failed_message.format(*msg_out)
             r["failed"].append(out)
-
     return r
 
 
 @story("Error US04")
 def marriage_before_divorce(gedcom_file):
     """ Marriage should occur before divorce of spouses, and divorce can only occur after marriage
-    
+
     :sprint: 1
     :author: vibharavi
 
@@ -147,10 +141,8 @@ def marriage_before_divorce(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
     passed_message = "{0} with husband {1} and wife {2} has marriage on {3} before divorce on {4}"
     failed_message = "{0} with husband {1} and wife {2} has marriage on {3} after divorce on {4}"
-
     for fam in (f for f in gedcom_file.families if (f.has("marriage_date") and f.has("divorce_date"))):
         out = {"family_xref": fam.xref,
                "husband_xref": fam.husband.xref if fam.has("husband") else None,
@@ -163,7 +155,6 @@ def marriage_before_divorce(gedcom_file):
         else:
             out["message"] = failed_message.format(*msg_out)
             r["failed"].append(out)
-
     return r
 
 
@@ -179,10 +170,8 @@ def marriage_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
     pass_msg = "has {0} {1} with death {2} after marriage"
     fail_msg = "has {0} {1} with death {2} before marriage"
-
     for fam in (f for f in gedcom_file.families if f.has("marriage_date")):
         out = {"family_xref": fam.xref,
                "marriage_date": fam.marriage_date.story_dict,
@@ -224,7 +213,7 @@ def marriage_before_death(gedcom_file):
 @story("Error US06")
 def divorce_before_death(gedcom_file):
     """ Divorce can only occur before death of both spouses
-    
+
     :sprint: 1
     :author: Adam Burbidge
 
@@ -233,10 +222,8 @@ def divorce_before_death(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
     pass_msg = "has {0} {1} with death {2} before divorce"
     fail_msg = "has {0} {1} with death {2} after divorce"
-
     for fam in (f for f in gedcom_file.families if f.has("divorce_date")):
         out = {"family_xref": fam.xref,
                "divorce_date": fam.divorce_date.story_dict,
@@ -279,7 +266,7 @@ def divorce_before_death(gedcom_file):
 def less_then_150_years_old(gedcom_file):
     """ Death should be less than 150 years after birth for dead people, and
         current date should be less than 150 years after birth for all living people
-    
+
     :sprint: 2
     :author: Constantine Davantzis
 
@@ -305,7 +292,7 @@ def less_then_150_years_old(gedcom_file):
 @story("Anomaly US08")
 def birth_before_marriage_of_parents(gedcom_file):
     """ Child should be born after marriage of parents (and before their divorce)
-    
+
     :sprint: 2
     :author: Constantine Davantzis
 
@@ -314,10 +301,8 @@ def birth_before_marriage_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
     div_msg = "{0} with marriage date {1} and divorce date {2} has a child {3} born {4}"
     mar_msg = "{0} with marriage date {1} has a child {2} born {3}"
-
     for fam in (f for f in gedcom_file.families if f.has("marriage_date")):
         for child in (c for c in fam.children if c.has("birth_date")):
             out = {"family_xref": fam.xref, "child_xref": child.xref,
@@ -338,7 +323,7 @@ def birth_before_marriage_of_parents(gedcom_file):
 @story("Error US09")
 def birth_before_death_of_parents(gedcom_file):
     """ Child should be born before death of mother and before 9 months after death of father
-    
+
     :sprint: 2
     :author: vibharavi
 
@@ -356,8 +341,7 @@ def birth_before_death_of_parents(gedcom_file):
                       "father_id": family["husb"].get("xref_ID"),
                       "child_id": child.get("xref_ID"),
                       "father_name": tools.get_name(family["husb"]),
-                      "mother_name": tools.get_name(family["wife"])
-                      }
+                      "mother_name": tools.get_name(family["wife"])}
             child_birt_date = tools.get_birth_date(child)
             if child_birt_date:
                 output["child_birth_date"] = child_birt_date.story_dict
@@ -380,7 +364,7 @@ def birth_before_death_of_parents(gedcom_file):
 @story("Anomaly US10")
 def marriage_after_14(gedcom_file):
     """ Marriage should be at least 14 years after birth of both spouses
-    
+
     :sprint: 2
     :author: vibharavi
 
@@ -403,8 +387,7 @@ def marriage_after_14(gedcom_file):
                       "wife_marriage_age": w_marr_age,
                       "husband_marriage_age": h_marr_age,
                       "wife_name": tools.get_name(family["wife"]),
-                      "husband_name": tools.get_name(family["husb"])
-                      }
+                      "husband_name": tools.get_name(family["husb"])}
             r["passed"].append(output) if ((w_marr_age is None) or (w_marr_age > 14)) and (
                 (h_marr_age is None) or (h_marr_age > 14)) else r["failed"].append(output)
     return r
@@ -480,124 +463,199 @@ def parents_not_too_old(gedcom_file):
     return r
 
 
-def siblings_spacing():
-    """ Siblings spacing
-    Description: Birth dates of siblings should be more than 8 months apart or less than 2 days apart
-    story_id: US13
-    author: cd
-    sprint: 3
+@story("Anomaly US13")
+def siblings_spacing(gedcom_file):
+    """ Birth dates of siblings should be more than 8 months apart or less than 2 days apart
+
+    :sprint: 2
+    :author: Constantine Davantzis
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def multiple_births_less_than_5():
-    """ Multiple births less than 5
-    Description: No more than five siblings should be born at the same time
-    story_id: US14
-    author: cd
-    sprint: 3
+@story("Anomaly US14")
+def multiple_births_less_than_5(gedcom_file):
+    """ No more than five siblings should be born at the same time
+
+    :sprint: 3
+    :author: Constantine Davantzis
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def fewer_than_15_siblings():
-    """ Fewer than 15 siblings
-    Description: There should be fewer than 15 siblings in a family
-    story_id: US15
-    author: vr
-    sprint: 3
+@story("Anomaly US15")
+def fewer_than_15_siblings(gedcom_file):
+    """ There should be fewer than 15 siblings in a family
+
+    :sprint: 3
+    :author: vibharavi
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def male_last_names():
-    """ Male last names
-    Description: All male members of a family should have the same last name
-    story_id: US16
-    author: vr
-    sprint: 3
+@story("Anomaly US16")
+def male_last_names(gedcom_file):
+    """ All male members of a family should have the same last name
+
+    :sprint: 3
+    :author: vibharavi
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def no_marriages_to_descendants():
-    """ No marriages to descendants
-    Description: Parents should not marry any of their descendants
-    story_id: US17
-    author: ab
-    sprint: 3
+@story("Anomaly US17")
+def no_marriages_to_descendants(gedcom_file):
+    """ Parents should not marry any of their descendants
+
+    :sprint: 3
+    :author: Adam Burbidge
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def siblings_should_not_marry():
-    """ Siblings should not marry
-    Description: Siblings should not marry one another
-    story_id: US18
-    author: ab
-    sprint: 3
+@story("Anomaly US18")
+def siblings_should_not_marry(gedcom_file):
+    """ Siblings should not marry one another
+
+    :sprint: 3
+    :author: Adam Burbidge
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def first_cousins_should_not_marry():
-    """ First cousins should not marry
-    Description: First cousins should not marry one another
-    story_id: US19
-    author: cd
-    sprint: 4
+@story("Anomaly US19")
+def first_cousins_should_not_marry(gedcom_file):
+    """ First cousins should not marry one another
+
+    :sprint: 4
+    :author: Constantine Davantzis
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def aunts_and_uncles():
-    """ Aunts and uncles
-    Description: Aunts and uncles should not marry their nieces or nephews
-    story_id: US20
-    author: cd
-    sprint: 4
+@story("Anomaly US20")
+def aunts_and_uncles(gedcom_file):
+    """ Aunts and uncles should not marry their nieces or nephews
+
+    :sprint: 4
+    :author: Constantine Davantzis
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def correct_gender_for_role():
-    """ Correct gender for role
-    Description: Husband in family should be male and wife in family should be female
-    story_id: US21
-    author: vr
-    sprint: 4
+@story("Error US21")
+def correct_gender_for_role(gedcom_file):
+    """ Husband in family should be male and wife in family should be female
+
+    :sprint: 4
+    :author: vibharavi
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def unique_ids():
-    """ Unique IDs
-    Description: All individual IDs should be unique and all family IDs should be unique
-    story_id: US22
-    author: vr
-    sprint: 4
+@story("Error US22")
+def unique_ids(gedcom_file):
+    """ All individual IDs should be unique and all family IDs should be unique
+
+    :sprint: 4
+    :author: vibharavi
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def unique_name_and_birth_date():
-    """ Unique name and birth date
-    Description: No more than one individual with the same name and birth date should appear in a GEDCOM file
-    story_id: US23
-    author: ab
-    sprint: 4
+@story("Anomaly US23")
+def unique_name_and_birth_date(gedcom_file):
+    """ No more than one individual with the same name and birth date should appear in a GEDCOM file
+
+    :sprint: 4
+    :author: Adam Burbidge
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
 
 
-def unique_families_by_spouses():
-    """ Unique families by spouses
-    Description: No more than one family with the same spouses by name and the same marriage date should appear in a GEDCOM file
-    story_id: US24
-    author: ab
-    sprint: 4
+@story("Anomaly US24")
+def unique_families_by_spouses(gedcom_file):
+    """ No more than one family with the same spouses by name and the same marriage date should appear in a GEDCOM file
+
+    :sprint: 4
+    :author: Adam Burbidge
+
+    :param gedcom_file: GEDCOM File to check
+    :type gedcom_file: gedcom.File
+
     """
-    pass
+    r = {"passed": [], "failed": []}
+    # ...
+    return r
+
+
+# USER STORIES BELOW NOT IN ASSIGNMENT SCOPE
 
 
 def unique_first_names_in_families():
@@ -781,17 +839,14 @@ def reject_illegitimate_dates():
 
 
 if __name__ == "__main__":
-    import json 
     g = gedcom.File()
-
     fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
     try:
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
-
-    #Sprint 1
+    # Sprint 1 - Stories
     dates_before_current_date(g)
     birth_before_marriage(g)
     birth_before_death(g)
@@ -799,10 +854,26 @@ if __name__ == "__main__":
     marriage_before_death(g)
     divorce_before_death(g)
 
-    # Sprint 2
+    # Sprint 2 - Stories
     less_then_150_years_old(g)
     birth_before_marriage_of_parents(g)
     birth_before_death_of_parents(g)
     marriage_after_14(g)
     no_bigamy(g)
     parents_not_too_old(g)
+
+    # Sprint 3 - Stories
+    # siblings_spacing(g)
+    # multiple_births_less_than_5(g)
+    # fewer_than_15_siblings(g)
+    # male_last_names(g)
+    # no_marriages_to_descendants(g)
+    # siblings_should_not_marry(g)
+
+    # Sprint 4 - Stories
+    # first_cousins_should_not_marry(g)
+    # aunts_and_uncles(g)
+    # correct_gender_for_role(g)
+    # unique_ids(g)
+    # unique_name_and_birth_date(g)
+    # unique_families_by_spouses(g)

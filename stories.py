@@ -467,7 +467,9 @@ def parents_not_too_old(gedcom_file):
 def siblings_spacing(gedcom_file):
     """ Birth dates of siblings should be more than 8 months apart or less than 2 days apart
 
-    :sprint: 2
+    :note: Assume 8 months is (30 days)*(8 months)=(240 days)
+
+    :sprint: 3
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
@@ -475,7 +477,20 @@ def siblings_spacing(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
+    msg = "{0} has siblings born {1} days apart with {2} born on {3} and {4} born on {5}"
+    for fam in gedcom_file.families:
+        siblings = [c for c in fam.children if c.has("birth_date")]
+        if len(siblings) >= 2:
+            for sib_a, sib_b in combinations(siblings, 2):
+                days = tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
+                out = {"family_xref": fam.xref,
+                       "mother_xref": fam.wife.xref if fam.has("wife") else None,
+                       "father_xref": fam.husband.xref if fam.has("husband") else None,
+                       "days_apart": days,
+                       "sibling_one": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
+                       "sibling_two": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
+                       "message": msg.format(fam, days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)}
+                r["passed"].append(out) if (days < 2) or (days > 240) else r["failed"].append(out)
     return r
 
 
@@ -863,7 +878,7 @@ if __name__ == "__main__":
     parents_not_too_old(g)
 
     # Sprint 3 - Stories
-    # siblings_spacing(g)
+    siblings_spacing(g)
     # multiple_births_less_than_5(g)
     # fewer_than_15_siblings(g)
     # male_last_names(g)

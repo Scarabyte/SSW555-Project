@@ -36,6 +36,19 @@ def parse_date(s):
     raise ValueError("Unsupported Date Format")
 
 
+def days_between(a, b):
+    """ Calculate the days between two dates
+
+    :param a: datetime 1
+    :param b: datetime 2
+
+    :return: days between two dates
+    :rtype: float
+
+    """
+    return abs((a - b).days)
+
+
 def years_between(a, b):
     """ Calculate the years between two dates
 

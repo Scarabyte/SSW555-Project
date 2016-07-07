@@ -67,10 +67,10 @@ def dates_before_current_date(gedcom_file):
         #except AttributeError:
         #    pass
         if date.datetime < NOW:
-            out["message"] = "Date {0} is before the current date {1}".format(tools.Date(date), NOW_STRING)
+            out["message"] = "Date {0} is before {1} (current date)".format(tools.Date(date), NOW_STRING)
             r["passed"].append(out)
         else:
-            out["message"] = "Date {0} is after the current date {1}".format(tools.Date(date), NOW_STRING)
+            out["message"] = "Date {0} is after {1} (current date)".format(tools.Date(date), NOW_STRING)
             r["failed"].append(out)
     return r
 
@@ -288,30 +288,17 @@ def less_then_150_years_old(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.individuals_dict:
-        birt_date = tools.get_birth_date(individual)
-        deat_date = tools.get_death_date(individual)
-        if birt_date:
-            if deat_date:
-                age = tools.years_between(birt_date.datetime, deat_date.datetime)
-                output = {"individual_id": individual.get("xref_ID"),
-                          "birth_date": birt_date.story_dict,
-                          "death_date": deat_date.story_dict,
-                          "age": age,
-                          "name": tools.get_name(individual),
-                          "sex": tools.get_sex(individual)
-                          }
-                r["passed"].append(output) if age < 150 else r["failed"].append(output)
-            else:
-                age = tools.years_between(birt_date.datetime, datetime.now())
-                output = {"individual_id": individual.get("xref_ID"),
-                          "birth_date": birt_date.story_dict,
-                          "current_date": datetime.now().strftime("%d %b %Y").upper(),
-                          "age": age,
-                          "name": tools.get_name(individual),
-                          "sex": tools.get_sex(individual)
-                          }
-                r["passed"].append(output) if age < 150 else r["failed"].append(output)
+    death_msg = "Individual {0} was born {1} and died {2} years later on {3}"
+    alive_msg = "Individual {0} was born {1} and is {2} years old as of {3} (current date)"
+    for indi in (i for i in gedcom_file.individuals if i.has("birth_date")):
+        out = {"xref": indi.xref, "birth_date": indi.birth_date}
+        if indi.death_date:
+            out.update({"death_date": indi.death_date.story_dict, "age_at_death": indi.age})
+            out["message"] = death_msg.format(indi, indi.birth_date, indi.age, indi.death_date)
+        else:
+            out.update({"current_date": NOW_STRING, "current_age": indi.age})
+            out["message"] = alive_msg.format(indi, indi.birth_date, indi.age, NOW_STRING)
+        r["passed"].append(out) if indi.age < 150 else r["failed"].append(out)
     return r
 
 
@@ -814,9 +801,9 @@ if __name__ == "__main__":
     divorce_before_death(g)
 
     # Sprint 2
-    #less_then_150_years_old(g)
-    #birth_before_marriage_of_parents(g)
-    #birth_before_death_of_parents(g)
-    #marriage_after_14(g)
-    #no_bigamy(g)
-    #parents_not_too_old(g)
+    less_then_150_years_old(g)
+    birth_before_marriage_of_parents(g)
+    birth_before_death_of_parents(g)
+    marriage_after_14(g)
+    no_bigamy(g)
+    parents_not_too_old(g)

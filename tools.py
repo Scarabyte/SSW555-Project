@@ -8,6 +8,9 @@ from itertools import ifilter
 import gedcom
 import time
 
+NOW = datetime.now()
+NOW_STRING = NOW.strftime("%d %b %Y").upper()
+
 
 def human_sort(s, _re=re.compile('([0-9]+)')):
     """
@@ -280,6 +283,15 @@ class Individual(LineTool):
     @cachemethod
     def sex(self):
         return self.line.children.find_one("tag", "SEX")
+
+    @property
+    @cachemethod
+    def age(self):
+        if self.birth_date:
+            if self.death_date:
+                return years_between(self.birth_date.dt, self.death_date.dt)
+            return years_between(self.birth_date.dt, NOW)
+        return None
 
     @property
     @cachemethod

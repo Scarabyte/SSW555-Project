@@ -571,6 +571,57 @@ def siblings_should_not_marry(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+    # Get sibilings
+    # Get an individual's marriages
+    # Check if any overlap
+
+############ From US13
+    msg = "{0} has siblings born {1} days apart with {2} born on {3} and {4} born on {5}"
+    for fam in gedcom_file.families:
+        siblings = [c for c in fam.children if c.has("birth_date")]
+        if len(siblings) >= 2:
+            for sib_a, sib_b in combinations(siblings, 2):
+                days = tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
+                out = {"family_xref": fam.xref,
+                       "mother_xref": fam.wife.xref if fam.has("wife") else None,
+                       "father_xref": fam.husband.xref if fam.has("husband") else None,
+                       "days_apart": days,
+                       "sibling_one": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
+                       "sibling_two": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
+                       "message": msg.format(fam, days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)}
+                r["passed"].append(out) if (days < 2) or (days > 240) else r["failed"].append(out)
+
+############ From US02
+    passed_message = "Individual {0} born {1} before {2} marriage ({3}) on {4}"
+    failed_message = "Individual {0} born {1} after {2} marriage ({3}) on {4}"
+    for indi in (i for i in gedcom_file.individuals if i.has("birth_date")):
+        for fam in (fam for fam in indi.families("FAMS") if fam.has("marriage_date")):
+            out = {"indi": {"xref": indi.xref, "birth_date": indi.birth_date.story_dict},
+                   "fam": {"xref": fam.xref, "marr_date": fam.marriage_date.story_dict}}
+            msg_out = (indi, indi.birth_date, indi.pronoun, fam.xref, fam.marriage_date)
+            if indi.birth_date < fam.marriage_date:
+                out["message"] = passed_message.format(*msg_out)
+                r["passed"].append(out)
+            else:
+                out["message"] = failed_message.format(*msg_out)
+                r["failed"].append(out)
+
+############
+    failed_message = "Individual {0} is married to {1} sibling {2}"
+    for indi in (i for i in gedcom_file.individuals:
+        for fam in (fam for fam in indi.families("FAMS") if fam.has("marriage_date")):
+            siblings = [c for c in fam.children if c.has("birth_date")]
+            spouses = tools.get_spouses(indi)
+            if len(siblings) >= 2:
+                for sib_a, sib_b in combinations(siblings, 2):
+                    # ... (Not sure if this is the right way to do it)
+                    # Compare the lists...
+
+# For each individual:
+    # Get a list of their siblings
+    # Get a list of their spouses
+    # See if any names appear in both lists
+
     return r
 
 

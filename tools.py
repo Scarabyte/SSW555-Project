@@ -282,6 +282,11 @@ class Individual(LineTool):
         xref = self.xref
         return "{0} ({1})".format(name, xref)
 
+    def __repr__(self):
+        name = self.name.val.replace("/", "") if self.has("name") else "N/A"
+        xref = self.xref
+        return "{0} ({1})".format(name, xref)
+
     @property
     @cachemethod
     def xref(self):
@@ -346,6 +351,16 @@ class Individual(LineTool):
         if tag not in ["FAMS", "FAMC"]:
             raise ValueError("families tag must be 'FAMS' or 'FAMC'")
         return iter(Family(f.follow_xref()) for f in self.line.children.find("tag", tag))
+
+    @property
+    def spouses(self):
+        """
+        """
+        for fam in self.families("FAMS"):
+            if fam.has("husband") and fam.husband.xref != self.xref:
+                yield fam.husband
+            if fam.has("wife") and fam.wife.xref != self.xref:
+                yield fam.wife
 
 
 class Family(LineTool):

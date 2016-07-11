@@ -7,478 +7,393 @@
             "output": {
                 "failed": [
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 59,
-                                "line_value": "4 SEP 2017"
-                            }
+                            "line_number": 59,
+                            "line_value": "4 SEP 2017"
                         },
-                        "individual_id": "@I6@"
+                        "message": "Date 4 SEP 2017 (line 59) is after 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     }
                 ],
                 "passed": [
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "HEAD",
-                            "value": {
-                                "line_number": 4,
-                                "line_value": "20 MAY 2016"
-                            }
-                        }
+                            "line_number": 4,
+                            "line_value": "20 MAY 2016"
+                        },
+                        "message": "Date 20 MAY 2016 (line 4) is before 11 JUL 2016 (current date)",
+                        "type": "HEAD"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 18,
-                                "line_value": "17 JUN 1945"
-                            }
+                            "line_number": 18,
+                            "line_value": "17 JUN 1945"
                         },
-                        "individual_id": "@I1@"
+                        "message": "Date 17 JUN 1945 (line 18) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 25,
-                                "line_value": "10 FEB 1980"
-                            }
+                            "line_number": 25,
+                            "line_value": "10 FEB 1980"
                         },
-                        "individual_id": "@I2@"
+                        "message": "Date 10 FEB 1980 (line 25) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 27,
-                                "line_value": "24 AUG 1994"
-                            }
+                            "line_number": 27,
+                            "line_value": "24 AUG 1994"
                         },
-                        "individual_id": "@I2@"
+                        "message": "Date 24 AUG 1994 (line 27) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 34,
-                                "line_value": "24 NOV 1848"
-                            }
+                            "line_number": 34,
+                            "line_value": "24 NOV 1848"
                         },
-                        "individual_id": "@I3@"
+                        "message": "Date 24 NOV 1848 (line 34) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 36,
-                                "line_value": "12 JUL 1988"
-                            }
+                            "line_number": 36,
+                            "line_value": "12 JUL 1988"
                         },
-                        "individual_id": "@I3@"
+                        "message": "Date 12 JUL 1988 (line 36) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 44,
-                                "line_value": "18 JUL 1992"
-                            }
+                            "line_number": 44,
+                            "line_value": "18 JUL 1992"
                         },
-                        "individual_id": "@I4@"
+                        "message": "Date 18 JUL 1992 (line 44) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 51,
-                                "line_value": "23 AUG 1855"
-                            }
+                            "line_number": 51,
+                            "line_value": "23 AUG 1855"
                         },
-                        "individual_id": "@I5@"
+                        "message": "Date 23 AUG 1855 (line 51) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 53,
-                                "line_value": "4 MAY 2006"
-                            }
+                            "line_number": 53,
+                            "line_value": "4 MAY 2006"
                         },
-                        "individual_id": "@I5@"
+                        "message": "Date 4 MAY 2006 (line 53) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 65,
-                                "line_value": "26 MAR 1979"
-                            }
+                            "line_number": 65,
+                            "line_value": "26 MAR 1979"
                         },
-                        "individual_id": "@I7@"
+                        "message": "Date 26 MAR 1979 (line 65) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 71,
-                                "line_value": "4 OCT 2003"
-                            }
+                            "line_number": 71,
+                            "line_value": "4 OCT 2003"
                         },
-                        "individual_id": "@I8@"
+                        "message": "Date 4 OCT 2003 (line 71) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 77,
-                                "line_value": "15 OCT 1975"
-                            }
+                            "line_number": 77,
+                            "line_value": "15 OCT 1975"
                         },
-                        "individual_id": "@I9@"
+                        "message": "Date 15 OCT 1975 (line 77) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 83,
-                                "line_value": "24 JAN 1973"
-                            }
+                            "line_number": 83,
+                            "line_value": "24 JAN 1973"
                         },
-                        "individual_id": "@I10@"
+                        "message": "Date 24 JAN 1973 (line 83) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 85,
-                                "line_value": "16 MAY 2016"
-                            }
+                            "line_number": 85,
+                            "line_value": "16 MAY 2016"
                         },
-                        "individual_id": "@I10@"
+                        "message": "Date 16 MAY 2016 (line 85) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 91,
-                                "line_value": "27 MAR 1920"
-                            }
+                            "line_number": 91,
+                            "line_value": "27 MAR 1920"
                         },
-                        "individual_id": "@I11@"
+                        "message": "Date 27 MAR 1920 (line 91) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 93,
-                                "line_value": "27 FEB 2002"
-                            }
+                            "line_number": 93,
+                            "line_value": "27 FEB 2002"
                         },
-                        "individual_id": "@I11@"
+                        "message": "Date 27 FEB 2002 (line 93) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 99,
-                                "line_value": "14 JAN 1922"
-                            }
+                            "line_number": 99,
+                            "line_value": "14 JAN 1922"
                         },
-                        "individual_id": "@I12@"
+                        "message": "Date 14 JAN 1922 (line 99) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 101,
-                                "line_value": "4 APR 1997"
-                            }
+                            "line_number": 101,
+                            "line_value": "4 APR 1997"
                         },
-                        "individual_id": "@I12@"
+                        "message": "Date 4 APR 1997 (line 101) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 107,
-                                "line_value": "3 JUN 1954"
-                            }
+                            "line_number": 107,
+                            "line_value": "3 JUN 1954"
                         },
-                        "individual_id": "@I13@"
+                        "message": "Date 3 JUN 1954 (line 107) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 109,
-                                "line_value": "10 AUG 1994"
-                            }
+                            "line_number": 109,
+                            "line_value": "10 AUG 1994"
                         },
-                        "individual_id": "@I13@"
+                        "message": "Date 10 AUG 1994 (line 109) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 117,
-                                "line_value": "16 DEC 1951"
-                            }
+                            "line_number": 117,
+                            "line_value": "16 DEC 1951"
                         },
-                        "individual_id": "@I14@"
+                        "message": "Date 16 DEC 1951 (line 117) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 124,
-                                "line_value": "8 APR 1918"
-                            }
+                            "line_number": 124,
+                            "line_value": "8 APR 1918"
                         },
-                        "individual_id": "@I15@"
+                        "message": "Date 8 APR 1918 (line 124) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 126,
-                                "line_value": "10 OCT 1995"
-                            }
+                            "line_number": 126,
+                            "line_value": "10 OCT 1995"
                         },
-                        "individual_id": "@I15@"
+                        "message": "Date 10 OCT 1995 (line 126) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 132,
-                                "line_value": "23 OCT 1918"
-                            }
+                            "line_number": 132,
+                            "line_value": "23 OCT 1918"
                         },
-                        "individual_id": "@I16@"
+                        "message": "Date 23 OCT 1918 (line 132) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 138,
-                                "line_value": "30 OCT 1960"
-                            }
+                            "line_number": 138,
+                            "line_value": "30 OCT 1960"
                         },
-                        "individual_id": "@I17@"
+                        "message": "Date 30 OCT 1960 (line 138) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 144,
-                                "line_value": "11 JUN 1943"
-                            }
+                            "line_number": 144,
+                            "line_value": "11 JUN 1943"
                         },
-                        "individual_id": "@I18@"
+                        "message": "Date 11 JUN 1943 (line 144) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 150,
-                                "line_value": "7 SEP 1948"
-                            }
+                            "line_number": 150,
+                            "line_value": "7 SEP 1948"
                         },
-                        "individual_id": "@I19@"
+                        "message": "Date 7 SEP 1948 (line 150) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 156,
-                                "line_value": "24 JUL 1972"
-                            }
+                            "line_number": 156,
+                            "line_value": "24 JUL 1972"
                         },
-                        "individual_id": "@I20@"
+                        "message": "Date 24 JUL 1972 (line 156) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 162,
-                                "line_value": "1 AUG 1990"
-                            }
+                            "line_number": 162,
+                            "line_value": "1 AUG 1990"
                         },
-                        "individual_id": "@I21@"
+                        "message": "Date 1 AUG 1990 (line 162) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 168,
-                                "line_value": "5 JUN 1957"
-                            }
+                            "line_number": 168,
+                            "line_value": "5 JUN 1957"
                         },
-                        "individual_id": "@I22@"
+                        "message": "Date 5 JUN 1957 (line 168) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DEAT",
-                            "value": {
-                                "line_number": 170,
-                                "line_value": "12 SEP 1989"
-                            }
+                            "line_number": 170,
+                            "line_value": "12 SEP 1989"
                         },
-                        "individual_id": "@I22@"
+                        "message": "Date 12 SEP 1989 (line 170) is before 11 JUL 2016 (current date)",
+                        "type": "DEAT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 176,
-                                "line_value": "7 JUL 1977"
-                            }
+                            "line_number": 176,
+                            "line_value": "7 JUL 1977"
                         },
-                        "individual_id": "@I23@"
+                        "message": "Date 7 JUL 1977 (line 176) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 182,
-                                "line_value": "2 MAY 1993"
-                            }
+                            "line_number": 182,
+                            "line_value": "2 MAY 1993"
                         },
-                        "individual_id": "@I24@"
+                        "message": "Date 2 MAY 1993 (line 182) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 188,
-                                "line_value": "4 AUG 1975"
-                            }
+                            "line_number": 188,
+                            "line_value": "4 AUG 1975"
                         },
-                        "individual_id": "@I25@"
+                        "message": "Date 4 AUG 1975 (line 188) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "BIRT",
-                            "value": {
-                                "line_number": 194,
-                                "line_value": "9 SEP 1991"
-                            }
+                            "line_number": 194,
+                            "line_value": "9 SEP 1991"
                         },
-                        "individual_id": "@I26@"
+                        "message": "Date 9 SEP 1991 (line 194) is before 11 JUL 2016 (current date)",
+                        "type": "BIRT"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "MARR",
-                            "value": {
-                                "line_number": 207,
-                                "line_value": "26 MAR 1976"
-                            }
+                            "line_number": 207,
+                            "line_value": "26 MAR 1976"
                         },
-                        "family_id": "@F2@"
+                        "message": "Date 26 MAR 1976 (line 207) is before 11 JUL 2016 (current date)",
+                        "type": "MARR"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DIV",
-                            "value": {
-                                "line_number": 209,
-                                "line_value": "13 NOV 2012"
-                            }
+                            "line_number": 209,
+                            "line_value": "13 NOV 2012"
                         },
-                        "family_id": "@F2@"
+                        "message": "Date 13 NOV 2012 (line 209) is before 11 JUL 2016 (current date)",
+                        "type": "DIV"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "MARR",
-                            "value": {
-                                "line_number": 222,
-                                "line_value": "4 SEP 1970"
-                            }
+                            "line_number": 222,
+                            "line_value": "4 SEP 1970"
                         },
-                        "family_id": "@F4@"
+                        "message": "Date 4 SEP 1970 (line 222) is before 11 JUL 2016 (current date)",
+                        "type": "MARR"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "MARR",
-                            "value": {
-                                "line_number": 238,
-                                "line_value": "19 MAR 1990"
-                            }
+                            "line_number": 238,
+                            "line_value": "19 MAR 1990"
                         },
-                        "family_id": "@F7@"
+                        "message": "Date 19 MAR 1990 (line 238) is before 11 JUL 2016 (current date)",
+                        "type": "MARR"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "MARR",
-                            "value": {
-                                "line_number": 244,
-                                "line_value": "12 OCT 1986"
-                            }
+                            "line_number": 244,
+                            "line_value": "12 OCT 1986"
                         },
-                        "family_id": "@F8@"
+                        "message": "Date 12 OCT 1986 (line 244) is before 11 JUL 2016 (current date)",
+                        "type": "MARR"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "DIV",
-                            "value": {
-                                "line_number": 246,
-                                "line_value": "17 NOV 1978"
-                            }
+                            "line_number": 246,
+                            "line_value": "17 NOV 1978"
                         },
-                        "family_id": "@F8@"
+                        "message": "Date 17 NOV 1978 (line 246) is before 11 JUL 2016 (current date)",
+                        "type": "DIV"
                     },
                     {
-                        "current_date": "03 JUL 2016",
+                        "current_date": "11 JUL 2016",
                         "date": {
-                            "type": "MARR",
-                            "value": {
-                                "line_number": 252,
-                                "line_value": "1 MAY 1973"
-                            }
+                            "line_number": 252,
+                            "line_value": "1 MAY 1973"
                         },
-                        "family_id": "@F9@"
+                        "message": "Date 1 MAY 1973 (line 252) is before 11 JUL 2016 (current date)",
+                        "type": "MARR"
                     }
                 ]
             }
@@ -489,146 +404,176 @@
             "output": {
                 "failed": [
                     {
-                        "birth_date": {
-                            "line_number": 25,
-                            "line_value": "10 FEB 1980"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 207,
+                                "line_value": "26 MAR 1976"
+                            },
+                            "xref": "@F2@"
                         },
-                        "family_id": "@F2@",
-                        "individual_id": "@I2@",
-                        "marriage_date": {
-                            "line_number": 207,
-                            "line_value": "26 MAR 1976"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 25,
+                                "line_value": "10 FEB 1980"
+                            },
+                            "xref": "@I2@"
                         },
-                        "name": "David Burbidge",
-                        "sex": "M"
+                        "message": "Individual David Burbidge (@I2@) born 10 FEB 1980 (line 25) after his marriage (@F2@) on 26 MAR 1976 (line 207)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 83,
-                            "line_value": "24 JAN 1973"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 222,
+                                "line_value": "4 SEP 1970"
+                            },
+                            "xref": "@F4@"
                         },
-                        "family_id": "@F4@",
-                        "individual_id": "@I10@",
-                        "marriage_date": {
-                            "line_number": 222,
-                            "line_value": "4 SEP 1970"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 83,
+                                "line_value": "24 JAN 1973"
+                            },
+                            "xref": "@I10@"
                         },
-                        "name": "Jerry Briand",
-                        "sex": "M"
+                        "message": "Individual Jerry Briand (@I10@) born 24 JAN 1973 (line 83) after his marriage (@F4@) on 4 SEP 1970 (line 222)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 162,
-                            "line_value": "1 AUG 1990"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 244,
+                                "line_value": "12 OCT 1986"
+                            },
+                            "xref": "@F8@"
                         },
-                        "family_id": "@F8@",
-                        "individual_id": "@I21@",
-                        "marriage_date": {
-                            "line_number": 244,
-                            "line_value": "12 OCT 1986"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 162,
+                                "line_value": "1 AUG 1990"
+                            },
+                            "xref": "@I21@"
                         },
-                        "name": "Jack Cunningham",
-                        "sex": "M"
+                        "message": "Individual Jack Cunningham (@I21@) born 1 AUG 1990 (line 162) after his marriage (@F8@) on 12 OCT 1986 (line 244)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 182,
-                            "line_value": "2 MAY 1993"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 252,
+                                "line_value": "1 MAY 1973"
+                            },
+                            "xref": "@F9@"
                         },
-                        "family_id": "@F9@",
-                        "individual_id": "@I24@",
-                        "marriage_date": {
-                            "line_number": 252,
-                            "line_value": "1 MAY 1973"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 182,
+                                "line_value": "2 MAY 1993"
+                            },
+                            "xref": "@I24@"
                         },
-                        "name": "Helen Trotter",
-                        "sex": "F"
+                        "message": "Individual Helen Trotter (@I24@) born 2 MAY 1993 (line 182) after her marriage (@F9@) on 1 MAY 1973 (line 252)"
                     }
                 ],
                 "passed": [
                     {
-                        "birth_date": {
-                            "line_number": 34,
-                            "line_value": "24 NOV 1848"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 207,
+                                "line_value": "26 MAR 1976"
+                            },
+                            "xref": "@F2@"
                         },
-                        "family_id": "@F2@",
-                        "individual_id": "@I3@",
-                        "marriage_date": {
-                            "line_number": 207,
-                            "line_value": "26 MAR 1976"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 34,
+                                "line_value": "24 NOV 1848"
+                            },
+                            "xref": "@I3@"
                         },
-                        "name": "Wendy Watson",
-                        "sex": "F"
+                        "message": "Individual Wendy Watson (@I3@) born 24 NOV 1848 (line 34) before her marriage (@F2@) on 26 MAR 1976 (line 207)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 34,
-                            "line_value": "24 NOV 1848"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 222,
+                                "line_value": "4 SEP 1970"
+                            },
+                            "xref": "@F4@"
                         },
-                        "family_id": "@F4@",
-                        "individual_id": "@I3@",
-                        "marriage_date": {
-                            "line_number": 222,
-                            "line_value": "4 SEP 1970"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 34,
+                                "line_value": "24 NOV 1848"
+                            },
+                            "xref": "@I3@"
                         },
-                        "name": "Wendy Watson",
-                        "sex": "F"
+                        "message": "Individual Wendy Watson (@I3@) born 24 NOV 1848 (line 34) before her marriage (@F4@) on 4 SEP 1970 (line 222)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 107,
-                            "line_value": "3 JUN 1954"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 238,
+                                "line_value": "19 MAR 1990"
+                            },
+                            "xref": "@F7@"
                         },
-                        "family_id": "@F7@",
-                        "individual_id": "@I13@",
-                        "marriage_date": {
-                            "line_number": 238,
-                            "line_value": "19 MAR 1990"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 107,
+                                "line_value": "3 JUN 1954"
+                            },
+                            "xref": "@I13@"
                         },
-                        "name": "Jean Watson",
-                        "sex": "F"
+                        "message": "Individual Jean Watson (@I13@) born 3 JUN 1954 (line 107) before her marriage (@F7@) on 19 MAR 1990 (line 238)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 107,
-                            "line_value": "3 JUN 1954"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 244,
+                                "line_value": "12 OCT 1986"
+                            },
+                            "xref": "@F8@"
                         },
-                        "family_id": "@F8@",
-                        "individual_id": "@I13@",
-                        "marriage_date": {
-                            "line_number": 244,
-                            "line_value": "12 OCT 1986"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 107,
+                                "line_value": "3 JUN 1954"
+                            },
+                            "xref": "@I13@"
                         },
-                        "name": "Jean Watson",
-                        "sex": "F"
+                        "message": "Individual Jean Watson (@I13@) born 3 JUN 1954 (line 107) before her marriage (@F8@) on 12 OCT 1986 (line 244)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 117,
-                            "line_value": "16 DEC 1951"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 252,
+                                "line_value": "1 MAY 1973"
+                            },
+                            "xref": "@F9@"
                         },
-                        "family_id": "@F9@",
-                        "individual_id": "@I14@",
-                        "marriage_date": {
-                            "line_number": 252,
-                            "line_value": "1 MAY 1973"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 117,
+                                "line_value": "16 DEC 1951"
+                            },
+                            "xref": "@I14@"
                         },
-                        "name": "Martin Watson",
-                        "sex": "M"
+                        "message": "Individual Martin Watson (@I14@) born 16 DEC 1951 (line 117) before his marriage (@F9@) on 1 MAY 1973 (line 252)"
                     },
                     {
-                        "birth_date": {
-                            "line_number": 168,
-                            "line_value": "5 JUN 1957"
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 238,
+                                "line_value": "19 MAR 1990"
+                            },
+                            "xref": "@F7@"
                         },
-                        "family_id": "@F7@",
-                        "individual_id": "@I22@",
-                        "marriage_date": {
-                            "line_number": 238,
-                            "line_value": "19 MAR 1990"
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 168,
+                                "line_value": "5 JUN 1957"
+                            },
+                            "xref": "@I22@"
                         },
-                        "name": "Brian Mayer",
-                        "sex": "M"
+                        "message": "Individual Brian Mayer (@I22@) born 5 JUN 1957 (line 168) before his marriage (@F7@) on 19 MAR 1990 (line 238)"
                     }
                 ]
             }
@@ -648,9 +593,8 @@
                             "line_number": 27,
                             "line_value": "24 AUG 1994"
                         },
-                        "individual_id": "@I2@",
-                        "name": "David Burbidge",
-                        "sex": "M"
+                        "message": "Individual David Burbidge (@I2@) born 10 FEB 1980 (line 25) before his death on 24 AUG 1994 (line 27)",
+                        "xref": "@I2@"
                     },
                     {
                         "birth_date": {
@@ -661,9 +605,8 @@
                             "line_number": 36,
                             "line_value": "12 JUL 1988"
                         },
-                        "individual_id": "@I3@",
-                        "name": "Wendy Watson",
-                        "sex": "F"
+                        "message": "Individual Wendy Watson (@I3@) born 24 NOV 1848 (line 34) before her death on 12 JUL 1988 (line 36)",
+                        "xref": "@I3@"
                     },
                     {
                         "birth_date": {
@@ -674,9 +617,8 @@
                             "line_number": 53,
                             "line_value": "4 MAY 2006"
                         },
-                        "individual_id": "@I5@",
-                        "name": "Angelica Burbidge",
-                        "sex": "F"
+                        "message": "Individual Angelica Burbidge (@I5@) born 23 AUG 1855 (line 51) before her death on 4 MAY 2006 (line 53)",
+                        "xref": "@I5@"
                     },
                     {
                         "birth_date": {
@@ -687,9 +629,8 @@
                             "line_number": 85,
                             "line_value": "16 MAY 2016"
                         },
-                        "individual_id": "@I10@",
-                        "name": "Jerry Briand",
-                        "sex": "M"
+                        "message": "Individual Jerry Briand (@I10@) born 24 JAN 1973 (line 83) before his death on 16 MAY 2016 (line 85)",
+                        "xref": "@I10@"
                     },
                     {
                         "birth_date": {
@@ -700,9 +641,8 @@
                             "line_number": 93,
                             "line_value": "27 FEB 2002"
                         },
-                        "individual_id": "@I11@",
-                        "name": "Cyril Watson",
-                        "sex": "M"
+                        "message": "Individual Cyril Watson (@I11@) born 27 MAR 1920 (line 91) before his death on 27 FEB 2002 (line 93)",
+                        "xref": "@I11@"
                     },
                     {
                         "birth_date": {
@@ -713,9 +653,8 @@
                             "line_number": 101,
                             "line_value": "4 APR 1997"
                         },
-                        "individual_id": "@I12@",
-                        "name": "Elizabeth Watson",
-                        "sex": "F"
+                        "message": "Individual Elizabeth Watson (@I12@) born 14 JAN 1922 (line 99) before her death on 4 APR 1997 (line 101)",
+                        "xref": "@I12@"
                     },
                     {
                         "birth_date": {
@@ -726,9 +665,8 @@
                             "line_number": 109,
                             "line_value": "10 AUG 1994"
                         },
-                        "individual_id": "@I13@",
-                        "name": "Jean Watson",
-                        "sex": "F"
+                        "message": "Individual Jean Watson (@I13@) born 3 JUN 1954 (line 107) before her death on 10 AUG 1994 (line 109)",
+                        "xref": "@I13@"
                     },
                     {
                         "birth_date": {
@@ -739,9 +677,8 @@
                             "line_number": 126,
                             "line_value": "10 OCT 1995"
                         },
-                        "individual_id": "@I15@",
-                        "name": "Andrew Burbidge",
-                        "sex": "M"
+                        "message": "Individual Andrew Burbidge (@I15@) born 8 APR 1918 (line 124) before his death on 10 OCT 1995 (line 126)",
+                        "xref": "@I15@"
                     },
                     {
                         "birth_date": {
@@ -752,9 +689,8 @@
                             "line_number": 170,
                             "line_value": "12 SEP 1989"
                         },
-                        "individual_id": "@I22@",
-                        "name": "Brian Mayer",
-                        "sex": "M"
+                        "message": "Individual Brian Mayer (@I22@) born 5 JUN 1957 (line 168) before his death on 12 SEP 1989 (line 170)",
+                        "xref": "@I22@"
                     }
                 ]
             }
@@ -769,15 +705,14 @@
                             "line_number": 246,
                             "line_value": "17 NOV 1978"
                         },
-                        "family_id": "@F8@",
-                        "husband_id": "@I21@",
-                        "husband_name": "Jack Cunningham",
+                        "family_xref": "@F8@",
+                        "husband_xref": "@I21@",
                         "marriage_date": {
                             "line_number": 244,
                             "line_value": "12 OCT 1986"
                         },
-                        "wife_id": "@I13@",
-                        "wife_name": "Jean Watson"
+                        "message": "Family (@F8@) with husband Jack Cunningham (@I21@) and wife Jean Watson (@I13@) has marriage on 12 OCT 1986 (line 244) after divorce on 17 NOV 1978 (line 246)",
+                        "wife_xref": "@I13@"
                     }
                 ],
                 "passed": [
@@ -786,15 +721,14 @@
                             "line_number": 209,
                             "line_value": "13 NOV 2012"
                         },
-                        "family_id": "@F2@",
-                        "husband_id": "@I2@",
-                        "husband_name": "David Burbidge",
+                        "family_xref": "@F2@",
+                        "husband_xref": "@I2@",
                         "marriage_date": {
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
                         },
-                        "wife_id": "@I3@",
-                        "wife_name": "Wendy Watson"
+                        "message": "Family (@F2@) with husband David Burbidge (@I2@) and wife Wendy Watson (@I3@) has marriage on 26 MAR 1976 (line 207) before divorce on 13 NOV 2012 (line 209)",
+                        "wife_xref": "@I3@"
                     }
                 ]
             }
@@ -805,81 +739,75 @@
             "output": {
                 "failed": [
                     {
-                        "death_date": {
+                        "family_xref": "@F7@",
+                        "husband_death_date": {
                             "line_number": 170,
                             "line_value": "12 SEP 1989"
                         },
-                        "family_id": "@F7@",
-                        "individual_id": "@I22@",
+                        "husband_xref": "@I22@",
                         "marriage_date": {
                             "line_number": 238,
                             "line_value": "19 MAR 1990"
                         },
-                        "name": "Brian Mayer",
-                        "sex": "M",
-                        "spouse_id": null
+                        "message": "Family (@F7@) with marriage on 19 MAR 1990 (line 238) has husband Brian Mayer (@I22@) with death 12 SEP 1989 (line 170) before marriage and has wife Jean Watson (@I13@) with death 10 AUG 1994 (line 109) after marriage",
+                        "wife_death_date": {
+                            "line_number": 109,
+                            "line_value": "10 AUG 1994"
+                        },
+                        "wife_xref": "@I13@"
                     }
                 ],
                 "passed": [
                     {
-                        "death_date": {
+                        "family_xref": "@F2@",
+                        "husband_death_date": {
                             "line_number": 27,
                             "line_value": "24 AUG 1994"
                         },
-                        "family_id": "@F2@",
-                        "individual_id": "@I2@",
+                        "husband_xref": "@I2@",
                         "marriage_date": {
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
                         },
-                        "name": "David Burbidge",
-                        "sex": "M",
-                        "spouse_id": null
-                    },
-                    {
-                        "death_date": {
+                        "message": "Family (@F2@) with marriage on 26 MAR 1976 (line 207) has husband David Burbidge (@I2@) with death 24 AUG 1994 (line 27) after marriage and has wife Wendy Watson (@I3@) with death 12 JUL 1988 (line 36) after marriage",
+                        "wife_death_date": {
                             "line_number": 36,
                             "line_value": "12 JUL 1988"
                         },
-                        "family_id": "@F2@",
-                        "individual_id": "@I3@",
-                        "marriage_date": {
-                            "line_number": 207,
-                            "line_value": "26 MAR 1976"
-                        },
-                        "name": "Wendy Watson",
-                        "sex": "F",
-                        "spouse_id": null
+                        "wife_xref": "@I3@"
                     },
                     {
-                        "death_date": {
+                        "family_xref": "@F4@",
+                        "husband_death_date": {
                             "line_number": 85,
                             "line_value": "16 MAY 2016"
                         },
-                        "family_id": "@F4@",
-                        "individual_id": "@I10@",
+                        "husband_xref": "@I10@",
                         "marriage_date": {
                             "line_number": 222,
                             "line_value": "4 SEP 1970"
                         },
-                        "name": "Jerry Briand",
-                        "sex": "M",
-                        "spouse_id": null
+                        "message": "Family (@F4@) with marriage on 4 SEP 1970 (line 222) has husband Jerry Briand (@I10@) with death 16 MAY 2016 (line 85) after marriage and has wife Wendy Watson (@I3@) with death 12 JUL 1988 (line 36) after marriage",
+                        "wife_death_date": {
+                            "line_number": 36,
+                            "line_value": "12 JUL 1988"
+                        },
+                        "wife_xref": "@I3@"
                     },
                     {
-                        "death_date": {
+                        "family_xref": "@F8@",
+                        "husband_death_date": null,
+                        "husband_xref": "@I21@",
+                        "marriage_date": {
+                            "line_number": 244,
+                            "line_value": "12 OCT 1986"
+                        },
+                        "message": "Family (@F8@) with marriage on 12 OCT 1986 (line 244) has wife Jean Watson (@I13@) with death 10 AUG 1994 (line 109) after marriage",
+                        "wife_death_date": {
                             "line_number": 109,
                             "line_value": "10 AUG 1994"
                         },
-                        "family_id": "@F7@",
-                        "individual_id": "@I13@",
-                        "marriage_date": {
-                            "line_number": 238,
-                            "line_value": "19 MAR 1990"
-                        },
-                        "name": "Jean Watson",
-                        "sex": "F",
-                        "spouse_id": null
+                        "wife_xref": "@I13@"
                     }
                 ]
             }
@@ -890,37 +818,38 @@
             "output": {
                 "failed": [
                     {
-                        "death_date": {
+                        "divorce_date": {
+                            "line_number": 246,
+                            "line_value": "17 NOV 1978"
+                        },
+                        "family_xref": "@F8@",
+                        "husband_death_date": null,
+                        "husband_xref": "@I21@",
+                        "message": "Family (@F8@) with divorce on 17 NOV 1978 (line 246) has wife Jean Watson (@I13@) with death 10 AUG 1994 (line 109) after divorce",
+                        "wife_death_date": null,
+                        "wife_xref": "@I13@"
+                    }
+                ],
+                "passed": [
+                    {
+                        "divorce_date": {
+                            "line_number": 209,
+                            "line_value": "13 NOV 2012"
+                        },
+                        "family_xref": "@F2@",
+                        "husband_death_date": {
                             "line_number": 27,
                             "line_value": "24 AUG 1994"
                         },
-                        "divorce_date": {
-                            "line_number": 209,
-                            "line_value": "13 NOV 2012"
-                        },
-                        "family_id": "@F2@",
-                        "individual_id": "@I2@",
-                        "name": "David Burbidge",
-                        "sex": "M",
-                        "spouse_id": null
-                    },
-                    {
-                        "death_date": {
+                        "husband_xref": "@I2@",
+                        "message": "Family (@F2@) with divorce on 13 NOV 2012 (line 209) has husband David Burbidge (@I2@) with death 24 AUG 1994 (line 27) before divorce and has wife Wendy Watson (@I3@) with death 12 JUL 1988 (line 36) before divorce",
+                        "wife_death_date": {
                             "line_number": 36,
                             "line_value": "12 JUL 1988"
                         },
-                        "divorce_date": {
-                            "line_number": 209,
-                            "line_value": "13 NOV 2012"
-                        },
-                        "family_id": "@F2@",
-                        "individual_id": "@I3@",
-                        "name": "Wendy Watson",
-                        "sex": "F",
-                        "spouse_id": null
+                        "wife_xref": "@I3@"
                     }
-                ],
-                "passed": []
+                ]
             }
         }
     ]

@@ -79,6 +79,29 @@ def project_06(gedcom_file):
     }
 
 
+def project_08(gedcom_file):
+    """ Function to perform the Project08 Tasks: Print the results of Sprint 3
+
+    :param gedcom_file: The GEDCOM File object to perform assignment on
+    :type gedcom_file: gedcom.File
+
+    :Examples:
+        myfile = gedcom.File("Test_Files/GEDCOM.ged")
+        print project_08(myfile)
+
+    """
+    return {
+        "Sprint Number": 3,
+        "Stories": [stories.siblings_spacing(gedcom_file),
+                    stories.multiple_births_less_than_5(gedcom_file),
+                    stories.fewer_than_15_siblings(gedcom_file),
+                    stories.male_last_names(gedcom_file),
+                    stories.no_marriages_to_descendants(gedcom_file),
+                    stories.siblings_should_not_marry(gedcom_file)
+                    ]
+    }
+
+
 if __name__ == "__main__":
     g = gedcom.File()
 
@@ -124,4 +147,15 @@ if __name__ == "__main__":
         sys.exit("Project 06: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
     else:
         print "Project 06: Successfully saved results to project_06_results.json"
+
+    try:
+        fname_out = 'Test_Results/project_08_sprint3_results.json'
+        with open(fname_out, 'w') as outfile:
+            json.dump(project_08(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    except IOError as e:
+        sys.exit("Project 08: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
+    except TypeError as e:
+        sys.exit("Project 08: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
+    else:
+        print "Project 08: Successfully saved results to project_06_results.json"
 

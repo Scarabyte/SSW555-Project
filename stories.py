@@ -560,6 +560,10 @@ def no_marriages_to_descendants(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+# For each individual:
+    # Get a list of their children (and grandchildren? How many generations to check?)
+    # Get a list of their spouses
+    # See if any names appear in both lists <- Check unique IDs
     return r
 
 
@@ -613,7 +617,7 @@ def siblings_should_not_marry(gedcom_file):
 
 ############
     failed_message = "Individual {0} is married to {1} sibling {2}"
-    for indi in (i for i in gedcom_file.individuals:
+    for indi in (i for i in gedcom_file.individuals):
         for fam in (fam for fam in indi.families("FAMS") if fam.has("marriage_date")):
             siblings = [c for c in fam.children if c.has("birth_date")]
             spouses = tools.get_spouses(indi)
@@ -621,11 +625,12 @@ def siblings_should_not_marry(gedcom_file):
                 for sib_a, sib_b in combinations(siblings, 2):
                     # ... (Not sure if this is the right way to do it)
                     # Compare the lists...
+                    print "~AB~"
 
 # For each individual:
     # Get a list of their siblings
     # Get a list of their spouses
-    # See if any names appear in both lists
+    # See if any names appear in both lists <- actually need to compare IDs, because two people could have the same name
 
     return r
 

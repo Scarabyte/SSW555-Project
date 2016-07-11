@@ -539,7 +539,7 @@ def male_last_names(gedcom_file):
     # loop through  families
     # get all the names of the husbands of the family
     # get all the names of the male children in the family
-    # compare the names of the husbands and that of the male children
+    # compare the surnames of the husbands and that of the male children
     # error or failed message if the names of the husband and male children are not the same
     """
     r = {"passed": [], "failed": []}

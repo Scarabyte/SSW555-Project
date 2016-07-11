@@ -145,8 +145,6 @@ if __name__ == "__main__":
             json.dump(project_08(g), outfile, sort_keys=True, indent=4, separators=(',', ': '))
     except IOError as e:
         sys.exit("Project 08: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
-    except TypeError as e:
-        sys.exit("Project 08: Error Saving Type Of Results To File - {0}: '{1}'".format(e.strerror, e.filename))
     else:
         print "Project 08: Successfully saved results to project_06_results.json"
 

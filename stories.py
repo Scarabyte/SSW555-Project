@@ -529,13 +529,18 @@ def fewer_than_15_siblings(gedcom_file):
 @story("Anomaly US16")
 def male_last_names(gedcom_file):
     """ All male members of a family should have the same last name
-
+    
     :sprint: 3
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
-
+    
+    # loop through  families
+    # get all the names of the husbands 
+    # get all the names of the male children in the family
+    # compare the names of the husbands and that of the male children
+    # error or failed message if the names of the husband and male children are not the same
     """
     r = {"passed": [], "failed": []}
     # ...

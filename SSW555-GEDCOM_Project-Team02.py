@@ -101,7 +101,7 @@ if __name__ == "__main__":
 
     # Request file name from user
     #fname = raw_input('Enter the file name to open: ')
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
     try:
         g.read_file(fname)
     except IOError as e:

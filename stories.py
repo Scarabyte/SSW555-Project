@@ -87,18 +87,18 @@ def birth_before_marriage(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    passed_message = "Individual {0} born {1} before {2} marriage ({3}) on {4}"
-    failed_message = "Individual {0} born {1} after {2} marriage ({3}) on {4}"
+    passed_msg = "Individual {0} born {1} before {2} marriage ({3}) on {4}"
+    failed_msg = "Individual {0} born {1} after {2} marriage ({3}) on {4}"
     for indi in (i for i in gedcom_file.individuals if i.has("birth_date")):
         for fam in (fam for fam in indi.families("FAMS") if fam.has("marriage_date")):
             out = {"indi": {"xref": indi.xref, "birth_date": indi.birth_date.story_dict},
                    "fam": {"xref": fam.xref, "marr_date": fam.marriage_date.story_dict}}
             msg_out = (indi, indi.birth_date, indi.pronoun, fam.xref, fam.marriage_date)
             if indi.birth_date < fam.marriage_date:
-                out["message"] = passed_message.format(*msg_out)
+                out["message"] = passed_msg.format(*msg_out)
                 r["passed"].append(out)
             else:
-                out["message"] = failed_message.format(*msg_out)
+                out["message"] = failed_msg.format(*msg_out)
                 r["failed"].append(out)
     return r
 
@@ -332,32 +332,29 @@ def birth_before_death_of_parents(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in gedcom_file.families_dict:
-        mother_deat_date = tools.get_death_date(family["wife"])
-        father_deat_date = tools.get_death_date(family["husb"])
-        for child in family["children"]:
-            output = {"family_id": family["xref"],
-                      "mother_id": family["wife"].get("xref_ID"),
-                      "father_id": family["husb"].get("xref_ID"),
-                      "child_id": child.get("xref_ID"),
-                      "father_name": tools.get_name(family["husb"]),
-                      "mother_name": tools.get_name(family["wife"])}
-            child_birt_date = tools.get_birth_date(child)
-            if child_birt_date:
-                output["child_birth_date"] = child_birt_date.story_dict
-                b4_moms_death = None
-                b4_9_months_after_dads_death = None
-                if mother_deat_date:
-                    b4_moms_death = child_birt_date.datetime < mother_deat_date.datetime
-                    output["mother_death_date"] = mother_deat_date.story_dict
-                if father_deat_date:
-                    b4_9_months_after_dads_death = ((father_deat_date.datetime - child_birt_date.datetime).days / 30) > 9
-                    output["husband_death_date"] = father_deat_date.story_dict
-                if ((b4_moms_death is True) or (b4_moms_death is None)) and (
-                            (b4_9_months_after_dads_death is True) or (b4_9_months_after_dads_death is None)):
-                    r["passed"].append(output)
-                else:
-                    r["failed"].append(output)
+    for fam in gedcom_file.families:
+        for child in (c for c in fam.children if c.has("birth_date")):
+            out = {"family_xref": fam.xref, "child": {"xref": child.xref, "birth_date": child.birth_date.story_dict}}
+            chk_mom = fam.has("wife") and fam.wife.has("death_date")
+            chk_dad = fam.has("husband") and fam.husband.has("death_date")
+            mom_pass = child.birth_date < fam.wife.birth_date if chk_mom else None
+            dad_pass = ((fam.husband.birth_date.dt - child.birth_date.dt).days / 30) > 9 if chk_dad else None
+            msg = "Child {0} was born {1} and has".format(child, child.birth_date)
+            if mom_pass is None:
+                out["mother"] = {"xref": fam.wife.xref if fam.has("wife") else None, "birth_date": None}
+                msg += " mother {0} with no death date".format(fam.wife)
+            else:
+                out["mother"] = {"xref": fam.wife.xref, "birth_date": fam.wife.birth_date}
+                msg += " mother {0} with death date {1}".format(fam.wife, fam.wife.death_date)
+            if dad_pass is None:
+                out["father"] = {"xref": fam.husband.xref if fam.has("husband") else None, "birth_date": None}
+                msg += " and father {0} with no death date.".format(fam.husband)
+            else:
+                out["father"] = {"xref": fam.husband.xref, "birth_date": fam.husband.birth_date}
+                msg += " and father {0} with death date {1}.".format(fam.husband, fam.husband.death_date)
+            out["message"] = msg
+            passed = ((mom_pass is None) or (mom_pass is True)) and ((dad_pass is None) or (dad_pass is True))
+            r["passed"].append(out) if passed else r["failed"].append(out)
     return r
 
 
@@ -950,7 +947,7 @@ if __name__ == "__main__":
     parents_not_too_old(g)
 
     # Sprint 3 - Stories
-    siblings_spacing(g)
+    # siblings_spacing(g)
     # multiple_births_less_than_5(g)
     # fewer_than_15_siblings(g)
     # male_last_names(g)

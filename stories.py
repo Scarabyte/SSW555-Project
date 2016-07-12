@@ -339,7 +339,7 @@ def birth_before_death_of_parents(gedcom_file):
             chk_dad = fam.has("husband") and fam.husband.has("death_date")
             mom_pass = child.birth_date < fam.wife.birth_date if chk_mom else None
             dad_pass = ((fam.husband.birth_date.dt - child.birth_date.dt).days / 30) > 9 if chk_dad else None
-            msg = "Family {0} has Child {1} with birth date {2} and has".format(fam, child, child.birth_date)
+            msg = "{0} has Child {1} with birth date {2} and has".format(fam, child, child.birth_date)
             if mom_pass is None:
                 out["mother"] = {"xref": fam.wife.xref if fam.has("wife") else None, "birth_date": None}
                 msg += " mother {0} with no death date".format(fam.wife)
@@ -441,31 +441,43 @@ def parents_not_too_old(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in gedcom_file.families_dict:
-        m_birt_date = tools.get_birth_date(family["wife"])
-        f_birt_date = tools.get_birth_date(family["husb"])
-        for child in family["children"]:
-            c_birt_date = tools.get_birth_date(child)
-            if c_birt_date:
-                m_yrs_older = tools.years_between(c_birt_date.datetime, m_birt_date.datetime) if m_birt_date else None
-                f_yrs_older = tools.years_between(c_birt_date.datetime, f_birt_date.datetime) if f_birt_date else None
-                output = {"family_id": family["xref"],
-                          "child_id": child.get("xref_ID"),
-                          "father_id": family["husb"].get("xref_ID"),
-                          "mother_id": family["wife"].get("xref_ID"),
-                          "child_birt_date": c_birt_date.story_dict,
-                          "father_birt_date": f_birt_date.story_dict if f_birt_date else None,
-                          "mother_birt_date": m_birt_date.story_dict if m_birt_date else None,
-                          "father_years_older": f_yrs_older,
-                          "mother_years_older": m_yrs_older,
-                          "father_name": tools.get_name(family["husb"]),
-                          "mother_name": tools.get_name(family["wife"])
-                          }
-            try:  # Python 2.7 | (None < 60) and (None < 80) is True
-                r["passed"].append(output) if (m_yrs_older < 60) and (f_yrs_older < 80) else r["failed"].append(output)
-            except TypeError:  # Python 3.0l | (None < 60) and (None < 80) raises TypeError
-                r["passed"].append(output) if ((m_yrs_older is None) or (m_yrs_older < 60)) and (
-                    (f_yrs_older is None) or (f_yrs_older < 80)) else r["failed"].append(output)
+    msg = "{0} with child {1} born {2} has mother {3} born {4} [{5} years older than child] " \
+          + "and father {6} born {7} [{8} years older than child]."
+
+    for fam in gedcom_file.families:
+        # Check Project Overview Assumptions
+        if not fam.has("marriage_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("husband") or not fam.husband.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("wife") or not fam.wife.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+
+        for child in fam.children:
+            # Check Project Overview Assumptions
+            if not child.has("birth_date"):
+                continue  # Project Overview Assumptions not met
+
+            m_yrs_older = tools.years_between(child.birth_date.dt, fam.wife.birth_date.dt)
+            f_yrs_older = tools.years_between(child.birth_date.dt, fam.husband.birth_date.dt)
+
+            # Construct Output
+            out = {"family": {"xref": fam.xref},
+                   "mother": {"xref": fam.wife.xref,
+                              "birth_date": fam.wife.birth_date.story_dict,
+                              "years_older": m_yrs_older},
+                   "father": {"xref": fam.husband.xref,
+                              "birth_date": fam.husband.birth_date.story_dict,
+                              "years_older": f_yrs_older},
+                   "child": {"xref": child.xref,
+                             "birth_date": child.birth_date.story_dict},
+                   "message": msg.format(fam, child, child.birth_date, fam.wife, fam.wife.birth_date, m_yrs_older,
+                                         fam.husband, fam.husband.birth_date, f_yrs_older)
+                   }
+
+            # Perform Check
+            r["passed"].append(out) if (m_yrs_older < 60) and (f_yrs_older < 80) else r["failed"].append(out)
+
     return r
 
 

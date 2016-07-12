@@ -403,9 +403,6 @@ class Family(LineTool):
         marr = self.marriage
         return Date(marr.children.find_one('tag', 'DATE')) if marr else None
 
-
-
-
     @property
     @cachemethod
     def divorce(self):
@@ -420,6 +417,11 @@ class Family(LineTool):
     @property
     @cachemethod
     def marriage_end(self):
+        """
+            Logic:
+            * marriages end with div_date, or the first deat_date of either spouse
+            * if the marriage hasen't ended datetime.max is used as the datetime
+        """
         if self.divorce_date:
             return {"reason": "divorce",
                     "dt": self.divorce_date.dt,
@@ -436,14 +438,14 @@ class Family(LineTool):
             if self.husband.death_date < self.wife.death_date:
                 return {"reason": "husband death",
                         "dt": self.husband.death_date.dt,
-                        "story_dict": self.husband.story_dict}
+                        "story_dict": self.husband.death_date.story_dict}
             else:
                 return {"reason": "wife death",
                         "dt": self.wife.death_date.dt,
                         "story_dict": self.wife.death_date.story_dict}
-        return {"reason": "Not Ended",
+        return {"reason": "marriage has not ended",
                 "dt": datetime.max,
-                "story_dict": None}
+                "story_dict": {"line_number": "N/A", "line_value": "never"}}
 
     @property
     @cachemethod
@@ -502,57 +504,6 @@ def iter_family_dict(individual):
         else:
             d["spouse_is"] = None
         yield d
-
-
-def iter_marriage_timeframe_dict(individual):
-    """ Returns dictionary with information about the start and the end of a marriage.
-
-    Logic:
-        * check if datetime of these marriages overlap
-        * marriages start with marr_date
-        * marriages end with div_date, or the first deat_date of either spouse
-        * if the marriage hasen't ended datetime.max is used as the datetime
-
-    author: Constantine Davantzis
-
-    :param individual:
-    :type individual: Line
-
-    :rtype: dict
-
-    """
-    for family in iter_family_dict(individual):
-        marr_date = family["marr_date"]
-        div_date = family["div_date"]
-        wife_deat_date = get_death_date(family["wife"])
-        husb_deat_date = get_death_date(family["husb"])
-        if marr_date:
-            start_ln, start_val, start_dt = marr_date.ln, marr_date.val, marr_date.datetime
-            if div_date:
-                end_reason = "div"
-                end_ln, end_val, end_dt = div_date.ln, div_date.val, div_date.datetime
-            elif wife_deat_date and not husb_deat_date:
-                end_reason = "wife_deat"
-                end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val, wife_deat_date.datetime
-            elif husb_deat_date and not wife_deat_date:
-                end_reason = "husb_deat"
-                end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val, husb_deat_date.datetime
-            elif husb_deat_date and wife_deat_date:
-                if husb_deat_date.datetime < wife_deat_date.datetime:
-                    end_reason = "husb_deat"
-                    end_ln, end_val, end_dt = husb_deat_date.ln, husb_deat_date.val, husb_deat_date.datetime
-                else:
-                    end_reason = "wife_deat"
-                    end_ln, end_val, end_dt = wife_deat_date.ln, wife_deat_date.val, wife_deat_date.datetime
-            else:
-                end_reason = "Not Ended"
-                end_ln, end_val, end_dt = None, None, datetime.max
-
-            yield {"family_id": family["xref"],
-                   "husband_id": family["husb"].get("xref_ID"),
-                   "wife_id": family["wife"].get("xref_ID"),
-                   "start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
-                   "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}}
 
 
 def iter_parent_family_dict(individual):

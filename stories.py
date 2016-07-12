@@ -411,6 +411,8 @@ def no_bigamy(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
+    msg = "Individual {0} is in {1} marriage starting {2} and ending {3} (line {4}) because {5}, and is in " \
+          + "{6} marriage starting {7} and ending {8} (line {9}) because {10}."
     for indi in gedcom_file.individuals:
         # Get all combinations of marriages this individual is or has been in
         for fam_1, fam_2 in combinations(indi.families("FAMS"), 2):
@@ -426,11 +428,12 @@ def no_bigamy(gedcom_file):
             failed = (start1.dt <= end2["dt"]) and (end1["dt"] >= start2.dt)
             end1.pop("dt"), end2.pop("dt")  # Don't include dt in user story
             out = {"individual": {"xref": indi.xref},
-                   "family_1": {"xref": fam_1.xref,
-                                "marriage_date": start1.story_dict, "marriage_end": end1},
-                   "family_2": {"xref": fam_2.xref,
-                                "marriage_date": start2.story_dict, "marriage_end": end2}}
-            # TODO: Print Nicely
+                   "family_1": {"xref": fam_1.xref, "marriage_date": start1.story_dict, "marriage_end": end1},
+                   "family_2": {"xref": fam_2.xref, "marriage_date": start2.story_dict, "marriage_end": end2},
+                   "message": msg.format(indi, fam_1, start1, end1["story_dict"]["line_value"],
+                                         end1["story_dict"]["line_number"],
+                                         end1["reason"], fam_2, start2, end2["story_dict"]["line_value"],
+                                         end2["story_dict"]["line_number"], end2["reason"])}
             r["failed"].append(out) if failed else r["passed"].append(out)
     return r
 

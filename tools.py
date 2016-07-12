@@ -3,10 +3,8 @@ Tools for gedcom project
 """
 import re
 from datetime import datetime
-import sys
 from itertools import ifilter
 import gedcom
-import time
 
 NOW = datetime.now()
 NOW_STRING = NOW.strftime("%d %b %Y").upper()
@@ -380,9 +378,19 @@ class Family(LineTool):
 
     @property
     @cachemethod
+    def husband_marriage_age(self):
+        return years_between(self.marriage_date.dt, self.husband.birth_date.dt)
+
+    @property
+    @cachemethod
     def wife(self):
         wife = self.line.children.find_one('tag', 'WIFE')
         return Individual(wife.follow_xref()) if wife else None
+
+    @property
+    @cachemethod
+    def wife_marriage_age(self):
+        return years_between(self.marriage_date.dt, self.wife.birth_date.dt)
 
     @property
     @cachemethod

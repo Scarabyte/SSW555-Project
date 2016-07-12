@@ -44,16 +44,13 @@ def project_04(gedcom_file):
         print project_04(myfile)
 
     """
-    return {
-        "Sprint Number": 1,
-        "Stories": [stories.dates_before_current_date(gedcom_file),
-                    stories.birth_before_marriage(gedcom_file),
-                    stories.birth_before_death(gedcom_file),
-                    stories.marriage_before_divorce(gedcom_file),
-                    stories.marriage_before_death(gedcom_file),
-                    stories.divorce_before_death(gedcom_file)
-                    ]
-    }
+    return {"Sprint Number": 1,
+            "Stories": [stories.dates_before_current_date(gedcom_file),
+                        stories.birth_before_marriage(gedcom_file),
+                        stories.birth_before_death(gedcom_file),
+                        stories.marriage_before_divorce(gedcom_file),
+                        stories.marriage_before_death(gedcom_file),
+                        stories.divorce_before_death(gedcom_file)]}
 
 
 def project_06(gedcom_file):

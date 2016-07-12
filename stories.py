@@ -339,18 +339,18 @@ def birth_before_death_of_parents(gedcom_file):
             chk_dad = fam.has("husband") and fam.husband.has("death_date")
             mom_pass = child.birth_date < fam.wife.birth_date if chk_mom else None
             dad_pass = ((fam.husband.birth_date.dt - child.birth_date.dt).days / 30) > 9 if chk_dad else None
-            msg = "Child {0} was born {1} and has".format(child, child.birth_date)
+            msg = "Family {0} has Child {1} with birth date {2} and has".format(fam, child, child.birth_date)
             if mom_pass is None:
                 out["mother"] = {"xref": fam.wife.xref if fam.has("wife") else None, "birth_date": None}
                 msg += " mother {0} with no death date".format(fam.wife)
             else:
-                out["mother"] = {"xref": fam.wife.xref, "birth_date": fam.wife.birth_date}
+                out["mother"] = {"xref": fam.wife.xref, "birth_date": fam.wife.birth_date.story_dict}
                 msg += " mother {0} with death date {1}".format(fam.wife, fam.wife.death_date)
             if dad_pass is None:
                 out["father"] = {"xref": fam.husband.xref if fam.has("husband") else None, "birth_date": None}
                 msg += " and father {0} with no death date.".format(fam.husband)
             else:
-                out["father"] = {"xref": fam.husband.xref, "birth_date": fam.husband.birth_date}
+                out["father"] = {"xref": fam.husband.xref, "birth_date": fam.husband.birth_date.story_dict}
                 msg += " and father {0} with death date {1}.".format(fam.husband, fam.husband.death_date)
             out["message"] = msg
             passed = ((mom_pass is None) or (mom_pass is True)) and ((dad_pass is None) or (dad_pass is True))
@@ -370,23 +370,32 @@ def marriage_after_14(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for family in gedcom_file.families_dict:
-        if family["marr_date"] is not None:
-            w_birt_date = tools.get_birth_date(family["wife"])
-            h_birt_date = tools.get_birth_date(family["husb"])
-            w_marr_age = tools.years_between(family["marr_date"].datetime, w_birt_date.datetime) if w_birt_date else None
-            h_marr_age = tools.years_between(family["marr_date"].datetime, h_birt_date.datetime) if h_birt_date else None
-            output = {"family_id": family["xref"],
-                      "wife_id": family["wife"].get("xref_ID"),
-                      "husband_id": family["husb"].get("xref_ID"),
-                      "wife_birth_date": w_birt_date.story_dict if w_birt_date else None,
-                      "husband_birth_date": h_birt_date.story_dict if h_birt_date else None,
-                      "wife_marriage_age": w_marr_age,
-                      "husband_marriage_age": h_marr_age,
-                      "wife_name": tools.get_name(family["wife"]),
-                      "husband_name": tools.get_name(family["husb"])}
-            r["passed"].append(output) if ((w_marr_age is None) or (w_marr_age > 14)) and (
-                (h_marr_age is None) or (h_marr_age > 14)) else r["failed"].append(output)
+    msg = "{0} has marriage date {1} with wife {2} born {3} [married at {4} years old] " \
+          + "and husband {5} born {6} [married at {7} years old]."
+
+    for fam in gedcom_file.families:
+        # Check Project Overview Assumptions
+        if not fam.has("marriage_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("husband") or not fam.husband.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("wife") or not fam.wife.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+
+        # Construct Output
+        out = {"family": {"xref": fam.xref},
+               "wife": {"xref": fam.wife.xref,
+                        "birth_date": fam.wife.birth_date.story_dict,
+                        "marriage_age": fam.wife_marriage_age},
+               "husband": {"xref": fam.husband.xref,
+                           "birth_date": fam.husband.birth_date.story_dict,
+                           "marriage_age": fam.husband_marriage_age},
+               "message": msg.format(fam, fam.marriage_date, fam.wife, fam.wife.birth_date, fam.wife_marriage_age,
+                                     fam.husband, fam.husband.birth_date, fam.husband_marriage_age)
+               }
+        # Perform Check
+        passed = (fam.wife_marriage_age > 14) and (fam.husband_marriage_age > 14)
+        r["passed"].append(out) if passed else r["failed"].append(out)
     return r
 
 

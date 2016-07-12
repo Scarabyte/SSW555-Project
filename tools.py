@@ -403,6 +403,9 @@ class Family(LineTool):
         marr = self.marriage
         return Date(marr.children.find_one('tag', 'DATE')) if marr else None
 
+
+
+
     @property
     @cachemethod
     def divorce(self):
@@ -416,34 +419,31 @@ class Family(LineTool):
 
     @property
     @cachemethod
-    def marriage_timeframe(self):
-        m_date = self.marriage_date
-        d_date = self.divorce_date
-        w_d_date = self.wife.death_date
-        h_d_date = self.husband.death_date
-        if m_date:
-            start_ln, start_val, start_dt = m_date.ln, m_date.val, m_date.datetime
-            if d_date:
-                end_reason = "div"
-                end_ln, end_val, end_dt = d_date.ln, d_date.val, d_date.datetime
-            elif w_d_date and not h_d_date:
-                end_reason = "wife_deat"
-                end_ln, end_val, end_dt = w_d_date.ln, w_d_date.val, w_d_date.datetime
-            elif h_d_date and not w_d_date:
-                end_reason = "husb_deat"
-                end_ln, end_val, end_dt = h_d_date.ln, h_d_date.val, h_d_date.datetime
-            elif h_d_date and w_d_date:
-                if h_d_date.datetime < w_d_date.datetime:
-                    end_reason = "husb_deat"
-                    end_ln, end_val, end_dt = h_d_date.ln, h_d_date.val, h_d_date.datetime
-                else:
-                    end_reason = "wife_deat"
-                    end_ln, end_val, end_dt = w_d_date.ln, w_d_date.val, w_d_date.datetime
+    def marriage_end(self):
+        if self.divorce_date:
+            return {"reason": "divorce",
+                    "dt": self.divorce_date.dt,
+                    "story_dict": self.divorce_date.story_dict}
+        if self.wife.has("death_date") and not self.husband.has("death_date"):
+            return {"reason": "wife death",
+                    "dt": self.wife.death_date.dt,
+                    "story_dict": self.wife.death_date.story_dict}
+        if self.husband.has("death_date") and not self.wife.has("death_date"):
+            return {"reason": "husband death",
+                    "dt": self.husband.death_date.dt,
+                    "story_dict": self.husband.story_dict}
+        if self.wife.has("death_date") and self.husband.has("death_date"):
+            if self.husband.death_date < self.wife.death_date:
+                return {"reason": "husband death",
+                        "dt": self.husband.death_date.dt,
+                        "story_dict": self.husband.story_dict}
             else:
-                end_reason = "Not Ended"
-                end_ln, end_val, end_dt = None, None, datetime.max
-            return {"start": {"line_number": start_ln, "line_value": start_val, "dt": start_dt, "reason": "marr_date"},
-                    "end": {"line_number": end_ln, "line_value": end_val, "dt": end_dt, "reason": end_reason}}
+                return {"reason": "wife death",
+                        "dt": self.wife.death_date.dt,
+                        "story_dict": self.wife.death_date.story_dict}
+        return {"reason": "Not Ended",
+                "dt": datetime.max,
+                "story_dict": None}
 
     @property
     @cachemethod

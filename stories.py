@@ -411,20 +411,27 @@ def no_bigamy(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for individual in gedcom_file.find("tag", "INDI"):
+    for indi in gedcom_file.individuals:
         # Get all combinations of marriages this individual is or has been in
-        for marr_1, marr_2 in combinations(tools.iter_marriage_timeframe_dict(individual), 2):
-            # marriages start with marr_date
-            # marriages end with div_date, or (if no div_date) the first deat_date of either spouse
-            # check if datetime of these marriages overlap
-            failed = (marr_1["start"]["dt"] <= marr_2["end"]["dt"]) and (marr_1["end"]["dt"] >= marr_2["start"]["dt"])
-            # Don't include dt in user story
-            marr_1["start"].pop("dt"), marr_1["end"].pop("dt"), marr_2["start"].pop("dt"), marr_2["end"].pop("dt")
-            output = {"marr_1": marr_1, "marr_2": marr_2,
-                      "name": tools.get_name(individual),
-                      "sex": tools.get_sex(individual)
-                      }
-            r["failed"].append(output) if failed else r["passed"].append(output)
+        for fam_1, fam_2 in combinations(indi.families("FAMS"), 2):
+            # Check Project Overview Assumptions
+            if not fam_1.has("marriage_date"):
+                continue  # Project Overview Assumptions not met
+            if not fam_2.has("marriage_date"):
+                continue  # Project Overview Assumptions not met
+            start1 = fam_1.marriage_date
+            end1 = fam_1.marriage_end
+            start2 = fam_2.marriage_date
+            end2 = fam_2.marriage_end
+            failed = (start1.dt <= end2["dt"]) and (end1["dt"] >= start2.dt)
+            end1.pop("dt"), end2.pop("dt")  # Don't include dt in user story
+            out = {"individual": {"xref": indi.xref},
+                   "family_1": {"xref": fam_1.xref,
+                                "marriage_date": start1.story_dict, "marriage_end": end1},
+                   "family_2": {"xref": fam_2.xref,
+                                "marriage_date": start2.story_dict, "marriage_end": end2}}
+            # TODO: Print Nicely
+            r["failed"].append(out) if failed else r["passed"].append(out)
     return r
 
 
@@ -506,7 +513,7 @@ def siblings_spacing(gedcom_file):
                        "father_xref": fam.husband.xref if fam.has("husband") else None,
                        "days_apart": days,
                        "sibling_one": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
-                       "sibling_two": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
+                       "sibling_two": {"xref": sib_b.xref, "birth_date": sib_b.birth_date.story_dict},
                        "message": msg.format(fam, days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)}
                 r["passed"].append(out) if (days < 2) or (days > 240) else r["failed"].append(out)
     return r

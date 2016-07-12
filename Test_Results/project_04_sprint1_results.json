@@ -7,392 +7,392 @@
             "output": {
                 "failed": [
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 59,
                             "line_value": "4 SEP 2017"
                         },
-                        "message": "Date 4 SEP 2017 (line 59) is after 11 JUL 2016 (current date)",
+                        "message": "Date 4 SEP 2017 (line 59) is after 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     }
                 ],
                 "passed": [
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 4,
                             "line_value": "20 MAY 2016"
                         },
-                        "message": "Date 20 MAY 2016 (line 4) is before 11 JUL 2016 (current date)",
+                        "message": "Date 20 MAY 2016 (line 4) is before 12 JUL 2016 (current date)",
                         "type": "HEAD"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 18,
                             "line_value": "17 JUN 1945"
                         },
-                        "message": "Date 17 JUN 1945 (line 18) is before 11 JUL 2016 (current date)",
+                        "message": "Date 17 JUN 1945 (line 18) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 25,
                             "line_value": "10 FEB 1980"
                         },
-                        "message": "Date 10 FEB 1980 (line 25) is before 11 JUL 2016 (current date)",
+                        "message": "Date 10 FEB 1980 (line 25) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 27,
                             "line_value": "24 AUG 1994"
                         },
-                        "message": "Date 24 AUG 1994 (line 27) is before 11 JUL 2016 (current date)",
+                        "message": "Date 24 AUG 1994 (line 27) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 34,
                             "line_value": "24 NOV 1848"
                         },
-                        "message": "Date 24 NOV 1848 (line 34) is before 11 JUL 2016 (current date)",
+                        "message": "Date 24 NOV 1848 (line 34) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 36,
                             "line_value": "12 JUL 1988"
                         },
-                        "message": "Date 12 JUL 1988 (line 36) is before 11 JUL 2016 (current date)",
+                        "message": "Date 12 JUL 1988 (line 36) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 44,
                             "line_value": "18 JUL 1992"
                         },
-                        "message": "Date 18 JUL 1992 (line 44) is before 11 JUL 2016 (current date)",
+                        "message": "Date 18 JUL 1992 (line 44) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 51,
                             "line_value": "23 AUG 1855"
                         },
-                        "message": "Date 23 AUG 1855 (line 51) is before 11 JUL 2016 (current date)",
+                        "message": "Date 23 AUG 1855 (line 51) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 53,
                             "line_value": "4 MAY 2006"
                         },
-                        "message": "Date 4 MAY 2006 (line 53) is before 11 JUL 2016 (current date)",
+                        "message": "Date 4 MAY 2006 (line 53) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 65,
                             "line_value": "26 MAR 1979"
                         },
-                        "message": "Date 26 MAR 1979 (line 65) is before 11 JUL 2016 (current date)",
+                        "message": "Date 26 MAR 1979 (line 65) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 71,
                             "line_value": "4 OCT 2003"
                         },
-                        "message": "Date 4 OCT 2003 (line 71) is before 11 JUL 2016 (current date)",
+                        "message": "Date 4 OCT 2003 (line 71) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 77,
                             "line_value": "15 OCT 1975"
                         },
-                        "message": "Date 15 OCT 1975 (line 77) is before 11 JUL 2016 (current date)",
+                        "message": "Date 15 OCT 1975 (line 77) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 83,
                             "line_value": "24 JAN 1973"
                         },
-                        "message": "Date 24 JAN 1973 (line 83) is before 11 JUL 2016 (current date)",
+                        "message": "Date 24 JAN 1973 (line 83) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 85,
                             "line_value": "16 MAY 2016"
                         },
-                        "message": "Date 16 MAY 2016 (line 85) is before 11 JUL 2016 (current date)",
+                        "message": "Date 16 MAY 2016 (line 85) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 91,
                             "line_value": "27 MAR 1920"
                         },
-                        "message": "Date 27 MAR 1920 (line 91) is before 11 JUL 2016 (current date)",
+                        "message": "Date 27 MAR 1920 (line 91) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 93,
                             "line_value": "27 FEB 2002"
                         },
-                        "message": "Date 27 FEB 2002 (line 93) is before 11 JUL 2016 (current date)",
+                        "message": "Date 27 FEB 2002 (line 93) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 99,
                             "line_value": "14 JAN 1922"
                         },
-                        "message": "Date 14 JAN 1922 (line 99) is before 11 JUL 2016 (current date)",
+                        "message": "Date 14 JAN 1922 (line 99) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 101,
                             "line_value": "4 APR 1997"
                         },
-                        "message": "Date 4 APR 1997 (line 101) is before 11 JUL 2016 (current date)",
+                        "message": "Date 4 APR 1997 (line 101) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 107,
                             "line_value": "3 JUN 1954"
                         },
-                        "message": "Date 3 JUN 1954 (line 107) is before 11 JUL 2016 (current date)",
+                        "message": "Date 3 JUN 1954 (line 107) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 109,
                             "line_value": "10 AUG 1994"
                         },
-                        "message": "Date 10 AUG 1994 (line 109) is before 11 JUL 2016 (current date)",
+                        "message": "Date 10 AUG 1994 (line 109) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 117,
                             "line_value": "16 DEC 1951"
                         },
-                        "message": "Date 16 DEC 1951 (line 117) is before 11 JUL 2016 (current date)",
+                        "message": "Date 16 DEC 1951 (line 117) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 124,
                             "line_value": "8 APR 1918"
                         },
-                        "message": "Date 8 APR 1918 (line 124) is before 11 JUL 2016 (current date)",
+                        "message": "Date 8 APR 1918 (line 124) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 126,
                             "line_value": "10 OCT 1995"
                         },
-                        "message": "Date 10 OCT 1995 (line 126) is before 11 JUL 2016 (current date)",
+                        "message": "Date 10 OCT 1995 (line 126) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 132,
                             "line_value": "23 OCT 1918"
                         },
-                        "message": "Date 23 OCT 1918 (line 132) is before 11 JUL 2016 (current date)",
+                        "message": "Date 23 OCT 1918 (line 132) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 138,
                             "line_value": "30 OCT 1960"
                         },
-                        "message": "Date 30 OCT 1960 (line 138) is before 11 JUL 2016 (current date)",
+                        "message": "Date 30 OCT 1960 (line 138) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 144,
                             "line_value": "11 JUN 1943"
                         },
-                        "message": "Date 11 JUN 1943 (line 144) is before 11 JUL 2016 (current date)",
+                        "message": "Date 11 JUN 1943 (line 144) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 150,
                             "line_value": "7 SEP 1948"
                         },
-                        "message": "Date 7 SEP 1948 (line 150) is before 11 JUL 2016 (current date)",
+                        "message": "Date 7 SEP 1948 (line 150) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 156,
                             "line_value": "24 JUL 1972"
                         },
-                        "message": "Date 24 JUL 1972 (line 156) is before 11 JUL 2016 (current date)",
+                        "message": "Date 24 JUL 1972 (line 156) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 162,
                             "line_value": "1 AUG 1990"
                         },
-                        "message": "Date 1 AUG 1990 (line 162) is before 11 JUL 2016 (current date)",
+                        "message": "Date 1 AUG 1990 (line 162) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 168,
                             "line_value": "5 JUN 1957"
                         },
-                        "message": "Date 5 JUN 1957 (line 168) is before 11 JUL 2016 (current date)",
+                        "message": "Date 5 JUN 1957 (line 168) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 170,
                             "line_value": "12 SEP 1989"
                         },
-                        "message": "Date 12 SEP 1989 (line 170) is before 11 JUL 2016 (current date)",
+                        "message": "Date 12 SEP 1989 (line 170) is before 12 JUL 2016 (current date)",
                         "type": "DEAT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 176,
                             "line_value": "7 JUL 1977"
                         },
-                        "message": "Date 7 JUL 1977 (line 176) is before 11 JUL 2016 (current date)",
+                        "message": "Date 7 JUL 1977 (line 176) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 182,
                             "line_value": "2 MAY 1993"
                         },
-                        "message": "Date 2 MAY 1993 (line 182) is before 11 JUL 2016 (current date)",
+                        "message": "Date 2 MAY 1993 (line 182) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 188,
                             "line_value": "4 AUG 1975"
                         },
-                        "message": "Date 4 AUG 1975 (line 188) is before 11 JUL 2016 (current date)",
+                        "message": "Date 4 AUG 1975 (line 188) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 194,
                             "line_value": "9 SEP 1991"
                         },
-                        "message": "Date 9 SEP 1991 (line 194) is before 11 JUL 2016 (current date)",
+                        "message": "Date 9 SEP 1991 (line 194) is before 12 JUL 2016 (current date)",
                         "type": "BIRT"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 207,
                             "line_value": "26 MAR 1976"
                         },
-                        "message": "Date 26 MAR 1976 (line 207) is before 11 JUL 2016 (current date)",
+                        "message": "Date 26 MAR 1976 (line 207) is before 12 JUL 2016 (current date)",
                         "type": "MARR"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 209,
                             "line_value": "13 NOV 2012"
                         },
-                        "message": "Date 13 NOV 2012 (line 209) is before 11 JUL 2016 (current date)",
+                        "message": "Date 13 NOV 2012 (line 209) is before 12 JUL 2016 (current date)",
                         "type": "DIV"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 222,
                             "line_value": "4 SEP 1970"
                         },
-                        "message": "Date 4 SEP 1970 (line 222) is before 11 JUL 2016 (current date)",
+                        "message": "Date 4 SEP 1970 (line 222) is before 12 JUL 2016 (current date)",
                         "type": "MARR"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 238,
                             "line_value": "19 MAR 1990"
                         },
-                        "message": "Date 19 MAR 1990 (line 238) is before 11 JUL 2016 (current date)",
+                        "message": "Date 19 MAR 1990 (line 238) is before 12 JUL 2016 (current date)",
                         "type": "MARR"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 244,
                             "line_value": "12 OCT 1986"
                         },
-                        "message": "Date 12 OCT 1986 (line 244) is before 11 JUL 2016 (current date)",
+                        "message": "Date 12 OCT 1986 (line 244) is before 12 JUL 2016 (current date)",
                         "type": "MARR"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 246,
                             "line_value": "17 NOV 1978"
                         },
-                        "message": "Date 17 NOV 1978 (line 246) is before 11 JUL 2016 (current date)",
+                        "message": "Date 17 NOV 1978 (line 246) is before 12 JUL 2016 (current date)",
                         "type": "DIV"
                     },
                     {
-                        "current_date": "11 JUL 2016",
+                        "current_date": "12 JUL 2016",
                         "date": {
                             "line_number": 252,
                             "line_value": "1 MAY 1973"
                         },
-                        "message": "Date 1 MAY 1973 (line 252) is before 11 JUL 2016 (current date)",
+                        "message": "Date 1 MAY 1973 (line 252) is before 12 JUL 2016 (current date)",
                         "type": "MARR"
                     }
                 ]

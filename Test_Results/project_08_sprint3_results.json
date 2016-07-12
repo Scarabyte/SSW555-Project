@@ -299,42 +299,6 @@
                     },
                     {
                         "fam": {
-                            "xref": "@F3@"
-                        },
-                        "indi": {
-                            "xref": "@I2@"
-                        },
-                        "message": "Individual David Burbidge (@I2@) is not married to any of his siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F3@"
-                        },
-                        "indi": {
-                            "xref": "@I2@"
-                        },
-                        "message": "Individual David Burbidge (@I2@) is not married to any of his siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I3@"
-                        },
-                        "message": "Individual Wendy Watson (@I3@) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I3@"
-                        },
-                        "message": "Individual Wendy Watson (@I3@) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
                             "xref": "@F5@"
                         },
                         "indi": {
@@ -368,33 +332,6 @@
                             "xref": "@I13@"
                         },
                         "message": "Individual Jean Watson (@I13@) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I13@"
-                        },
-                        "message": "Individual Jean Watson (@I13@) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I13@"
-                        },
-                        "message": "Individual Jean Watson (@I13@) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I14@"
-                        },
-                        "message": "Individual Martin Watson (@I14@) is not married to any of his siblings"
                     },
                     {
                         "fam": {

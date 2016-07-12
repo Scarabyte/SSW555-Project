@@ -641,18 +641,24 @@ def siblings_should_not_marry(gedcom_file):
     for fam in gedcom_file.families:
         for indi in fam.children:
             for spouse in indi.spouses:
+                married_to_sibling = 0
                 for sibling in (s for s in fam.children if s.xref != indi.xref):
                     out = {"indi": {"xref": indi.xref},
                            "fam": {"xref": fam.xref}}
                     msg_out = (indi, indi.pronoun, sibling)
                     if indi.xref == spouse.xref:
                         print "BAD: ", sibling, spouse
+                        married_to_sibling += 1
                         out["message"] = failed_message.format(*msg_out)
                         r["failed"].append(out)
-                    else:
-                        print "GOOD: ", sibling, spouse
-                        out["message"] = passed_message.format(*msg_out)
-                        r["passed"].append(out)
+#                    else:
+#                        print "GOOD: ", sibling, spouse
+#                        out["message"] = passed_message.format(*msg_out)
+#                        r["passed"].append(out)
+                if not married_to_sibling:
+                    print "GOOD: ", sibling, spouse
+                    out["message"] = passed_message.format(*msg_out)
+                    r["passed"].append(out)
         print
 
 # For each individual:

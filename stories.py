@@ -592,6 +592,15 @@ def no_marriages_to_descendants(gedcom_file):
     # Get a list of their children (and grandchildren? How many generations to check?)
     # Get a list of their spouses
     # See if any names appear in both lists <- Check unique IDs
+    passed_message = "Individual {0} is not married to any of {1} children"
+    failed_message = "Individual {0} is married to {1} child {2}"
+    for fam in gedcom_file.families:
+        for indi in fam.children:
+            for spouse in indi.spouses:
+                print "~AB~ Fam = ",fam," indi = ",indi," spouse = ",spouse
+                # Now need to get a list of the children
+#        pass
+
     return r
 
 
@@ -623,15 +632,15 @@ def siblings_should_not_marry(gedcom_file):
                            "fam": {"xref": fam.xref}}
                     msg_out = (indi, indi.pronoun, sibling)
                     if sibling.xref == spouse.xref:
-                        print "BAD: ", sibling, spouse
+#                        print "BAD: ", sibling, spouse
                         married_to_sibling += 1
                         out["message"] = failed_message.format(*msg_out)
                         r["failed"].append(out)
                 if not married_to_sibling:
-                    print "GOOD: ", sibling, spouse
+#                    print "GOOD: ", sibling, spouse
                     out["message"] = passed_message.format(*msg_out)
                     r["passed"].append(out)
-        print
+#        print
 
 # For each individual:
     # Get a list of their siblings

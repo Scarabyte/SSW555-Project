@@ -550,7 +550,13 @@ def fewer_than_15_siblings(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
+    msg = "{0} has siblings more than 15 in the family"
+    for fam in gedcom_file.families:
+        siblings = [c for c in fam.children]
+        numberofsiblings = len(siblings)
+        out = {"family_xref": fam.xref,
+                "message": msg.format(fam)}
+        r["passed"].append(out) if (numberofsiblings < 15 )  else r["failed"].append(out)
     return r
 
 
@@ -571,7 +577,24 @@ def male_last_names(gedcom_file):
     # error or failed message if the names of the husband and male children are not the same
     """
     r = {"passed": [], "failed": []}
-    # ...
+    passed_msg = "{0} family's  members have the same surname"
+    failed_msg = "{0} family's members does not have the same surname"
+    for family in gedcom_file.families_dict:
+        husband_name = tools.get_name(family["husb"])
+        husband_last_name = husband_name.split()[-1]
+        for child in family["children"]:   
+            child_sex = tools.get_sex(child) 
+            if child_sex == 'M' :
+                male_child_name = tools.get_name(male_child)
+                male_child_last_name = male_child_name.split()[-1]
+                out = {"family_xref": fam.xref}
+                msg_out = (fam)
+                if husband_last_name == male_child_last_name:
+                    out["message"] = passed_msg.format(*msg_out)
+                    r["passed"].append(out)
+                else :
+                    out["message"] = failed_msg.format(*msg_out)
+                    r["failed"].append(out) 
     return r
 
 

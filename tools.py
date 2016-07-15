@@ -274,16 +274,18 @@ class Date(LineTool):
 
 
 class Individual(LineTool):
-
     def __str__(self):
         name = self.name.val.replace("/", "") if self.has("name") else "N/A"
-        xref = self.xref
-        return "{0} ({1})".format(name, xref)
+        return "{0} ({1} - line {2})".format(name, self.xref, self.ln)
 
     def __repr__(self):
         name = self.name.val.replace("/", "") if self.has("name") else "N/A"
-        xref = self.xref
-        return "{0} ({1})".format(name, xref)
+        return "{0} ({1} - line {2})".format(name, self.xref, self.ln)
+
+    @property
+    @cachemethod
+    def story_dict(self):
+        return {"xref": self.xref, "line_number": self.ln}
 
     @property
     @cachemethod
@@ -363,7 +365,7 @@ class Individual(LineTool):
 
 class Family(LineTool):
     def __str__(self):
-        return "Family ({0})".format(self.line.get('xref_ID'))
+        return "Family ({0} - line {1})".format(self.xref, self.ln)
 
     @property
     @cachemethod

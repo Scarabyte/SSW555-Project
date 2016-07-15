@@ -550,19 +550,14 @@ def fewer_than_15_siblings(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    passed_msg = "{0}  has less than 15 siblings in the family"
-    failed_msg = "{0}  has more than 15 siblings in the family"
+    msg = "{0} has {1} {2}{3}".format
     for fam in gedcom_file.families:
-        siblings = [c for c in fam.children]
-        numberofsiblings = len(siblings)
-        msg_out = {"family_xref": fam.xref}
-        out = {}
-        if numberofsiblings < 15:
-            out["message"] = passed_msg.format(msg_out)
-            r["passed"].append(out)
-        else :
-            out["message"] = failed_msg.format(msg_out)
-            r["failed"].append(out)
+        i = len(fam.children)
+        out = {"family": fam.story_dict, "siblings": [child.story_dict for child in fam.children], "count": i,
+               "message": msg(fam, "no", "siblings", "") if i == 0
+               else msg(fam, i, "sibling, ", fam.children[0]) if i == 1
+               else msg(fam, i, "siblings ", str(fam.children)[1:-1])}
+        r["passed"].append(out) if i < 15 else r["failed"].append(out)
     return r
 
 
@@ -958,32 +953,32 @@ def reject_illegitimate_dates():
 
 if __name__ == "__main__":
     g = gedcom.File()
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors.ged"
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
     try:
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
     # Sprint 1 - Stories
-    dates_before_current_date(g)
-    birth_before_marriage(g)
-    birth_before_death(g)
-    marriage_before_divorce(g)
-    marriage_before_death(g)
-    divorce_before_death(g)
+    #dates_before_current_date(g)
+    #birth_before_marriage(g)
+    #birth_before_death(g)
+    #marriage_before_divorce(g)
+    #marriage_before_death(g)
+    #divorce_before_death(g)
 
     # Sprint 2 - Stories
-    less_then_150_years_old(g)
-    birth_before_marriage_of_parents(g)
-    birth_before_death_of_parents(g)
-    marriage_after_14(g)
-    no_bigamy(g)
-    parents_not_too_old(g)
+    #less_then_150_years_old(g)
+    #birth_before_marriage_of_parents(g)
+    #birth_before_death_of_parents(g)
+    #marriage_after_14(g)
+    #no_bigamy(g)
+    #parents_not_too_old(g)
 
     # Sprint 3 - Stories
     # siblings_spacing(g)
     # multiple_births_less_than_5(g)
-    # fewer_than_15_siblings(g)
+    fewer_than_15_siblings(g)
     # male_last_names(g)
     # no_marriages_to_descendants(g)
     # siblings_should_not_marry(g)

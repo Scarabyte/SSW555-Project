@@ -505,20 +505,25 @@ def siblings_spacing(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = "{0} has siblings born {1} days apart with {2} born on {3} and {4} born on {5}"
+    msg = "{0} has siblings born {1} apart ({2} days) with {3} born on {4} and {5} born on {6}".format
     for fam in gedcom_file.families:
-        siblings = [c for c in fam.children if c.has("birth_date")]
-        if len(siblings) >= 2:
-            for sib_a, sib_b in combinations(siblings, 2):
-                days = tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
-                out = {"family_xref": fam.xref,
-                       "mother_xref": fam.wife.xref if fam.has("wife") else None,
-                       "father_xref": fam.husband.xref if fam.has("husband") else None,
-                       "days_apart": days,
-                       "sibling_one": {"xref": sib_a.xref, "birth_date": sib_a.birth_date.story_dict},
-                       "sibling_two": {"xref": sib_b.xref, "birth_date": sib_b.birth_date.story_dict},
-                       "message": msg.format(fam, days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)}
-                r["passed"].append(out) if (days < 2) or (days > 240) else r["failed"].append(out)
+        for sib_a, sib_b in combinations((c for c in fam.children if c.has("birth_date")), 2):
+            days = tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
+            out = {"family": fam.story_dict, "days_apart": days,
+                   "sibling_one": {"xref": sib_a.xref, "line_number": sib_a.ln,
+                                   "birth_date": sib_a.birth_date.story_dict},
+                   "sibling_two": {"xref": sib_b.xref, "line_number": sib_b.ln,
+                                   "birth_date": sib_b.birth_date.story_dict}}
+            if days < 2:
+                out["message"] = msg(fam, "less than two days", days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)
+                r["passed"].append(out)
+            elif days > 240:
+                out["message"] = msg(fam, "more than 8 months", days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)
+                r["passed"].append(out)
+            else:
+                out["message"] = msg(fam, "less than 8 months but more than two days", days, sib_a, sib_a.birth_date,
+                                     sib_b, sib_b.birth_date)
+                r["failed"].append(out)
     return r
 
 
@@ -601,7 +606,8 @@ def male_last_names(gedcom_file):
         for child in fam.male_children:
 
             out = {"family": fam.story_dict,
-                   "father":{"xref": fam.husband.xref, "line_number": fam.husband.ln, "name": fam.husband.name.story_dict},
+                   "father": {"xref": fam.husband.xref, "line_number": fam.husband.ln,
+                              "name": fam.husband.name.story_dict},
                    "child": {"xref": child.xref, "line_number": child.ln, "name": child.name.story_dict}}
 
             if fam.husband.name.surname == child.name.surname:
@@ -990,10 +996,10 @@ if __name__ == "__main__":
     #parents_not_too_old(g)
 
     # Sprint 3 - Stories
-    # siblings_spacing(g)
+    siblings_spacing(g)
     # multiple_births_less_than_5(g)
     # fewer_than_15_siblings(g)
-    male_last_names(g)
+    # male_last_names(g)
     # no_marriages_to_descendants(g)
     # siblings_should_not_marry(g)
 

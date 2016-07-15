@@ -230,6 +230,23 @@ class LineTool(object):
         return getattr(self, p) is not None
 
 
+class Sex(LineTool):
+    def __str__(self):
+        return "{0} (line {1})".format("Male" if self.val == "M" else "Female", self.ln)
+
+    def __repr__(self):
+        return "{0} (line {1})".format("Male" if self.val == "M" else "Female", self.ln)
+
+
+class Name(LineTool):
+
+    @property
+    @cachemethod
+    def surname(self):
+        m = re.match(r".*?/([^/]*)/", self.val)
+        return m.group(1).strip() if m else None
+
+
 class Date(LineTool):
     def __str__(self):
         return "{0} (line {1})".format(self.val, self.ln)
@@ -295,12 +312,12 @@ class Individual(LineTool):
     @property
     @cachemethod
     def name(self):
-        return self.line.children.find_one("tag", "NAME")
+        return Name(self.line.children.find_one("tag", "NAME"))
 
     @property
     @cachemethod
     def sex(self):
-        return self.line.children.find_one("tag", "SEX")
+        return Sex(self.line.children.find_one("tag", "SEX"))
 
     @property
     @cachemethod
@@ -453,6 +470,16 @@ class Family(LineTool):
     @cachemethod
     def children(self):
         return [Individual(child.follow_xref()) for child in self.line.children.find('tag', 'CHIL')]
+
+    @property
+    @cachemethod
+    def male_children(self):
+        return filter(lambda c: c.sex.val == "M", self.children)
+
+    @property
+    @cachemethod
+    def female_children(self):
+        return filter(lambda c: c.sex.val == "F", self.children)
 
 
 def family_dict(family):

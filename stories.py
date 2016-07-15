@@ -572,31 +572,37 @@ def male_last_names(gedcom_file):
     :type gedcom_file: gedcom.File
     
     """
-    # loop through  families
-    # get all the names of the husbands of the family
-    # get all the names of the male children in the family
-    # compare the surnames of the husbands and that of the male children
-    # error or failed message if the names of the husband and male children are not the same
     r = {"passed": [], "failed": []}
-    passed_msg = "{0} family's male members have the same surname"
-    failed_msg = "{0} family's male members do not have the same surname"
-    for family in gedcom_file.families_dict:
-        husband_name = tools.get_name(family["husb"])
-        husband_last_name = husband_name.split()[-1]
-        for child in family["children"]:   
-            child_sex = tools.get_sex(child) 
-            if child_sex == 'M' :
-                male_child_name = tools.get_name(child)
-                male_child_last_name = male_child_name.split()[-1]
-                familyXref = family["xref"]
-                out = {"family_xref": familyXref}
-                #msg_out = (family)
-                if husband_last_name == male_child_last_name:
-                    out["message"] = passed_msg.format(familyXref)
-                    r["passed"].append(out)
-                else :
-                    out["message"] = failed_msg.format(familyXref)
-                    r["failed"].append(out) 
+
+    sib_msg = "{0} with male siblings {1} and {2}{3} have the same surname".format  # Sibling Check Message Formatter
+    dad_msg = "{0} with father {1} and son {2}{3} have the same surname".format     # Dad/Son Check Message Formatter
+
+    for fam in gedcom_file.families:
+
+        # Compare children to each other
+        for sib_a, sib_b in combinations(fam.male_children, 2):
+            out = {}  # TODO: provide output data
+            if sib_a.name.surname == sib_b.name.surname:
+                out["message"] = sib_msg(fam, sib_a, sib_b, "")
+                r["passed"].append(out)
+            else:
+                out["message"] = sib_msg(fam, sib_a, sib_b, " do not")
+                r["failed"].append(out)
+
+        # Check Project Overview Assumptions
+        if not fam.has("husband") or not fam.husband.has("sex") or fam.husband.sex.val != "M" or not fam.husband.has("name"):
+            continue  # Project Overview Assumptions not met
+
+        # Compare father to each child
+        for child in fam.male_children:
+            out = {}  # TODO: provide output data
+            if fam.husband.name.surname == child.name.surname:
+                out["message"] = dad_msg(fam, fam.husband, child, "")
+                r["passed"].append(out)
+            else:
+                out["message"] = dad_msg(fam, fam.husband, child, " do not")
+                r["failed"].append(out)
+                
     return r
 
 
@@ -978,8 +984,8 @@ if __name__ == "__main__":
     # Sprint 3 - Stories
     # siblings_spacing(g)
     # multiple_births_less_than_5(g)
-    fewer_than_15_siblings(g)
-    # male_last_names(g)
+    # fewer_than_15_siblings(g)
+    male_last_names(g)
     # no_marriages_to_descendants(g)
     # siblings_should_not_marry(g)
 

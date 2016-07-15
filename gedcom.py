@@ -484,7 +484,7 @@ class Line(dict):
         """ Line Number Property
         :return: line number
         """
-        return self.get("line_number")
+        return self.get("line_number")+1
 
     @property
     def tag(self):

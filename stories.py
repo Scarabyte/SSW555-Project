@@ -11,11 +11,11 @@ import gedcom
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 
-
-logging.basicConfig(format='%(story_id)-13s| %(story_name)s (%(status)s) - %(message)s', level=logging.DEBUG)
-
 NOW = datetime.now()
 NOW_STRING = NOW.strftime("%d %b %Y").upper()
+
+logging.basicConfig(format='%(story_id)-13s| %(story_name)s (%(status)s) - %(message)s', level=logging.INFO)
+user_out = logging.getLogger(__name__)
 
 
 def log(func):
@@ -23,10 +23,9 @@ def log(func):
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
         for entry in r["output"]["passed"]:
-            logging.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Passed", story_name=r["name"]))
+            user_out.debug(entry.get("message", ""), extra=dict(story_id=r["id"], status="Passed", story_name=r["name"]))
         for entry in r["output"]["failed"]:
-            logging.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Failed", story_name=r["name"]))
-
+            user_out.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Failed", story_name=r["name"]))
         return r
     return func_wrapper
 
@@ -642,7 +641,8 @@ def no_marriages_to_descendants(gedcom_file):
     for fam in gedcom_file.families:
         for indi in fam.children:
             for spouse in indi.spouses:
-                print "~AB~ Fam = ",fam," indi = ",indi," spouse = ",spouse
+                pass
+                # print "~AB~ Fam = ",fam," indi = ",indi," spouse = ",spouse
                 # Now need to get a list of the children
 #        pass
 
@@ -979,29 +979,32 @@ if __name__ == "__main__":
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
+    # Set Log mode to debug
+    user_out.setLevel(logging.DEBUG)
+
     # Sprint 1 - Stories
-    #dates_before_current_date(g)
-    #birth_before_marriage(g)
-    #birth_before_death(g)
-    #marriage_before_divorce(g)
-    #marriage_before_death(g)
-    #divorce_before_death(g)
+    dates_before_current_date(g)
+    birth_before_marriage(g)
+    birth_before_death(g)
+    marriage_before_divorce(g)
+    marriage_before_death(g)
+    divorce_before_death(g)
 
     # Sprint 2 - Stories
-    #less_then_150_years_old(g)
-    #birth_before_marriage_of_parents(g)
-    #birth_before_death_of_parents(g)
-    #marriage_after_14(g)
-    #no_bigamy(g)
-    #parents_not_too_old(g)
+    less_then_150_years_old(g)
+    birth_before_marriage_of_parents(g)
+    birth_before_death_of_parents(g)
+    marriage_after_14(g)
+    no_bigamy(g)
+    parents_not_too_old(g)
 
     # Sprint 3 - Stories
     siblings_spacing(g)
-    # multiple_births_less_than_5(g)
-    # fewer_than_15_siblings(g)
-    # male_last_names(g)
-    # no_marriages_to_descendants(g)
-    # siblings_should_not_marry(g)
+    multiple_births_less_than_5(g)
+    fewer_than_15_siblings(g)
+    male_last_names(g)
+    no_marriages_to_descendants(g)
+    siblings_should_not_marry(g)
 
     # Sprint 4 - Stories
     # first_cousins_should_not_marry(g)

@@ -97,6 +97,9 @@ def project_08(gedcom_file):
 
 
 if __name__ == "__main__":
+    # Uncomment to show passed cases aswell
+    #stories.user_out.setLevel(logging.DEBUG)
+
     g = gedcom.File()
 
     # Request file name from user
@@ -143,5 +146,5 @@ if __name__ == "__main__":
     except IOError as e:
         sys.exit("Project 08: Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
     else:
-        print "Project 08: Successfully saved results to project_06_results.json"
+        print "Project 08: Successfully saved results to project_08_results.json"
 

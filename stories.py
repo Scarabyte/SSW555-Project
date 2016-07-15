@@ -585,7 +585,7 @@ def male_last_names(gedcom_file):
         for child in family["children"]:   
             child_sex = tools.get_sex(child) 
             if child_sex == 'M' :
-                male_child_name = tools.get_name(male_child)
+                male_child_name = tools.get_name(child)
                 male_child_last_name = male_child_name.split()[-1]
                 out = {"family_xref": fam.xref}
                 msg_out = (fam)

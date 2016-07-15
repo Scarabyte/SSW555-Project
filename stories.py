@@ -570,12 +570,12 @@ def male_last_names(gedcom_file):
     :param gedcom_file: GEDCOM File to check
     :type gedcom_file: gedcom.File
     
+    """
     # loop through  families
     # get all the names of the husbands of the family
     # get all the names of the male children in the family
     # compare the surnames of the husbands and that of the male children
     # error or failed message if the names of the husband and male children are not the same
-    """
     r = {"passed": [], "failed": []}
     passed_msg = "{0} family's  members have the same surname"
     failed_msg = "{0} family's members does not have the same surname"
@@ -612,7 +612,7 @@ def no_marriages_to_descendants(gedcom_file):
     r = {"passed": [], "failed": []}
     # ...
 # For each individual:
-    # Get a list of their children (and grandchildren? How many generations to check?)
+    # Get a list of their children
     # Get a list of their spouses
     # See if any names appear in both lists <- Check unique IDs
     passed_message = "Individual {0} is not married to any of {1} children"
@@ -639,8 +639,7 @@ def siblings_should_not_marry(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
-    # Get sibilings
+    # Get an individual's sibilings
     # Get an individual's marriages
     # Check if any overlap
 
@@ -655,15 +654,12 @@ def siblings_should_not_marry(gedcom_file):
                            "fam": {"xref": fam.xref}}
                     msg_out = (indi, indi.pronoun, sibling)
                     if sibling.xref == spouse.xref:
-#                        print "BAD: ", sibling, spouse
                         married_to_sibling += 1
                         out["message"] = failed_message.format(*msg_out)
                         r["failed"].append(out)
                 if not married_to_sibling:
-#                    print "GOOD: ", sibling, spouse
                     out["message"] = passed_message.format(*msg_out)
                     r["passed"].append(out)
-#        print
 
 # For each individual:
     # Get a list of their siblings

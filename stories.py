@@ -581,7 +581,9 @@ def male_last_names(gedcom_file):
 
         # Compare children to each other
         for sib_a, sib_b in combinations(fam.male_children, 2):
-            out = {}  # TODO: provide output data
+            out = {"family": fam.story_dict,
+                   "sibling_one": {"xref": sib_a.xref, "line_number": sib_a.ln, "name": sib_a.name.story_dict},
+                   "sibling_two": {"xref": sib_b.xref, "line_number": sib_b.ln, "name": sib_a.name.story_dict}}
             if sib_a.name.surname == sib_b.name.surname:
                 out["message"] = sib_msg(fam, sib_a, sib_b, "")
                 r["passed"].append(out)
@@ -590,19 +592,25 @@ def male_last_names(gedcom_file):
                 r["failed"].append(out)
 
         # Check Project Overview Assumptions
-        if not fam.has("husband") or not fam.husband.has("sex") or fam.husband.sex.val != "M" or not fam.husband.has("name"):
+        if not fam.has("husband") or not fam.husband.has("name"):
+            continue  # Project Overview Assumptions not met
+        if not fam.husband.has("sex") or fam.husband.sex.val != "M":
             continue  # Project Overview Assumptions not met
 
         # Compare father to each child
         for child in fam.male_children:
-            out = {}  # TODO: provide output data
+
+            out = {"family": fam.story_dict,
+                   "father":{"xref": fam.husband.xref, "line_number": fam.husband.ln, "name": fam.husband.name.story_dict},
+                   "child": {"xref": child.xref, "line_number": child.ln, "name": child.name.story_dict}}
+
             if fam.husband.name.surname == child.name.surname:
                 out["message"] = dad_msg(fam, fam.husband, child, "")
                 r["passed"].append(out)
             else:
                 out["message"] = dad_msg(fam, fam.husband, child, " do not")
                 r["failed"].append(out)
-                
+
     return r
 
 

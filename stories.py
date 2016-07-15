@@ -14,18 +14,39 @@ __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 NOW = datetime.now()
 NOW_STRING = NOW.strftime("%d %b %Y").upper()
 
-logging.basicConfig(format='%(story_id)-13s| %(story_name)s (%(status)s) - %(message)s', level=logging.INFO)
+#logging.basicConfig(format='(%(status)s) - %(message)s', level=logging.INFO)
+
+logging.basicConfig(format='%(message)s', level=logging.INFO)
 user_out = logging.getLogger(__name__)
 
+
+LOG_H1_STR = '\n### {0}: {1} ###'
+LOG_H2_STR = '\t > {2}'
+LOG_BULLET_STR = '\t\t * {0}'
 
 def log(func):
     """ Function decarator used by the story decorator inorder to log the results of a story """
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
+        user_out.info(LOG_H1_STR.format(r["id"], r["name"].replace("_", " ").title()))
+
+        user_out.info("~~~~")
+
+        user_out.debug("[passed]")
         for entry in r["output"]["passed"]:
-            user_out.debug(entry.get("message", ""), extra=dict(story_id=r["id"], status="Passed", story_name=r["name"]))
+            h2 = LOG_H2_STR.format(r["id"].split(" ")[-1], "passed", entry.get("message", entry))
+            user_out.debug(h2)
+            for bullet in entry.get("bullets", []):
+                user_out.debug(LOG_BULLET_STR.format(bullet))
+
+        user_out.info("[failed]")
         for entry in r["output"]["failed"]:
-            user_out.info(entry.get("message", ""), extra=dict(story_id=r["id"], status="Failed", story_name=r["name"]))
+            h2 = LOG_H2_STR.format(r["id"].split(" ")[-1], "failed", entry.get("message", entry))
+            user_out.info(h2)
+            for bullet in entry.get("bullets", []):
+                user_out.info(LOG_BULLET_STR.format(bullet))
+        user_out.info("~~~~")
+
         return r
     return func_wrapper
 
@@ -504,7 +525,8 @@ def siblings_spacing(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = "{0} has siblings born {1} apart ({2} days) with {3} born on {4} and {5} born on {6}".format
+    msg = "{0} has siblings born {1} apart ({2} days)".format
+    bullet_msg = "Sibling {0} born {1}".format
     for fam in gedcom_file.families:
         for sib_a, sib_b in combinations((c for c in fam.children if c.has("birth_date")), 2):
             days = tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
@@ -512,7 +534,10 @@ def siblings_spacing(gedcom_file):
                    "sibling_one": {"xref": sib_a.xref, "line_number": sib_a.ln,
                                    "birth_date": sib_a.birth_date.story_dict},
                    "sibling_two": {"xref": sib_b.xref, "line_number": sib_b.ln,
-                                   "birth_date": sib_b.birth_date.story_dict}}
+                                   "birth_date": sib_b.birth_date.story_dict},
+                   "bullets": [bullet_msg(sib_a, sib_a.birth_date), bullet_msg(sib_b, sib_b.birth_date)]
+                   }
+
             if days < 2:
                 out["message"] = msg(fam, "less than two days", days, sib_a, sib_a.birth_date, sib_b, sib_b.birth_date)
                 r["passed"].append(out)
@@ -539,22 +564,20 @@ def multiple_births_less_than_5(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 
-    msg_pass = "{0} has no more than 5 siblings born on the same date, with {1} {2} born on {3}.{4}".format
-    msg_fail = "{0} has more than 5 siblings born on the same date, with {1} siblings born on {2}.{3}".format
+    msg_pass = "{0} has no more than 5 siblings born on the same date, with {1} {2} born on {3}".format
+    msg_fail = "{0} has more than 5 siblings born on the same date, with {1} siblings born on {2}".format
 
     for fam in gedcom_file.families:
         group = groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date)
         for date, born_on_date in ((date, list(born_on_date)) for date, born_on_date in group):
-            str_siblings = "".join("\n\t{0}. Sibling {1} born {2}".format(i+1, c, c.birth_date) for i, c in enumerate(born_on_date))
             i = len(born_on_date)
-            out = {}
+            out = {"bullets": ("Sibling {0} born {1}".format(c, c.birth_date) for i, c in enumerate(born_on_date))}
             if i <= 5:
-                out["message"] = msg_pass(fam, i, "sibling" if i == 1 else "siblings", date.val, str_siblings)
+                out["message"] = msg_pass(fam, i, "sibling" if i == 1 else "siblings", date.val)
                 r["passed"].append(out)
             else:
-                out["message"] = msg_fail(fam, i, date.val, str_siblings)
+                out["message"] = msg_fail(fam, i, date.val)
                 r["failed"].append(out)
-
     return r
 
 

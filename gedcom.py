@@ -225,10 +225,6 @@ class File(object):
         # Todo: Write Docstring
         return [tools.Family(line) for line in self.find("tag", "FAM")]
 
-    @property
-    def individuals_dict(self):
-        # Todo: Write Docstring
-        return self.find("tag", "INDI")
 
     @property
     def families_dict(self):

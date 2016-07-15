@@ -16,61 +16,88 @@ NOW_STRING = NOW.strftime("%d %b %Y").upper()
 
 # Log Constants
 LOG_HEADING = '\n### {0}: {1} ###'
-LOG_STORY = '\t > {2}'
+LOG_ENTRY = '\t > {0}'
 LOG_BULLET = '\t\t * {0}'
+LOG_BULLET_ALT = '\t\t * {0}: {1}'
 
 # Initiate Log
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 user_out = logging.getLogger(__name__)
 
 
-def log(func):
-    """ Function decarator used by the story decorator inorder to log the results of a story """
-    def func_wrapper(gedcom_file):
-        r = func(gedcom_file)
+def individual_summary(gedcom_file):
+    # TODO: Write Docstring
+    # TODO: add message and bullets into summary
+    r = []
+    user_out.info(LOG_HEADING.format("Summary", "Individuals"))
+    for indi in gedcom_file.individuals:
+        r.append(indi.summary)
+        user_out.info(LOG_ENTRY.format(indi))
+        user_out.info(LOG_BULLET_ALT.format("Gender", indi.sex))
+        user_out.info(LOG_BULLET_ALT.format("Birth date", indi.birth_date))
+        if indi.death_date:
+            user_out.info(LOG_BULLET_ALT.format("Death date", indi.death_date))
+            user_out.info(LOG_BULLET_ALT.format("Age at death", indi.age))
+        else:
+            user_out.info(LOG_BULLET_ALT.format("Current age", indi.age))
+        spouses_str = ", ".join(map(str, indi.spouses))
+        if spouses_str:
+            user_out.info(LOG_BULLET_ALT.format("Spouses", spouses_str))
+        spouse_in_str = ", ".join(map(str, indi.families("FAMS")))
+        if spouse_in_str:
+            user_out.info(LOG_BULLET_ALT.format("Spouse in", spouse_in_str))
+        child_in_str = ", ".join(map(str, indi.families("FAMC")))
+        if child_in_str:
+            user_out.info(LOG_BULLET_ALT.format("Child in", child_in_str))
+    return r
 
-        # story header
-        user_out.info(LOG_HEADING.format(r["id"], r["name"].replace("_", " ").title()))
 
-        # story description
-        # TODO: log story description
-
-        # begin code block
-        user_out.info("~~~~")
-
-        # passed stories
-        user_out.debug("[passed]")
-        for entry in r["output"]["passed"]:
-            h2 = LOG_STORY.format(r["id"].split(" ")[-1], "passed", entry.get("message", entry))
-            user_out.debug(h2)
-            for bullet in entry.get("bullets", []):
-                user_out.debug(LOG_BULLET.format(bullet))
-
-        # failed stories
-        user_out.info("[failed]")
-        for entry in r["output"]["failed"]:
-            h2 = LOG_STORY.format(r["id"].split(" ")[-1], "failed", entry.get("message", entry))
-            user_out.info(h2)
-            for bullet in entry.get("bullets", []):
-                user_out.info(LOG_BULLET.format(bullet))
-
-        # end code block
-        user_out.info("~~~~")
-
-        return r
-    return func_wrapper
-
+def family_summary(gedcom_file):
+    # TODO: Write Docstring
+    r = []
+    # TODO: add message and bullets into summary
+    user_out.info(LOG_HEADING.format("Summary", "Families"))
+    for fam in gedcom_file.families:
+        r.append(fam.summary)
+        user_out.info(LOG_ENTRY.format(fam))
+        user_out.info(LOG_BULLET_ALT.format("Husband", fam.husband))
+        user_out.info(LOG_BULLET_ALT.format("Wife", fam.wife))
+        for i, child in enumerate(fam.children):
+            user_out.info(LOG_BULLET_ALT.format("Child {0}".format(i+1), child))
+    return r
 
 def story(id_):
     """ Function decarator used to find both outcomes of a story, and log and return the results """
     def story_decorator(func):
-        @log
         def func_wrapper(gedcom_file):
             if type(gedcom_file) is not gedcom.File:
                 raise TypeError("Story function must be provided a gedcom file object.")
-            return {"id": id_, "name": func.__name__, "output":  func(gedcom_file)}
+            r = {"id": id_, "name": func.__name__, "output":  func(gedcom_file)}
+
+            # Log Text Results To User Output
+            user_out.info(LOG_HEADING.format(r["id"], r["name"].replace("_", " ").title()))
+            # TODO: log story description
+            user_out.info("~~~~")
+            user_out.debug("[passed]")
+            for entry in r["output"]["passed"]:
+                h2 = LOG_ENTRY.format(entry.get("message", entry))
+                user_out.debug(h2)
+                for bullet in entry.get("bullets", []):
+                    user_out.debug(LOG_BULLET.format(bullet))
+            user_out.info("[failed]")
+            for entry in r["output"]["failed"]:
+                h2 = LOG_ENTRY.format(entry.get("message", entry))
+                user_out.info(h2)
+                for bullet in entry.get("bullets", []):
+                    user_out.info(LOG_BULLET.format(bullet))
+            user_out.info("~~~~")
+
+            # Return Results Dictionary
+            return r
         return func_wrapper
     return story_decorator
+
+
 
 
 @story("Error US01")
@@ -579,7 +606,7 @@ def multiple_births_less_than_5(gedcom_file):
         group = groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date)
         for date, born_on_date in ((date, list(born_on_date)) for date, born_on_date in group):
             i = len(born_on_date)
-            out = {"bullets": ("Sibling {0} born {1}".format(c, c.birth_date) for i, c in enumerate(born_on_date))}
+            out = {"bullets": ["Sibling {0} born {1}".format(c, c.birth_date) for i, c in enumerate(born_on_date)]}
             if i <= 5:
                 out["message"] = msg_pass(fam, i, "sibling" if i == 1 else "siblings", date.val)
                 r["passed"].append(out)
@@ -1028,6 +1055,10 @@ if __name__ == "__main__":
 
     # Set Log mode to debug
     user_out.setLevel(logging.DEBUG)
+
+    # Sprint 0 - Summaries
+    individual_summary(g)
+    family_summary(g)
 
     # Sprint 1 - Stories
     dates_before_current_date(g)

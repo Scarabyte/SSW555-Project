@@ -514,7 +514,7 @@ class Line(dict):
         """ return line_number and value
 
         """
-        return {"line_number": self.get("line_number"), "line_value": self.get("line_value")}
+        return {"line_number": self.ln, "line_value": self.val}
 
     def ged(self):
         if self.tag == "INDI":

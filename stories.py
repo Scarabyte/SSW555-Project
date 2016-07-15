@@ -5,7 +5,7 @@ import tools
 import logging
 import sys
 from datetime import datetime
-from itertools import combinations
+from itertools import combinations, groupby
 
 import gedcom
 
@@ -538,7 +538,15 @@ def multiple_births_less_than_5(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
+
+    def byAge_key(person,x):
+        print person, x
+        return 1
+
+    for fam in gedcom_file.families:
+        for g in groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date):
+            print g[0], list(g[1])
+
     return r
 
 

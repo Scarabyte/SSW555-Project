@@ -539,13 +539,21 @@ def multiple_births_less_than_5(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 
-    def byAge_key(person,x):
-        print person, x
-        return 1
+    msg_pass = "{0} has no more than 5 siblings born on the same date, with {1} {2} born on {3}.{4}".format
+    msg_fail = "{0} has more than 5 siblings born on the same date, with {1} siblings born on {2}.{3}".format
 
     for fam in gedcom_file.families:
-        for g in groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date):
-            print g[0], list(g[1])
+        group = groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date)
+        for date, born_on_date in ((date, list(born_on_date)) for date, born_on_date in group):
+            str_siblings = "".join("\n\t{0}. Sibling {1} born {2}".format(i+1, c, c.birth_date) for i, c in enumerate(born_on_date))
+            i = len(born_on_date)
+            out = {}
+            if i <= 5:
+                out["message"] = msg_pass(fam, i, "sibling" if i == 1 else "siblings", date.val, str_siblings)
+                r["passed"].append(out)
+            else:
+                out["message"] = msg_fail(fam, i, date.val, str_siblings)
+                r["failed"].append(out)
 
     return r
 

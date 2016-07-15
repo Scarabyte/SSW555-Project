@@ -277,17 +277,21 @@ class Date(LineTool):
     @property
     @cachemethod
     def type(self):
-        tag = self.line.parent.tag
-        if tag == "MARR":
-            return "marriage date"
-        if tag == "HEAD":
-            return "header date"
-        if tag == "DIV":
-            return "divorce date"
-        if tag == "BIRT":
-            return "birth date"
-        if tag == "DEAT":
-            return "death date"
+        options = {"HEAD": "header", "MARR": "marriage", "DIV": "divorce", "BIRT": "birth", "DEAT": "death"}
+        p = self.line.parent
+        return options.get(p.tag, p.tag) if p is not None else None
+
+    @property
+    @cachemethod
+    def belongs_to(self):
+        p = self.line.parent
+        if p:
+            pp = p.parent
+            if pp:
+                if pp.tag == "INDI":
+                    return Individual(pp)
+                if pp.tag == "FAM":
+                    return Family(pp)
 
 
 class Individual(LineTool):

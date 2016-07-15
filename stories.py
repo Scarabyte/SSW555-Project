@@ -14,37 +14,47 @@ __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 NOW = datetime.now()
 NOW_STRING = NOW.strftime("%d %b %Y").upper()
 
-#logging.basicConfig(format='(%(status)s) - %(message)s', level=logging.INFO)
+# Log Constants
+LOG_HEADING = '\n### {0}: {1} ###'
+LOG_STORY = '\t > {2}'
+LOG_BULLET = '\t\t * {0}'
 
+# Initiate Log
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 user_out = logging.getLogger(__name__)
 
-
-LOG_H1_STR = '\n### {0}: {1} ###'
-LOG_H2_STR = '\t > {2}'
-LOG_BULLET_STR = '\t\t * {0}'
 
 def log(func):
     """ Function decarator used by the story decorator inorder to log the results of a story """
     def func_wrapper(gedcom_file):
         r = func(gedcom_file)
-        user_out.info(LOG_H1_STR.format(r["id"], r["name"].replace("_", " ").title()))
 
+        # story header
+        user_out.info(LOG_HEADING.format(r["id"], r["name"].replace("_", " ").title()))
+
+        # story description
+        # TODO: log story description
+
+        # begin code block
         user_out.info("~~~~")
 
+        # passed stories
         user_out.debug("[passed]")
         for entry in r["output"]["passed"]:
-            h2 = LOG_H2_STR.format(r["id"].split(" ")[-1], "passed", entry.get("message", entry))
+            h2 = LOG_STORY.format(r["id"].split(" ")[-1], "passed", entry.get("message", entry))
             user_out.debug(h2)
             for bullet in entry.get("bullets", []):
-                user_out.debug(LOG_BULLET_STR.format(bullet))
+                user_out.debug(LOG_BULLET.format(bullet))
 
+        # failed stories
         user_out.info("[failed]")
         for entry in r["output"]["failed"]:
-            h2 = LOG_H2_STR.format(r["id"].split(" ")[-1], "failed", entry.get("message", entry))
+            h2 = LOG_STORY.format(r["id"].split(" ")[-1], "failed", entry.get("message", entry))
             user_out.info(h2)
             for bullet in entry.get("bullets", []):
-                user_out.info(LOG_BULLET_STR.format(bullet))
+                user_out.info(LOG_BULLET.format(bullet))
+
+        # end code block
         user_out.info("~~~~")
 
         return r
@@ -75,23 +85,21 @@ def dates_before_current_date(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    for date in gedcom_file.find("tag", "DATE"):
-        out = {"current_date": NOW_STRING, "type": date.parent.get("tag"), "date": date.story_dict}
-        #TODO: Reimplement better
-        #try:
-        #    pp = date.parent.parent
-        #    if pp.tag == "INDI":
-        #        output["individual_id"] = date.parent.parent.get("xref_ID")
-        #    elif pp.tag == "FAM":
-        #        output["family_id"] = date.parent.parent.get("xref_ID")
-        #except AttributeError:
-        #    pass
-        if date.datetime < NOW:
-            out["message"] = "Date {0} is before {1} (current date)".format(tools.Date(date), NOW_STRING)
-            r["passed"].append(out)
-        else:
-            out["message"] = "Date {0} is after {1} (current date)".format(tools.Date(date), NOW_STRING)
-            r["failed"].append(out)
+    msg = "{0}{1} has a {2} date {3} the current date".format
+    msg_bullet = ["Current Date is {0} (date script ran)".format, "{0} date is {1}".format]
+    for date in (tools.Date(d_line) for d_line in gedcom_file.find("tag", "DATE")):
+        if date.type in ("birth", "marriage", "divorce", "death"):
+            out = {"dates": [{"type": date.type, "value": date.val, "line_number": date.ln},
+                             {"type": "current", "value": NOW_STRING, "line_number": None}],
+                   "bullets": [msg_bullet[0](NOW_STRING), msg_bullet[1](date.type.capitalize(), date)]}
+            passed, word = (True, "before") if date.dt < NOW else (True, "on") if date.dt == NOW else (False, "after")
+            if type(date.belongs_to) is tools.Individual:
+                out["message"] = msg("Individual ", date.belongs_to, date.type, word)
+            elif type(date.belongs_to) is tools.Family:
+                out["message"] = msg("", date.belongs_to, date.type, word)
+            else:
+                out["message"] = msg("", "Gedcom File", date.type, word)
+            r["passed"].append(out) if passed else r["failed"].append(out)
     return r
 
 

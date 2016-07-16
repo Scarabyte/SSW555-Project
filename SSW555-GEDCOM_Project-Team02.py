@@ -24,8 +24,7 @@ def run(gedcom_file, show_passed=False):
     # TODO: Work on output structure
     # Todo: Move to gedcom class?
 
-
-    stories.user_out.setLevel(logging.DEBUG) if show_passed else stories.user_out.setLevel(logging.INFO)
+    stories.console_output.setLevel(logging.DEBUG) if show_passed else stories.console_output.setLevel(logging.INFO)
 
     return {
         "individuals": stories.individual_summary(gedcom_file),

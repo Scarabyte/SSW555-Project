@@ -22,33 +22,40 @@ LOG_BULLET_ALT = '\t\t * {0}: {1}'
 
 # Initiate Log
 logging.basicConfig(format='%(message)s', level=logging.INFO)
-user_out = logging.getLogger(__name__)
+console_output = logging.getLogger(__name__)
 
+user_output = logging.FileHandler(filename='Test_Results/output.md', mode="w")
+user_output.setLevel(logging.INFO)
+debug_output = logging.FileHandler(filename='Test_Results/output.debug.md', mode="w")
+debug_output.setLevel(logging.DEBUG)
+
+console_output.addHandler(user_output)
+console_output.addHandler(debug_output)
 
 def individual_summary(gedcom_file):
     # TODO: Write Docstring
     # TODO: add message and bullets into summary
     r = []
-    user_out.info(LOG_HEADING.format("Summary", "Individuals"))
+    console_output.info(LOG_HEADING.format("Summary", "Individuals"))
     for indi in gedcom_file.individuals:
         r.append(indi.summary)
-        user_out.info(LOG_ENTRY.format(indi))
-        user_out.info(LOG_BULLET_ALT.format("Gender", indi.sex))
-        user_out.info(LOG_BULLET_ALT.format("Birth date", indi.birth_date))
+        console_output.info(LOG_ENTRY.format(indi))
+        console_output.info(LOG_BULLET_ALT.format("Gender", indi.sex))
+        console_output.info(LOG_BULLET_ALT.format("Birth date", indi.birth_date))
         if indi.death_date:
-            user_out.info(LOG_BULLET_ALT.format("Death date", indi.death_date))
-            user_out.info(LOG_BULLET_ALT.format("Age at death", indi.age))
+            console_output.info(LOG_BULLET_ALT.format("Death date", indi.death_date))
+            console_output.info(LOG_BULLET_ALT.format("Age at death", indi.age))
         else:
-            user_out.info(LOG_BULLET_ALT.format("Current age", indi.age))
+            console_output.info(LOG_BULLET_ALT.format("Current age", indi.age))
         spouses_str = ", ".join(map(str, indi.spouses))
         if spouses_str:
-            user_out.info(LOG_BULLET_ALT.format("Spouses", spouses_str))
+            console_output.info(LOG_BULLET_ALT.format("Spouses", spouses_str))
         spouse_in_str = ", ".join(map(str, indi.families("FAMS")))
         if spouse_in_str:
-            user_out.info(LOG_BULLET_ALT.format("Spouse in", spouse_in_str))
+            console_output.info(LOG_BULLET_ALT.format("Spouse in", spouse_in_str))
         child_in_str = ", ".join(map(str, indi.families("FAMC")))
         if child_in_str:
-            user_out.info(LOG_BULLET_ALT.format("Child in", child_in_str))
+            console_output.info(LOG_BULLET_ALT.format("Child in", child_in_str))
     return r
 
 
@@ -56,14 +63,14 @@ def family_summary(gedcom_file):
     # TODO: Write Docstring
     r = []
     # TODO: add message and bullets into summary
-    user_out.info(LOG_HEADING.format("Summary", "Families"))
+    console_output.info(LOG_HEADING.format("Summary", "Families"))
     for fam in gedcom_file.families:
         r.append(fam.summary)
-        user_out.info(LOG_ENTRY.format(fam))
-        user_out.info(LOG_BULLET_ALT.format("Husband", fam.husband))
-        user_out.info(LOG_BULLET_ALT.format("Wife", fam.wife))
+        console_output.info(LOG_ENTRY.format(fam))
+        console_output.info(LOG_BULLET_ALT.format("Husband", fam.husband))
+        console_output.info(LOG_BULLET_ALT.format("Wife", fam.wife))
         for i, child in enumerate(fam.children):
-            user_out.info(LOG_BULLET_ALT.format("Child {0}".format(i+1), child))
+            console_output.info(LOG_BULLET_ALT.format("Child {0}".format(i+1), child))
     return r
 
 def story(id_):
@@ -75,22 +82,22 @@ def story(id_):
             r = {"id": id_, "name": func.__name__, "output":  func(gedcom_file)}
 
             # Log Text Results To User Output
-            user_out.info(LOG_HEADING.format(r["id"], r["name"].replace("_", " ").title()))
+            console_output.info(LOG_HEADING.format(r["id"], r["name"].replace("_", " ").title()))
             # TODO: log story description
-            user_out.info("~~~~")
-            user_out.debug("[passed]")
+            console_output.info("~~~~")
+            console_output.debug("[passed]")
             for entry in r["output"]["passed"]:
                 h2 = LOG_ENTRY.format(entry.get("message", entry))
-                user_out.debug(h2)
+                console_output.debug(h2)
                 for bullet in entry.get("bullets", []):
-                    user_out.debug(LOG_BULLET.format(bullet))
-            user_out.info("[failed]")
+                    console_output.debug(LOG_BULLET.format(bullet))
+            console_output.info("[failed]")
             for entry in r["output"]["failed"]:
                 h2 = LOG_ENTRY.format(entry.get("message", entry))
-                user_out.info(h2)
+                console_output.info(h2)
                 for bullet in entry.get("bullets", []):
-                    user_out.info(LOG_BULLET.format(bullet))
-            user_out.info("~~~~")
+                    console_output.info(LOG_BULLET.format(bullet))
+            console_output.info("~~~~")
 
             # Return Results Dictionary
             return r
@@ -1054,7 +1061,7 @@ if __name__ == "__main__":
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
     # Set Log mode to debug
-    user_out.setLevel(logging.DEBUG)
+    console_output.setLevel(logging.DEBUG)
 
     # Sprint 0 - Summaries
     individual_summary(g)

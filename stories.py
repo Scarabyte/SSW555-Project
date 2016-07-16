@@ -629,13 +629,13 @@ def fewer_than_15_siblings(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = "{0} has {1} {2}{3}".format
+    msg = "{0} has {1} {2}".format
+    bul = "Child {0}: {1}".format
     for fam in gedcom_file.families:
         i = len(fam.children)
-        out = {"family": fam.story_dict, "siblings": [child.story_dict for child in fam.children], "count": i,
-               "message": msg(fam, "no", "siblings", "") if i == 0
-               else msg(fam, i, "sibling, ", fam.children[0]) if i == 1
-               else msg(fam, i, "siblings ", str(fam.children)[1:-1])}
+        out = {"family": fam.story_dict, "children": [child.story_dict for child in fam.children],
+               "message": msg(fam, "no", "children") if i == 0 else msg(fam, "one", "child") if i == 1
+               else msg(fam, i, "siblings"), "bullets": [bul(i + 1, child) for i, child in enumerate(fam.children)]}
         r["passed"].append(out) if i < 15 else r["failed"].append(out)
     return r
 
@@ -714,8 +714,8 @@ def no_marriages_to_descendants(gedcom_file):
         for spouse in indi.spouses:
             # Iterate through this individual's spouses
             married_to_child = 0
+            # For families where this individual is a spouse (parent)
             for fam in indi.families("FAMS"):
-                # Families where this individual is a spouse (parent)
                 for child in fam.children:
                     # The children of this individual
                     out = {"indi": {"xref": indi.xref},

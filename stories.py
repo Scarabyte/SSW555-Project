@@ -712,23 +712,54 @@ def no_marriages_to_descendants(gedcom_file):
     # See if any names appear in both lists <- Check unique IDs
     passed_message = "Individual {0} is not married to any of {1} children"
     failed_message = "Individual {0} is married to {1} child {2}"
-    for fam in gedcom_file.families:
-        for child in fam.children:
-            if fam.has("wife"):
-                mother = fam.wife
-            else:
-                mother = None
-            if fam.has("husband"):
-                father = fam.husband
-            else:
-                father = None
-            for spouse in child.spouses:
-                # pass
-                print "~AB~ Fam = ",fam," child = ",child," spouse = ",spouse," mother = ",mother," father = ",father
-                # Do any children have the same individual as both spouse and father/mother?
-#        pass
+##    for fam in gedcom_file.families:
+##        for child in fam.children:
+##            if fam.has("wife"):
+##                mother = fam.wife
+##            else:
+##                mother = None
+##            if fam.has("husband"):
+##                father = fam.husband
+##            else:
+##                father = None
+##            for spouse in child.spouses:
+##                # pass
+##                print "~AB~ Fam = ",fam," child = ",child," spouse = ",spouse," mother = ",mother," father = ",father
+##                # Do any children have the same individual as both spouse and father/mother?
+##                #if spouse == father or spouse == mother:
+##                #    print "~AB~ Failed"
+##                if spouse.xref  == father.xref or spouse.xref == mother.xref:
+##                    print "~AB~ Failed"
+###        pass
 
-
+##    for indi in gedcom_file.individuals:
+##        print "~AB~ spouses xrefs = ",indi.spouses.xref
+##        for fam in indi.families("FAMS"):
+##            # Families where this individual is a spouse
+##            print "~AB~ indi = ",indi," fam = ",fam," children = ",fam.children
+##            for child in fam.children:
+##                #
+##                pass
+    for indi in gedcom_file.individuals:
+        for spouse in indi.spouses:
+            # Iterate through this individual's spouses
+            married_to_child = 0
+            for fam in indi.families("FAMS"):
+                # Families where this individual is a spouse (parent)
+                for child in fam.children:
+                    # The children of this individual
+                    out = {"indi": {"xref": indi.xref},
+                           "fam": {"xref": fam.xref}}
+                    msg_out = (indi, indi.pronoun, child)
+                    if spouse.xref == child.xref:
+                        married_to_child += 1
+                        #print "~AB~ indi =",indi," spouse = ",spouse," child = ",child
+                        out["message"] = failed_message.format(*msg_out)
+                        r["failed"].append(out)
+                if not married_to_child:
+                    out["message"] = passed_message.format(*msg_out)
+                    r["passed"].append(out)
+                    
     return r
 
 

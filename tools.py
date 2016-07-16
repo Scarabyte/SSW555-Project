@@ -206,7 +206,7 @@ class Individual(LineTool):
             return "his"
         if sex == "F":
             return "her"
-        return "there"
+        return "their"
 
     @property
     @cachemethod

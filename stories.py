@@ -98,8 +98,6 @@ def story(id_):
     return story_decorator
 
 
-
-
 @story("Error US01")
 def dates_before_current_date(gedcom_file):
     """ Dates (birth, marriage, divorce, death) should not be after the current date
@@ -606,7 +604,7 @@ def less_than_5_multiple_births(gedcom_file):
         group = groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date)
         for date, born_on_date in ((date, list(born_on_date)) for date, born_on_date in group):
             i = len(born_on_date)
-            out = {"bullets": ["Sibling {0} born {1}".format(c, c.birth_date) for i, c in enumerate(born_on_date)]}
+            out = {"bullets": ["Sibling {0} born {1}".format(c, c.birth_date) for c in born_on_date]}
             if i <= 5:
                 out["message"] = msg_pass(fam, i, "sibling" if i == 1 else "siblings", date.val)
                 r["passed"].append(out)
@@ -1077,7 +1075,7 @@ if __name__ == "__main__":
 
     # Sprint 3 - Stories
     siblings_spacing(g)
-    multiple_births_less_than_5(g)
+    less_than_5_multiple_births(g)
     fewer_than_15_siblings(g)
     male_last_names(g)
     no_marriages_to_descendants(g)

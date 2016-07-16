@@ -243,7 +243,7 @@
                         {
                             "birth_date": {
                                 "line_number": 160,
-                                "line_value": "29 OCT 1960"
+                                "line_value": "27 OCT 1960"
                             },
                             "line_number": 156,
                             "name": {
@@ -455,7 +455,7 @@
                         {
                             "birth_date": {
                                 "line_number": 160,
-                                "line_value": "29 OCT 1960"
+                                "line_value": "27 OCT 1960"
                             },
                             "line_number": 156,
                             "name": {
@@ -1343,7 +1343,7 @@
             {
                 "birth_date": {
                     "line_number": 160,
-                    "line_value": "29 OCT 1960"
+                    "line_value": "27 OCT 1960"
                 },
                 "line_number": 156,
                 "name": {
@@ -1988,13 +1988,13 @@
                             {
                                 "bullets": [
                                     "Current Date is 16 JUL 2016 (date script ran)",
-                                    "Birth date is 29 OCT 1960 (line 160)"
+                                    "Birth date is 27 OCT 1960 (line 160)"
                                 ],
                                 "dates": [
                                     {
                                         "line_number": 160,
                                         "type": "birth",
-                                        "value": "29 OCT 1960"
+                                        "value": "27 OCT 1960"
                                     },
                                     {
                                         "line_number": null,
@@ -2974,11 +2974,11 @@
                             {
                                 "birth_date": {
                                     "line_number": 160,
-                                    "line_value": "29 OCT 1960"
+                                    "line_value": "27 OCT 1960"
                                 },
-                                "current_age": 55.75,
+                                "current_age": 55.76,
                                 "current_date": "16 JUL 2016",
-                                "message": "Individual Sally Burbidge (@I18@ - line 156) was born 29 OCT 1960 (line 160) and is 55.75 years old as of 16 JUL 2016 (current date)",
+                                "message": "Individual Sally Burbidge (@I18@ - line 156) was born 27 OCT 1960 (line 160) and is 55.76 years old as of 16 JUL 2016 (current date)",
                                 "xref": "@I18@"
                             },
                             {
@@ -3285,7 +3285,7 @@
                                 "child": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "xref": "@I18@"
                                 },
@@ -3297,7 +3297,7 @@
                                     },
                                     "xref": "@I15@"
                                 },
-                                "message": "Family (@F3@ - line 244) has Child Sally Burbidge (@I18@ - line 156) with birth date 29 OCT 1960 (line 160) and has mother Claire Burbidge (@I16@ - line 141) with no death date and father Andrew Burbidge (@I15@ - line 132) with death date 10 OCT 1995 (line 138).",
+                                "message": "Family (@F3@ - line 244) has Child Sally Burbidge (@I18@ - line 156) with birth date 27 OCT 1960 (line 160) and has mother Claire Burbidge (@I16@ - line 141) with no death date and father Andrew Burbidge (@I15@ - line 132) with death date 10 OCT 1995 (line 138).",
                                 "mother": {
                                     "birth_date": null,
                                     "xref": "@I16@"
@@ -3722,7 +3722,7 @@
                                 "child": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "xref": "@I18@"
                                 },
@@ -3731,7 +3731,7 @@
                                     "birth_date": null,
                                     "xref": "@I1@"
                                 },
-                                "message": "Family (@F1@ - line 216) has Child Sally Burbidge (@I18@ - line 156) with birth date 29 OCT 1960 (line 160) and has mother Keisha Morris (@I4@ - line 44) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
+                                "message": "Family (@F1@ - line 216) has Child Sally Burbidge (@I18@ - line 156) with birth date 27 OCT 1960 (line 160) and has mother Keisha Morris (@I4@ - line 44) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
                                 "mother": {
                                     "birth_date": null,
                                     "xref": "@I4@"
@@ -4264,6 +4264,34 @@
                             {
                                 "bullets": [
                                     "Sibling Elizabeth Watson (@I12@ - line 104) born 30 OCT 1960 (line 108)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 216,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 108,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 104,
+                                    "xref": "@I12@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Elizabeth Watson (@I12@ - line 104) born 30 OCT 1960 (line 108)",
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
                                 "days_apart": 69,
@@ -4287,6 +4315,34 @@
                                     },
                                     "line_number": 163,
                                     "xref": "@I19@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Jean Watson (@I13@ - line 113) born 30 OCT 1960 (line 117)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 216,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 117,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 113,
+                                    "xref": "@I13@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
                                 }
                             },
                             {
@@ -4320,6 +4376,34 @@
                             {
                                 "bullets": [
                                     "Sibling Martin Watson (@I14@ - line 124) born 30 OCT 1960 (line 128)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 216,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 128,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 124,
+                                    "xref": "@I14@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Martin Watson (@I14@ - line 124) born 30 OCT 1960 (line 128)",
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
                                 "days_apart": 69,
@@ -4343,6 +4427,34 @@
                                     },
                                     "line_number": 163,
                                     "xref": "@I19@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Andrew Burbidge (@I15@ - line 132) born 30 OCT 1960 (line 136)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 216,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 136,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 132,
+                                    "xref": "@I15@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
                                 }
                             },
                             {
@@ -4376,6 +4488,34 @@
                             {
                                 "bullets": [
                                     "Sibling Claire Burbidge (@I16@ - line 141) born 30 OCT 1960 (line 145)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 216,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 145,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 141,
+                                    "xref": "@I16@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Claire Burbidge (@I16@ - line 141) born 30 OCT 1960 (line 145)",
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
                                 "days_apart": 69,
@@ -4399,6 +4539,34 @@
                                     },
                                     "line_number": 163,
                                     "xref": "@I19@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 216,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 152,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 148,
+                                    "xref": "@I17@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
                                 }
                             },
                             {
@@ -4431,19 +4599,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)",
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
-                                "days_apart": 70,
+                                "days_apart": 72,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (70 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (72 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -4455,6 +4623,34 @@
                                     },
                                     "line_number": 163,
                                     "xref": "@I19@"
+                                }
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "days_apart": 3,
+                                "family": {
+                                    "line_number": 244,
+                                    "line_value": null
+                                },
+                                "message": "Family (@F3@ - line 244) has siblings born less than 8 months but more than two days apart (3 days)",
+                                "sibling_one": {
+                                    "birth_date": {
+                                        "line_number": 152,
+                                        "line_value": "30 OCT 1960"
+                                    },
+                                    "line_number": 148,
+                                    "xref": "@I17@"
+                                },
+                                "sibling_two": {
+                                    "birth_date": {
+                                        "line_number": 160,
+                                        "line_value": "27 OCT 1960"
+                                    },
+                                    "line_number": 156,
+                                    "xref": "@I18@"
                                 }
                             },
                             {
@@ -4487,19 +4683,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)",
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
-                                "days_apart": 70,
+                                "days_apart": 72,
                                 "family": {
                                     "line_number": 244,
                                     "line_value": null
                                 },
-                                "message": "Family (@F3@ - line 244) has siblings born less than 8 months but more than two days apart (70 days)",
+                                "message": "Family (@F3@ - line 244) has siblings born less than 8 months but more than two days apart (72 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -4854,14 +5050,14 @@
                             {
                                 "bullets": [
                                     "Sibling Angelica Burbidge (@I5@ - line 51) born 23 AUG 1855 (line 55)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 38418,
+                                "days_apart": 38416,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38416 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 55,
@@ -4873,7 +5069,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -5246,14 +5442,14 @@
                             {
                                 "bullets": [
                                     "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 38417,
+                                "days_apart": 38415,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38417 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38415 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
@@ -5265,7 +5461,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -5610,14 +5806,14 @@
                             {
                                 "bullets": [
                                     "Sibling James Dutton (@I7@ - line 65) born 26 MAR 1979 (line 69)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 6722,
+                                "days_apart": 6724,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6722 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6724 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 69,
@@ -5629,7 +5825,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -5946,14 +6142,14 @@
                             {
                                 "bullets": [
                                     "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 15680,
+                                "days_apart": 15682,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15680 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15682 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 76,
@@ -5965,7 +6161,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -6254,14 +6450,14 @@
                             {
                                 "bullets": [
                                     "Sibling Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 5464,
+                                "days_apart": 5466,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5464 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5466 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 83,
@@ -6273,7 +6469,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -6534,14 +6730,14 @@
                             {
                                 "bullets": [
                                     "Sibling Jerry Briand (@I10@ - line 86) born 24 JAN 1973 (line 90)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 4470,
+                                "days_apart": 4472,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4470 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4472 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 90,
@@ -6553,7 +6749,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -6758,14 +6954,14 @@
                             {
                                 "bullets": [
                                     "Sibling Cyril Watson (@I11@ - line 95) born 27 MAR 1920 (line 99)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 14826,
+                                "days_apart": 14824,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14826 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14824 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 99,
@@ -6777,7 +6973,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -6982,34 +7178,6 @@
                             {
                                 "bullets": [
                                     "Sibling Elizabeth Watson (@I12@ - line 104) born 30 OCT 1960 (line 108)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 108,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 104,
-                                    "xref": "@I12@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Elizabeth Watson (@I12@ - line 104) born 30 OCT 1960 (line 108)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
                                 "days_apart": 4285,
@@ -7150,34 +7318,6 @@
                             {
                                 "bullets": [
                                     "Sibling Jean Watson (@I13@ - line 113) born 30 OCT 1960 (line 117)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 117,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 113,
-                                    "xref": "@I13@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Jean Watson (@I13@ - line 113) born 30 OCT 1960 (line 117)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
                                 "days_apart": 4285,
@@ -7290,34 +7430,6 @@
                             {
                                 "bullets": [
                                     "Sibling Martin Watson (@I14@ - line 124) born 30 OCT 1960 (line 128)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 128,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 124,
-                                    "xref": "@I14@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Martin Watson (@I14@ - line 124) born 30 OCT 1960 (line 128)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
                                 "days_apart": 4285,
@@ -7402,34 +7514,6 @@
                             {
                                 "bullets": [
                                     "Sibling Andrew Burbidge (@I15@ - line 132) born 30 OCT 1960 (line 136)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 136,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 132,
-                                    "xref": "@I15@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Andrew Burbidge (@I15@ - line 132) born 30 OCT 1960 (line 136)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
                                 "days_apart": 4285,
@@ -7486,34 +7570,6 @@
                             {
                                 "bullets": [
                                     "Sibling Claire Burbidge (@I16@ - line 141) born 30 OCT 1960 (line 145)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 145,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 141,
-                                    "xref": "@I16@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Claire Burbidge (@I16@ - line 141) born 30 OCT 1960 (line 145)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
                                 "days_apart": 4285,
@@ -7537,34 +7593,6 @@
                                     },
                                     "line_number": 171,
                                     "xref": "@I20@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 152,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 148,
-                                    "xref": "@I17@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
                                 }
                             },
                             {
@@ -7597,19 +7625,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)",
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
-                                "days_apart": 4286,
+                                "days_apart": 4288,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4286 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4288 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -7710,14 +7738,14 @@
                             {
                                 "bullets": [
                                     "Sibling David Burbidge (@I2@ - line 24) born 10 FEB 1980 (line 28)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 7043,
+                                "days_apart": 7045,
                                 "family": {
                                     "line_number": 244,
                                     "line_value": null
                                 },
-                                "message": "Family (@F3@ - line 244) has siblings born more than 8 months apart (7043 days)",
+                                "message": "Family (@F3@ - line 244) has siblings born more than 8 months apart (7045 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 28,
@@ -7729,7 +7757,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 160,
-                                        "line_value": "29 OCT 1960"
+                                        "line_value": "27 OCT 1960"
                                     },
                                     "line_number": 156,
                                     "xref": "@I18@"
@@ -7761,34 +7789,6 @@
                                     },
                                     "line_number": 163,
                                     "xref": "@I19@"
-                                }
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)",
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
-                                ],
-                                "days_apart": 1,
-                                "family": {
-                                    "line_number": 244,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F3@ - line 244) has siblings born less than two days apart (1 days)",
-                                "sibling_one": {
-                                    "birth_date": {
-                                        "line_number": 152,
-                                        "line_value": "30 OCT 1960"
-                                    },
-                                    "line_number": 148,
-                                    "xref": "@I17@"
-                                },
-                                "sibling_two": {
-                                    "birth_date": {
-                                        "line_number": 160,
-                                        "line_value": "29 OCT 1960"
-                                    },
-                                    "line_number": 156,
-                                    "xref": "@I18@"
                                 }
                             },
                             {
@@ -7904,9 +7904,9 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 29 OCT 1960"
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 27 OCT 1960"
                             },
                             {
                                 "bullets": [
@@ -7969,9 +7969,9 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 0 siblings born on 29 OCT 1960"
+                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 0 siblings born on 27 OCT 1960"
                             },
                             {
                                 "bullets": [

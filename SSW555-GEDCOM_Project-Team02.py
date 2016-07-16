@@ -52,7 +52,7 @@ def run(gedcom_file, show_passed=False):
             {
                 "sprint_number": 3,
                 "results": [stories.siblings_spacing(gedcom_file),
-                            stories.multiple_births_less_than_5(gedcom_file),
+                            stories.less_than_5_multiple_births(gedcom_file),
                             stories.fewer_than_15_siblings(gedcom_file),
                             stories.male_last_names(gedcom_file),
                             stories.no_marriages_to_descendants(gedcom_file),

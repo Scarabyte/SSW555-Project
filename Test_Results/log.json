@@ -27,7 +27,7 @@
                         {
                             "birth_date": {
                                 "line_number": 63,
-                                "line_value": "4 SEP 2017"
+                                "line_value": "24 AUG 1855"
                             },
                             "line_number": 59,
                             "name": {
@@ -1127,7 +1127,7 @@
             {
                 "birth_date": {
                     "line_number": 63,
-                    "line_value": "4 SEP 2017"
+                    "line_value": "24 AUG 1855"
                 },
                 "line_number": 59,
                 "name": {
@@ -1508,27 +1508,7 @@
                     "id": "Error US01",
                     "name": "dates_before_current_date",
                     "output": {
-                        "failed": [
-                            {
-                                "bullets": [
-                                    "Current Date is 15 JUL 2016 (date script ran)",
-                                    "Birth date is 4 SEP 2017 (line 63)"
-                                ],
-                                "dates": [
-                                    {
-                                        "line_number": 63,
-                                        "type": "birth",
-                                        "value": "4 SEP 2017"
-                                    },
-                                    {
-                                        "line_number": null,
-                                        "type": "current",
-                                        "value": "15 JUL 2016"
-                                    }
-                                ],
-                                "message": "Individual Phoebe Burbidge (@I6@ - line 59) has a birth date after the current date"
-                            }
-                        ],
+                        "failed": [],
                         "passed": [
                             {
                                 "bullets": [
@@ -1681,6 +1661,25 @@
                                     }
                                 ],
                                 "message": "Individual Angelica Burbidge (@I5@ - line 51) has a death date before the current date"
+                            },
+                            {
+                                "bullets": [
+                                    "Current Date is 15 JUL 2016 (date script ran)",
+                                    "Birth date is 24 AUG 1855 (line 63)"
+                                ],
+                                "dates": [
+                                    {
+                                        "line_number": 63,
+                                        "type": "birth",
+                                        "value": "24 AUG 1855"
+                                    },
+                                    {
+                                        "line_number": null,
+                                        "type": "current",
+                                        "value": "15 JUL 2016"
+                                    }
+                                ],
+                                "message": "Individual Phoebe Burbidge (@I6@ - line 59) has a birth date before the current date"
                             },
                             {
                                 "bullets": [
@@ -2788,6 +2787,16 @@
                                 },
                                 "message": "Individual Angelica Burbidge (@I5@ - line 51) was born 23 AUG 1855 (line 55) and died 150.8 years later on 4 MAY 2006 (line 57)",
                                 "xref": "@I5@"
+                            },
+                            {
+                                "birth_date": {
+                                    "line_number": 63,
+                                    "line_value": "24 AUG 1855"
+                                },
+                                "current_age": 161.0,
+                                "current_date": "15 JUL 2016",
+                                "message": "Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.0 years old as of 15 JUL 2016 (current date)",
+                                "xref": "@I6@"
                             }
                         ],
                         "passed": [
@@ -2836,16 +2845,6 @@
                                 "current_date": "15 JUL 2016",
                                 "message": "Individual Keisha Morris (@I4@ - line 44) was born 18 JUL 1992 (line 48) and is 24.01 years old as of 15 JUL 2016 (current date)",
                                 "xref": "@I4@"
-                            },
-                            {
-                                "birth_date": {
-                                    "line_number": 63,
-                                    "line_value": "4 SEP 2017"
-                                },
-                                "current_age": 1.14,
-                                "current_date": "15 JUL 2016",
-                                "message": "Individual Phoebe Burbidge (@I6@ - line 59) was born 4 SEP 2017 (line 63) and is 1.14 years old as of 15 JUL 2016 (current date)",
-                                "xref": "@I6@"
                             },
                             {
                                 "birth_date": {
@@ -3495,7 +3494,7 @@
                                 "child": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "xref": "@I6@"
                                 },
@@ -3504,7 +3503,7 @@
                                     "birth_date": null,
                                     "xref": "@I1@"
                                 },
-                                "message": "Family (@F1@ - line 216) has Child Phoebe Burbidge (@I6@ - line 59) with birth date 4 SEP 2017 (line 63) and has mother Keisha Morris (@I4@ - line 44) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
+                                "message": "Family (@F1@ - line 216) has Child Phoebe Burbidge (@I6@ - line 59) with birth date 24 AUG 1855 (line 63) and has mother Keisha Morris (@I4@ - line 44) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
                                 "mother": {
                                     "birth_date": null,
                                     "xref": "@I4@"
@@ -4519,14 +4518,14 @@
                             {
                                 "bullets": [
                                     "Sibling Angelica Burbidge (@I5@ - line 51) born 23 AUG 1855 (line 55)",
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)"
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)"
                                 ],
-                                "days_apart": 59182,
+                                "days_apart": 1,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (59182 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 55,
@@ -4538,7 +4537,7 @@
                                 "sibling_two": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -4938,19 +4937,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling James Dutton (@I7@ - line 65) born 26 MAR 1979 (line 69)"
                                 ],
-                                "days_apart": 14042,
+                                "days_apart": 45139,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14042 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (45139 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -4966,19 +4965,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)"
                                 ],
-                                "days_apart": 5084,
+                                "days_apart": 54097,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5084 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (54097 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -4994,19 +4993,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83)"
                                 ],
-                                "days_apart": 15300,
+                                "days_apart": 43881,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15300 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (43881 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5022,19 +5021,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Jerry Briand (@I10@ - line 86) born 24 JAN 1973 (line 90)"
                                 ],
-                                "days_apart": 16294,
+                                "days_apart": 42887,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (16294 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (42887 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5050,19 +5049,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Cyril Watson (@I11@ - line 95) born 27 MAR 1920 (line 99)"
                                 ],
-                                "days_apart": 35590,
+                                "days_apart": 23591,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (35590 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (23591 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5078,19 +5077,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Elizabeth Watson (@I12@ - line 104) born 30 OCT 1960 (line 108)"
                                 ],
-                                "days_apart": 20763,
+                                "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20763 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5106,19 +5105,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Jean Watson (@I13@ - line 113) born 30 OCT 1960 (line 117)"
                                 ],
-                                "days_apart": 20763,
+                                "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20763 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5134,19 +5133,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Martin Watson (@I14@ - line 124) born 30 OCT 1960 (line 128)"
                                 ],
-                                "days_apart": 20763,
+                                "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20763 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5162,19 +5161,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Andrew Burbidge (@I15@ - line 132) born 30 OCT 1960 (line 136)"
                                 ],
-                                "days_apart": 20763,
+                                "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20763 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5190,19 +5189,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Claire Burbidge (@I16@ - line 141) born 30 OCT 1960 (line 145)"
                                 ],
-                                "days_apart": 20763,
+                                "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20763 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5218,19 +5217,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)"
                                 ],
-                                "days_apart": 20763,
+                                "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20763 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5246,19 +5245,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Sally Burbidge (@I18@ - line 156) born 29 OCT 1960 (line 160)"
                                 ],
-                                "days_apart": 20764,
+                                "days_apart": 38417,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20764 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38417 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5274,19 +5273,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
-                                "days_apart": 20694,
+                                "days_apart": 38487,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20694 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38487 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -5302,19 +5301,19 @@
                             },
                             {
                                 "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)",
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
-                                "days_apart": 16478,
+                                "days_apart": 42703,
                                 "family": {
                                     "line_number": 216,
                                     "line_value": null
                                 },
-                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (16478 days)",
+                                "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (42703 days)",
                                 "sibling_one": {
                                     "birth_date": {
                                         "line_number": 63,
-                                        "line_value": "4 SEP 2017"
+                                        "line_value": "24 AUG 1855"
                                     },
                                     "line_number": 59,
                                     "xref": "@I6@"
@@ -7881,7 +7880,7 @@
                 },
                 {
                     "id": "Anomaly US14",
-                    "name": "multiple_births_less_than_5",
+                    "name": "less_than_5_multiple_births",
                     "output": {
                         "failed": [],
                         "passed": [
@@ -7890,6 +7889,12 @@
                                     "Sibling Angelica Burbidge (@I5@ - line 51) born 23 AUG 1855 (line 55)"
                                 ],
                                 "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 23 AUG 1855"
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)"
+                                ],
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 24 AUG 1855"
                             },
                             {
                                 "bullets": [
@@ -7949,12 +7954,6 @@
                                     "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)"
                                 ],
                                 "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 4 OCT 2003"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 4 SEP 2017"
                             },
                             {
                                 "bullets": [

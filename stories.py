@@ -587,7 +587,7 @@ def siblings_spacing(gedcom_file):
 
 
 @story("Anomaly US14")
-def multiple_births_less_than_5(gedcom_file):
+def less_than_5_multiple_births(gedcom_file):
     """ No more than five siblings should be born at the same time
 
     :sprint: 3

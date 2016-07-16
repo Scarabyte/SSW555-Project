@@ -713,12 +713,21 @@ def no_marriages_to_descendants(gedcom_file):
     passed_message = "Individual {0} is not married to any of {1} children"
     failed_message = "Individual {0} is married to {1} child {2}"
     for fam in gedcom_file.families:
-        for indi in fam.children:
-            for spouse in indi.spouses:
-                pass
-                # print "~AB~ Fam = ",fam," indi = ",indi," spouse = ",spouse
-                # Now need to get a list of the children
+        for child in fam.children:
+            if fam.has("wife"):
+                mother = fam.wife
+            else:
+                mother = None
+            if fam.has("husband"):
+                father = fam.husband
+            else:
+                father = None
+            for spouse in child.spouses:
+                # pass
+                print "~AB~ Fam = ",fam," child = ",child," spouse = ",spouse," mother = ",mother," father = ",father
+                # Do any children have the same individual as both spouse and father/mother?
 #        pass
+
 
     return r
 

@@ -271,6 +271,11 @@ class Family(LineTool):
 
     @property
     @cachemethod
+    def story_dict(self):
+        return {"xref": self.xref, "line_number": self.ln}
+
+    @property
+    @cachemethod
     def husband(self):
         husb = self.line.children.find_one('tag', 'HUSB')
         return Individual(husb.follow_xref()) if husb else None

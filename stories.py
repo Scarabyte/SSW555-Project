@@ -604,7 +604,10 @@ def less_than_5_multiple_births(gedcom_file):
         group = groupby(sorted(fam.children, key=lambda x: x.birth_date.dt), lambda x: x.birth_date)
         for date, born_on_date in ((date, list(born_on_date)) for date, born_on_date in group):
             i = len(born_on_date)
-            out = {"bullets": ["Sibling {0} born {1}".format(c, c.birth_date) for c in born_on_date]}
+            out = {"family": fam.story_dict,
+                   "siblings": [{"xref": c.xref, "line_number": c.ln, "birth_date": c.birth_date.story_dict} for c in
+                                born_on_date],
+                   "bullets": ["Sibling {0} born {1}".format(c, c.birth_date) for c in born_on_date]}
             if i <= 5:
                 out["message"] = msg_pass(fam, i, "sibling" if i == 1 else "siblings", date.val)
                 r["passed"].append(out)

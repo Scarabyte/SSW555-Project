@@ -4241,7 +4241,7 @@
                                 "days_apart": 184,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (184 days)",
                                 "sibling_one": {
@@ -4269,7 +4269,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4297,7 +4297,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4325,7 +4325,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4353,7 +4353,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4381,7 +4381,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4409,7 +4409,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4437,7 +4437,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4465,7 +4465,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4493,7 +4493,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4521,7 +4521,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4549,7 +4549,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4577,7 +4577,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4605,7 +4605,7 @@
                                 "days_apart": 72,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than 8 months but more than two days apart (72 days)",
                                 "sibling_one": {
@@ -4633,7 +4633,7 @@
                                 "days_apart": 3,
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) has siblings born less than 8 months but more than two days apart (3 days)",
                                 "sibling_one": {
@@ -4661,7 +4661,7 @@
                                 "days_apart": 69,
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) has siblings born less than 8 months but more than two days apart (69 days)",
                                 "sibling_one": {
@@ -4689,7 +4689,7 @@
                                 "days_apart": 72,
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) has siblings born less than 8 months but more than two days apart (72 days)",
                                 "sibling_one": {
@@ -4719,7 +4719,7 @@
                                 "days_apart": 1,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (1 days)",
                                 "sibling_one": {
@@ -4747,7 +4747,7 @@
                                 "days_apart": 45140,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (45140 days)",
                                 "sibling_one": {
@@ -4775,7 +4775,7 @@
                                 "days_apart": 54098,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (54098 days)",
                                 "sibling_one": {
@@ -4803,7 +4803,7 @@
                                 "days_apart": 43882,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (43882 days)",
                                 "sibling_one": {
@@ -4831,7 +4831,7 @@
                                 "days_apart": 42888,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (42888 days)",
                                 "sibling_one": {
@@ -4859,7 +4859,7 @@
                                 "days_apart": 23592,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (23592 days)",
                                 "sibling_one": {
@@ -4887,7 +4887,7 @@
                                 "days_apart": 38419,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38419 days)",
                                 "sibling_one": {
@@ -4915,7 +4915,7 @@
                                 "days_apart": 38419,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38419 days)",
                                 "sibling_one": {
@@ -4943,7 +4943,7 @@
                                 "days_apart": 38419,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38419 days)",
                                 "sibling_one": {
@@ -4971,7 +4971,7 @@
                                 "days_apart": 38419,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38419 days)",
                                 "sibling_one": {
@@ -4999,7 +4999,7 @@
                                 "days_apart": 38419,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38419 days)",
                                 "sibling_one": {
@@ -5027,7 +5027,7 @@
                                 "days_apart": 38419,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38419 days)",
                                 "sibling_one": {
@@ -5055,7 +5055,7 @@
                                 "days_apart": 38416,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38416 days)",
                                 "sibling_one": {
@@ -5083,7 +5083,7 @@
                                 "days_apart": 38488,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38488 days)",
                                 "sibling_one": {
@@ -5111,7 +5111,7 @@
                                 "days_apart": 42704,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (42704 days)",
                                 "sibling_one": {
@@ -5139,7 +5139,7 @@
                                 "days_apart": 45139,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (45139 days)",
                                 "sibling_one": {
@@ -5167,7 +5167,7 @@
                                 "days_apart": 54097,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (54097 days)",
                                 "sibling_one": {
@@ -5195,7 +5195,7 @@
                                 "days_apart": 43881,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (43881 days)",
                                 "sibling_one": {
@@ -5223,7 +5223,7 @@
                                 "days_apart": 42887,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (42887 days)",
                                 "sibling_one": {
@@ -5251,7 +5251,7 @@
                                 "days_apart": 23591,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (23591 days)",
                                 "sibling_one": {
@@ -5279,7 +5279,7 @@
                                 "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
@@ -5307,7 +5307,7 @@
                                 "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
@@ -5335,7 +5335,7 @@
                                 "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
@@ -5363,7 +5363,7 @@
                                 "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
@@ -5391,7 +5391,7 @@
                                 "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
@@ -5419,7 +5419,7 @@
                                 "days_apart": 38418,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38418 days)",
                                 "sibling_one": {
@@ -5447,7 +5447,7 @@
                                 "days_apart": 38415,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38415 days)",
                                 "sibling_one": {
@@ -5475,7 +5475,7 @@
                                 "days_apart": 38487,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (38487 days)",
                                 "sibling_one": {
@@ -5503,7 +5503,7 @@
                                 "days_apart": 42703,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (42703 days)",
                                 "sibling_one": {
@@ -5531,7 +5531,7 @@
                                 "days_apart": 8958,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (8958 days)",
                                 "sibling_one": {
@@ -5559,7 +5559,7 @@
                                 "days_apart": 1258,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (1258 days)",
                                 "sibling_one": {
@@ -5587,7 +5587,7 @@
                                 "days_apart": 2252,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (2252 days)",
                                 "sibling_one": {
@@ -5615,7 +5615,7 @@
                                 "days_apart": 21548,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (21548 days)",
                                 "sibling_one": {
@@ -5643,7 +5643,7 @@
                                 "days_apart": 6721,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6721 days)",
                                 "sibling_one": {
@@ -5671,7 +5671,7 @@
                                 "days_apart": 6721,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6721 days)",
                                 "sibling_one": {
@@ -5699,7 +5699,7 @@
                                 "days_apart": 6721,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6721 days)",
                                 "sibling_one": {
@@ -5727,7 +5727,7 @@
                                 "days_apart": 6721,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6721 days)",
                                 "sibling_one": {
@@ -5755,7 +5755,7 @@
                                 "days_apart": 6721,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6721 days)",
                                 "sibling_one": {
@@ -5783,7 +5783,7 @@
                                 "days_apart": 6721,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6721 days)",
                                 "sibling_one": {
@@ -5811,7 +5811,7 @@
                                 "days_apart": 6724,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6724 days)",
                                 "sibling_one": {
@@ -5839,7 +5839,7 @@
                                 "days_apart": 6652,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (6652 days)",
                                 "sibling_one": {
@@ -5867,7 +5867,7 @@
                                 "days_apart": 2436,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (2436 days)",
                                 "sibling_one": {
@@ -5895,7 +5895,7 @@
                                 "days_apart": 10216,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (10216 days)",
                                 "sibling_one": {
@@ -5923,7 +5923,7 @@
                                 "days_apart": 11210,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (11210 days)",
                                 "sibling_one": {
@@ -5951,7 +5951,7 @@
                                 "days_apart": 30506,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (30506 days)",
                                 "sibling_one": {
@@ -5979,7 +5979,7 @@
                                 "days_apart": 15679,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15679 days)",
                                 "sibling_one": {
@@ -6007,7 +6007,7 @@
                                 "days_apart": 15679,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15679 days)",
                                 "sibling_one": {
@@ -6035,7 +6035,7 @@
                                 "days_apart": 15679,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15679 days)",
                                 "sibling_one": {
@@ -6063,7 +6063,7 @@
                                 "days_apart": 15679,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15679 days)",
                                 "sibling_one": {
@@ -6091,7 +6091,7 @@
                                 "days_apart": 15679,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15679 days)",
                                 "sibling_one": {
@@ -6119,7 +6119,7 @@
                                 "days_apart": 15679,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15679 days)",
                                 "sibling_one": {
@@ -6147,7 +6147,7 @@
                                 "days_apart": 15682,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15682 days)",
                                 "sibling_one": {
@@ -6175,7 +6175,7 @@
                                 "days_apart": 15610,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (15610 days)",
                                 "sibling_one": {
@@ -6203,7 +6203,7 @@
                                 "days_apart": 11394,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (11394 days)",
                                 "sibling_one": {
@@ -6231,7 +6231,7 @@
                                 "days_apart": 994,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (994 days)",
                                 "sibling_one": {
@@ -6259,7 +6259,7 @@
                                 "days_apart": 20290,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (20290 days)",
                                 "sibling_one": {
@@ -6287,7 +6287,7 @@
                                 "days_apart": 5463,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5463 days)",
                                 "sibling_one": {
@@ -6315,7 +6315,7 @@
                                 "days_apart": 5463,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5463 days)",
                                 "sibling_one": {
@@ -6343,7 +6343,7 @@
                                 "days_apart": 5463,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5463 days)",
                                 "sibling_one": {
@@ -6371,7 +6371,7 @@
                                 "days_apart": 5463,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5463 days)",
                                 "sibling_one": {
@@ -6399,7 +6399,7 @@
                                 "days_apart": 5463,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5463 days)",
                                 "sibling_one": {
@@ -6427,7 +6427,7 @@
                                 "days_apart": 5463,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5463 days)",
                                 "sibling_one": {
@@ -6455,7 +6455,7 @@
                                 "days_apart": 5466,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5466 days)",
                                 "sibling_one": {
@@ -6483,7 +6483,7 @@
                                 "days_apart": 5394,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (5394 days)",
                                 "sibling_one": {
@@ -6511,7 +6511,7 @@
                                 "days_apart": 1178,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (1178 days)",
                                 "sibling_one": {
@@ -6539,7 +6539,7 @@
                                 "days_apart": 19296,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (19296 days)",
                                 "sibling_one": {
@@ -6567,7 +6567,7 @@
                                 "days_apart": 4469,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4469 days)",
                                 "sibling_one": {
@@ -6595,7 +6595,7 @@
                                 "days_apart": 4469,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4469 days)",
                                 "sibling_one": {
@@ -6623,7 +6623,7 @@
                                 "days_apart": 4469,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4469 days)",
                                 "sibling_one": {
@@ -6651,7 +6651,7 @@
                                 "days_apart": 4469,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4469 days)",
                                 "sibling_one": {
@@ -6679,7 +6679,7 @@
                                 "days_apart": 4469,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4469 days)",
                                 "sibling_one": {
@@ -6707,7 +6707,7 @@
                                 "days_apart": 4469,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4469 days)",
                                 "sibling_one": {
@@ -6735,7 +6735,7 @@
                                 "days_apart": 4472,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4472 days)",
                                 "sibling_one": {
@@ -6763,7 +6763,7 @@
                                 "days_apart": 4400,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4400 days)",
                                 "sibling_one": {
@@ -6791,7 +6791,7 @@
                                 "days_apart": 14827,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14827 days)",
                                 "sibling_one": {
@@ -6819,7 +6819,7 @@
                                 "days_apart": 14827,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14827 days)",
                                 "sibling_one": {
@@ -6847,7 +6847,7 @@
                                 "days_apart": 14827,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14827 days)",
                                 "sibling_one": {
@@ -6875,7 +6875,7 @@
                                 "days_apart": 14827,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14827 days)",
                                 "sibling_one": {
@@ -6903,7 +6903,7 @@
                                 "days_apart": 14827,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14827 days)",
                                 "sibling_one": {
@@ -6931,7 +6931,7 @@
                                 "days_apart": 14827,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14827 days)",
                                 "sibling_one": {
@@ -6959,7 +6959,7 @@
                                 "days_apart": 14824,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14824 days)",
                                 "sibling_one": {
@@ -6987,7 +6987,7 @@
                                 "days_apart": 14896,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (14896 days)",
                                 "sibling_one": {
@@ -7015,7 +7015,7 @@
                                 "days_apart": 19112,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (19112 days)",
                                 "sibling_one": {
@@ -7043,7 +7043,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7071,7 +7071,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7099,7 +7099,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7127,7 +7127,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7155,7 +7155,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7183,7 +7183,7 @@
                                 "days_apart": 4285,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4285 days)",
                                 "sibling_one": {
@@ -7211,7 +7211,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7239,7 +7239,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7267,7 +7267,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7295,7 +7295,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7323,7 +7323,7 @@
                                 "days_apart": 4285,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4285 days)",
                                 "sibling_one": {
@@ -7351,7 +7351,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7379,7 +7379,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7407,7 +7407,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7435,7 +7435,7 @@
                                 "days_apart": 4285,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4285 days)",
                                 "sibling_one": {
@@ -7463,7 +7463,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7491,7 +7491,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7519,7 +7519,7 @@
                                 "days_apart": 4285,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4285 days)",
                                 "sibling_one": {
@@ -7547,7 +7547,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7575,7 +7575,7 @@
                                 "days_apart": 4285,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4285 days)",
                                 "sibling_one": {
@@ -7603,7 +7603,7 @@
                                 "days_apart": 4285,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4285 days)",
                                 "sibling_one": {
@@ -7631,7 +7631,7 @@
                                 "days_apart": 4288,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4288 days)",
                                 "sibling_one": {
@@ -7659,7 +7659,7 @@
                                 "days_apart": 4216,
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) has siblings born more than 8 months apart (4216 days)",
                                 "sibling_one": {
@@ -7687,7 +7687,7 @@
                                 "days_apart": 11077,
                                 "family": {
                                     "line_number": 235,
-                                    "line_value": null
+                                    "xref": "@F2@"
                                 },
                                 "message": "Family (@F2@ - line 235) has siblings born more than 8 months apart (11077 days)",
                                 "sibling_one": {
@@ -7715,7 +7715,7 @@
                                 "days_apart": 7042,
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) has siblings born more than 8 months apart (7042 days)",
                                 "sibling_one": {
@@ -7743,7 +7743,7 @@
                                 "days_apart": 7045,
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) has siblings born more than 8 months apart (7045 days)",
                                 "sibling_one": {
@@ -7771,7 +7771,7 @@
                                 "days_apart": 6973,
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) has siblings born more than 8 months apart (6973 days)",
                                 "sibling_one": {
@@ -7799,7 +7799,7 @@
                                 "days_apart": 40882,
                                 "family": {
                                     "line_number": 257,
-                                    "line_value": null
+                                    "xref": "@F5@"
                                 },
                                 "message": "Family (@F5@ - line 257) has siblings born more than 8 months apart (40882 days)",
                                 "sibling_one": {
@@ -7827,7 +7827,7 @@
                                 "days_apart": 40882,
                                 "family": {
                                     "line_number": 257,
-                                    "line_value": null
+                                    "xref": "@F5@"
                                 },
                                 "message": "Family (@F5@ - line 257) has siblings born more than 8 months apart (40882 days)",
                                 "sibling_one": {
@@ -7855,7 +7855,7 @@
                                 "days_apart": 0,
                                 "family": {
                                     "line_number": 257,
-                                    "line_value": null
+                                    "xref": "@F5@"
                                 },
                                 "message": "Family (@F5@ - line 257) has siblings born less than two days apart (0 days)",
                                 "sibling_one": {
@@ -7882,32 +7882,7 @@
                     "id": "Anomaly US14",
                     "name": "less_than_5_multiple_births",
                     "output": {
-                        "failed": [],
-                        "passed": [
-                            {
-                                "bullets": [
-                                    "Sibling Angelica Burbidge (@I5@ - line 51) born 23 AUG 1855 (line 55)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 23 AUG 1855"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 24 AUG 1855"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Cyril Watson (@I11@ - line 95) born 27 MAR 1920 (line 99)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 27 MAR 1920"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 27 OCT 1960"
-                            },
+                        "failed": [
                             {
                                 "bullets": [
                                     "Sibling Elizabeth Watson (@I12@ - line 104) born 30 OCT 1960 (line 108)",
@@ -7917,128 +7892,552 @@
                                     "Sibling Claire Burbidge (@I16@ - line 141) born 30 OCT 1960 (line 145)",
                                     "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)"
                                 ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 5 siblings born on 30 OCT 1960"
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has more than 5 siblings born on the same date, with 6 siblings born on 30 OCT 1960",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 108,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 104,
+                                        "xref": "@I12@"
+                                    },
+                                    {
+                                        "birth_date": {
+                                            "line_number": 117,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 113,
+                                        "xref": "@I13@"
+                                    },
+                                    {
+                                        "birth_date": {
+                                            "line_number": 128,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 124,
+                                        "xref": "@I14@"
+                                    },
+                                    {
+                                        "birth_date": {
+                                            "line_number": 136,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 132,
+                                        "xref": "@I15@"
+                                    },
+                                    {
+                                        "birth_date": {
+                                            "line_number": 145,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 141,
+                                        "xref": "@I16@"
+                                    },
+                                    {
+                                        "birth_date": {
+                                            "line_number": 152,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 148,
+                                        "xref": "@I17@"
+                                    }
+                                ]
+                            }
+                        ],
+                        "passed": [
+                            {
+                                "bullets": [
+                                    "Sibling Angelica Burbidge (@I5@ - line 51) born 23 AUG 1855 (line 55)"
+                                ],
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 23 AUG 1855",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 55,
+                                            "line_value": "23 AUG 1855"
+                                        },
+                                        "line_number": 51,
+                                        "xref": "@I5@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
-                                    "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
+                                    "Sibling Phoebe Burbidge (@I6@ - line 59) born 24 AUG 1855 (line 63)"
                                 ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 7 JAN 1961"
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 24 AUG 1855",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 63,
+                                            "line_value": "24 AUG 1855"
+                                        },
+                                        "line_number": 59,
+                                        "xref": "@I6@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
-                                    "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
+                                    "Sibling Cyril Watson (@I11@ - line 95) born 27 MAR 1920 (line 99)"
                                 ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 24 JUL 1972"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Jerry Briand (@I10@ - line 86) born 24 JAN 1973 (line 90)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 24 JAN 1973"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 15 OCT 1975"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling James Dutton (@I7@ - line 65) born 26 MAR 1979 (line 69)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 26 MAR 1979"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)"
-                                ],
-                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 0 siblings born on 4 OCT 2003"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19)"
-                                ],
-                                "message": "Family (@F2@ - line 235) has no more than 5 siblings born on the same date, with 0 siblings born on 17 JUN 1945"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83)"
-                                ],
-                                "message": "Family (@F2@ - line 235) has no more than 5 siblings born on the same date, with 0 siblings born on 15 OCT 1975"
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 27 MAR 1920",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 99,
+                                            "line_value": "27 MAR 1920"
+                                        },
+                                        "line_number": 95,
+                                        "xref": "@I11@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
                                 ],
-                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 0 siblings born on 27 OCT 1960"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)"
-                                ],
-                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 0 siblings born on 30 OCT 1960"
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 27 OCT 1960",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 160,
+                                            "line_value": "27 OCT 1960"
+                                        },
+                                        "line_number": 156,
+                                        "xref": "@I18@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
                                 ],
-                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 0 siblings born on 7 JAN 1961"
-                            },
-                            {
-                                "bullets": [
-                                    "Sibling David Burbidge (@I2@ - line 24) born 10 FEB 1980 (line 28)"
-                                ],
-                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 0 siblings born on 10 FEB 1980"
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 7 JAN 1961",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 167,
+                                            "line_value": "7 JAN 1961"
+                                        },
+                                        "line_number": 163,
+                                        "xref": "@I19@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
                                 ],
-                                "message": "Family (@F4@ - line 251) has no more than 5 siblings born on the same date, with 0 siblings born on 24 JUL 1972"
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 24 JUL 1972",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 175,
+                                            "line_value": "24 JUL 1972"
+                                        },
+                                        "line_number": 171,
+                                        "xref": "@I20@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Jerry Briand (@I10@ - line 86) born 24 JAN 1973 (line 90)"
+                                ],
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 24 JAN 1973",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 90,
+                                            "line_value": "24 JAN 1973"
+                                        },
+                                        "line_number": 86,
+                                        "xref": "@I10@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83)"
+                                ],
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 15 OCT 1975",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 83,
+                                            "line_value": "15 OCT 1975"
+                                        },
+                                        "line_number": 79,
+                                        "xref": "@I9@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling James Dutton (@I7@ - line 65) born 26 MAR 1979 (line 69)"
+                                ],
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 26 MAR 1979",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 69,
+                                            "line_value": "26 MAR 1979"
+                                        },
+                                        "line_number": 65,
+                                        "xref": "@I7@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)"
+                                ],
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has no more than 5 siblings born on the same date, with 1 sibling born on 4 OCT 2003",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 76,
+                                            "line_value": "4 OCT 2003"
+                                        },
+                                        "line_number": 72,
+                                        "xref": "@I8@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19)"
+                                ],
+                                "family": {
+                                    "line_number": 235,
+                                    "xref": "@F2@"
+                                },
+                                "message": "Family (@F2@ - line 235) has no more than 5 siblings born on the same date, with 1 sibling born on 17 JUN 1945",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 19,
+                                            "line_value": "17 JUN 1945"
+                                        },
+                                        "line_number": 15,
+                                        "xref": "@I1@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83)"
+                                ],
+                                "family": {
+                                    "line_number": 235,
+                                    "xref": "@F2@"
+                                },
+                                "message": "Family (@F2@ - line 235) has no more than 5 siblings born on the same date, with 1 sibling born on 15 OCT 1975",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 83,
+                                            "line_value": "15 OCT 1975"
+                                        },
+                                        "line_number": 79,
+                                        "xref": "@I9@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Sally Burbidge (@I18@ - line 156) born 27 OCT 1960 (line 160)"
+                                ],
+                                "family": {
+                                    "line_number": 244,
+                                    "xref": "@F3@"
+                                },
+                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 1 sibling born on 27 OCT 1960",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 160,
+                                            "line_value": "27 OCT 1960"
+                                        },
+                                        "line_number": 156,
+                                        "xref": "@I18@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Stanley Burbidge (@I17@ - line 148) born 30 OCT 1960 (line 152)"
+                                ],
+                                "family": {
+                                    "line_number": 244,
+                                    "xref": "@F3@"
+                                },
+                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 1 sibling born on 30 OCT 1960",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 152,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 148,
+                                        "xref": "@I17@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Heather Burbidge (@I19@ - line 163) born 7 JAN 1961 (line 167)"
+                                ],
+                                "family": {
+                                    "line_number": 244,
+                                    "xref": "@F3@"
+                                },
+                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 1 sibling born on 7 JAN 1961",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 167,
+                                            "line_value": "7 JAN 1961"
+                                        },
+                                        "line_number": 163,
+                                        "xref": "@I19@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling David Burbidge (@I2@ - line 24) born 10 FEB 1980 (line 28)"
+                                ],
+                                "family": {
+                                    "line_number": 244,
+                                    "xref": "@F3@"
+                                },
+                                "message": "Family (@F3@ - line 244) has no more than 5 siblings born on the same date, with 1 sibling born on 10 FEB 1980",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 28,
+                                            "line_value": "10 FEB 1980"
+                                        },
+                                        "line_number": 24,
+                                        "xref": "@I2@"
+                                    }
+                                ]
+                            },
+                            {
+                                "bullets": [
+                                    "Sibling Linda Briand (@I20@ - line 171) born 24 JUL 1972 (line 175)"
+                                ],
+                                "family": {
+                                    "line_number": 251,
+                                    "xref": "@F4@"
+                                },
+                                "message": "Family (@F4@ - line 251) has no more than 5 siblings born on the same date, with 1 sibling born on 24 JUL 1972",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 175,
+                                            "line_value": "24 JUL 1972"
+                                        },
+                                        "line_number": 171,
+                                        "xref": "@I20@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Wendy Watson (@I3@ - line 33) born 24 NOV 1848 (line 37)"
                                 ],
-                                "message": "Family (@F5@ - line 257) has no more than 5 siblings born on the same date, with 0 siblings born on 24 NOV 1848"
+                                "family": {
+                                    "line_number": 257,
+                                    "xref": "@F5@"
+                                },
+                                "message": "Family (@F5@ - line 257) has no more than 5 siblings born on the same date, with 1 sibling born on 24 NOV 1848",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 37,
+                                            "line_value": "24 NOV 1848"
+                                        },
+                                        "line_number": 33,
+                                        "xref": "@I3@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Jean Watson (@I13@ - line 113) born 30 OCT 1960 (line 117)",
                                     "Sibling Martin Watson (@I14@ - line 124) born 30 OCT 1960 (line 128)"
                                 ],
-                                "message": "Family (@F5@ - line 257) has no more than 5 siblings born on the same date, with 1 sibling born on 30 OCT 1960"
+                                "family": {
+                                    "line_number": 257,
+                                    "xref": "@F5@"
+                                },
+                                "message": "Family (@F5@ - line 257) has no more than 5 siblings born on the same date, with 2 siblings born on 30 OCT 1960",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 117,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 113,
+                                        "xref": "@I13@"
+                                    },
+                                    {
+                                        "birth_date": {
+                                            "line_number": 128,
+                                            "line_value": "30 OCT 1960"
+                                        },
+                                        "line_number": 124,
+                                        "xref": "@I14@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)"
                                 ],
-                                "message": "Family (@F6@ - line 263) has no more than 5 siblings born on the same date, with 0 siblings born on 4 OCT 2003"
+                                "family": {
+                                    "line_number": 263,
+                                    "xref": "@F6@"
+                                },
+                                "message": "Family (@F6@ - line 263) has no more than 5 siblings born on the same date, with 1 sibling born on 4 OCT 2003",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 76,
+                                            "line_value": "4 OCT 2003"
+                                        },
+                                        "line_number": 72,
+                                        "xref": "@I8@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Susan Cunningham (@I26@ - line 210) born 9 SEP 1991 (line 214)"
                                 ],
-                                "message": "Family (@F7@ - line 267) has no more than 5 siblings born on the same date, with 0 siblings born on 9 SEP 1991"
+                                "family": {
+                                    "line_number": 267,
+                                    "xref": "@F7@"
+                                },
+                                "message": "Family (@F7@ - line 267) has no more than 5 siblings born on the same date, with 1 sibling born on 9 SEP 1991",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 214,
+                                            "line_value": "9 SEP 1991"
+                                        },
+                                        "line_number": 210,
+                                        "xref": "@I26@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Lucy Cunningham (@I23@ - line 192) born 7 JUL 1977 (line 196)"
                                 ],
-                                "message": "Family (@F8@ - line 273) has no more than 5 siblings born on the same date, with 0 siblings born on 7 JUL 1977"
+                                "family": {
+                                    "line_number": 273,
+                                    "xref": "@F8@"
+                                },
+                                "message": "Family (@F8@ - line 273) has no more than 5 siblings born on the same date, with 1 sibling born on 7 JUL 1977",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 196,
+                                            "line_value": "7 JUL 1977"
+                                        },
+                                        "line_number": 192,
+                                        "xref": "@I23@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Matthew Watson (@I25@ - line 204) born 4 AUG 1975 (line 208)"
                                 ],
-                                "message": "Family (@F9@ - line 281) has no more than 5 siblings born on the same date, with 0 siblings born on 4 AUG 1975"
+                                "family": {
+                                    "line_number": 281,
+                                    "xref": "@F9@"
+                                },
+                                "message": "Family (@F9@ - line 281) has no more than 5 siblings born on the same date, with 1 sibling born on 4 AUG 1975",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 208,
+                                            "line_value": "4 AUG 1975"
+                                        },
+                                        "line_number": 204,
+                                        "xref": "@I25@"
+                                    }
+                                ]
                             },
                             {
                                 "bullets": [
                                     "Sibling Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19)"
                                 ],
-                                "message": "Family (@F11@ - line 290) has no more than 5 siblings born on the same date, with 0 siblings born on 17 JUN 1945"
+                                "family": {
+                                    "line_number": 290,
+                                    "xref": "@F11@"
+                                },
+                                "message": "Family (@F11@ - line 290) has no more than 5 siblings born on the same date, with 1 sibling born on 17 JUN 1945",
+                                "siblings": [
+                                    {
+                                        "birth_date": {
+                                            "line_number": 19,
+                                            "line_value": "17 JUN 1945"
+                                        },
+                                        "line_number": 15,
+                                        "xref": "@I1@"
+                                    }
+                                ]
                             }
                         ]
                     }
@@ -8049,13 +8448,25 @@
                     "output": {
                         "failed": [
                             {
-                                "count": 16,
-                                "family": {
-                                    "line_number": 216,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F1@ - line 216) has 16 siblings Angelica Burbidge (@I5@ - line 51), Phoebe Burbidge (@I6@ - line 59), James Dutton (@I7@ - line 65), Peter Dutton (@I8@ - line 72), Louise Burbidge (@I9@ - line 79), Jerry Briand (@I10@ - line 86), Cyril Watson (@I11@ - line 95), Elizabeth Watson (@I12@ - line 104), Jean Watson (@I13@ - line 113), Martin Watson (@I14@ - line 124), Andrew Burbidge (@I15@ - line 132), Claire Burbidge (@I16@ - line 141), Stanley Burbidge (@I17@ - line 148), Sally Burbidge (@I18@ - line 156), Heather Burbidge (@I19@ - line 163), Linda Briand (@I20@ - line 171)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Angelica Burbidge (@I5@ - line 51)",
+                                    "Child 2: Phoebe Burbidge (@I6@ - line 59)",
+                                    "Child 3: James Dutton (@I7@ - line 65)",
+                                    "Child 4: Peter Dutton (@I8@ - line 72)",
+                                    "Child 5: Louise Burbidge (@I9@ - line 79)",
+                                    "Child 6: Jerry Briand (@I10@ - line 86)",
+                                    "Child 7: Cyril Watson (@I11@ - line 95)",
+                                    "Child 8: Elizabeth Watson (@I12@ - line 104)",
+                                    "Child 9: Jean Watson (@I13@ - line 113)",
+                                    "Child 10: Martin Watson (@I14@ - line 124)",
+                                    "Child 11: Andrew Burbidge (@I15@ - line 132)",
+                                    "Child 12: Claire Burbidge (@I16@ - line 141)",
+                                    "Child 13: Stanley Burbidge (@I17@ - line 148)",
+                                    "Child 14: Sally Burbidge (@I18@ - line 156)",
+                                    "Child 15: Heather Burbidge (@I19@ - line 163)",
+                                    "Child 16: Linda Briand (@I20@ - line 171)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 51,
                                         "xref": "@I5@"
@@ -8120,18 +8531,21 @@
                                         "line_number": 171,
                                         "xref": "@I20@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 216,
+                                    "xref": "@F1@"
+                                },
+                                "message": "Family (@F1@ - line 216) has 16 siblings"
                             }
                         ],
                         "passed": [
                             {
-                                "count": 2,
-                                "family": {
-                                    "line_number": 235,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F2@ - line 235) has 2 siblings Adam Burbidge (@I1@ - line 15), Louise Burbidge (@I9@ - line 79)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Adam Burbidge (@I1@ - line 15)",
+                                    "Child 2: Louise Burbidge (@I9@ - line 79)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 15,
                                         "xref": "@I1@"
@@ -8140,16 +8554,21 @@
                                         "line_number": 79,
                                         "xref": "@I9@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 235,
+                                    "xref": "@F2@"
+                                },
+                                "message": "Family (@F2@ - line 235) has 2 siblings"
                             },
                             {
-                                "count": 4,
-                                "family": {
-                                    "line_number": 244,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F3@ - line 244) has 4 siblings David Burbidge (@I2@ - line 24), Stanley Burbidge (@I17@ - line 148), Sally Burbidge (@I18@ - line 156), Heather Burbidge (@I19@ - line 163)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: David Burbidge (@I2@ - line 24)",
+                                    "Child 2: Stanley Burbidge (@I17@ - line 148)",
+                                    "Child 3: Sally Burbidge (@I18@ - line 156)",
+                                    "Child 4: Heather Burbidge (@I19@ - line 163)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 24,
                                         "xref": "@I2@"
@@ -8166,30 +8585,36 @@
                                         "line_number": 163,
                                         "xref": "@I19@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 244,
+                                    "xref": "@F3@"
+                                },
+                                "message": "Family (@F3@ - line 244) has 4 siblings"
                             },
                             {
-                                "count": 1,
-                                "family": {
-                                    "line_number": 251,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F4@ - line 251) has 1 sibling, Linda Briand (@I20@ - line 171)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Linda Briand (@I20@ - line 171)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 171,
                                         "xref": "@I20@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 251,
+                                    "xref": "@F4@"
+                                },
+                                "message": "Family (@F4@ - line 251) has one child"
                             },
                             {
-                                "count": 3,
-                                "family": {
-                                    "line_number": 257,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F5@ - line 257) has 3 siblings Wendy Watson (@I3@ - line 33), Jean Watson (@I13@ - line 113), Martin Watson (@I14@ - line 124)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Wendy Watson (@I3@ - line 33)",
+                                    "Child 2: Jean Watson (@I13@ - line 113)",
+                                    "Child 3: Martin Watson (@I14@ - line 124)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 33,
                                         "xref": "@I3@"
@@ -8202,86 +8627,101 @@
                                         "line_number": 124,
                                         "xref": "@I14@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 257,
+                                    "xref": "@F5@"
+                                },
+                                "message": "Family (@F5@ - line 257) has 3 siblings"
                             },
                             {
-                                "count": 1,
-                                "family": {
-                                    "line_number": 263,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F6@ - line 263) has 1 sibling, Peter Dutton (@I8@ - line 72)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Peter Dutton (@I8@ - line 72)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 72,
                                         "xref": "@I8@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 263,
+                                    "xref": "@F6@"
+                                },
+                                "message": "Family (@F6@ - line 263) has one child"
                             },
                             {
-                                "count": 1,
-                                "family": {
-                                    "line_number": 267,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F7@ - line 267) has 1 sibling, Susan Cunningham (@I26@ - line 210)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Susan Cunningham (@I26@ - line 210)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 210,
                                         "xref": "@I26@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 267,
+                                    "xref": "@F7@"
+                                },
+                                "message": "Family (@F7@ - line 267) has one child"
                             },
                             {
-                                "count": 1,
-                                "family": {
-                                    "line_number": 273,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F8@ - line 273) has 1 sibling, Lucy Cunningham (@I23@ - line 192)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Lucy Cunningham (@I23@ - line 192)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 192,
                                         "xref": "@I23@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 273,
+                                    "xref": "@F8@"
+                                },
+                                "message": "Family (@F8@ - line 273) has one child"
                             },
                             {
-                                "count": 1,
-                                "family": {
-                                    "line_number": 281,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F9@ - line 281) has 1 sibling, Matthew Watson (@I25@ - line 204)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Matthew Watson (@I25@ - line 204)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 204,
                                         "xref": "@I25@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 281,
+                                    "xref": "@F9@"
+                                },
+                                "message": "Family (@F9@ - line 281) has one child"
                             },
                             {
-                                "count": 0,
+                                "bullets": [],
+                                "children": [],
                                 "family": {
                                     "line_number": 287,
-                                    "line_value": null
+                                    "xref": "@F10@"
                                 },
-                                "message": "Family (@F10@ - line 287) has no siblings",
-                                "siblings": []
+                                "message": "Family (@F10@ - line 287) has no children"
                             },
                             {
-                                "count": 1,
-                                "family": {
-                                    "line_number": 290,
-                                    "line_value": null
-                                },
-                                "message": "Family (@F11@ - line 290) has 1 sibling, Adam Burbidge (@I1@ - line 15)",
-                                "siblings": [
+                                "bullets": [
+                                    "Child 1: Adam Burbidge (@I1@ - line 15)"
+                                ],
+                                "children": [
                                     {
                                         "line_number": 15,
                                         "xref": "@I1@"
                                     }
-                                ]
+                                ],
+                                "family": {
+                                    "line_number": 290,
+                                    "xref": "@F11@"
+                                },
+                                "message": "Family (@F11@ - line 290) has one child"
                             }
                         ]
                     }
@@ -8294,7 +8734,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings James Dutton (@I7@ - line 65) and Jerry Briand (@I10@ - line 86) do not have the same surname",
                                 "sibling_one": {
@@ -8317,7 +8757,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings James Dutton (@I7@ - line 65) and Cyril Watson (@I11@ - line 95) do not have the same surname",
                                 "sibling_one": {
@@ -8340,7 +8780,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings James Dutton (@I7@ - line 65) and Martin Watson (@I14@ - line 124) do not have the same surname",
                                 "sibling_one": {
@@ -8363,7 +8803,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings James Dutton (@I7@ - line 65) and Andrew Burbidge (@I15@ - line 132) do not have the same surname",
                                 "sibling_one": {
@@ -8386,7 +8826,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings James Dutton (@I7@ - line 65) and Stanley Burbidge (@I17@ - line 148) do not have the same surname",
                                 "sibling_one": {
@@ -8409,7 +8849,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Peter Dutton (@I8@ - line 72) and Jerry Briand (@I10@ - line 86) do not have the same surname",
                                 "sibling_one": {
@@ -8432,7 +8872,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Peter Dutton (@I8@ - line 72) and Cyril Watson (@I11@ - line 95) do not have the same surname",
                                 "sibling_one": {
@@ -8455,7 +8895,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Peter Dutton (@I8@ - line 72) and Martin Watson (@I14@ - line 124) do not have the same surname",
                                 "sibling_one": {
@@ -8478,7 +8918,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Peter Dutton (@I8@ - line 72) and Andrew Burbidge (@I15@ - line 132) do not have the same surname",
                                 "sibling_one": {
@@ -8501,7 +8941,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Peter Dutton (@I8@ - line 72) and Stanley Burbidge (@I17@ - line 148) do not have the same surname",
                                 "sibling_one": {
@@ -8524,7 +8964,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Jerry Briand (@I10@ - line 86) and Cyril Watson (@I11@ - line 95) do not have the same surname",
                                 "sibling_one": {
@@ -8547,7 +8987,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Jerry Briand (@I10@ - line 86) and Martin Watson (@I14@ - line 124) do not have the same surname",
                                 "sibling_one": {
@@ -8570,7 +9010,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Jerry Briand (@I10@ - line 86) and Andrew Burbidge (@I15@ - line 132) do not have the same surname",
                                 "sibling_one": {
@@ -8593,7 +9033,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Jerry Briand (@I10@ - line 86) and Stanley Burbidge (@I17@ - line 148) do not have the same surname",
                                 "sibling_one": {
@@ -8616,7 +9056,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Cyril Watson (@I11@ - line 95) and Andrew Burbidge (@I15@ - line 132) do not have the same surname",
                                 "sibling_one": {
@@ -8639,7 +9079,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Cyril Watson (@I11@ - line 95) and Stanley Burbidge (@I17@ - line 148) do not have the same surname",
                                 "sibling_one": {
@@ -8662,7 +9102,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Martin Watson (@I14@ - line 124) and Andrew Burbidge (@I15@ - line 132) do not have the same surname",
                                 "sibling_one": {
@@ -8685,7 +9125,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Martin Watson (@I14@ - line 124) and Stanley Burbidge (@I17@ - line 148) do not have the same surname",
                                 "sibling_one": {
@@ -8716,7 +9156,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8739,7 +9179,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8762,7 +9202,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8785,7 +9225,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8808,7 +9248,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8825,7 +9265,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings James Dutton (@I7@ - line 65) and Peter Dutton (@I8@ - line 72) have the same surname",
                                 "sibling_one": {
@@ -8848,7 +9288,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Cyril Watson (@I11@ - line 95) and Martin Watson (@I14@ - line 124) have the same surname",
                                 "sibling_one": {
@@ -8871,7 +9311,7 @@
                             {
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "message": "Family (@F1@ - line 216) with male siblings Andrew Burbidge (@I15@ - line 132) and Stanley Burbidge (@I17@ - line 148) have the same surname",
                                 "sibling_one": {
@@ -8902,7 +9342,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8925,7 +9365,7 @@
                                 },
                                 "family": {
                                     "line_number": 216,
-                                    "line_value": null
+                                    "xref": "@F1@"
                                 },
                                 "father": {
                                     "line_number": 15,
@@ -8948,7 +9388,7 @@
                                 },
                                 "family": {
                                     "line_number": 235,
-                                    "line_value": null
+                                    "xref": "@F2@"
                                 },
                                 "father": {
                                     "line_number": 24,
@@ -8963,7 +9403,7 @@
                             {
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "message": "Family (@F3@ - line 244) with male siblings David Burbidge (@I2@ - line 24) and Stanley Burbidge (@I17@ - line 148) have the same surname",
                                 "sibling_one": {
@@ -8994,7 +9434,7 @@
                                 },
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "father": {
                                     "line_number": 132,
@@ -9017,7 +9457,7 @@
                                 },
                                 "family": {
                                     "line_number": 244,
-                                    "line_value": null
+                                    "xref": "@F3@"
                                 },
                                 "father": {
                                     "line_number": 132,
@@ -9040,7 +9480,7 @@
                                 },
                                 "family": {
                                     "line_number": 257,
-                                    "line_value": null
+                                    "xref": "@F5@"
                                 },
                                 "father": {
                                     "line_number": 95,
@@ -9063,7 +9503,7 @@
                                 },
                                 "family": {
                                     "line_number": 263,
-                                    "line_value": null
+                                    "xref": "@F6@"
                                 },
                                 "father": {
                                     "line_number": 65,
@@ -9086,7 +9526,7 @@
                                 },
                                 "family": {
                                     "line_number": 281,
-                                    "line_value": null
+                                    "xref": "@F9@"
                                 },
                                 "father": {
                                     "line_number": 124,
@@ -9109,7 +9549,7 @@
                                 },
                                 "family": {
                                     "line_number": 290,
-                                    "line_value": null
+                                    "xref": "@F11@"
                                 },
                                 "father": {
                                     "line_number": 15,

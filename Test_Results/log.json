@@ -9856,222 +9856,246 @@
             "output": {
                 "failed": [
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [
+                            "Married to sibling Elizabeth Watson (@I12@ - line 104)"
+                        ],
+                        "individual": {
+                            "line_number": 95,
                             "xref": "@I11@"
                         },
-                        "message": "Individual Cyril Watson (@I11@ - line 95) is married to his sibling Elizabeth Watson (@I12@ - line 104)"
+                        "message": "Individual Cyril Watson (@I11@ - line 95) is married to 1 of his siblings",
+                        "siblings_married_to": [
+                            {
+                                "line_number": 104,
+                                "xref": "@I12@"
+                            }
+                        ]
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [
+                            "Married to sibling Cyril Watson (@I11@ - line 95)"
+                        ],
+                        "individual": {
+                            "line_number": 104,
                             "xref": "@I12@"
                         },
-                        "message": "Individual Elizabeth Watson (@I12@ - line 104) is married to her sibling Cyril Watson (@I11@ - line 95)"
+                        "message": "Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of her siblings",
+                        "siblings_married_to": [
+                            {
+                                "line_number": 95,
+                                "xref": "@I11@"
+                            }
+                        ]
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [
+                            "Married to sibling Claire Burbidge (@I16@ - line 141)"
+                        ],
+                        "individual": {
+                            "line_number": 132,
                             "xref": "@I15@"
                         },
-                        "message": "Individual Andrew Burbidge (@I15@ - line 132) is married to his sibling Claire Burbidge (@I16@ - line 141)"
+                        "message": "Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of his siblings",
+                        "siblings_married_to": [
+                            {
+                                "line_number": 141,
+                                "xref": "@I16@"
+                            }
+                        ]
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [
+                            "Married to sibling Andrew Burbidge (@I15@ - line 132)"
+                        ],
+                        "individual": {
+                            "line_number": 141,
                             "xref": "@I16@"
                         },
-                        "message": "Individual Claire Burbidge (@I16@ - line 141) is married to her sibling Andrew Burbidge (@I15@ - line 132)"
+                        "message": "Individual Claire Burbidge (@I16@ - line 141) is married to 1 of her siblings",
+                        "siblings_married_to": [
+                            {
+                                "line_number": 132,
+                                "xref": "@I15@"
+                            }
+                        ]
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [
+                            "Married to sibling Heather Burbidge (@I19@ - line 163)"
+                        ],
+                        "individual": {
+                            "line_number": 148,
                             "xref": "@I17@"
                         },
-                        "message": "Individual Stanley Burbidge (@I17@ - line 148) is married to his sibling Heather Burbidge (@I19@ - line 163)"
+                        "message": "Individual Stanley Burbidge (@I17@ - line 148) is married to 1 of his siblings",
+                        "siblings_married_to": [
+                            {
+                                "line_number": 163,
+                                "xref": "@I19@"
+                            }
+                        ]
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [
+                            "Married to sibling Stanley Burbidge (@I17@ - line 148)"
+                        ],
+                        "individual": {
+                            "line_number": 163,
                             "xref": "@I19@"
                         },
-                        "message": "Individual Heather Burbidge (@I19@ - line 163) is married to her sibling Stanley Burbidge (@I17@ - line 148)"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F3@"
-                        },
-                        "indi": {
-                            "xref": "@I17@"
-                        },
-                        "message": "Individual Stanley Burbidge (@I17@ - line 148) is married to his sibling Heather Burbidge (@I19@ - line 163)"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F3@"
-                        },
-                        "indi": {
-                            "xref": "@I19@"
-                        },
-                        "message": "Individual Heather Burbidge (@I19@ - line 163) is married to her sibling Stanley Burbidge (@I17@ - line 148)"
+                        "message": "Individual Heather Burbidge (@I19@ - line 163) is married to 1 of her siblings",
+                        "siblings_married_to": [
+                            {
+                                "line_number": 148,
+                                "xref": "@I17@"
+                            }
+                        ]
                     }
                 ],
                 "passed": [
                     {
-                        "fam": {
-                            "xref": "@F1@"
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 51,
+                            "xref": "@I5@"
                         },
-                        "indi": {
+                        "message": "Individual Angelica Burbidge (@I5@ - line 51) is not married to any of her siblings",
+                        "siblings_married_to": []
+                    },
+                    {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 59,
+                            "xref": "@I6@"
+                        },
+                        "message": "Individual Phoebe Burbidge (@I6@ - line 59) is not married to any of her siblings",
+                        "siblings_married_to": []
+                    },
+                    {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 65,
                             "xref": "@I7@"
                         },
-                        "message": "Individual James Dutton (@I7@ - line 65) is not married to any of his siblings"
+                        "message": "Individual James Dutton (@I7@ - line 65) is not married to any of his siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 72,
+                            "xref": "@I8@"
                         },
-                        "indi": {
+                        "message": "Individual Peter Dutton (@I8@ - line 72) is not married to any of his siblings",
+                        "siblings_married_to": []
+                    },
+                    {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 79,
+                            "xref": "@I9@"
+                        },
+                        "message": "Individual Louise Burbidge (@I9@ - line 79) is not married to any of her siblings",
+                        "siblings_married_to": []
+                    },
+                    {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 86,
                             "xref": "@I10@"
                         },
-                        "message": "Individual Jerry Briand (@I10@ - line 86) is not married to any of his siblings"
+                        "message": "Individual Jerry Briand (@I10@ - line 86) is not married to any of his siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 113,
                             "xref": "@I13@"
                         },
-                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her siblings"
+                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
-                            "xref": "@I13@"
-                        },
-                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F1@"
-                        },
-                        "indi": {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 124,
                             "xref": "@I14@"
                         },
-                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any of his siblings"
+                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any of his siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F2@"
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 156,
+                            "xref": "@I18@"
                         },
-                        "indi": {
+                        "message": "Individual Sally Burbidge (@I18@ - line 156) is not married to any of her siblings",
+                        "siblings_married_to": []
+                    },
+                    {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 171,
+                            "xref": "@I20@"
+                        },
+                        "message": "Individual Linda Briand (@I20@ - line 171) is not married to any of her siblings",
+                        "siblings_married_to": []
+                    },
+                    {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 15,
                             "xref": "@I1@"
                         },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his siblings"
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F2@"
-                        },
-                        "indi": {
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F3@"
-                        },
-                        "indi": {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 24,
                             "xref": "@I2@"
                         },
-                        "message": "Individual David Burbidge (@I2@ - line 24) is not married to any of his siblings"
+                        "message": "Individual David Burbidge (@I2@ - line 24) is not married to any of his siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 33,
                             "xref": "@I3@"
                         },
-                        "message": "Individual Wendy Watson (@I3@ - line 33) is not married to any of her siblings"
+                        "message": "Individual Wendy Watson (@I3@ - line 33) is not married to any of her siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F5@"
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 210,
+                            "xref": "@I26@"
                         },
-                        "indi": {
-                            "xref": "@I3@"
-                        },
-                        "message": "Individual Wendy Watson (@I3@ - line 33) is not married to any of her siblings"
+                        "message": "Individual Susan Cunningham (@I26@ - line 210) is not married to any of her siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F5@"
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 192,
+                            "xref": "@I23@"
                         },
-                        "indi": {
-                            "xref": "@I3@"
-                        },
-                        "message": "Individual Wendy Watson (@I3@ - line 33) is not married to any of her siblings"
+                        "message": "Individual Lucy Cunningham (@I23@ - line 192) is not married to any of her siblings",
+                        "siblings_married_to": []
                     },
                     {
-                        "fam": {
-                            "xref": "@F5@"
+                        "bullets": [],
+                        "individual": {
+                            "line_number": 204,
+                            "xref": "@I25@"
                         },
-                        "indi": {
-                            "xref": "@I13@"
-                        },
-                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I13@"
-                        },
-                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I14@"
-                        },
-                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any of his siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I14@"
-                        },
-                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any of his siblings"
-                    },
-                    {
-                        "fam": {
-                            "xref": "@F5@"
-                        },
-                        "indi": {
-                            "xref": "@I14@"
-                        },
-                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any of his siblings"
+                        "message": "Individual Matthew Watson (@I25@ - line 204) is not married to any of his siblings",
+                        "siblings_married_to": []
                     }
                 ]
             }

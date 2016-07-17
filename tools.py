@@ -169,6 +169,9 @@ class Individual(LineTool):
         name = self.name.val.replace("/", "") if self.has("name") else "N/A"
         return "{0} ({1} - line {2})".format(name, self.xref, self.ln)
 
+    def __eq__(self, other):
+        return self.xref == other.xref
+
     @property
     @cachemethod
     def story_dict(self):
@@ -263,6 +266,9 @@ class Individual(LineTool):
 class Family(LineTool):
     def __str__(self):
         return "Family ({0} - line {1})".format(self.xref, self.ln)
+
+    def __eq__(self, other):
+        return self.xref == other.xref
 
     @property
     @cachemethod

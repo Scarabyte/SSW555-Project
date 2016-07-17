@@ -746,25 +746,26 @@ def siblings_should_not_marry(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-
-    passed_message = "Individual {0} is not married to any of {1} siblings"
-    failed_message = "Individual {0} is married to {1} sibling {2}"
+    passed_msg = "Individual {0} is not married to any of {1} siblings".format
+    failed_msg = "Individual {0} is married to {1} of {2} siblings".format
+    bullet = "Married to sibling {0}".format
+    # Keep track of individuals checked just in case individual is a child in multiple families (ERROR)
+    checked = []
     for fam in gedcom_file.families:
-        for indi in fam.children:
+        for indi in (i for i in fam.children if (i not in checked)):
+            checked.append(indi)
+            out = {"individual": indi.story_dict, "siblings_married_to": [], "bullets": []}
             for spouse in indi.spouses:
-                married_to_sibling = 0
                 for sibling in (s for s in fam.children if s.xref != indi.xref):
-                    out = {"indi": {"xref": indi.xref},
-                           "fam": {"xref": fam.xref}}
-                    msg_out = (indi, indi.pronoun, sibling)
                     if sibling.xref == spouse.xref:
-                        married_to_sibling += 1
-                        out["message"] = failed_message.format(*msg_out)
-                        r["failed"].append(out)
-                if not married_to_sibling:
-                    out["message"] = passed_message.format(*msg_out)
-                    r["passed"].append(out)
-
+                        out["siblings_married_to"].append(sibling.story_dict)
+                        out["bullets"].append(bullet(sibling))
+            if len(out["siblings_married_to"]) == 0:
+                out["message"] = passed_msg(indi, indi.pronoun)
+                r["passed"].append(out)
+            else:
+                out["message"] = failed_msg(indi, len(out["siblings_married_to"]), indi.pronoun)
+                r["failed"].append(out)
     return r
 
 

@@ -20,11 +20,21 @@ def run(gedcom_file, show_passed=False):
     :type gedcom_file: gedcom.File
 
     """
-    # TODO: Write better docstring
-    # TODO: Work on output structure
-    # Todo: Move to gedcom class?
 
-    stories.console_output.setLevel(logging.DEBUG) if show_passed else stories.console_output.setLevel(logging.INFO)
+    # Log only failed cases to console if show_passed is False else show passed and failed cases
+    stream_handler = logging.StreamHandler()
+    stream_handler.setLevel(logging.DEBUG) if show_passed else stream_handler.setLevel(logging.INFO)
+    stories.logger.addHandler(stream_handler)
+
+    # Log only failed cases to file "output.md"
+    user_output = logging.FileHandler(filename='Test_Results/output.md', mode="w")
+    user_output.setLevel(logging.INFO)
+    stories.logger.addHandler(user_output)
+
+    # Log only passed cases to file "output.md"
+    debug_output = logging.FileHandler(filename='Test_Results/output.debug.md', mode="w")
+    debug_output.setLevel(logging.DEBUG)
+    stories.logger.addHandler(debug_output)
 
     return {
         "individuals": stories.individual_summary(gedcom_file),
@@ -53,20 +63,7 @@ def run(gedcom_file, show_passed=False):
 
 
 if __name__ == "__main__":
-
-    # Log to files
-    user_output = logging.FileHandler(filename='Test_Results/output.md', mode="w")
-    user_output.setLevel(logging.INFO)
-    debug_output = logging.FileHandler(filename='Test_Results/output.debug.md', mode="w")
-    debug_output.setLevel(logging.DEBUG)
-
-    stories.console_output.addHandler(user_output)
-    stories.console_output.addHandler(debug_output)
-
-
-
     g = gedcom.File()
-
     # Request file name from user
     fname = raw_input('Enter the file name to open: ')
     #fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
@@ -74,9 +71,6 @@ if __name__ == "__main__":
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
-
-    # Todo: include input filename in output filename
-
     try:
         fname_out = 'Test_Results/log.json'
         with open(fname_out, 'w') as outfile:

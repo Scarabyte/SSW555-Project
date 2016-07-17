@@ -80,20 +80,29 @@ class LineTool(object):
     @property
     @cachemethod
     def ln(self):
-        return self.line.ln
+        try:
+            return self.line.ln
+        except AttributeError:
+            return None
 
     @property
     @cachemethod
     def val(self):
-        return self.line.val
+        try:
+            return self.line.val
+        except AttributeError:
+            return None
 
     @property
     @cachemethod
     def story_dict(self):
-        return self.line.story_dict
+        try:
+            return self.line.story_dict
+        except AttributeError:
+            return None
 
     def has(self, p):
-        return getattr(self, p) is not None
+        return (getattr(self, p) is not None) and (getattr(self, p) is not {})
 
 
 class Sex(LineTool):
@@ -138,7 +147,10 @@ class Date(LineTool):
     @property
     @cachemethod
     def dt(self):
-        return self.line.datetime
+        try:
+            return self.line.datetime
+        except AttributeError:
+            return None
 
     @property
     @cachemethod
@@ -219,19 +231,24 @@ class Individual(LineTool):
     @property
     @cachemethod
     def birth_date(self):
-        l = self.birth
-        return Date(l.children.find_one('tag', 'DATE')) if type(l) is gedcom.Line else None
+        if type(self.birth) is gedcom.Line:
+            date = self.birth.children.find_one('tag', 'DATE')
+            if type(date) is gedcom.Line:
+                return Date(date)
 
     @property
     @cachemethod
     def death(self):
-        return self.line.children.find_one("tag", "DEAT")
+        l = self.line.children.find_one("tag", "DEAT")
+        return l if type(l) is gedcom.Line else None
 
     @property
     @cachemethod
     def death_date(self):
-        l = self.death
-        return Date(l.children.find_one('tag', 'DATE')) if type(l) is gedcom.Line else None
+        if type(self.death) is gedcom.Line:
+            date = self.death.children.find_one('tag', 'DATE')
+            if type(date) is gedcom.Line:
+                return Date(date)
 
     def families(self, tag):
         """ Returns iterator of families where this person is a spouse.
@@ -258,9 +275,9 @@ class Individual(LineTool):
         """ Returns the summary for individual
         """
         return self.xref, {"line_number": self.ln,
-                           "name": self.name.story_dict,
-                           "sex": self.sex.story_dict,
-                           "birth_date": self.birth_date.story_dict}
+                           "name": self.name.story_dict if self.has("name") else None,
+                           "sex": self.sex.story_dict if self.has("sex") else None,
+                           "birth_date": self.birth_date.story_dict if self.has("birth_date") else None}
 
 
 class Family(LineTool):

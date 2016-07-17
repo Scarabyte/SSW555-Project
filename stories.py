@@ -37,7 +37,7 @@ def individual_summary(gedcom_file):
         logger.info(LOG_ENTRY.format(indi))
         logger.info(LOG_BULLET_ALT.format("Gender", indi.sex))
         logger.info(LOG_BULLET_ALT.format("Birth date", indi.birth_date))
-        if indi.death_date:
+        if indi.has("death_date"):
             logger.info(LOG_BULLET_ALT.format("Death date", indi.death_date))
             logger.info(LOG_BULLET_ALT.format("Age at death", indi.age))
         else:
@@ -67,6 +67,7 @@ def family_summary(gedcom_file):
         for i, child in enumerate(fam.children):
             logger.info(LOG_BULLET_ALT.format("Child {0}".format(i + 1), child))
     return r
+
 
 def story(id_):
     """ Function decarator used to find both outcomes of a story, and log and return the results """
@@ -227,7 +228,12 @@ def marriage_before_death(gedcom_file):
     r = {"passed": [], "failed": []}
     pass_msg = "has {0} {1} with death {2} after marriage"
     fail_msg = "has {0} {1} with death {2} before marriage"
-    for fam in (f for f in gedcom_file.families if f.has("marriage_date")):
+    for fam in gedcom_file.families:
+
+        if not fam.has("marriage_date"):
+            continue  # Project Overview Assumptions not met
+
+
         out = {"family_xref": fam.xref,
                "marriage_date": fam.marriage_date.story_dict,
                "husband_xref": fam.husband.xref if fam.has("husband") else None,
@@ -359,6 +365,14 @@ def birth_before_marriage_of_parents(gedcom_file):
     div_msg = "{0} with marriage date {1} and divorce date {2} has a child {3} born {4}"
     mar_msg = "{0} with marriage date {1} has a child {2} born {3}"
     for fam in (f for f in gedcom_file.families if f.has("marriage_date")):
+
+        if not fam.has("marriage_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("husband") or not fam.husband.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("wife") or not fam.wife.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+
         for child in (c for c in fam.children if c.has("birth_date")):
             out = {"family_xref": fam.xref, "child_xref": child.xref,
                    "mother_xref": fam.wife.xref if fam.has("wife") else None,
@@ -482,12 +496,13 @@ def no_bigamy(gedcom_file):
             end2 = fam_2.marriage_end
             failed = (start1.dt <= end2["dt"]) and (end1["dt"] >= start2.dt)
             end1.pop("dt"), end2.pop("dt")  # Don't include dt in user story
+            print end1["story_dict"]
             out = {"individual": {"xref": indi.xref},
                    "family_1": {"xref": fam_1.xref, "marriage_date": start1.story_dict, "marriage_end": end1},
                    "family_2": {"xref": fam_2.xref, "marriage_date": start2.story_dict, "marriage_end": end2},
-                   "message": msg.format(indi, fam_1, start1, end1["story_dict"]["line_value"],
+                   "message": msg.format(indi, fam_1, start1, end1["story_dict"].get("line_value"),
                                          end1["story_dict"]["line_number"],
-                                         end1["reason"], fam_2, start2, end2["story_dict"]["line_value"],
+                                         end1["reason"], fam_2, start2, end2["story_dict"].get("line_value"),
                                          end2["story_dict"]["line_number"], end2["reason"])}
             r["failed"].append(out) if failed else r["passed"].append(out)
     return r
@@ -730,7 +745,6 @@ def no_marriages_to_descendants(gedcom_file):
                 if not married_to_child:
                     out["message"] = passed_message.format(*msg_out)
                     r["passed"].append(out)
-                    
     return r
 
 
@@ -757,7 +771,7 @@ def siblings_should_not_marry(gedcom_file):
             out = {"individual": indi.story_dict, "siblings_married_to": [], "bullets": []}
             for spouse in indi.spouses:
                 for sibling in (s for s in fam.children if s.xref != indi.xref):
-                    if sibling.xref == spouse.xref:
+                    if sibling == spouse:
                         out["siblings_married_to"].append(sibling.story_dict)
                         out["bullets"].append(bullet(sibling))
             if len(out["siblings_married_to"]) == 0:
@@ -1050,7 +1064,7 @@ def reject_illegitimate_dates():
 
 if __name__ == "__main__":
     g = gedcom.File()
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
+    fname = "Test_Files/try.ged"
     try:
         g.read_file(fname)
     except IOError as e:

@@ -175,11 +175,6 @@ class File(object):
         :return: Line subclass of dictionary defined in this module.
         :rtype: Line
 
-        :note: If a matching line is never found an empty dictionary will be return instead.
-        This allows the user to preform __dict__.get("value") on the results (which will return None),
-        as apposed to None.get("value") which would cause an exception.
-            :return: An empty dictionary
-            :rtype: dict
 
         :Examples:
             print g.find_one('xref_ID', '@I1@')
@@ -187,7 +182,7 @@ class File(object):
             print g.find_one('tag', 'a_value_that_will_never_be_found')
 
         """
-        return next(ifilter(lambda d: d.get(key) == value, self.lines), {})
+        return next(ifilter(lambda d: d.get(key) == value, self.lines), None)
 
     @property
     def text(self):
@@ -398,7 +393,7 @@ class Line(dict):
         :note: This method will return None if line has no parent, i.e. the line level is 0.
 
         """
-        return next(imap(self.file.lines.__getitem__, self.get('parent_line_numbers', [])), {})
+        return next(imap(self.file.lines.__getitem__, self.get('parent_line_numbers', [])), None)
 
     def refresh(self):
         """ Refresh this line

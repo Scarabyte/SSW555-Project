@@ -480,31 +480,37 @@ def no_bigamy(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = "Individual {0} is in {1} marriage starting {2} and ending {3} (line {4}) because {5}, and is in " \
-          + "{6} marriage starting {7} and ending {8} (line {9}) because {10}."
+
+    failed_msg = "Individual {0} has overlapping marriages".format
+    passed_msg = "Individual {0} has non-overlapping marriages".format
+    bullet = "{0} marriage starts {1} and ends {2} (line {3}) because {4}".format
     for indi in gedcom_file.individuals:
         # Get all combinations of marriages this individual is or has been in
         for fam_1, fam_2 in combinations(indi.families("FAMS"), 2):
+
             # Check Project Overview Assumptions
             if not fam_1.has("marriage_date"):
                 continue  # Project Overview Assumptions not met
             if not fam_2.has("marriage_date"):
                 continue  # Project Overview Assumptions not met
-            start1 = fam_1.marriage_date
-            end1 = fam_1.marriage_end
-            start2 = fam_2.marriage_date
-            end2 = fam_2.marriage_end
-            failed = (start1.dt <= end2["dt"]) and (end1["dt"] >= start2.dt)
-            end1.pop("dt"), end2.pop("dt")  # Don't include dt in user story
-            print end1["story_dict"]
+
+            start1, end1, start2, end2 = fam_1.marriage_date, fam_1.marriage_end, fam_2.marriage_date, fam_2.marriage_end
+            end1_dt, end2_dt = end1.pop("dt"), end2.pop("dt")
             out = {"individual": {"xref": indi.xref},
                    "family_1": {"xref": fam_1.xref, "marriage_date": start1.story_dict, "marriage_end": end1},
                    "family_2": {"xref": fam_2.xref, "marriage_date": start2.story_dict, "marriage_end": end2},
-                   "message": msg.format(indi, fam_1, start1, end1["story_dict"].get("line_value"),
-                                         end1["story_dict"]["line_number"],
-                                         end1["reason"], fam_2, start2, end2["story_dict"].get("line_value"),
-                                         end2["story_dict"]["line_number"], end2["reason"])}
-            r["failed"].append(out) if failed else r["passed"].append(out)
+                   "bullets": [
+                       bullet(fam_1, start1, end1["story_dict"].get("line_value"), end1["story_dict"]["line_number"],
+                              end1["reason"]),
+                       bullet(fam_2, start2, end2["story_dict"].get("line_value"), end2["story_dict"]["line_number"],
+                              end2["reason"]),
+                   ]}
+            if (start1.dt <= end2_dt) and (end1_dt >= start2.dt):
+                out["message"] = failed_msg(indi)
+                r["failed"].append(out)
+            else:
+                out["message"] = passed_msg(indi)
+                r["passed"].append(out)
     return r
 
 
@@ -1064,7 +1070,7 @@ def reject_illegitimate_dates():
 
 if __name__ == "__main__":
     g = gedcom.File()
-    fname = "Test_Files/try.ged"
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
     try:
         g.read_file(fname)
     except IOError as e:

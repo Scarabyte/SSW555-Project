@@ -317,7 +317,9 @@
 ### Anomaly US11: No Bigamy ###
 ~~~~
 [failed]
-	 > Individual Wendy Watson (@I3@ - line 33) is in Family (@F2@ - line 235) marriage starting 26 MAR 1976 (line 241) and ending 13 NOV 2012 (line 243) because divorce, and is in Family (@F4@ - line 251) marriage starting 4 SEP 1970 (line 256) and ending 12 JUL 1988 (line 39) because wife death.
+	 > Individual Wendy Watson (@I3@ - line 33) has overlapping marriages
+		 * Family (@F2@ - line 235) marriage starts 26 MAR 1976 (line 241) and ends 13 NOV 2012 (line 243) because divorce
+		 * Family (@F4@ - line 251) marriage starts 4 SEP 1970 (line 256) and ends 12 JUL 1988 (line 39) because wife death
 ~~~~
 
 ### Anomaly US12: Parents Not Too Old ###

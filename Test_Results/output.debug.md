@@ -520,9 +520,13 @@
 ### Anomaly US11: No Bigamy ###
 ~~~~
 [passed]
-	 > Individual Jean Watson (@I13@ - line 113) is in Family (@F7@ - line 267) marriage starting 19 MAR 1990 (line 272) and ending 12 SEP 1989 (line 190) because husband death, and is in Family (@F8@ - line 273) marriage starting 12 OCT 1986 (line 278) and ending 17 NOV 1978 (line 280) because divorce.
+	 > Individual Jean Watson (@I13@ - line 113) has non-overlapping marriages
+		 * Family (@F7@ - line 267) marriage starts 19 MAR 1990 (line 272) and ends 12 SEP 1989 (line 190) because husband death
+		 * Family (@F8@ - line 273) marriage starts 12 OCT 1986 (line 278) and ends 17 NOV 1978 (line 280) because divorce
 [failed]
-	 > Individual Wendy Watson (@I3@ - line 33) is in Family (@F2@ - line 235) marriage starting 26 MAR 1976 (line 241) and ending 13 NOV 2012 (line 243) because divorce, and is in Family (@F4@ - line 251) marriage starting 4 SEP 1970 (line 256) and ending 12 JUL 1988 (line 39) because wife death.
+	 > Individual Wendy Watson (@I3@ - line 33) has overlapping marriages
+		 * Family (@F2@ - line 235) marriage starts 26 MAR 1976 (line 241) and ends 13 NOV 2012 (line 243) because divorce
+		 * Family (@F4@ - line 251) marriage starts 4 SEP 1970 (line 256) and ends 12 JUL 1988 (line 39) because wife death
 ~~~~
 
 ### Anomaly US12: Parents Not Too Old ###

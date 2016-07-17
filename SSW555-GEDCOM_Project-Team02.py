@@ -36,7 +36,8 @@ def run(gedcom_file, show_passed=False):
     debug_output.setLevel(logging.DEBUG)
     stories.logger.addHandler(debug_output)
 
-    return {
+
+    log = {
         "individuals": stories.individual_summary(gedcom_file),
         "families": stories.family_summary(gedcom_file),
         "stories": [
@@ -61,21 +62,29 @@ def run(gedcom_file, show_passed=False):
         ]
     }
 
+    # attempt to save log to json file
+    try:
+        fname_out = 'Test_Results/log.json'
+        with open(fname_out, 'w') as outfile:
+            json.dump(log, outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    except IOError as e:
+        sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
+
 
 if __name__ == "__main__":
     g = gedcom.File()
     # Request file name from user
     fname = raw_input('Enter the file name to open: ')
     #fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
+
     try:
         g.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
-    try:
-        fname_out = 'Test_Results/log.json'
-        with open(fname_out, 'w') as outfile:
-            json.dump(run(g, show_passed=False), outfile, sort_keys=True, indent=4, separators=(',', ': '))
-    except IOError as e:
-        sys.exit("Error Saving Results - {0}: '{1}'".format(e.strerror, e.filename))
-    else:
-        print "Successfully saved results to Test_Results/log.json"
+
+    run(g, show_passed=False)
+
+    print "Successfully saved output to {0}".format('Test_Results/output.md')
+    print "Successfully saved debug output to {0}".format('Test_Results/output.debug.md')
+    print "Successfully saved log to {0}".format('Test_Results/log.json')
+

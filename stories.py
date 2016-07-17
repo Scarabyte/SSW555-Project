@@ -731,14 +731,14 @@ def no_marriages_to_descendants(gedcom_file):
 
     passed_message = "Individual {0} is not married to any descendants".format
     failed_message = "Individual {0} is married to {1} of {2} descendants".format
-    bullet = "Married to {0} {1}".format
+    bullet = "Married to {0} {1} in {2}".format
     for indi in gedcom_file.individuals:
         out = {"individual": indi.story_dict,  "descendants_married_to": [], "bullets": []}
         for descendant in indi.descendants:
-            for spouse in indi.spouses:
+            for fam, spouse in indi.families_and_spouses:
                 if spouse == descendant:
                     out["descendants_married_to"].append((descendant.descendant_title, descendant.story_dict))
-                    out["bullets"].append(bullet(descendant.descendant_title, descendant))
+                    out["bullets"].append(bullet(descendant.descendant_title, descendant, fam))
         if len(out["descendants_married_to"]) == 0:
             out["message"] = passed_message(indi)
             r["passed"].append(out)
@@ -760,25 +760,26 @@ def siblings_should_not_marry(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    passed_msg = "Individual {0} is not married to any of {1} siblings".format
+    passed_msg = "Individual {0} is married to none of {1} siblings".format
     failed_msg = "Individual {0} is married to {1} of {2} siblings".format
-    bullet = "Married to sibling {0}".format
+    bullet = "Married to sibling {0}. Sibling in {1}, Married in {2}".format
     # Keep track of individuals checked just in case individual is a child in multiple families (ERROR)
     checked = []
     for fam in gedcom_file.families:
         for indi in (i for i in fam.children if (i not in checked)):
+            siblings = [s for s in fam.children if s.xref != indi.xref]
             checked.append(indi)
             out = {"individual": indi.story_dict, "siblings_married_to": [], "bullets": []}
-            for spouse in indi.spouses:
-                for sibling in (s for s in fam.children if s.xref != indi.xref):
+            for spouse_fam, spouse in indi.families_and_spouses:
+                for sibling in siblings:
                     if sibling == spouse:
                         out["siblings_married_to"].append(sibling.story_dict)
-                        out["bullets"].append(bullet(sibling))
+                        out["bullets"].append(bullet(sibling, fam, spouse_fam))
             if len(out["siblings_married_to"]) == 0:
-                out["message"] = passed_msg(indi, indi.pronoun)
+                out["message"] = passed_msg(indi, len(siblings))
                 r["passed"].append(out)
             else:
-                out["message"] = failed_msg(indi, len(out["siblings_married_to"]), indi.pronoun)
+                out["message"] = failed_msg(indi, len(out["siblings_married_to"]), len(siblings))
                 r["failed"].append(out)
     return r
 

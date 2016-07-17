@@ -279,6 +279,16 @@ class Individual(LineTool):
                 yield fam.wife
 
     @property
+    def families_and_spouses(self):
+        """
+        """
+        for fam in self.families("FAMS"):
+            if fam.has("husband") and fam.husband.xref != self.xref:
+                yield fam, fam.husband
+            if fam.has("wife") and fam.wife.xref != self.xref:
+                yield fam, fam.wife
+
+    @property
     @cachemethod
     def summary(self):
         """ Returns the summary for individual

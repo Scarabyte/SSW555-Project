@@ -9564,205 +9564,346 @@
             "id": "Anomaly US17",
             "name": "no_marriages_to_descendants",
             "output": {
-                "failed": [],
-                "passed": [
+                "failed": [
                     {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to grandchild Wendy Watson (@I3@ - line 33)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "grandchild",
+                                {
+                                    "line_number": 33,
+                                    "xref": "@I3@"
+                                }
+                            ]
+                        ],
                         "individual": {
                             "line_number": 15,
                             "xref": "@I1@"
                         },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) is married to 1 of 22 descendants"
                     },
                     {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to great-grandchild Wendy Watson (@I3@ - line 33)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 33,
+                                    "xref": "@I3@"
+                                }
+                            ]
+                        ],
                         "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
+                            "line_number": 24,
+                            "xref": "@I2@"
                         },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
+                        "message": "Individual David Burbidge (@I2@ - line 24) is married to 1 of 22 descendants"
                     },
                     {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to child Adam Burbidge (@I1@ - line 15)",
+                            "Married to grandchild Jerry Briand (@I10@ - line 86)",
+                            "Married to great-grandchild David Burbidge (@I2@ - line 24)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "child",
+                                {
+                                    "line_number": 15,
+                                    "xref": "@I1@"
+                                }
+                            ],
+                            [
+                                "grandchild",
+                                {
+                                    "line_number": 86,
+                                    "xref": "@I10@"
+                                }
+                            ],
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 24,
+                                    "xref": "@I2@"
+                                }
+                            ]
+                        ],
                         "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
+                            "line_number": 33,
+                            "xref": "@I3@"
                         },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
+                        "message": "Individual Wendy Watson (@I3@ - line 33) is married to 3 of 22 descendants"
                     },
                     {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to child James Dutton (@I7@ - line 65)",
+                            "Married to great-grandchild Adam Burbidge (@I1@ - line 15)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "child",
+                                {
+                                    "line_number": 65,
+                                    "xref": "@I7@"
+                                }
+                            ],
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 15,
+                                    "xref": "@I1@"
+                                }
+                            ]
+                        ],
                         "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
+                            "line_number": 44,
+                            "xref": "@I4@"
                         },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
+                        "message": "Individual Keisha Morris (@I4@ - line 44) is married to 2 of 22 descendants"
                     },
                     {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 15,
-                            "xref": "@I1@"
-                        },
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to great-grandchild Elizabeth Watson (@I12@ - line 104)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 104,
+                                    "xref": "@I12@"
+                                }
+                            ]
+                        ],
                         "individual": {
                             "line_number": 95,
                             "xref": "@I11@"
                         },
-                        "message": "Individual Cyril Watson (@I11@ - line 95) is not married to any of his children"
+                        "message": "Individual Cyril Watson (@I11@ - line 95) is married to 1 of 22 descendants"
                     },
                     {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to great-grandchild Cyril Watson (@I11@ - line 95)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 95,
+                                    "xref": "@I11@"
+                                }
+                            ]
+                        ],
                         "individual": {
-                            "line_number": 113,
-                            "xref": "@I13@"
+                            "line_number": 104,
+                            "xref": "@I12@"
                         },
-                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her children"
+                        "message": "Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of 22 descendants"
                     },
                     {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 113,
-                            "xref": "@I13@"
-                        },
-                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any of her children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
-                        "individual": {
-                            "line_number": 124,
-                            "xref": "@I14@"
-                        },
-                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any of his children"
-                    },
-                    {
-                        "bullets": [],
-                        "children_married_to": [],
+                        "bullets": [
+                            "Married to great-grandchild Claire Burbidge (@I16@ - line 141)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 141,
+                                    "xref": "@I16@"
+                                }
+                            ]
+                        ],
                         "individual": {
                             "line_number": 132,
                             "xref": "@I15@"
                         },
-                        "message": "Individual Andrew Burbidge (@I15@ - line 132) is not married to any of his children"
+                        "message": "Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of 22 descendants"
+                    },
+                    {
+                        "bullets": [
+                            "Married to great-grandchild Andrew Burbidge (@I15@ - line 132)"
+                        ],
+                        "descendants_married_to": [
+                            [
+                                "great-grandchild",
+                                {
+                                    "line_number": 132,
+                                    "xref": "@I15@"
+                                }
+                            ]
+                        ],
+                        "individual": {
+                            "line_number": 141,
+                            "xref": "@I16@"
+                        },
+                        "message": "Individual Claire Burbidge (@I16@ - line 141) is married to 1 of 22 descendants"
+                    }
+                ],
+                "passed": [
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 51,
+                            "xref": "@I5@"
+                        },
+                        "message": "Individual Angelica Burbidge (@I5@ - line 51) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 59,
+                            "xref": "@I6@"
+                        },
+                        "message": "Individual Phoebe Burbidge (@I6@ - line 59) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 65,
+                            "xref": "@I7@"
+                        },
+                        "message": "Individual James Dutton (@I7@ - line 65) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 72,
+                            "xref": "@I8@"
+                        },
+                        "message": "Individual Peter Dutton (@I8@ - line 72) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 79,
+                            "xref": "@I9@"
+                        },
+                        "message": "Individual Louise Burbidge (@I9@ - line 79) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 86,
+                            "xref": "@I10@"
+                        },
+                        "message": "Individual Jerry Briand (@I10@ - line 86) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 113,
+                            "xref": "@I13@"
+                        },
+                        "message": "Individual Jean Watson (@I13@ - line 113) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 124,
+                            "xref": "@I14@"
+                        },
+                        "message": "Individual Martin Watson (@I14@ - line 124) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 148,
+                            "xref": "@I17@"
+                        },
+                        "message": "Individual Stanley Burbidge (@I17@ - line 148) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 156,
+                            "xref": "@I18@"
+                        },
+                        "message": "Individual Sally Burbidge (@I18@ - line 156) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 163,
+                            "xref": "@I19@"
+                        },
+                        "message": "Individual Heather Burbidge (@I19@ - line 163) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 171,
+                            "xref": "@I20@"
+                        },
+                        "message": "Individual Linda Briand (@I20@ - line 171) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 178,
+                            "xref": "@I21@"
+                        },
+                        "message": "Individual Jack Cunningham (@I21@ - line 178) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 184,
+                            "xref": "@I22@"
+                        },
+                        "message": "Individual Brian Mayer (@I22@ - line 184) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 192,
+                            "xref": "@I23@"
+                        },
+                        "message": "Individual Lucy Cunningham (@I23@ - line 192) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 198,
+                            "xref": "@I24@"
+                        },
+                        "message": "Individual Helen Trotter (@I24@ - line 198) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 204,
+                            "xref": "@I25@"
+                        },
+                        "message": "Individual Matthew Watson (@I25@ - line 204) is not married to any descendants"
+                    },
+                    {
+                        "bullets": [],
+                        "descendants_married_to": [],
+                        "individual": {
+                            "line_number": 210,
+                            "xref": "@I26@"
+                        },
+                        "message": "Individual Susan Cunningham (@I26@ - line 210) is not married to any descendants"
                     }
                 ]
             }

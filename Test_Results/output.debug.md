@@ -1088,3 +1088,80 @@
 	 > Family (@F1@ - line 216) with father Adam Burbidge (@I1@ - line 15) and son Cyril Watson (@I11@ - line 95) do not have the same surname
 	 > Family (@F1@ - line 216) with father Adam Burbidge (@I1@ - line 15) and son Martin Watson (@I14@ - line 124) do not have the same surname
 ~~~~
+
+### Anomaly US17: No Marriages To Descendants ###
+~~~~
+[passed]
+	 > Individual Angelica Burbidge (@I5@ - line 51) is not married to any descendants
+	 > Individual Phoebe Burbidge (@I6@ - line 59) is not married to any descendants
+	 > Individual James Dutton (@I7@ - line 65) is not married to any descendants
+	 > Individual Peter Dutton (@I8@ - line 72) is not married to any descendants
+	 > Individual Louise Burbidge (@I9@ - line 79) is not married to any descendants
+	 > Individual Jerry Briand (@I10@ - line 86) is not married to any descendants
+	 > Individual Jean Watson (@I13@ - line 113) is not married to any descendants
+	 > Individual Martin Watson (@I14@ - line 124) is not married to any descendants
+	 > Individual Stanley Burbidge (@I17@ - line 148) is not married to any descendants
+	 > Individual Sally Burbidge (@I18@ - line 156) is not married to any descendants
+	 > Individual Heather Burbidge (@I19@ - line 163) is not married to any descendants
+	 > Individual Linda Briand (@I20@ - line 171) is not married to any descendants
+	 > Individual Jack Cunningham (@I21@ - line 178) is not married to any descendants
+	 > Individual Brian Mayer (@I22@ - line 184) is not married to any descendants
+	 > Individual Lucy Cunningham (@I23@ - line 192) is not married to any descendants
+	 > Individual Helen Trotter (@I24@ - line 198) is not married to any descendants
+	 > Individual Matthew Watson (@I25@ - line 204) is not married to any descendants
+	 > Individual Susan Cunningham (@I26@ - line 210) is not married to any descendants
+[failed]
+	 > Individual Adam Burbidge (@I1@ - line 15) is married to 1 of 22 descendants
+		 * Married to grandchild Wendy Watson (@I3@ - line 33)
+	 > Individual David Burbidge (@I2@ - line 24) is married to 1 of 22 descendants
+		 * Married to great-grandchild Wendy Watson (@I3@ - line 33)
+	 > Individual Wendy Watson (@I3@ - line 33) is married to 3 of 22 descendants
+		 * Married to child Adam Burbidge (@I1@ - line 15)
+		 * Married to grandchild Jerry Briand (@I10@ - line 86)
+		 * Married to great-grandchild David Burbidge (@I2@ - line 24)
+	 > Individual Keisha Morris (@I4@ - line 44) is married to 2 of 22 descendants
+		 * Married to child James Dutton (@I7@ - line 65)
+		 * Married to great-grandchild Adam Burbidge (@I1@ - line 15)
+	 > Individual Cyril Watson (@I11@ - line 95) is married to 1 of 22 descendants
+		 * Married to great-grandchild Elizabeth Watson (@I12@ - line 104)
+	 > Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of 22 descendants
+		 * Married to great-grandchild Cyril Watson (@I11@ - line 95)
+	 > Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of 22 descendants
+		 * Married to great-grandchild Claire Burbidge (@I16@ - line 141)
+	 > Individual Claire Burbidge (@I16@ - line 141) is married to 1 of 22 descendants
+		 * Married to great-grandchild Andrew Burbidge (@I15@ - line 132)
+~~~~
+
+### Anomaly US18: Siblings Should Not Marry ###
+~~~~
+[passed]
+	 > Individual Angelica Burbidge (@I5@ - line 51) is not married to any of her siblings
+	 > Individual Phoebe Burbidge (@I6@ - line 59) is not married to any of her siblings
+	 > Individual James Dutton (@I7@ - line 65) is not married to any of his siblings
+	 > Individual Peter Dutton (@I8@ - line 72) is not married to any of his siblings
+	 > Individual Louise Burbidge (@I9@ - line 79) is not married to any of her siblings
+	 > Individual Jerry Briand (@I10@ - line 86) is not married to any of his siblings
+	 > Individual Jean Watson (@I13@ - line 113) is not married to any of her siblings
+	 > Individual Martin Watson (@I14@ - line 124) is not married to any of his siblings
+	 > Individual Sally Burbidge (@I18@ - line 156) is not married to any of her siblings
+	 > Individual Linda Briand (@I20@ - line 171) is not married to any of her siblings
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his siblings
+	 > Individual David Burbidge (@I2@ - line 24) is not married to any of his siblings
+	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her siblings
+	 > Individual Susan Cunningham (@I26@ - line 210) is not married to any of her siblings
+	 > Individual Lucy Cunningham (@I23@ - line 192) is not married to any of her siblings
+	 > Individual Matthew Watson (@I25@ - line 204) is not married to any of his siblings
+[failed]
+	 > Individual Cyril Watson (@I11@ - line 95) is married to 1 of his siblings
+		 * Married to sibling Elizabeth Watson (@I12@ - line 104)
+	 > Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of her siblings
+		 * Married to sibling Cyril Watson (@I11@ - line 95)
+	 > Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of his siblings
+		 * Married to sibling Claire Burbidge (@I16@ - line 141)
+	 > Individual Claire Burbidge (@I16@ - line 141) is married to 1 of her siblings
+		 * Married to sibling Andrew Burbidge (@I15@ - line 132)
+	 > Individual Stanley Burbidge (@I17@ - line 148) is married to 1 of his siblings
+		 * Married to sibling Heather Burbidge (@I19@ - line 163)
+	 > Individual Heather Burbidge (@I19@ - line 163) is married to 1 of her siblings
+		 * Married to sibling Stanley Burbidge (@I17@ - line 148)
+~~~~

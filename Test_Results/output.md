@@ -447,3 +447,44 @@
 	 > Family (@F1@ - line 216) with father Adam Burbidge (@I1@ - line 15) and son Cyril Watson (@I11@ - line 95) do not have the same surname
 	 > Family (@F1@ - line 216) with father Adam Burbidge (@I1@ - line 15) and son Martin Watson (@I14@ - line 124) do not have the same surname
 ~~~~
+
+### Anomaly US17: No Marriages To Descendants ###
+~~~~
+[failed]
+	 > Individual Adam Burbidge (@I1@ - line 15) is married to 1 of 22 descendants
+		 * Married to grandchild Wendy Watson (@I3@ - line 33)
+	 > Individual David Burbidge (@I2@ - line 24) is married to 1 of 22 descendants
+		 * Married to great-grandchild Wendy Watson (@I3@ - line 33)
+	 > Individual Wendy Watson (@I3@ - line 33) is married to 3 of 22 descendants
+		 * Married to child Adam Burbidge (@I1@ - line 15)
+		 * Married to grandchild Jerry Briand (@I10@ - line 86)
+		 * Married to great-grandchild David Burbidge (@I2@ - line 24)
+	 > Individual Keisha Morris (@I4@ - line 44) is married to 2 of 22 descendants
+		 * Married to child James Dutton (@I7@ - line 65)
+		 * Married to great-grandchild Adam Burbidge (@I1@ - line 15)
+	 > Individual Cyril Watson (@I11@ - line 95) is married to 1 of 22 descendants
+		 * Married to great-grandchild Elizabeth Watson (@I12@ - line 104)
+	 > Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of 22 descendants
+		 * Married to great-grandchild Cyril Watson (@I11@ - line 95)
+	 > Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of 22 descendants
+		 * Married to great-grandchild Claire Burbidge (@I16@ - line 141)
+	 > Individual Claire Burbidge (@I16@ - line 141) is married to 1 of 22 descendants
+		 * Married to great-grandchild Andrew Burbidge (@I15@ - line 132)
+~~~~
+
+### Anomaly US18: Siblings Should Not Marry ###
+~~~~
+[failed]
+	 > Individual Cyril Watson (@I11@ - line 95) is married to 1 of his siblings
+		 * Married to sibling Elizabeth Watson (@I12@ - line 104)
+	 > Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of her siblings
+		 * Married to sibling Cyril Watson (@I11@ - line 95)
+	 > Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of his siblings
+		 * Married to sibling Claire Burbidge (@I16@ - line 141)
+	 > Individual Claire Burbidge (@I16@ - line 141) is married to 1 of her siblings
+		 * Married to sibling Andrew Burbidge (@I15@ - line 132)
+	 > Individual Stanley Burbidge (@I17@ - line 148) is married to 1 of his siblings
+		 * Married to sibling Heather Burbidge (@I19@ - line 163)
+	 > Individual Heather Burbidge (@I19@ - line 163) is married to 1 of her siblings
+		 * Married to sibling Stanley Burbidge (@I17@ - line 148)
+~~~~

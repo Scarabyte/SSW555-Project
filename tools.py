@@ -12,6 +12,15 @@ NOW_STRING = NOW.strftime("%d %b %Y").upper()
 # TODO: Move LineTools to gedcom.py?
 
 
+
+
+
+
+
+
+
+
+
 def human_sort(s, _re=re.compile('([0-9]+)')):
     """
     key for natural sorting
@@ -278,6 +287,27 @@ class Individual(LineTool):
                            "name": self.name.story_dict if self.has("name") else None,
                            "sex": self.sex.story_dict if self.has("sex") else None,
                            "birth_date": self.birth_date.story_dict if self.has("birth_date") else None}
+
+    @property
+    @cachemethod
+    def children(self):
+        return [c for f in self.families("FAMS") for c in f.children]
+
+    @property
+    @cachemethod
+    def descendants(self):
+
+        def get_d(individuals=[], level=1):
+            get_c = lambda indis, level: [(level, c) for indi in indis for c in indi.children]
+            l = get_c(individuals, level)
+            if len(l) > 0:
+                return l + get_d(map(lambda x: x[1], l), level + 1)
+            else:
+                return l
+
+        title = lambda i: "child" if i == 1 else "grandchild" if i == 2 else (i-2)*"great-"+"grandchild"
+        return map(lambda x: (title(x[0]), x[1]), get_d([self]))
+
 
 
 class Family(LineTool):

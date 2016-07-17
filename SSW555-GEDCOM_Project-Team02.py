@@ -30,40 +30,40 @@ def run(gedcom_file, show_passed=False):
         "individuals": stories.individual_summary(gedcom_file),
         "families": stories.family_summary(gedcom_file),
         "stories": [
-            {
-                "sprint_number": 1,
-                "results": [stories.dates_before_current_date(gedcom_file),
-                            stories.birth_before_marriage(gedcom_file),
-                            stories.birth_before_death(gedcom_file),
-                            stories.marriage_before_divorce(gedcom_file),
-                            stories.marriage_before_death(gedcom_file),
-                            stories.divorce_before_death(gedcom_file)]
-            },
-            {
-                "sprint_number": 2,
-                "results": [stories.less_then_150_years_old(gedcom_file),
-                            stories.birth_before_marriage_of_parents(gedcom_file),
-                            stories.birth_before_death_of_parents(gedcom_file),
-                            stories.marriage_after_14(gedcom_file),
-                            stories.no_bigamy(gedcom_file),
-                            stories.parents_not_too_old(gedcom_file)]
-            },
-            {
-                "sprint_number": 3,
-                "results": [stories.siblings_spacing(gedcom_file),
-                            stories.less_than_5_multiple_births(gedcom_file),
-                            stories.fewer_than_15_siblings(gedcom_file),
-                            stories.male_last_names(gedcom_file),
-                            stories.no_marriages_to_descendants(gedcom_file),
-                            stories.siblings_should_not_marry(gedcom_file)]
-            }
-
+            stories.dates_before_current_date(gedcom_file),
+            stories.birth_before_marriage(gedcom_file),
+            stories.birth_before_death(gedcom_file),
+            stories.marriage_before_divorce(gedcom_file),
+            stories.marriage_before_death(gedcom_file),
+            stories.divorce_before_death(gedcom_file),
+            stories.less_then_150_years_old(gedcom_file),
+            stories.birth_before_marriage_of_parents(gedcom_file),
+            stories.birth_before_death_of_parents(gedcom_file),
+            stories.marriage_after_14(gedcom_file),
+            stories.no_bigamy(gedcom_file),
+            stories.parents_not_too_old(gedcom_file),
+            stories.siblings_spacing(gedcom_file),
+            stories.less_than_5_multiple_births(gedcom_file),
+            stories.fewer_than_15_siblings(gedcom_file),
+            stories.male_last_names(gedcom_file),
+            stories.no_marriages_to_descendants(gedcom_file),
+            stories.siblings_should_not_marry(gedcom_file)
         ]
     }
 
 
 if __name__ == "__main__":
-    # Uncomment to show passed cases aswell
+
+    # Log to files
+    user_output = logging.FileHandler(filename='Test_Results/output.md', mode="w")
+    user_output.setLevel(logging.INFO)
+    debug_output = logging.FileHandler(filename='Test_Results/output.debug.md', mode="w")
+    debug_output.setLevel(logging.DEBUG)
+
+    stories.console_output.addHandler(user_output)
+    stories.console_output.addHandler(debug_output)
+
+
 
     g = gedcom.File()
 

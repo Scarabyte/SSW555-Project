@@ -24,13 +24,6 @@ LOG_BULLET_ALT = '\t\t * {0}: {1}'
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 console_output = logging.getLogger(__name__)
 
-user_output = logging.FileHandler(filename='Test_Results/output.md', mode="w")
-user_output.setLevel(logging.INFO)
-debug_output = logging.FileHandler(filename='Test_Results/output.debug.md', mode="w")
-debug_output.setLevel(logging.DEBUG)
-
-console_output.addHandler(user_output)
-console_output.addHandler(debug_output)
 
 def individual_summary(gedcom_file):
     # TODO: Write Docstring
@@ -70,7 +63,7 @@ def family_summary(gedcom_file):
         console_output.info(LOG_BULLET_ALT.format("Husband", fam.husband))
         console_output.info(LOG_BULLET_ALT.format("Wife", fam.wife))
         for i, child in enumerate(fam.children):
-            console_output.info(LOG_BULLET_ALT.format("Child {0}".format(i+1), child))
+            console_output.info(LOG_BULLET_ALT.format("Child {0}".format(i + 1), child))
     return r
 
 def story(id_):

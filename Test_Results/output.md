@@ -26,7 +26,7 @@
 	 > Keisha Morris (@I4@ - line 44)
 		 * Gender: Female (line 46)
 		 * Birth date: 18 JUL 1992 (line 48)
-		 * Current age: 24.01
+		 * Current age: 24.02
 		 * Spouses: Adam Burbidge (@I1@ - line 15), James Dutton (@I7@ - line 65)
 		 * Spouse in: Family (@F1@ - line 216), Family (@F6@ - line 263)
 	 > Angelica Burbidge (@I5@ - line 51)
@@ -50,12 +50,12 @@
 	 > Peter Dutton (@I8@ - line 72)
 		 * Gender: Male (line 74)
 		 * Birth date: 4 OCT 2003 (line 76)
-		 * Current age: 12.79
+		 * Current age: 12.8
 		 * Child in: Family (@F6@ - line 263), Family (@F1@ - line 216)
 	 > Louise Burbidge (@I9@ - line 79)
 		 * Gender: Female (line 81)
 		 * Birth date: 15 OCT 1975 (line 83)
-		 * Current age: 40.78
+		 * Current age: 40.79
 		 * Child in: Family (@F2@ - line 235), Family (@F1@ - line 216)
 	 > Jerry Briand (@I10@ - line 86)
 		 * Gender: Male (line 88)
@@ -151,12 +151,12 @@
 	 > Lucy Cunningham (@I23@ - line 192)
 		 * Gender: Female (line 194)
 		 * Birth date: 7 JUL 1977 (line 196)
-		 * Current age: 39.05
+		 * Current age: 39.06
 		 * Child in: Family (@F8@ - line 273)
 	 > Helen Trotter (@I24@ - line 198)
 		 * Gender: Female (line 200)
 		 * Birth date: 2 MAY 1993 (line 202)
-		 * Current age: 23.22
+		 * Current age: 23.23
 		 * Spouses: Martin Watson (@I14@ - line 124)
 		 * Spouse in: Family (@F9@ - line 281)
 	 > Matthew Watson (@I25@ - line 204)
@@ -277,7 +277,7 @@
 ~~~~
 [failed]
 	 > Individual Angelica Burbidge (@I5@ - line 51) was born 23 AUG 1855 (line 55) and died 150.8 years later on 4 MAY 2006 (line 57)
-	 > Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.01 years old as of 16 JUL 2016 (current date)
+	 > Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.01 years old as of 17 JUL 2016 (current date)
 ~~~~
 
 ### Anomaly US08: Birth Before Marriage Of Parents ###

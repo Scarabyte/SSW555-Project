@@ -1510,7 +1510,7 @@
                 "passed": [
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 17 JUN 1945 (line 19)"
                         ],
                         "dates": [
@@ -1522,14 +1522,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Adam Burbidge (@I1@ - line 15) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 10 FEB 1980 (line 28)"
                         ],
                         "dates": [
@@ -1541,14 +1541,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual David Burbidge (@I2@ - line 24) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 24 AUG 1994 (line 30)"
                         ],
                         "dates": [
@@ -1560,14 +1560,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual David Burbidge (@I2@ - line 24) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 24 NOV 1848 (line 37)"
                         ],
                         "dates": [
@@ -1579,14 +1579,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Wendy Watson (@I3@ - line 33) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 12 JUL 1988 (line 39)"
                         ],
                         "dates": [
@@ -1598,14 +1598,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Wendy Watson (@I3@ - line 33) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 18 JUL 1992 (line 48)"
                         ],
                         "dates": [
@@ -1617,14 +1617,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Keisha Morris (@I4@ - line 44) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 23 AUG 1855 (line 55)"
                         ],
                         "dates": [
@@ -1636,14 +1636,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Angelica Burbidge (@I5@ - line 51) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 4 MAY 2006 (line 57)"
                         ],
                         "dates": [
@@ -1655,14 +1655,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Angelica Burbidge (@I5@ - line 51) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 24 AUG 1855 (line 63)"
                         ],
                         "dates": [
@@ -1674,14 +1674,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Phoebe Burbidge (@I6@ - line 59) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 26 MAR 1979 (line 69)"
                         ],
                         "dates": [
@@ -1693,14 +1693,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual James Dutton (@I7@ - line 65) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 4 OCT 2003 (line 76)"
                         ],
                         "dates": [
@@ -1712,14 +1712,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Peter Dutton (@I8@ - line 72) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 15 OCT 1975 (line 83)"
                         ],
                         "dates": [
@@ -1731,14 +1731,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Louise Burbidge (@I9@ - line 79) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 24 JAN 1973 (line 90)"
                         ],
                         "dates": [
@@ -1750,14 +1750,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Jerry Briand (@I10@ - line 86) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 16 MAY 2016 (line 92)"
                         ],
                         "dates": [
@@ -1769,14 +1769,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Jerry Briand (@I10@ - line 86) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 27 MAR 1920 (line 99)"
                         ],
                         "dates": [
@@ -1788,14 +1788,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Cyril Watson (@I11@ - line 95) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 27 FEB 2002 (line 101)"
                         ],
                         "dates": [
@@ -1807,14 +1807,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Cyril Watson (@I11@ - line 95) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 108)"
                         ],
                         "dates": [
@@ -1826,14 +1826,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Elizabeth Watson (@I12@ - line 104) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 4 APR 1997 (line 110)"
                         ],
                         "dates": [
@@ -1845,14 +1845,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Elizabeth Watson (@I12@ - line 104) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 117)"
                         ],
                         "dates": [
@@ -1864,14 +1864,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Jean Watson (@I13@ - line 113) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 10 AUG 1994 (line 119)"
                         ],
                         "dates": [
@@ -1883,14 +1883,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Jean Watson (@I13@ - line 113) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 128)"
                         ],
                         "dates": [
@@ -1902,14 +1902,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Martin Watson (@I14@ - line 124) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 136)"
                         ],
                         "dates": [
@@ -1921,14 +1921,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Andrew Burbidge (@I15@ - line 132) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 10 OCT 1995 (line 138)"
                         ],
                         "dates": [
@@ -1940,14 +1940,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Andrew Burbidge (@I15@ - line 132) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 145)"
                         ],
                         "dates": [
@@ -1959,14 +1959,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Claire Burbidge (@I16@ - line 141) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 152)"
                         ],
                         "dates": [
@@ -1978,14 +1978,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Stanley Burbidge (@I17@ - line 148) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 27 OCT 1960 (line 160)"
                         ],
                         "dates": [
@@ -1997,14 +1997,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Sally Burbidge (@I18@ - line 156) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 7 JAN 1961 (line 167)"
                         ],
                         "dates": [
@@ -2016,14 +2016,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Heather Burbidge (@I19@ - line 163) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 24 JUL 1972 (line 175)"
                         ],
                         "dates": [
@@ -2035,14 +2035,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Linda Briand (@I20@ - line 171) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 1 AUG 1990 (line 182)"
                         ],
                         "dates": [
@@ -2054,14 +2054,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Jack Cunningham (@I21@ - line 178) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 5 JUN 1957 (line 188)"
                         ],
                         "dates": [
@@ -2073,14 +2073,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Brian Mayer (@I22@ - line 184) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Death date is 12 SEP 1989 (line 190)"
                         ],
                         "dates": [
@@ -2092,14 +2092,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Brian Mayer (@I22@ - line 184) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 7 JUL 1977 (line 196)"
                         ],
                         "dates": [
@@ -2111,14 +2111,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Lucy Cunningham (@I23@ - line 192) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 2 MAY 1993 (line 202)"
                         ],
                         "dates": [
@@ -2130,14 +2130,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Helen Trotter (@I24@ - line 198) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 4 AUG 1975 (line 208)"
                         ],
                         "dates": [
@@ -2149,14 +2149,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Matthew Watson (@I25@ - line 204) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Birth date is 9 SEP 1991 (line 214)"
                         ],
                         "dates": [
@@ -2168,14 +2168,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Individual Susan Cunningham (@I26@ - line 210) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Marriage date is 26 MAR 1976 (line 241)"
                         ],
                         "dates": [
@@ -2187,14 +2187,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F2@ - line 235) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Divorce date is 13 NOV 2012 (line 243)"
                         ],
                         "dates": [
@@ -2206,14 +2206,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F2@ - line 235) has a divorce date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Marriage date is 4 SEP 1970 (line 256)"
                         ],
                         "dates": [
@@ -2225,14 +2225,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F4@ - line 251) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Marriage date is 19 MAR 1990 (line 272)"
                         ],
                         "dates": [
@@ -2244,14 +2244,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F7@ - line 267) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Marriage date is 12 OCT 1986 (line 278)"
                         ],
                         "dates": [
@@ -2263,14 +2263,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F8@ - line 273) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Divorce date is 17 NOV 1978 (line 280)"
                         ],
                         "dates": [
@@ -2282,14 +2282,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F8@ - line 273) has a divorce date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 16 JUL 2016 (date script ran)",
+                            "Current Date is 17 JUL 2016 (date script ran)",
                             "Marriage date is 1 MAY 1973 (line 286)"
                         ],
                         "dates": [
@@ -2301,7 +2301,7 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "16 JUL 2016"
+                                "value": "17 JUL 2016"
                             }
                         ],
                         "message": "Family (@F9@ - line 281) has a marriage date before the current date"
@@ -2787,8 +2787,8 @@
                             "line_value": "24 AUG 1855"
                         },
                         "current_age": 161.01,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.01 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.01 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I6@"
                     }
                 ],
@@ -2799,8 +2799,8 @@
                             "line_value": "17 JUN 1945"
                         },
                         "current_age": 71.13,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) was born 17 JUN 1945 (line 19) and is 71.13 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) was born 17 JUN 1945 (line 19) and is 71.13 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I1@"
                     },
                     {
@@ -2834,9 +2834,9 @@
                             "line_number": 48,
                             "line_value": "18 JUL 1992"
                         },
-                        "current_age": 24.01,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Keisha Morris (@I4@ - line 44) was born 18 JUL 1992 (line 48) and is 24.01 years old as of 16 JUL 2016 (current date)",
+                        "current_age": 24.02,
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Keisha Morris (@I4@ - line 44) was born 18 JUL 1992 (line 48) and is 24.02 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I4@"
                     },
                     {
@@ -2845,8 +2845,8 @@
                             "line_value": "26 MAR 1979"
                         },
                         "current_age": 37.34,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual James Dutton (@I7@ - line 65) was born 26 MAR 1979 (line 69) and is 37.34 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual James Dutton (@I7@ - line 65) was born 26 MAR 1979 (line 69) and is 37.34 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I7@"
                     },
                     {
@@ -2854,9 +2854,9 @@
                             "line_number": 76,
                             "line_value": "4 OCT 2003"
                         },
-                        "current_age": 12.79,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Peter Dutton (@I8@ - line 72) was born 4 OCT 2003 (line 76) and is 12.79 years old as of 16 JUL 2016 (current date)",
+                        "current_age": 12.8,
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Peter Dutton (@I8@ - line 72) was born 4 OCT 2003 (line 76) and is 12.8 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I8@"
                     },
                     {
@@ -2864,9 +2864,9 @@
                             "line_number": 83,
                             "line_value": "15 OCT 1975"
                         },
-                        "current_age": 40.78,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Louise Burbidge (@I9@ - line 79) was born 15 OCT 1975 (line 83) and is 40.78 years old as of 16 JUL 2016 (current date)",
+                        "current_age": 40.79,
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Louise Burbidge (@I9@ - line 79) was born 15 OCT 1975 (line 83) and is 40.79 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I9@"
                     },
                     {
@@ -2927,8 +2927,8 @@
                             "line_value": "30 OCT 1960"
                         },
                         "current_age": 55.75,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Martin Watson (@I14@ - line 124) was born 30 OCT 1960 (line 128) and is 55.75 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Martin Watson (@I14@ - line 124) was born 30 OCT 1960 (line 128) and is 55.75 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I14@"
                     },
                     {
@@ -2950,8 +2950,8 @@
                             "line_value": "30 OCT 1960"
                         },
                         "current_age": 55.75,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Claire Burbidge (@I16@ - line 141) was born 30 OCT 1960 (line 145) and is 55.75 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Claire Burbidge (@I16@ - line 141) was born 30 OCT 1960 (line 145) and is 55.75 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I16@"
                     },
                     {
@@ -2960,8 +2960,8 @@
                             "line_value": "30 OCT 1960"
                         },
                         "current_age": 55.75,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Stanley Burbidge (@I17@ - line 148) was born 30 OCT 1960 (line 152) and is 55.75 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Stanley Burbidge (@I17@ - line 148) was born 30 OCT 1960 (line 152) and is 55.75 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I17@"
                     },
                     {
@@ -2970,8 +2970,8 @@
                             "line_value": "27 OCT 1960"
                         },
                         "current_age": 55.76,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Sally Burbidge (@I18@ - line 156) was born 27 OCT 1960 (line 160) and is 55.76 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Sally Burbidge (@I18@ - line 156) was born 27 OCT 1960 (line 160) and is 55.76 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I18@"
                     },
                     {
@@ -2980,8 +2980,8 @@
                             "line_value": "7 JAN 1961"
                         },
                         "current_age": 55.56,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Heather Burbidge (@I19@ - line 163) was born 7 JAN 1961 (line 167) and is 55.56 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Heather Burbidge (@I19@ - line 163) was born 7 JAN 1961 (line 167) and is 55.56 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I19@"
                     },
                     {
@@ -2990,8 +2990,8 @@
                             "line_value": "24 JUL 1972"
                         },
                         "current_age": 44.01,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Linda Briand (@I20@ - line 171) was born 24 JUL 1972 (line 175) and is 44.01 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Linda Briand (@I20@ - line 171) was born 24 JUL 1972 (line 175) and is 44.01 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I20@"
                     },
                     {
@@ -3000,8 +3000,8 @@
                             "line_value": "1 AUG 1990"
                         },
                         "current_age": 25.98,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Jack Cunningham (@I21@ - line 178) was born 1 AUG 1990 (line 182) and is 25.98 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Jack Cunningham (@I21@ - line 178) was born 1 AUG 1990 (line 182) and is 25.98 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I21@"
                     },
                     {
@@ -3022,9 +3022,9 @@
                             "line_number": 196,
                             "line_value": "7 JUL 1977"
                         },
-                        "current_age": 39.05,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Lucy Cunningham (@I23@ - line 192) was born 7 JUL 1977 (line 196) and is 39.05 years old as of 16 JUL 2016 (current date)",
+                        "current_age": 39.06,
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Lucy Cunningham (@I23@ - line 192) was born 7 JUL 1977 (line 196) and is 39.06 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I23@"
                     },
                     {
@@ -3032,9 +3032,9 @@
                             "line_number": 202,
                             "line_value": "2 MAY 1993"
                         },
-                        "current_age": 23.22,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Helen Trotter (@I24@ - line 198) was born 2 MAY 1993 (line 202) and is 23.22 years old as of 16 JUL 2016 (current date)",
+                        "current_age": 23.23,
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Helen Trotter (@I24@ - line 198) was born 2 MAY 1993 (line 202) and is 23.23 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I24@"
                     },
                     {
@@ -3043,8 +3043,8 @@
                             "line_value": "4 AUG 1975"
                         },
                         "current_age": 40.98,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Matthew Watson (@I25@ - line 204) was born 4 AUG 1975 (line 208) and is 40.98 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Matthew Watson (@I25@ - line 204) was born 4 AUG 1975 (line 208) and is 40.98 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I25@"
                     },
                     {
@@ -3053,8 +3053,8 @@
                             "line_value": "9 SEP 1991"
                         },
                         "current_age": 24.87,
-                        "current_date": "16 JUL 2016",
-                        "message": "Individual Susan Cunningham (@I26@ - line 210) was born 9 SEP 1991 (line 214) and is 24.87 years old as of 16 JUL 2016 (current date)",
+                        "current_date": "17 JUL 2016",
+                        "message": "Individual Susan Cunningham (@I26@ - line 210) was born 9 SEP 1991 (line 214) and is 24.87 years old as of 17 JUL 2016 (current date)",
                         "xref": "@I26@"
                     }
                 ]

@@ -447,25 +447,3 @@
 	 > Family (@F1@ - line 216) with father Adam Burbidge (@I1@ - line 15) and son Cyril Watson (@I11@ - line 95) do not have the same surname
 	 > Family (@F1@ - line 216) with father Adam Burbidge (@I1@ - line 15) and son Martin Watson (@I14@ - line 124) do not have the same surname
 ~~~~
-
-### Anomaly US17: No Marriages To Descendants ###
-~~~~
-[failed]
-~~~~
-
-### Anomaly US18: Siblings Should Not Marry ###
-~~~~
-[failed]
-	 > Individual Cyril Watson (@I11@ - line 95) is married to 1 of his siblings
-		 * Married to sibling Elizabeth Watson (@I12@ - line 104)
-	 > Individual Elizabeth Watson (@I12@ - line 104) is married to 1 of her siblings
-		 * Married to sibling Cyril Watson (@I11@ - line 95)
-	 > Individual Andrew Burbidge (@I15@ - line 132) is married to 1 of his siblings
-		 * Married to sibling Claire Burbidge (@I16@ - line 141)
-	 > Individual Claire Burbidge (@I16@ - line 141) is married to 1 of her siblings
-		 * Married to sibling Andrew Burbidge (@I15@ - line 132)
-	 > Individual Stanley Burbidge (@I17@ - line 148) is married to 1 of his siblings
-		 * Married to sibling Heather Burbidge (@I19@ - line 163)
-	 > Individual Heather Burbidge (@I19@ - line 163) is married to 1 of her siblings
-		 * Married to sibling Stanley Burbidge (@I17@ - line 148)
-~~~~

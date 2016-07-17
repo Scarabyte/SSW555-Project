@@ -734,11 +734,11 @@ def no_marriages_to_descendants(gedcom_file):
     bullet = "Married to {0} {1}".format
     for indi in gedcom_file.individuals:
         out = {"individual": indi.story_dict,  "descendants_married_to": [], "bullets": []}
-        for spouse in indi.spouses:
-            for title, descendant in indi.descendants:
-                if spouse.xref == descendant.xref:
-                    out["descendants_married_to"].append((title, descendant.story_dict))
-                    out["bullets"].append(bullet(title, descendant))
+        for descendant in indi.descendants:
+            for spouse in indi.spouses:
+                if spouse == descendant:
+                    out["descendants_married_to"].append((descendant.descendant_title, descendant.story_dict))
+                    out["bullets"].append(bullet(descendant.descendant_title, descendant))
         if len(out["descendants_married_to"]) == 0:
             out["message"] = passed_message(indi)
             r["passed"].append(out)
@@ -1064,7 +1064,7 @@ def reject_illegitimate_dates():
 
 if __name__ == "__main__":
     g = gedcom.File()
-    fname = "Test_Files/GEDCOM.ged"
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
     try:
         g.read_file(fname)
     except IOError as e:

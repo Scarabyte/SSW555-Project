@@ -297,16 +297,22 @@ class Individual(LineTool):
     @cachemethod
     def descendants(self):
 
-        def get_d(individuals=[], level=1):
-            get_c = lambda indis, level: [(level, c) for indi in indis for c in indi.children]
-            l = get_c(individuals, level)
-            if len(l) > 0:
-                return l + get_d(map(lambda x: x[1], l), level + 1)
-            else:
-                return l
-
         title = lambda i: "child" if i == 1 else "grandchild" if i == 2 else (i-2)*"great-"+"grandchild"
-        return map(lambda x: (title(x[0]), x[1]), get_d([self]))
+
+        def get_d(individuals=[], checked=[], i=1):
+            new = []
+            for indi in individuals:
+                for child in indi.children:
+                    if child in checked:
+                        pass
+                    else:
+                        child.descendant_title = title(i)
+                        checked.append(child)
+                        new.append(child)
+            return new + get_d(new, checked, i+1) if len(new) > 0 else new
+
+
+        return get_d([self])
 
 
 

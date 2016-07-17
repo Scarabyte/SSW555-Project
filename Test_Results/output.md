@@ -451,9 +451,6 @@
 ### Anomaly US17: No Marriages To Descendants ###
 ~~~~
 [failed]
-	 > Individual Wendy Watson (@I3@ - line 33) is married to her child Adam Burbidge (@I1@ - line 15)
-	 > Individual Wendy Watson (@I3@ - line 33) is married to her child Adam Burbidge (@I1@ - line 15)
-	 > Individual Keisha Morris (@I4@ - line 44) is married to her child James Dutton (@I7@ - line 65)
 ~~~~
 
 ### Anomaly US18: Siblings Should Not Marry ###

@@ -1096,35 +1096,25 @@
 	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
 	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
 	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
-	 > Individual David Burbidge (@I2@ - line 24) is not married to any of his children
-	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her children
-	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her children
-	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her children
-	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her children
-	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her children
-	 > Individual Wendy Watson (@I3@ - line 33) is not married to any of her children
-	 > Individual Keisha Morris (@I4@ - line 44) is not married to any of her children
-	 > Individual Keisha Morris (@I4@ - line 44) is not married to any of her children
-	 > Individual James Dutton (@I7@ - line 65) is not married to any of his children
-	 > Individual Jerry Briand (@I10@ - line 86) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
+	 > Individual Adam Burbidge (@I1@ - line 15) is not married to any of his children
 	 > Individual Cyril Watson (@I11@ - line 95) is not married to any of his children
-	 > Individual Elizabeth Watson (@I12@ - line 104) is not married to any of her children
-	 > Individual Jean Watson (@I13@ - line 113) is not married to any of her children
-	 > Individual Jean Watson (@I13@ - line 113) is not married to any of her children
 	 > Individual Jean Watson (@I13@ - line 113) is not married to any of her children
 	 > Individual Jean Watson (@I13@ - line 113) is not married to any of her children
 	 > Individual Martin Watson (@I14@ - line 124) is not married to any of his children
 	 > Individual Andrew Burbidge (@I15@ - line 132) is not married to any of his children
-	 > Individual Claire Burbidge (@I16@ - line 141) is not married to any of her children
-	 > Individual Claire Burbidge (@I16@ - line 141) is not married to any of her children
-	 > Individual Claire Burbidge (@I16@ - line 141) is not married to any of her children
-	 > Individual Jack Cunningham (@I21@ - line 178) is not married to any of his children
-	 > Individual Brian Mayer (@I22@ - line 184) is not married to any of his children
-	 > Individual Helen Trotter (@I24@ - line 198) is not married to any of her children
 [failed]
-	 > Individual Wendy Watson (@I3@ - line 33) is married to her child Adam Burbidge (@I1@ - line 15)
-	 > Individual Wendy Watson (@I3@ - line 33) is married to her child Adam Burbidge (@I1@ - line 15)
-	 > Individual Keisha Morris (@I4@ - line 44) is married to her child James Dutton (@I7@ - line 65)
 ~~~~
 
 ### Anomaly US18: Siblings Should Not Marry ###

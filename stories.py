@@ -730,27 +730,33 @@ def no_marriages_to_descendants(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 
-    passed_message = "Individual {0} is not married to any of {1} children"
-    failed_message = "Individual {0} is married to {1} child {2}"
+    passed_message = "Individual {0} is not married to any of {1} children".format
+    failed_message = "Individual {0} is married to {1} of {2} children".format
+    bullet = "Married to child {0}".format
+    # Keep track of individuals checked in case the file erroneously has them as a child in multiple families
+    checked = []
 
     for indi in gedcom_file.individuals:
         for spouse in indi.spouses:
             # Iterate through this individual's spouses
-            married_to_child = 0
-            # For families where this individual is a spouse (parent)
+#            married_to_child = 0
+            # Families where this individual is a spouse (parent)
             for fam in indi.families("FAMS"):
-                for child in fam.children:
-                    # The children of this individual
-                    out = {"indi": {"xref": indi.xref},
-                           "fam": {"xref": fam.xref}}
+                # The children of this individual
+                for child in (c for c in fam.children if (c not in checked)):
+                    checked.append(child)
+                    out = {"individual": indi.story_dict, "children_married_to": [], "bullets": []}
                     msg_out = (indi, indi.pronoun, child)
                     if spouse.xref == child.xref:
-                        married_to_child += 1
-                        out["message"] = failed_message.format(*msg_out)
+#                        married_to_child += 1
+                        out["children_married_to"].append(child.story_dict)
+                        out["bullets"].append(bullet(child))
+                    if len(out["children_married_to"]) == 0:
+                        out["message"] = passed_message(indi, indi.pronoun)
+                        r["passed"].append(out)
+                    else:
+                        out["message"] = failed_message(indi, len(out["children_married_to"]), indi.pronoun)
                         r["failed"].append(out)
-                if not married_to_child:
-                    out["message"] = passed_message.format(*msg_out)
-                    r["passed"].append(out)
     return r
 
 

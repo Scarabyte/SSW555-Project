@@ -4,10 +4,10 @@ This is the main file for the project
 """
 import json
 import logging
-
-import gedcom
-import stories
 import sys
+
+from gedcom.parser import File
+import stories
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
 __status__ = "Development"
@@ -17,7 +17,7 @@ def run(gedcom_file, show_passed=False):
     """ Check Gedcom File For Errors
 
     :param gedcom_file: The GEDCOM File object to perform assignment on
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
 
@@ -72,7 +72,7 @@ def run(gedcom_file, show_passed=False):
 
 
 if __name__ == "__main__":
-    g = gedcom.File()
+    g = File()
     # Request file name from user
     fname = raw_input('Enter the file name to open: ')
     #fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"

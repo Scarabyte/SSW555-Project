@@ -1,7 +1,6 @@
 """
 Story Functions
 """
-import tools
 import logging
 import sys
 from datetime import datetime
@@ -73,7 +72,7 @@ def story(id_):
     """ Function decarator used to find both outcomes of a story, and log and return the results """
     def story_decorator(func):
         def func_wrapper(gedcom_file):
-            if type(gedcom_file) is not gedcom.File:
+            if type(gedcom_file) is not gedcom.parser.File:
                 raise TypeError("Story function must be provided a gedcom file object.")
             r = {"id": id_, "name": func.__name__, "output":  func(gedcom_file)}
 
@@ -109,21 +108,21 @@ def dates_before_current_date(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
     msg = "{0}{1} has a {2} date {3} the current date".format
     msg_bullet = ["Current Date is {0} (date script ran)".format, "{0} date is {1}".format]
-    for date in (tools.Date(d_line) for d_line in gedcom_file.find("tag", "DATE")):
+    for date in gedcom_file.dates:
         if date.type in ("birth", "marriage", "divorce", "death"):
             out = {"dates": [{"type": date.type, "value": date.val, "line_number": date.ln},
                              {"type": "current", "value": NOW_STRING, "line_number": None}],
                    "bullets": [msg_bullet[0](NOW_STRING), msg_bullet[1](date.type.capitalize(), date)]}
             passed, word = (True, "before") if date.dt < NOW else (True, "on") if date.dt == NOW else (False, "after")
-            if type(date.belongs_to) is tools.Individual:
+            if type(date.belongs_to) is gedcom.tag.Individual:
                 out["message"] = msg("Individual ", date.belongs_to, date.type, word)
-            elif type(date.belongs_to) is tools.Family:
+            elif type(date.belongs_to) is gedcom.tag.Family:
                 out["message"] = msg("", date.belongs_to, date.type, word)
             else:
                 out["message"] = msg("", "Gedcom File", date.type, word)
@@ -139,7 +138,7 @@ def birth_before_marriage(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -167,7 +166,7 @@ def birth_before_death(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -193,7 +192,7 @@ def marriage_before_divorce(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -222,7 +221,7 @@ def marriage_before_death(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -278,7 +277,7 @@ def divorce_before_death(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -331,7 +330,7 @@ def less_then_150_years_old(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -357,7 +356,7 @@ def birth_before_marriage_of_parents(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -396,7 +395,7 @@ def birth_before_death_of_parents(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -434,7 +433,7 @@ def marriage_after_14(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -475,7 +474,7 @@ def no_bigamy(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -522,7 +521,7 @@ def parents_not_too_old(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -543,8 +542,8 @@ def parents_not_too_old(gedcom_file):
             if not child.has("birth_date"):
                 continue  # Project Overview Assumptions not met
 
-            m_yrs_older = tools.years_between(child.birth_date.dt, fam.wife.birth_date.dt)
-            f_yrs_older = tools.years_between(child.birth_date.dt, fam.husband.birth_date.dt)
+            m_yrs_older = gedcom.tools.years_between(child.birth_date.dt, fam.wife.birth_date.dt)
+            f_yrs_older = gedcom.tools.years_between(child.birth_date.dt, fam.husband.birth_date.dt)
 
             # Construct Output
             out = {"family": {"xref": fam.xref},
@@ -576,7 +575,7 @@ def siblings_spacing(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -584,7 +583,7 @@ def siblings_spacing(gedcom_file):
     bullet_msg = "Sibling {0} born {1}".format
     for fam in gedcom_file.families:
         for sib_a, sib_b in combinations((c for c in fam.children if c.has("birth_date")), 2):
-            days = tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
+            days = gedcom.tools.days_between(sib_a.birth_date.dt, sib_b.birth_date.dt)
             out = {"family": fam.story_dict, "days_apart": days,
                    "sibling_one": {"xref": sib_a.xref, "line_number": sib_a.ln,
                                    "birth_date": sib_a.birth_date.story_dict},
@@ -614,7 +613,7 @@ def less_than_5_multiple_births(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -647,7 +646,7 @@ def fewer_than_15_siblings(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -665,13 +664,13 @@ def fewer_than_15_siblings(gedcom_file):
 @story("Anomaly US16")
 def male_last_names(gedcom_file):
     """ All male members of a family should have the same last name
-    
+
     :sprint: 3
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
-    
+    :type gedcom_file: parser.File
+
     """
     r = {"passed": [], "failed": []}
 
@@ -724,7 +723,7 @@ def no_marriages_to_descendants(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -756,7 +755,7 @@ def siblings_should_not_marry(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -792,7 +791,7 @@ def first_cousins_should_not_marry(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -808,7 +807,7 @@ def aunts_and_uncles(gedcom_file):
     :author: Constantine Davantzis
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -824,7 +823,7 @@ def correct_gender_for_role(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -840,7 +839,7 @@ def unique_ids(gedcom_file):
     :author: vibharavi
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -856,7 +855,7 @@ def unique_name_and_birth_date(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -872,7 +871,7 @@ def unique_families_by_spouses(gedcom_file):
     :author: Adam Burbidge
 
     :param gedcom_file: GEDCOM File to check
-    :type gedcom_file: gedcom.File
+    :type gedcom_file: parser.File
 
     """
     r = {"passed": [], "failed": []}
@@ -1062,7 +1061,6 @@ def reject_illegitimate_dates():
     """
     pass
 
-
 if __name__ == "__main__":
     g = gedcom.File()
     fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
@@ -1105,9 +1103,9 @@ if __name__ == "__main__":
     siblings_should_not_marry(g)
 
     # Sprint 4 - Stories
-    # first_cousins_should_not_marry(g)
-    # aunts_and_uncles(g)
-    # correct_gender_for_role(g)
-    # unique_ids(g)
-    # unique_name_and_birth_date(g)
-    # unique_families_by_spouses(g)
+    first_cousins_should_not_marry(g)
+    aunts_and_uncles(g)
+    correct_gender_for_role(g)
+    unique_ids(g)
+    unique_name_and_birth_date(g)
+    unique_families_by_spouses(g)

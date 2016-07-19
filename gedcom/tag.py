@@ -1,74 +1,10 @@
-"""
-Tools for gedcom project
-"""
 import re
+import tools
+import parser
 from datetime import datetime
-import gedcom
 
 NOW = datetime.now()
 NOW_STRING = NOW.strftime("%d %b %Y").upper()
-
-# TODO: Better Comments
-# TODO: Move LineTools to gedcom.py?
-
-
-
-
-
-
-
-
-
-
-
-def human_sort(s, _re=re.compile('([0-9]+)')):
-    """
-    key for natural sorting
-    example: alist.sort(key=human_sort)    #sorts the list in place (returns none)
-    example: sorted(alist, key=human_sort) #returns a new list
-    """
-    try:
-        return [int(x) if x.isdigit() else x.lower() for x in re.split(_re, s)]
-    except:
-        return s
-
-
-def parse_date(s):
-    """
-    parse linedate string into datetime object
-    """
-    for fmt in ('%d %b %Y', '%b %Y', '%Y'):
-        try:
-            return datetime.strptime(s, fmt)
-        except ValueError:
-            pass
-    raise ValueError("Unsupported Date Format")
-
-
-def days_between(a, b):
-    """ Calculate the days between two dates
-
-    :param a: datetime 1
-    :param b: datetime 2
-
-    :return: days between two dates
-    :rtype: float
-
-    """
-    return abs((a - b).days)
-
-
-def years_between(a, b):
-    """ Calculate the years between two dates
-
-    :param a: datetime 1
-    :param b: datetime 2
-
-    :return: years between two dates
-    :rtype: float
-
-    """
-    return abs(round(float((a - b).days) / 365, 2))
 
 
 def cachemethod(func):
@@ -81,7 +17,7 @@ def cachemethod(func):
     return wrapper
 
 
-class LineTool(object):
+class Base(object):
     def __init__(self, line):
         self.line = line
         self.cache = {}
@@ -114,7 +50,7 @@ class LineTool(object):
         return (getattr(self, p) is not None) and (getattr(self, p) is not {})
 
 
-class Sex(LineTool):
+class Sex(Base):
     def __str__(self):
         return "{0} (line {1})".format("Male" if self.val == "M" else "Female", self.ln)
 
@@ -122,8 +58,7 @@ class Sex(LineTool):
         return "{0} (line {1})".format("Male" if self.val == "M" else "Female", self.ln)
 
 
-class Name(LineTool):
-
+class Name(Base):
     @property
     @cachemethod
     def surname(self):
@@ -131,7 +66,7 @@ class Name(LineTool):
         return m.group(1).strip() if m else None
 
 
-class Date(LineTool):
+class Date(Base):
     def __str__(self):
         return "{0} (line {1})".format(self.val, self.ln)
 
@@ -181,7 +116,7 @@ class Date(LineTool):
                     return Family(pp)
 
 
-class Individual(LineTool):
+class Individual(Base):
     def __str__(self):
         name = self.name.val.replace("/", "") if self.has("name") else "N/A"
         return "{0} ({1} - line {2})".format(name, self.xref, self.ln)
@@ -218,8 +153,8 @@ class Individual(LineTool):
     def age(self):
         if self.birth_date:
             if self.death_date:
-                return years_between(self.birth_date.dt, self.death_date.dt)
-            return years_between(self.birth_date.dt, NOW)
+                return tools.years_between(self.birth_date.dt, self.death_date.dt)
+            return tools.years_between(self.birth_date.dt, NOW)
         return None
 
     @property
@@ -240,23 +175,23 @@ class Individual(LineTool):
     @property
     @cachemethod
     def birth_date(self):
-        if type(self.birth) is gedcom.Line:
+        if type(self.birth) is parser.Line:
             date = self.birth.children.find_one('tag', 'DATE')
-            if type(date) is gedcom.Line:
+            if type(date) is parser.Line:
                 return Date(date)
 
     @property
     @cachemethod
     def death(self):
         l = self.line.children.find_one("tag", "DEAT")
-        return l if type(l) is gedcom.Line else None
+        return l if type(l) is parser.Line else None
 
     @property
     @cachemethod
     def death_date(self):
-        if type(self.death) is gedcom.Line:
+        if type(self.death) is parser.Line:
             date = self.death.children.find_one('tag', 'DATE')
-            if type(date) is gedcom.Line:
+            if type(date) is parser.Line:
                 return Date(date)
 
     def families(self, tag):
@@ -325,8 +260,7 @@ class Individual(LineTool):
         return get_d([self])
 
 
-
-class Family(LineTool):
+class Family(Base):
     def __str__(self):
         return "Family ({0} - line {1})".format(self.xref, self.ln)
 
@@ -352,7 +286,7 @@ class Family(LineTool):
     @property
     @cachemethod
     def husband_marriage_age(self):
-        return years_between(self.marriage_date.dt, self.husband.birth_date.dt)
+        return tools.years_between(self.marriage_date.dt, self.husband.birth_date.dt)
 
     @property
     @cachemethod
@@ -363,7 +297,7 @@ class Family(LineTool):
     @property
     @cachemethod
     def wife_marriage_age(self):
-        return years_between(self.marriage_date.dt, self.wife.birth_date.dt)
+        return tools.years_between(self.marriage_date.dt, self.wife.birth_date.dt)
 
     @property
     @cachemethod
@@ -445,5 +379,3 @@ class Family(LineTool):
                            "wife": self.wife.summary if self.has("wife") else None,
                            "children": map(lambda c: c.summary, self.children)}
 
-if __name__ == "__main__":
-    pass

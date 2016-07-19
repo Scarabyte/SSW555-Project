@@ -3,7 +3,7 @@
 	 > Adam Burbidge (@I1@ - line 15)
 		 * Gender: Male (line 17)
 		 * Birth date: 17 JUN 1945 (line 19)
-		 * Current age: 71.13
+		 * Current age: 71.14
 		 * Spouses: Keisha Morris (@I4@ - line 44), Wendy Watson (@I3@ - line 33)
 		 * Spouse in: Family (@F1@ - line 216), Family (@F11@ - line 290)
 		 * Child in: Family (@F2@ - line 235), Family (@F11@ - line 290)
@@ -43,7 +43,7 @@
 	 > James Dutton (@I7@ - line 65)
 		 * Gender: Male (line 67)
 		 * Birth date: 26 MAR 1979 (line 69)
-		 * Current age: 37.34
+		 * Current age: 37.35
 		 * Spouses: Keisha Morris (@I4@ - line 44)
 		 * Spouse in: Family (@F6@ - line 263)
 		 * Child in: Family (@F1@ - line 216)
@@ -92,7 +92,7 @@
 	 > Martin Watson (@I14@ - line 124)
 		 * Gender: Male (line 126)
 		 * Birth date: 30 OCT 1960 (line 128)
-		 * Current age: 55.75
+		 * Current age: 55.76
 		 * Spouses: Helen Trotter (@I24@ - line 198)
 		 * Spouse in: Family (@F9@ - line 281)
 		 * Child in: Family (@F5@ - line 257), Family (@F1@ - line 216)
@@ -107,38 +107,38 @@
 	 > Claire Burbidge (@I16@ - line 141)
 		 * Gender: Female (line 143)
 		 * Birth date: 30 OCT 1960 (line 145)
-		 * Current age: 55.75
+		 * Current age: 55.76
 		 * Spouses: Andrew Burbidge (@I15@ - line 132)
 		 * Spouse in: Family (@F3@ - line 244)
 		 * Child in: Family (@F1@ - line 216)
 	 > Stanley Burbidge (@I17@ - line 148)
 		 * Gender: Male (line 150)
 		 * Birth date: 30 OCT 1960 (line 152)
-		 * Current age: 55.75
+		 * Current age: 55.76
 		 * Spouses: Heather Burbidge (@I19@ - line 163)
 		 * Spouse in: Family (@F10@ - line 287)
 		 * Child in: Family (@F3@ - line 244), Family (@F1@ - line 216)
 	 > Sally Burbidge (@I18@ - line 156)
 		 * Gender: Female (line 158)
 		 * Birth date: 27 OCT 1960 (line 160)
-		 * Current age: 55.76
+		 * Current age: 55.77
 		 * Child in: Family (@F3@ - line 244), Family (@F1@ - line 216)
 	 > Heather Burbidge (@I19@ - line 163)
 		 * Gender: Female (line 165)
 		 * Birth date: 7 JAN 1961 (line 167)
-		 * Current age: 55.56
+		 * Current age: 55.57
 		 * Spouses: Stanley Burbidge (@I17@ - line 148)
 		 * Spouse in: Family (@F10@ - line 287)
 		 * Child in: Family (@F3@ - line 244), Family (@F1@ - line 216)
 	 > Linda Briand (@I20@ - line 171)
 		 * Gender: Female (line 173)
 		 * Birth date: 24 JUL 1972 (line 175)
-		 * Current age: 44.01
+		 * Current age: 44.02
 		 * Child in: Family (@F4@ - line 251), Family (@F1@ - line 216)
 	 > Jack Cunningham (@I21@ - line 178)
 		 * Gender: Male (line 180)
 		 * Birth date: 1 AUG 1990 (line 182)
-		 * Current age: 25.98
+		 * Current age: 25.99
 		 * Spouses: Jean Watson (@I13@ - line 113)
 		 * Spouse in: Family (@F8@ - line 273)
 	 > Brian Mayer (@I22@ - line 184)
@@ -162,12 +162,12 @@
 	 > Matthew Watson (@I25@ - line 204)
 		 * Gender: Male (line 206)
 		 * Birth date: 4 AUG 1975 (line 208)
-		 * Current age: 40.98
+		 * Current age: 40.99
 		 * Child in: Family (@F9@ - line 281)
 	 > Susan Cunningham (@I26@ - line 210)
 		 * Gender: Female (line 212)
 		 * Birth date: 9 SEP 1991 (line 214)
-		 * Current age: 24.87
+		 * Current age: 24.88
 		 * Child in: Family (@F7@ - line 267)
 
 ### Summary: Families ###
@@ -277,7 +277,7 @@
 ~~~~
 [failed]
 	 > Individual Angelica Burbidge (@I5@ - line 51) was born 23 AUG 1855 (line 55) and died 150.8 years later on 4 MAY 2006 (line 57)
-	 > Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.01 years old as of 17 JUL 2016 (current date)
+	 > Individual Phoebe Burbidge (@I6@ - line 59) was born 24 AUG 1855 (line 63) and is 161.01 years old as of 19 JUL 2016 (current date)
 ~~~~
 
 ### Anomaly US08: Birth Before Marriage Of Parents ###

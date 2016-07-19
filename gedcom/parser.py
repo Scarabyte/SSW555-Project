@@ -4,14 +4,15 @@ This module provides a way of parsing and traversing through a GEDCOM file.
 
 """
 # Standard Library Imports
-import re
 import json
-from collections import OrderedDict
+import re
 from itertools import ifilter, imap
+import sys
 
 # Project Imports
+import tag
 import tools
-import sys
+
 
 __author__ = "Constantine Davantzis"
 
@@ -212,53 +213,18 @@ class File(object):
 
     @property
     def individuals(self):
-        # Todo: Write Docstring
-        return [tools.Individual(line) for line in self.find("tag", "INDI")]
+        return [tag.Individual(line) for line in self.find("tag", "INDI")]
 
     @property
     def families(self):
-        # Todo: Write Docstring
-        return [tools.Family(line) for line in self.find("tag", "FAM")]
-
+        return [tag.Family(line) for line in self.find("tag", "FAM")]
 
     @property
-    def families_dict(self):
-        # Todo: Write Docstring
-        return [tools.family_dict(line) for line in self.find("tag", "FAM")]
+    def dates(self):
+        return [tag.Date(line) for line in self.find("tag", "DATE")]
 
-    @property
-    def p3_individuals(self):
-        """ Unique identifiers and names of each of the individuals in order by their unique identifiers.
 
-        :note: The code used for stories will be similar to the code that makes up this method.
 
-        :return: An ordered dictionary of individuals
-        :rtype: OrderedDict
-
-        :Example:
-            print gedcom_file.individuals
-
-        """
-        results = [tools.indi_summary(line) for line in self.find("tag", "INDI")]
-        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
-
-    @property
-    def p3_families(self):
-        """ unique identifiers and names of the husbands and wives, in order by unique family identifiers.
-
-        :note: The code used for stories will be similar to the code that makes up this method.
-
-        :return: An ordered dictionary of families
-        :rtype: OrderedDict
-
-        :Example:
-            print gedcom_file.families
-
-        """
-        results = []
-        # The individuals ordered dictionary will be used to get the HUSB/WIFE name from there xref ID
-        results = [tools.family_summary(fam) for fam in self.families_dict]
-        return OrderedDict(sorted(results, key=lambda x: tools.human_sort(x[0])))
 
 
 class SubFile(File):
@@ -558,11 +524,5 @@ def demo(gedcom_file):
     print gedcom_file.find_one('tag', 'a_value_that_will_never_be_found')
 
 if __name__ == "__main__":
-    """ Open Test File and Carry Out Demos
-
-    """
-    g = File()
-    g.read_file("Test_Files/GEDCOM.ged")
-    #demo(g)
-    print g.find_one('tag', 'a_value_that_will_never_be_found')
+    pass
 

@@ -795,7 +795,28 @@ def first_cousins_should_not_marry(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
+    msg = {"passed": "Individual {0} is not married to cousin {1}".format,
+           "failed": "Individual {0} is married to cousin {1}".format}
+    bul = ["{0} child {1} has {2} {3}".format,
+           "{0} is siblings with {1} in {2}".format,
+           "{0} has child {1} in {2}".format,
+           {"passed": "{0} and {1} are married in {2}".format, "failed": "{0} and {1} are not married".format}]
+
+
+
+
+                #for sibling_fam, moms_sibling in
+                #    for cousin_fam, cousin in moms_sibling.families_and_children:
+                #        key = "failed" if spouse == cousin else "passed"
+                #        out = {"message": msg[key](indi, cousin),
+                #               "bullets": [bul[0](indi, fam),
+                #                           bul[1](fam, "mother", fam.husband),
+                #                           bul[2](fam.husband, dads_sibling, sibling_fam),
+                #                           bul[3](dads_sibling, cousin, cousin_fam),
+                #                           bul[4][key](indi, spouse, spouse_fam)]}
+                #        r[key].append(out)
+
+
     return r
 
 
@@ -811,7 +832,13 @@ def aunts_and_uncles(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
+    for indi in gedcom_file.individuals:
+        for aunt_or_uncle in indi.aunts_and_uncles:
+            for spouse in indi.spouses:
+                if aunt_or_uncle == spouse:
+                    pass
+                else:
+                    pass
     return r
 
 
@@ -1075,32 +1102,32 @@ if __name__ == "__main__":
     logger.addHandler(stream_handler)
 
     # Sprint 0 - Summaries
-    individual_summary(g)
-    family_summary(g)
+    #individual_summary(g)
+    #family_summary(g)
 
     # Sprint 1 - Stories
-    dates_before_current_date(g)
-    birth_before_marriage(g)
-    birth_before_death(g)
-    marriage_before_divorce(g)
-    marriage_before_death(g)
-    divorce_before_death(g)
+    #dates_before_current_date(g)
+    #birth_before_marriage(g)
+    #birth_before_death(g)
+    #marriage_before_divorce(g)
+    #marriage_before_death(g)
+    #divorce_before_death(g)
 
     # Sprint 2 - Stories
-    less_then_150_years_old(g)
-    birth_before_marriage_of_parents(g)
-    birth_before_death_of_parents(g)
-    marriage_after_14(g)
-    no_bigamy(g)
-    parents_not_too_old(g)
+    #less_then_150_years_old(g)
+    #birth_before_marriage_of_parents(g)
+    #birth_before_death_of_parents(g)
+    #marriage_after_14(g)
+    #no_bigamy(g)
+    #parents_not_too_old(g)
 
     # Sprint 3 - Stories
-    siblings_spacing(g)
-    less_than_5_multiple_births(g)
-    fewer_than_15_siblings(g)
-    male_last_names(g)
-    no_marriages_to_descendants(g)
-    siblings_should_not_marry(g)
+    # siblings_spacing(g)
+    #less_than_5_multiple_births(g)
+    #fewer_than_15_siblings(g)
+    #male_last_names(g)
+    #no_marriages_to_descendants(g)
+    #siblings_should_not_marry(g)
 
     # Sprint 4 - Stories
     first_cousins_should_not_marry(g)

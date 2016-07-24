@@ -128,6 +128,9 @@ class Individual(Base):
     def __eq__(self, other):
         return self.xref == other.xref
 
+    def __ne__(self, other):
+        return self.xref != other.xref
+
     @property
     @cachemethod
     def story_dict(self):
@@ -232,6 +235,39 @@ class Individual(Base):
                            "name": self.name.story_dict if self.has("name") else None,
                            "sex": self.sex.story_dict if self.has("sex") else None,
                            "birth_date": self.birth_date.story_dict if self.has("birth_date") else None}
+
+    @property
+    @cachemethod
+    def siblings(self):
+        for fam in self.families("FAMC"):
+            for child in fam.children:
+                if self != child:
+                    yield child
+
+    @property
+    @cachemethod
+    def aunts_and_uncles(self):
+        for fam in self.families("FAMC"):
+            for sib in fam.husband.siblings:
+                yield sib
+            for sib in fam.wife.siblings:
+                yield sib
+
+    @property
+    @cachemethod
+    def families_and_siblings(self):
+        for fam in self.families("FAMC"):
+            for child in fam.children:
+                if self != child:
+                    yield fam, child
+
+    @property
+    @cachemethod
+    def families_and_children(self):
+        for fam in self.families("FAMS"):
+            for child in fam.children:
+                yield fam, child
+
 
     @property
     @cachemethod

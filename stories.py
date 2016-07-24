@@ -19,7 +19,6 @@ LOG_ENTRY = '\t > {0}'
 LOG_BULLET = '\t\t * {0}'
 LOG_BULLET_ALT = '\t\t * {0}: {1}'
 
-
 # Initiate Log
 logging.basicConfig(level=logging.DEBUG, format='%(message)s')
 logger = logging.getLogger(__name__)
@@ -70,11 +69,12 @@ def family_summary(gedcom_file):
 
 def story(id_):
     """ Function decarator used to find both outcomes of a story, and log and return the results """
+
     def story_decorator(func):
         def func_wrapper(gedcom_file):
             if type(gedcom_file) is not gedcom.parser.File:
                 raise TypeError("Story function must be provided a gedcom file object.")
-            r = {"id": id_, "name": func.__name__, "output":  func(gedcom_file)}
+            r = {"id": id_, "name": func.__name__, "output": func(gedcom_file)}
 
             # Log Text Results To User Output
             logger.info(LOG_HEADING.format(r["id"], r["name"].replace("_", " ").title()))
@@ -96,7 +96,9 @@ def story(id_):
 
             # Return Results Dictionary
             return r
+
         return func_wrapper
+
     return story_decorator
 
 
@@ -675,7 +677,7 @@ def male_last_names(gedcom_file):
     r = {"passed": [], "failed": []}
 
     sib_msg = "{0} with male siblings {1} and {2}{3} have the same surname".format  # Sibling Check Message Formatter
-    dad_msg = "{0} with father {1} and son {2}{3} have the same surname".format     # Dad/Son Check Message Formatter
+    dad_msg = "{0} with father {1} and son {2}{3} have the same surname".format  # Dad/Son Check Message Formatter
 
     for fam in gedcom_file.families:
 
@@ -732,7 +734,7 @@ def no_marriages_to_descendants(gedcom_file):
     failed_message = "Individual {0} is married to {1} of {2} descendants".format
     bullet = "Married to {0} {1} in {2}".format
     for indi in gedcom_file.individuals:
-        out = {"individual": indi.story_dict,  "descendants_married_to": [], "bullets": []}
+        out = {"individual": indi.story_dict, "descendants_married_to": [], "bullets": []}
         for descendant in indi.descendants:
             for fam, spouse in indi.families_and_spouses:
                 if spouse == descendant:
@@ -795,28 +797,7 @@ def first_cousins_should_not_marry(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = {"passed": "Individual {0} is not married to cousin {1}".format,
-           "failed": "Individual {0} is married to cousin {1}".format}
-    bul = ["{0} child {1} has {2} {3}".format,
-           "{0} is siblings with {1} in {2}".format,
-           "{0} has child {1} in {2}".format,
-           {"passed": "{0} and {1} are married in {2}".format, "failed": "{0} and {1} are not married".format}]
-
-
-
-
-                #for sibling_fam, moms_sibling in
-                #    for cousin_fam, cousin in moms_sibling.families_and_children:
-                #        key = "failed" if spouse == cousin else "passed"
-                #        out = {"message": msg[key](indi, cousin),
-                #               "bullets": [bul[0](indi, fam),
-                #                           bul[1](fam, "mother", fam.husband),
-                #                           bul[2](fam.husband, dads_sibling, sibling_fam),
-                #                           bul[3](dads_sibling, cousin, cousin_fam),
-                #                           bul[4][key](indi, spouse, spouse_fam)]}
-                #        r[key].append(out)
-
-
+    # ...
     return r
 
 
@@ -832,13 +813,17 @@ def aunts_and_uncles(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
+    msg = {"passed": "{0} is not married to niece/nephew {1}".format,
+           "failed": "{0} is married to niece/nephew {1}".format}
+    bul = "Married in {0}".format
     for indi in gedcom_file.individuals:
+        spouses = list(indi.spouses)
         for aunt_or_uncle in indi.aunts_and_uncles:
-            for spouse in indi.spouses:
-                if aunt_or_uncle == spouse:
-                    pass
-                else:
-                    pass
+            if aunt_or_uncle in spouses:
+                r["failed"].append({"message": msg["failed"](aunt_or_uncle, indi),
+                                    "bullets": [bul(spouses.pop(spouses.index(aunt_or_uncle)).spouse_family)]})
+            else:
+                r["passed"].append({"message": msg["passed"](aunt_or_uncle, indi)})
     return r
 
 
@@ -1088,6 +1073,7 @@ def reject_illegitimate_dates():
     """
     pass
 
+
 if __name__ == "__main__":
     g = gedcom.File()
     fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
@@ -1102,32 +1088,32 @@ if __name__ == "__main__":
     logger.addHandler(stream_handler)
 
     # Sprint 0 - Summaries
-    #individual_summary(g)
-    #family_summary(g)
+    # individual_summary(g)
+    # family_summary(g)
 
     # Sprint 1 - Stories
-    #dates_before_current_date(g)
-    #birth_before_marriage(g)
-    #birth_before_death(g)
-    #marriage_before_divorce(g)
-    #marriage_before_death(g)
-    #divorce_before_death(g)
+    # dates_before_current_date(g)
+    # birth_before_marriage(g)
+    # birth_before_death(g)
+    # marriage_before_divorce(g)
+    # marriage_before_death(g)
+    # divorce_before_death(g)
 
     # Sprint 2 - Stories
-    #less_then_150_years_old(g)
-    #birth_before_marriage_of_parents(g)
-    #birth_before_death_of_parents(g)
-    #marriage_after_14(g)
-    #no_bigamy(g)
-    #parents_not_too_old(g)
+    # less_then_150_years_old(g)
+    # birth_before_marriage_of_parents(g)
+    # birth_before_death_of_parents(g)
+    # marriage_after_14(g)
+    # no_bigamy(g)
+    # parents_not_too_old(g)
 
     # Sprint 3 - Stories
     # siblings_spacing(g)
-    #less_than_5_multiple_births(g)
-    #fewer_than_15_siblings(g)
-    #male_last_names(g)
-    #no_marriages_to_descendants(g)
-    #siblings_should_not_marry(g)
+    # less_than_5_multiple_births(g)
+    # fewer_than_15_siblings(g)
+    # male_last_names(g)
+    # no_marriages_to_descendants(g)
+    # siblings_should_not_marry(g)
 
     # Sprint 4 - Stories
     first_cousins_should_not_marry(g)

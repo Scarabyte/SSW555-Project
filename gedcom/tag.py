@@ -212,8 +212,10 @@ class Individual(Base):
         """
         for fam in self.families("FAMS"):
             if fam.has("husband") and fam.husband.xref != self.xref:
+                fam.husband.spouse_family = fam
                 yield fam.husband
             if fam.has("wife") and fam.wife.xref != self.xref:
+                fam.wife.spouse_family = fam
                 yield fam.wife
 
     @property

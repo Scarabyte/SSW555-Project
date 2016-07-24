@@ -820,8 +820,8 @@ def aunts_and_uncles(gedcom_file):
         spouses = list(indi.spouses)
         for aunt_or_uncle in indi.aunts_and_uncles:
             if aunt_or_uncle in spouses:
-                r["failed"].append({"message": msg["failed"](aunt_or_uncle, indi),
-                                    "bullets": [bul(spouses.pop(spouses.index(aunt_or_uncle)).spouse_family)]})
+                fam = spouses.pop(spouses.index(aunt_or_uncle)).spouse_family
+                r["failed"].append({"message": msg["failed"](aunt_or_uncle, indi), "bullets": [bul(fam)]})
             else:
                 r["passed"].append({"message": msg["passed"](aunt_or_uncle, indi)})
     return r

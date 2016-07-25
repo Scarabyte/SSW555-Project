@@ -798,6 +798,7 @@ def first_cousins_should_not_marry(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+    # @F13@ should fail this
     return r
 
 
@@ -812,6 +813,7 @@ def aunts_and_uncles(gedcom_file):
     :type gedcom_file: parser.File
 
     """
+    # @F11@ and @F12@ should fail this
     r = {"passed": [], "failed": []}
     msg = {"passed": "{0} is not married to niece/nephew {1}".format,
            "failed": "{0} is married to niece/nephew {1}".format}

@@ -58,7 +58,13 @@ def run(gedcom_file, show_passed=False):
             stories.fewer_than_15_siblings(gedcom_file),
             stories.male_last_names(gedcom_file),
             stories.no_marriages_to_descendants(gedcom_file),
-            stories.siblings_should_not_marry(gedcom_file)
+            stories.siblings_should_not_marry(gedcom_file),
+            stories.first_cousins_should_not_marry(gedcom_file),
+            stories.aunts_and_uncles(gedcom_file),
+            stories.correct_gender_for_role(gedcom_file),
+            stories.unique_ids(gedcom_file),
+            stories.unique_name_and_birth_date(gedcom_file),
+            unique_families_by_spouses(gedcom_file)
         ]
     }
 
@@ -74,8 +80,8 @@ def run(gedcom_file, show_passed=False):
 if __name__ == "__main__":
     g = File()
     # Request file name from user
-    fname = raw_input('Enter the file name to open: ')
-    #fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
+    #fname = raw_input('Enter the file name to open: ')
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint04.ged"
 
     try:
         g.read_file(fname)

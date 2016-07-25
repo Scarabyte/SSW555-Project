@@ -840,6 +840,7 @@ def correct_gender_for_role(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+    # @F8@ has the female as husband and male as wife
     return r
 
 
@@ -856,6 +857,8 @@ def unique_ids(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+    # @I1@ and @I27@ are identical
+    # @F1@ and @F10@ are identical
     return r
 
 
@@ -872,6 +875,7 @@ def unique_name_and_birth_date(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+    # @I1@ and @I27@ are identical
     return r
 
 
@@ -888,6 +892,7 @@ def unique_families_by_spouses(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
+    # @F1@ and @F10@ are identical
     return r
 
 

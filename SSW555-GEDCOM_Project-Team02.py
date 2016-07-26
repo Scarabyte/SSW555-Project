@@ -31,7 +31,7 @@ def run(gedcom_file, show_passed=False):
     user_output.setLevel(logging.INFO)
     stories.logger.addHandler(user_output)
 
-    # Log only passed cases to file "output.md"
+    # Log only passed cases to file "output.debug.md"
     debug_output = logging.FileHandler(filename='Test_Results/output.debug.md', mode="w")
     debug_output.setLevel(logging.DEBUG)
     stories.logger.addHandler(debug_output)
@@ -64,7 +64,7 @@ def run(gedcom_file, show_passed=False):
             stories.correct_gender_for_role(gedcom_file),
             stories.unique_ids(gedcom_file),
             stories.unique_name_and_birth_date(gedcom_file),
-            unique_families_by_spouses(gedcom_file)
+            stories.unique_families_by_spouses(gedcom_file)
         ]
     }
 

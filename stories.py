@@ -292,7 +292,7 @@ def divorce_before_death(gedcom_file):
                "wife_xref": fam.wife.xref if fam.has("wife") else None,
                "husband_death_date": fam.husband.death_date.story_dict if fam.has("husband") and fam.husband.has(
                        "death_date") else None,
-               "wife_death_date": fam.wife.death_date.story_dict if fam.has("husband") and fam.husband.has(
+               "wife_death_date": fam.wife.death_date.story_dict if fam.has("wife") and fam.wife.has(
                        "death_date") else None}
         msg_intro = "{0} with divorce on {1} ".format(fam, fam.divorce_date)
         if fam.husband.has("death_date") and fam.wife.has("death_date"):

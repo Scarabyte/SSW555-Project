@@ -1377,7 +1377,7 @@
                 "failed": [
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 4 SEP 2017 (line 63)"
                         ],
                         "dates": [
@@ -1389,7 +1389,7 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Phoebe Burbidge (@I6@ - line 59) has a birth date after the current date"
@@ -1398,7 +1398,7 @@
                 "passed": [
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 17 JUN 1945 (line 19)"
                         ],
                         "dates": [
@@ -1410,14 +1410,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Adam Burbidge (@I1@ - line 15) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 10 FEB 1980 (line 27)"
                         ],
                         "dates": [
@@ -1429,14 +1429,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual David Burbidge (@I2@ - line 23) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 24 AUG 1994 (line 29)"
                         ],
                         "dates": [
@@ -1448,14 +1448,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual David Burbidge (@I2@ - line 23) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 24 NOV 1848 (line 36)"
                         ],
                         "dates": [
@@ -1467,14 +1467,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Wendy Watson (@I3@ - line 32) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 12 JUL 1988 (line 38)"
                         ],
                         "dates": [
@@ -1486,14 +1486,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Wendy Watson (@I3@ - line 32) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 18 JUL 1992 (line 46)"
                         ],
                         "dates": [
@@ -1505,14 +1505,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Keisha Morris (@I4@ - line 42) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 23 AUG 1855 (line 54)"
                         ],
                         "dates": [
@@ -1524,14 +1524,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Angelica Burbidge (@I5@ - line 50) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 4 MAY 2006 (line 56)"
                         ],
                         "dates": [
@@ -1543,14 +1543,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Angelica Burbidge (@I5@ - line 50) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 26 MAR 1979 (line 70)"
                         ],
                         "dates": [
@@ -1562,14 +1562,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual James Dutton (@I7@ - line 66) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 4 OCT 2003 (line 76)"
                         ],
                         "dates": [
@@ -1581,14 +1581,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Peter Dutton (@I8@ - line 72) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 15 OCT 1975 (line 82)"
                         ],
                         "dates": [
@@ -1600,14 +1600,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Louise Burbidge (@I9@ - line 78) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 24 JAN 1973 (line 88)"
                         ],
                         "dates": [
@@ -1619,14 +1619,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Jerry Briand (@I10@ - line 84) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 16 MAY 2016 (line 90)"
                         ],
                         "dates": [
@@ -1638,14 +1638,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Jerry Briand (@I10@ - line 84) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 27 MAR 1920 (line 96)"
                         ],
                         "dates": [
@@ -1657,14 +1657,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Cyril Watson (@I11@ - line 92) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 27 FEB 2002 (line 98)"
                         ],
                         "dates": [
@@ -1676,14 +1676,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Cyril Watson (@I11@ - line 92) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 14 JAN 1922 (line 104)"
                         ],
                         "dates": [
@@ -1695,14 +1695,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Elizabeth Watson (@I12@ - line 100) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 4 APR 1997 (line 106)"
                         ],
                         "dates": [
@@ -1714,14 +1714,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Elizabeth Watson (@I12@ - line 100) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 3 JUN 1954 (line 112)"
                         ],
                         "dates": [
@@ -1733,14 +1733,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Jean Watson (@I13@ - line 108) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 10 AUG 1994 (line 114)"
                         ],
                         "dates": [
@@ -1752,14 +1752,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Jean Watson (@I13@ - line 108) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 16 DEC 1951 (line 122)"
                         ],
                         "dates": [
@@ -1771,14 +1771,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Martin Watson (@I14@ - line 118) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 8 APR 1918 (line 129)"
                         ],
                         "dates": [
@@ -1790,14 +1790,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Andrew Burbidge (@I15@ - line 125) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 10 OCT 1995 (line 131)"
                         ],
                         "dates": [
@@ -1809,14 +1809,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Andrew Burbidge (@I15@ - line 125) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 23 OCT 1918 (line 137)"
                         ],
                         "dates": [
@@ -1828,14 +1828,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Claire Burbidge (@I16@ - line 133) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 30 OCT 1960 (line 143)"
                         ],
                         "dates": [
@@ -1847,14 +1847,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Stanley Burbidge (@I17@ - line 139) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 11 JUN 1943 (line 149)"
                         ],
                         "dates": [
@@ -1866,14 +1866,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Sally Burbidge (@I18@ - line 145) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 7 SEP 1948 (line 155)"
                         ],
                         "dates": [
@@ -1885,14 +1885,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Heather Burbidge (@I19@ - line 151) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 24 JUL 1972 (line 161)"
                         ],
                         "dates": [
@@ -1904,14 +1904,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Linda Briand (@I20@ - line 157) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 1 AUG 1990 (line 167)"
                         ],
                         "dates": [
@@ -1923,14 +1923,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Jack Cunningham (@I21@ - line 163) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 5 JUN 1957 (line 173)"
                         ],
                         "dates": [
@@ -1942,14 +1942,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Brian Mayer (@I22@ - line 169) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Death date is 12 SEP 1989 (line 175)"
                         ],
                         "dates": [
@@ -1961,14 +1961,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Brian Mayer (@I22@ - line 169) has a death date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 7 JUL 1977 (line 181)"
                         ],
                         "dates": [
@@ -1980,14 +1980,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Lucy Cunningham (@I23@ - line 177) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 2 MAY 1993 (line 187)"
                         ],
                         "dates": [
@@ -1999,14 +1999,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Helen Trotter (@I24@ - line 183) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 4 AUG 1975 (line 193)"
                         ],
                         "dates": [
@@ -2018,14 +2018,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Matthew Watson (@I25@ - line 189) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 9 SEP 1991 (line 199)"
                         ],
                         "dates": [
@@ -2037,14 +2037,14 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Susan Cunningham (@I26@ - line 195) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
+                            "Current Date is 27 JUL 2016 (date script ran)",
                             "Birth date is 18 JUL 1992 (line 205)"
                         ],
                         "dates": [
@@ -2056,200 +2056,238 @@
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
                         "message": "Individual Keisha Morris (@I27@ - line 201) has a birth date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 26 MAR 1976 (line 217)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 17 JUN 1998 (line 212)"
                         ],
                         "dates": [
                             {
-                                "line_number": 217,
+                                "line_number": 212,
+                                "type": "marriage",
+                                "value": "17 JUN 1998"
+                            },
+                            {
+                                "line_number": null,
+                                "type": "current",
+                                "value": "27 JUL 2016"
+                            }
+                        ],
+                        "message": "Family (@F1@ - line 206) has a marriage date before the current date"
+                    },
+                    {
+                        "bullets": [
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 26 MAR 1976 (line 219)"
+                        ],
+                        "dates": [
+                            {
+                                "line_number": 219,
                                 "type": "marriage",
                                 "value": "26 MAR 1976"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F2@ - line 211) has a marriage date before the current date"
+                        "message": "Family (@F2@ - line 213) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Divorce date is 13 NOV 2012 (line 219)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Divorce date is 13 NOV 2012 (line 221)"
                         ],
                         "dates": [
                             {
-                                "line_number": 219,
+                                "line_number": 221,
                                 "type": "divorce",
                                 "value": "13 NOV 2012"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F2@ - line 211) has a divorce date before the current date"
+                        "message": "Family (@F2@ - line 213) has a divorce date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 4 SEP 1970 (line 232)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 4 SEP 1970 (line 234)"
                         ],
                         "dates": [
                             {
-                                "line_number": 232,
+                                "line_number": 234,
                                 "type": "marriage",
                                 "value": "4 SEP 1970"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F4@ - line 227) has a marriage date before the current date"
+                        "message": "Family (@F4@ - line 229) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 19 MAR 1990 (line 248)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 19 MAR 1990 (line 250)"
                         ],
                         "dates": [
                             {
-                                "line_number": 248,
+                                "line_number": 250,
                                 "type": "marriage",
                                 "value": "19 MAR 1990"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F7@ - line 243) has a marriage date before the current date"
+                        "message": "Family (@F7@ - line 245) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 12 OCT 1986 (line 254)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 12 OCT 1986 (line 256)"
                         ],
                         "dates": [
                             {
-                                "line_number": 254,
+                                "line_number": 256,
                                 "type": "marriage",
                                 "value": "12 OCT 1986"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F8@ - line 249) has a marriage date before the current date"
+                        "message": "Family (@F8@ - line 251) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Divorce date is 17 NOV 1978 (line 256)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Divorce date is 17 NOV 1978 (line 258)"
                         ],
                         "dates": [
                             {
-                                "line_number": 256,
+                                "line_number": 258,
                                 "type": "divorce",
                                 "value": "17 NOV 1978"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F8@ - line 249) has a divorce date before the current date"
+                        "message": "Family (@F8@ - line 251) has a divorce date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 1 MAY 1973 (line 262)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 1 MAY 1973 (line 264)"
                         ],
                         "dates": [
                             {
-                                "line_number": 262,
+                                "line_number": 264,
                                 "type": "marriage",
                                 "value": "1 MAY 1973"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F9@ - line 257) has a marriage date before the current date"
+                        "message": "Family (@F9@ - line 259) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 18 MAR 1980 (line 272)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 17 JUN 1998 (line 271)"
                         ],
                         "dates": [
                             {
-                                "line_number": 272,
+                                "line_number": 271,
+                                "type": "marriage",
+                                "value": "17 JUN 1998"
+                            },
+                            {
+                                "line_number": null,
+                                "type": "current",
+                                "value": "27 JUL 2016"
+                            }
+                        ],
+                        "message": "Family (@F10@ - line 265) has a marriage date before the current date"
+                    },
+                    {
+                        "bullets": [
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 18 MAR 1980 (line 276)"
+                        ],
+                        "dates": [
+                            {
+                                "line_number": 276,
                                 "type": "marriage",
                                 "value": "18 MAR 1980"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F11@ - line 268) has a marriage date before the current date"
+                        "message": "Family (@F11@ - line 272) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 18 JUN 2000 (line 277)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 18 JUN 2000 (line 281)"
                         ],
                         "dates": [
                             {
-                                "line_number": 277,
+                                "line_number": 281,
                                 "type": "marriage",
                                 "value": "18 JUN 2000"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F12@ - line 273) has a marriage date before the current date"
+                        "message": "Family (@F12@ - line 277) has a marriage date before the current date"
                     },
                     {
                         "bullets": [
-                            "Current Date is 26 JUL 2016 (date script ran)",
-                            "Marriage date is 18 NOV 2010 (line 282)"
+                            "Current Date is 27 JUL 2016 (date script ran)",
+                            "Marriage date is 18 NOV 2010 (line 286)"
                         ],
                         "dates": [
                             {
-                                "line_number": 282,
+                                "line_number": 286,
                                 "type": "marriage",
                                 "value": "18 NOV 2010"
                             },
                             {
                                 "line_number": null,
                                 "type": "current",
-                                "value": "26 JUL 2016"
+                                "value": "27 JUL 2016"
                             }
                         ],
-                        "message": "Family (@F13@ - line 278) has a marriage date before the current date"
+                        "message": "Family (@F13@ - line 282) has a marriage date before the current date"
                     }
                 ]
             }
@@ -2262,7 +2300,7 @@
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 217,
+                                "line_number": 219,
                                 "line_value": "26 MAR 1976"
                             },
                             "xref": "@F2@"
@@ -2274,12 +2312,12 @@
                             },
                             "xref": "@I2@"
                         },
-                        "message": "Individual David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) after his marriage (@F2@) on 26 MAR 1976 (line 217)"
+                        "message": "Individual David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) after his marriage (@F2@) on 26 MAR 1976 (line 219)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 232,
+                                "line_number": 234,
                                 "line_value": "4 SEP 1970"
                             },
                             "xref": "@F4@"
@@ -2291,12 +2329,12 @@
                             },
                             "xref": "@I10@"
                         },
-                        "message": "Individual Jerry Briand (@I10@ - line 84) born 24 JAN 1973 (line 88) after his marriage (@F4@) on 4 SEP 1970 (line 232)"
+                        "message": "Individual Jerry Briand (@I10@ - line 84) born 24 JAN 1973 (line 88) after his marriage (@F4@) on 4 SEP 1970 (line 234)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 254,
+                                "line_number": 256,
                                 "line_value": "12 OCT 1986"
                             },
                             "xref": "@F8@"
@@ -2308,12 +2346,12 @@
                             },
                             "xref": "@I21@"
                         },
-                        "message": "Individual Jack Cunningham (@I21@ - line 163) born 1 AUG 1990 (line 167) after his marriage (@F8@) on 12 OCT 1986 (line 254)"
+                        "message": "Individual Jack Cunningham (@I21@ - line 163) born 1 AUG 1990 (line 167) after his marriage (@F8@) on 12 OCT 1986 (line 256)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 262,
+                                "line_number": 264,
                                 "line_value": "1 MAY 1973"
                             },
                             "xref": "@F9@"
@@ -2325,14 +2363,48 @@
                             },
                             "xref": "@I24@"
                         },
-                        "message": "Individual Helen Trotter (@I24@ - line 183) born 2 MAY 1993 (line 187) after her marriage (@F9@) on 1 MAY 1973 (line 262)"
+                        "message": "Individual Helen Trotter (@I24@ - line 183) born 2 MAY 1993 (line 187) after her marriage (@F9@) on 1 MAY 1973 (line 264)"
                     }
                 ],
                 "passed": [
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 217,
+                                "line_number": 212,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "xref": "@F1@"
+                        },
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "xref": "@I1@"
+                        },
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) before his marriage (@F1@) on 17 JUN 1998 (line 212)"
+                    },
+                    {
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 271,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "xref": "@F10@"
+                        },
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "xref": "@I1@"
+                        },
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) before his marriage (@F10@) on 17 JUN 1998 (line 271)"
+                    },
+                    {
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 219,
                                 "line_value": "26 MAR 1976"
                             },
                             "xref": "@F2@"
@@ -2344,12 +2416,12 @@
                             },
                             "xref": "@I3@"
                         },
-                        "message": "Individual Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) before her marriage (@F2@) on 26 MAR 1976 (line 217)"
+                        "message": "Individual Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) before her marriage (@F2@) on 26 MAR 1976 (line 219)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 232,
+                                "line_number": 234,
                                 "line_value": "4 SEP 1970"
                             },
                             "xref": "@F4@"
@@ -2361,12 +2433,46 @@
                             },
                             "xref": "@I3@"
                         },
-                        "message": "Individual Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) before her marriage (@F4@) on 4 SEP 1970 (line 232)"
+                        "message": "Individual Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) before her marriage (@F4@) on 4 SEP 1970 (line 234)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 248,
+                                "line_number": 212,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "xref": "@F1@"
+                        },
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "xref": "@I4@"
+                        },
+                        "message": "Individual Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) before her marriage (@F1@) on 17 JUN 1998 (line 212)"
+                    },
+                    {
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 271,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "xref": "@F10@"
+                        },
+                        "indi": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "xref": "@I4@"
+                        },
+                        "message": "Individual Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) before her marriage (@F10@) on 17 JUN 1998 (line 271)"
+                    },
+                    {
+                        "fam": {
+                            "marr_date": {
+                                "line_number": 250,
                                 "line_value": "19 MAR 1990"
                             },
                             "xref": "@F7@"
@@ -2378,12 +2484,12 @@
                             },
                             "xref": "@I13@"
                         },
-                        "message": "Individual Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) before her marriage (@F7@) on 19 MAR 1990 (line 248)"
+                        "message": "Individual Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) before her marriage (@F7@) on 19 MAR 1990 (line 250)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 254,
+                                "line_number": 256,
                                 "line_value": "12 OCT 1986"
                             },
                             "xref": "@F8@"
@@ -2395,12 +2501,12 @@
                             },
                             "xref": "@I13@"
                         },
-                        "message": "Individual Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) before her marriage (@F8@) on 12 OCT 1986 (line 254)"
+                        "message": "Individual Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) before her marriage (@F8@) on 12 OCT 1986 (line 256)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 262,
+                                "line_number": 264,
                                 "line_value": "1 MAY 1973"
                             },
                             "xref": "@F9@"
@@ -2412,12 +2518,12 @@
                             },
                             "xref": "@I14@"
                         },
-                        "message": "Individual Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) before his marriage (@F9@) on 1 MAY 1973 (line 262)"
+                        "message": "Individual Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) before his marriage (@F9@) on 1 MAY 1973 (line 264)"
                     },
                     {
                         "fam": {
                             "marr_date": {
-                                "line_number": 248,
+                                "line_number": 250,
                                 "line_value": "19 MAR 1990"
                             },
                             "xref": "@F7@"
@@ -2429,7 +2535,7 @@
                             },
                             "xref": "@I22@"
                         },
-                        "message": "Individual Brian Mayer (@I22@ - line 169) born 5 JUN 1957 (line 173) before his marriage (@F7@) on 19 MAR 1990 (line 248)"
+                        "message": "Individual Brian Mayer (@I22@ - line 169) born 5 JUN 1957 (line 173) before his marriage (@F7@) on 19 MAR 1990 (line 250)"
                     }
                 ]
             }
@@ -2558,32 +2664,32 @@
                 "failed": [
                     {
                         "divorce_date": {
-                            "line_number": 256,
+                            "line_number": 258,
                             "line_value": "17 NOV 1978"
                         },
                         "family_xref": "@F8@",
                         "husband_xref": "@I13@",
                         "marriage_date": {
-                            "line_number": 254,
+                            "line_number": 256,
                             "line_value": "12 OCT 1986"
                         },
-                        "message": "Family (@F8@ - line 249) with husband Jean Watson (@I13@ - line 108) and wife Jack Cunningham (@I21@ - line 163) has marriage on 12 OCT 1986 (line 254) after divorce on 17 NOV 1978 (line 256)",
+                        "message": "Family (@F8@ - line 251) with husband Jean Watson (@I13@ - line 108) and wife Jack Cunningham (@I21@ - line 163) has marriage on 12 OCT 1986 (line 256) after divorce on 17 NOV 1978 (line 258)",
                         "wife_xref": "@I21@"
                     }
                 ],
                 "passed": [
                     {
                         "divorce_date": {
-                            "line_number": 219,
+                            "line_number": 221,
                             "line_value": "13 NOV 2012"
                         },
                         "family_xref": "@F2@",
                         "husband_xref": "@I2@",
                         "marriage_date": {
-                            "line_number": 217,
+                            "line_number": 219,
                             "line_value": "26 MAR 1976"
                         },
-                        "message": "Family (@F2@ - line 211) with husband David Burbidge (@I2@ - line 23) and wife Wendy Watson (@I3@ - line 32) has marriage on 26 MAR 1976 (line 217) before divorce on 13 NOV 2012 (line 219)",
+                        "message": "Family (@F2@ - line 213) with husband David Burbidge (@I2@ - line 23) and wife Wendy Watson (@I3@ - line 32) has marriage on 26 MAR 1976 (line 219) before divorce on 13 NOV 2012 (line 221)",
                         "wife_xref": "@I3@"
                     }
                 ]
@@ -2602,10 +2708,10 @@
                         },
                         "husband_xref": "@I22@",
                         "marriage_date": {
-                            "line_number": 248,
+                            "line_number": 250,
                             "line_value": "19 MAR 1990"
                         },
-                        "message": "Family (@F7@ - line 243) with marriage on 19 MAR 1990 (line 248) has husband Brian Mayer (@I22@ - line 169) with death 12 SEP 1989 (line 175) before marriage and has wife Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) after marriage",
+                        "message": "Family (@F7@ - line 245) with marriage on 19 MAR 1990 (line 250) has husband Brian Mayer (@I22@ - line 169) with death 12 SEP 1989 (line 175) before marriage and has wife Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) after marriage",
                         "wife_death_date": {
                             "line_number": 114,
                             "line_value": "10 AUG 1994"
@@ -2617,10 +2723,10 @@
                         "husband_death_date": null,
                         "husband_xref": "@I25@",
                         "marriage_date": {
-                            "line_number": 277,
+                            "line_number": 281,
                             "line_value": "18 JUN 2000"
                         },
-                        "message": "Family (@F12@ - line 273) with marriage on 18 JUN 2000 (line 277) has wife Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) before marriage",
+                        "message": "Family (@F12@ - line 277) with marriage on 18 JUN 2000 (line 281) has wife Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) before marriage",
                         "wife_death_date": {
                             "line_number": 114,
                             "line_value": "10 AUG 1994"
@@ -2637,10 +2743,10 @@
                         },
                         "husband_xref": "@I2@",
                         "marriage_date": {
-                            "line_number": 217,
+                            "line_number": 219,
                             "line_value": "26 MAR 1976"
                         },
-                        "message": "Family (@F2@ - line 211) with marriage on 26 MAR 1976 (line 217) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) after marriage and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) after marriage",
+                        "message": "Family (@F2@ - line 213) with marriage on 26 MAR 1976 (line 219) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) after marriage and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) after marriage",
                         "wife_death_date": {
                             "line_number": 38,
                             "line_value": "12 JUL 1988"
@@ -2655,10 +2761,10 @@
                         },
                         "husband_xref": "@I10@",
                         "marriage_date": {
-                            "line_number": 232,
+                            "line_number": 234,
                             "line_value": "4 SEP 1970"
                         },
-                        "message": "Family (@F4@ - line 227) with marriage on 4 SEP 1970 (line 232) has husband Jerry Briand (@I10@ - line 84) with death 16 MAY 2016 (line 90) after marriage and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) after marriage",
+                        "message": "Family (@F4@ - line 229) with marriage on 4 SEP 1970 (line 234) has husband Jerry Briand (@I10@ - line 84) with death 16 MAY 2016 (line 90) after marriage and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) after marriage",
                         "wife_death_date": {
                             "line_number": 38,
                             "line_value": "12 JUL 1988"
@@ -2673,10 +2779,10 @@
                         },
                         "husband_xref": "@I13@",
                         "marriage_date": {
-                            "line_number": 254,
+                            "line_number": 256,
                             "line_value": "12 OCT 1986"
                         },
-                        "message": "Family (@F8@ - line 249) with marriage on 12 OCT 1986 (line 254) has husband Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) after marriage",
+                        "message": "Family (@F8@ - line 251) with marriage on 12 OCT 1986 (line 256) has husband Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) after marriage",
                         "wife_death_date": null,
                         "wife_xref": "@I21@"
                     }
@@ -2690,7 +2796,7 @@
                 "failed": [
                     {
                         "divorce_date": {
-                            "line_number": 256,
+                            "line_number": 258,
                             "line_value": "17 NOV 1978"
                         },
                         "family_xref": "@F8@",
@@ -2699,7 +2805,7 @@
                             "line_value": "10 AUG 1994"
                         },
                         "husband_xref": "@I13@",
-                        "message": "Family (@F8@ - line 249) with divorce on 17 NOV 1978 (line 256) has husband Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) after divorce",
+                        "message": "Family (@F8@ - line 251) with divorce on 17 NOV 1978 (line 258) has husband Jean Watson (@I13@ - line 108) with death 10 AUG 1994 (line 114) after divorce",
                         "wife_death_date": null,
                         "wife_xref": "@I21@"
                     }
@@ -2707,7 +2813,7 @@
                 "passed": [
                     {
                         "divorce_date": {
-                            "line_number": 219,
+                            "line_number": 221,
                             "line_value": "13 NOV 2012"
                         },
                         "family_xref": "@F2@",
@@ -2716,7 +2822,7 @@
                             "line_value": "24 AUG 1994"
                         },
                         "husband_xref": "@I2@",
-                        "message": "Family (@F2@ - line 211) with divorce on 13 NOV 2012 (line 219) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) before divorce and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) before divorce",
+                        "message": "Family (@F2@ - line 213) with divorce on 13 NOV 2012 (line 221) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) before divorce and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) before divorce",
                         "wife_death_date": {
                             "line_number": 38,
                             "line_value": "12 JUL 1988"
@@ -2752,8 +2858,8 @@
                             "line_value": "17 JUN 1945"
                         },
                         "current_age": 71.16,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Adam Burbidge (@I1@ - line 15) was born 17 JUN 1945 (line 19) and is 71.16 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) was born 17 JUN 1945 (line 19) and is 71.16 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I1@"
                     },
                     {
@@ -2788,8 +2894,8 @@
                             "line_value": "18 JUL 1992"
                         },
                         "current_age": 24.04,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Keisha Morris (@I4@ - line 42) was born 18 JUL 1992 (line 46) and is 24.04 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Keisha Morris (@I4@ - line 42) was born 18 JUL 1992 (line 46) and is 24.04 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I4@"
                     },
                     {
@@ -2797,9 +2903,9 @@
                             "line_number": 63,
                             "line_value": "4 SEP 2017"
                         },
-                        "current_age": 1.11,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Phoebe Burbidge (@I6@ - line 59) was born 4 SEP 2017 (line 63) and is 1.11 years old as of 26 JUL 2016 (current date)",
+                        "current_age": 1.1,
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Phoebe Burbidge (@I6@ - line 59) was born 4 SEP 2017 (line 63) and is 1.1 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I6@"
                     },
                     {
@@ -2807,9 +2913,9 @@
                             "line_number": 70,
                             "line_value": "26 MAR 1979"
                         },
-                        "current_age": 37.36,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual James Dutton (@I7@ - line 66) was born 26 MAR 1979 (line 70) and is 37.36 years old as of 26 JUL 2016 (current date)",
+                        "current_age": 37.37,
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual James Dutton (@I7@ - line 66) was born 26 MAR 1979 (line 70) and is 37.37 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I7@"
                     },
                     {
@@ -2818,8 +2924,8 @@
                             "line_value": "4 OCT 2003"
                         },
                         "current_age": 12.82,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Peter Dutton (@I8@ - line 72) was born 4 OCT 2003 (line 76) and is 12.82 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Peter Dutton (@I8@ - line 72) was born 4 OCT 2003 (line 76) and is 12.82 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I8@"
                     },
                     {
@@ -2828,8 +2934,8 @@
                             "line_value": "15 OCT 1975"
                         },
                         "current_age": 40.81,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Louise Burbidge (@I9@ - line 78) was born 15 OCT 1975 (line 82) and is 40.81 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Louise Burbidge (@I9@ - line 78) was born 15 OCT 1975 (line 82) and is 40.81 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I9@"
                     },
                     {
@@ -2890,8 +2996,8 @@
                             "line_value": "16 DEC 1951"
                         },
                         "current_age": 64.66,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Martin Watson (@I14@ - line 118) was born 16 DEC 1951 (line 122) and is 64.66 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Martin Watson (@I14@ - line 118) was born 16 DEC 1951 (line 122) and is 64.66 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I14@"
                     },
                     {
@@ -2913,8 +3019,8 @@
                             "line_value": "23 OCT 1918"
                         },
                         "current_age": 97.83,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Claire Burbidge (@I16@ - line 133) was born 23 OCT 1918 (line 137) and is 97.83 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Claire Burbidge (@I16@ - line 133) was born 23 OCT 1918 (line 137) and is 97.83 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I16@"
                     },
                     {
@@ -2923,8 +3029,8 @@
                             "line_value": "30 OCT 1960"
                         },
                         "current_age": 55.78,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Stanley Burbidge (@I17@ - line 139) was born 30 OCT 1960 (line 143) and is 55.78 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Stanley Burbidge (@I17@ - line 139) was born 30 OCT 1960 (line 143) and is 55.78 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I17@"
                     },
                     {
@@ -2933,8 +3039,8 @@
                             "line_value": "11 JUN 1943"
                         },
                         "current_age": 73.18,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Sally Burbidge (@I18@ - line 145) was born 11 JUN 1943 (line 149) and is 73.18 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Sally Burbidge (@I18@ - line 145) was born 11 JUN 1943 (line 149) and is 73.18 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I18@"
                     },
                     {
@@ -2943,8 +3049,8 @@
                             "line_value": "7 SEP 1948"
                         },
                         "current_age": 67.93,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Heather Burbidge (@I19@ - line 151) was born 7 SEP 1948 (line 155) and is 67.93 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Heather Burbidge (@I19@ - line 151) was born 7 SEP 1948 (line 155) and is 67.93 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I19@"
                     },
                     {
@@ -2953,8 +3059,8 @@
                             "line_value": "24 JUL 1972"
                         },
                         "current_age": 44.04,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Linda Briand (@I20@ - line 157) was born 24 JUL 1972 (line 161) and is 44.04 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Linda Briand (@I20@ - line 157) was born 24 JUL 1972 (line 161) and is 44.04 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I20@"
                     },
                     {
@@ -2963,8 +3069,8 @@
                             "line_value": "1 AUG 1990"
                         },
                         "current_age": 26.01,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Jack Cunningham (@I21@ - line 163) was born 1 AUG 1990 (line 167) and is 26.01 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Jack Cunningham (@I21@ - line 163) was born 1 AUG 1990 (line 167) and is 26.01 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I21@"
                     },
                     {
@@ -2986,8 +3092,8 @@
                             "line_value": "7 JUL 1977"
                         },
                         "current_age": 39.08,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Lucy Cunningham (@I23@ - line 177) was born 7 JUL 1977 (line 181) and is 39.08 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Lucy Cunningham (@I23@ - line 177) was born 7 JUL 1977 (line 181) and is 39.08 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I23@"
                     },
                     {
@@ -2996,8 +3102,8 @@
                             "line_value": "2 MAY 1993"
                         },
                         "current_age": 23.25,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Helen Trotter (@I24@ - line 183) was born 2 MAY 1993 (line 187) and is 23.25 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Helen Trotter (@I24@ - line 183) was born 2 MAY 1993 (line 187) and is 23.25 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I24@"
                     },
                     {
@@ -3006,8 +3112,8 @@
                             "line_value": "4 AUG 1975"
                         },
                         "current_age": 41.01,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Matthew Watson (@I25@ - line 189) was born 4 AUG 1975 (line 193) and is 41.01 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Matthew Watson (@I25@ - line 189) was born 4 AUG 1975 (line 193) and is 41.01 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I25@"
                     },
                     {
@@ -3016,8 +3122,8 @@
                             "line_value": "9 SEP 1991"
                         },
                         "current_age": 24.9,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Susan Cunningham (@I26@ - line 195) was born 9 SEP 1991 (line 199) and is 24.9 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Susan Cunningham (@I26@ - line 195) was born 9 SEP 1991 (line 199) and is 24.9 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I26@"
                     },
                     {
@@ -3026,8 +3132,8 @@
                             "line_value": "18 JUL 1992"
                         },
                         "current_age": 24.04,
-                        "current_date": "26 JUL 2016",
-                        "message": "Individual Keisha Morris (@I27@ - line 201) was born 18 JUL 1992 (line 205) and is 24.04 years old as of 26 JUL 2016 (current date)",
+                        "current_date": "27 JUL 2016",
+                        "message": "Individual Keisha Morris (@I27@ - line 201) was born 18 JUL 1992 (line 205) and is 24.04 years old as of 27 JUL 2016 (current date)",
                         "xref": "@I27@"
                     }
                 ]
@@ -3040,21 +3146,37 @@
                 "failed": [
                     {
                         "child_birth_date": {
+                            "line_number": 54,
+                            "line_value": "23 AUG 1855"
+                        },
+                        "child_xref": "@I5@",
+                        "divorce_date": null,
+                        "family_xref": "@F1@",
+                        "father_xref": "@I1@",
+                        "marriage_date": {
+                            "line_number": 212,
+                            "line_value": "17 JUN 1998"
+                        },
+                        "message": "Family (@F1@ - line 206) with marriage date 17 JUN 1998 (line 212) has a child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54)",
+                        "mother_xref": "@I4@"
+                    },
+                    {
+                        "child_birth_date": {
                             "line_number": 19,
                             "line_value": "17 JUN 1945"
                         },
                         "child_xref": "@I1@",
                         "divorce_date": {
-                            "line_number": 219,
+                            "line_number": 221,
                             "line_value": "13 NOV 2012"
                         },
                         "family_xref": "@F2@",
                         "father_xref": "@I2@",
                         "marriage_date": {
-                            "line_number": 217,
+                            "line_number": 219,
                             "line_value": "26 MAR 1976"
                         },
-                        "message": "Family (@F2@ - line 211) with marriage date 26 MAR 1976 (line 217) and divorce date 13 NOV 2012 (line 219) has a child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19)",
+                        "message": "Family (@F2@ - line 213) with marriage date 26 MAR 1976 (line 219) and divorce date 13 NOV 2012 (line 221) has a child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19)",
                         "mother_xref": "@I3@"
                     },
                     {
@@ -3064,16 +3186,16 @@
                         },
                         "child_xref": "@I9@",
                         "divorce_date": {
-                            "line_number": 219,
+                            "line_number": 221,
                             "line_value": "13 NOV 2012"
                         },
                         "family_xref": "@F2@",
                         "father_xref": "@I2@",
                         "marriage_date": {
-                            "line_number": 217,
+                            "line_number": 219,
                             "line_value": "26 MAR 1976"
                         },
-                        "message": "Family (@F2@ - line 211) with marriage date 26 MAR 1976 (line 217) and divorce date 13 NOV 2012 (line 219) has a child Louise Burbidge (@I9@ - line 78) born 15 OCT 1975 (line 82)",
+                        "message": "Family (@F2@ - line 213) with marriage date 26 MAR 1976 (line 219) and divorce date 13 NOV 2012 (line 221) has a child Louise Burbidge (@I9@ - line 78) born 15 OCT 1975 (line 82)",
                         "mother_xref": "@I3@"
                     },
                     {
@@ -3083,20 +3205,52 @@
                         },
                         "child_xref": "@I23@",
                         "divorce_date": {
-                            "line_number": 256,
+                            "line_number": 258,
                             "line_value": "17 NOV 1978"
                         },
                         "family_xref": "@F8@",
                         "father_xref": "@I13@",
                         "marriage_date": {
-                            "line_number": 254,
+                            "line_number": 256,
                             "line_value": "12 OCT 1986"
                         },
-                        "message": "Family (@F8@ - line 249) with marriage date 12 OCT 1986 (line 254) and divorce date 17 NOV 1978 (line 256) has a child Lucy Cunningham (@I23@ - line 177) born 7 JUL 1977 (line 181)",
+                        "message": "Family (@F8@ - line 251) with marriage date 12 OCT 1986 (line 256) and divorce date 17 NOV 1978 (line 258) has a child Lucy Cunningham (@I23@ - line 177) born 7 JUL 1977 (line 181)",
                         "mother_xref": "@I21@"
+                    },
+                    {
+                        "child_birth_date": {
+                            "line_number": 54,
+                            "line_value": "23 AUG 1855"
+                        },
+                        "child_xref": "@I5@",
+                        "divorce_date": null,
+                        "family_xref": "@F10@",
+                        "father_xref": "@I1@",
+                        "marriage_date": {
+                            "line_number": 271,
+                            "line_value": "17 JUN 1998"
+                        },
+                        "message": "Family (@F10@ - line 265) with marriage date 17 JUN 1998 (line 271) has a child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54)",
+                        "mother_xref": "@I4@"
                     }
                 ],
                 "passed": [
+                    {
+                        "child_birth_date": {
+                            "line_number": 63,
+                            "line_value": "4 SEP 2017"
+                        },
+                        "child_xref": "@I6@",
+                        "divorce_date": null,
+                        "family_xref": "@F1@",
+                        "father_xref": "@I1@",
+                        "marriage_date": {
+                            "line_number": 212,
+                            "line_value": "17 JUN 1998"
+                        },
+                        "message": "Family (@F1@ - line 206) with marriage date 17 JUN 1998 (line 212) has a child Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                        "mother_xref": "@I4@"
+                    },
                     {
                         "child_birth_date": {
                             "line_number": 161,
@@ -3107,10 +3261,10 @@
                         "family_xref": "@F4@",
                         "father_xref": "@I10@",
                         "marriage_date": {
-                            "line_number": 232,
+                            "line_number": 234,
                             "line_value": "4 SEP 1970"
                         },
-                        "message": "Family (@F4@ - line 227) with marriage date 4 SEP 1970 (line 232) has a child Linda Briand (@I20@ - line 157) born 24 JUL 1972 (line 161)",
+                        "message": "Family (@F4@ - line 229) with marriage date 4 SEP 1970 (line 234) has a child Linda Briand (@I20@ - line 157) born 24 JUL 1972 (line 161)",
                         "mother_xref": "@I3@"
                     },
                     {
@@ -3123,10 +3277,10 @@
                         "family_xref": "@F7@",
                         "father_xref": "@I22@",
                         "marriage_date": {
-                            "line_number": 248,
+                            "line_number": 250,
                             "line_value": "19 MAR 1990"
                         },
-                        "message": "Family (@F7@ - line 243) with marriage date 19 MAR 1990 (line 248) has a child Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199)",
+                        "message": "Family (@F7@ - line 245) with marriage date 19 MAR 1990 (line 250) has a child Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199)",
                         "mother_xref": "@I13@"
                     },
                     {
@@ -3139,11 +3293,27 @@
                         "family_xref": "@F9@",
                         "father_xref": "@I14@",
                         "marriage_date": {
-                            "line_number": 262,
+                            "line_number": 264,
                             "line_value": "1 MAY 1973"
                         },
-                        "message": "Family (@F9@ - line 257) with marriage date 1 MAY 1973 (line 262) has a child Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193)",
+                        "message": "Family (@F9@ - line 259) with marriage date 1 MAY 1973 (line 264) has a child Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193)",
                         "mother_xref": "@I24@"
+                    },
+                    {
+                        "child_birth_date": {
+                            "line_number": 63,
+                            "line_value": "4 SEP 2017"
+                        },
+                        "child_xref": "@I6@",
+                        "divorce_date": null,
+                        "family_xref": "@F10@",
+                        "father_xref": "@I1@",
+                        "marriage_date": {
+                            "line_number": 271,
+                            "line_value": "17 JUN 1998"
+                        },
+                        "message": "Family (@F10@ - line 265) with marriage date 17 JUN 1998 (line 271) has a child Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)",
+                        "mother_xref": "@I4@"
                     }
                 ]
             }
@@ -3169,7 +3339,7 @@
                             },
                             "xref": "@I2@"
                         },
-                        "message": "Family (@F2@ - line 211) has Child Adam Burbidge (@I1@ - line 15) with birth date 17 JUN 1945 (line 19) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29).",
+                        "message": "Family (@F2@ - line 213) has Child Adam Burbidge (@I1@ - line 15) with birth date 17 JUN 1945 (line 19) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3194,7 +3364,7 @@
                             },
                             "xref": "@I2@"
                         },
-                        "message": "Family (@F2@ - line 211) has Child Louise Burbidge (@I9@ - line 78) with birth date 15 OCT 1975 (line 82) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29).",
+                        "message": "Family (@F2@ - line 213) has Child Louise Burbidge (@I9@ - line 78) with birth date 15 OCT 1975 (line 82) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3219,7 +3389,7 @@
                             },
                             "xref": "@I15@"
                         },
-                        "message": "Family (@F3@ - line 220) has Child David Burbidge (@I2@ - line 23) with birth date 10 FEB 1980 (line 27) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
+                        "message": "Family (@F3@ - line 222) has Child David Burbidge (@I2@ - line 23) with birth date 10 FEB 1980 (line 27) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I16@"
@@ -3241,7 +3411,7 @@
                             },
                             "xref": "@I15@"
                         },
-                        "message": "Family (@F3@ - line 220) has Child Stanley Burbidge (@I17@ - line 139) with birth date 30 OCT 1960 (line 143) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
+                        "message": "Family (@F3@ - line 222) has Child Stanley Burbidge (@I17@ - line 139) with birth date 30 OCT 1960 (line 143) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I16@"
@@ -3263,7 +3433,7 @@
                             },
                             "xref": "@I15@"
                         },
-                        "message": "Family (@F3@ - line 220) has Child Sally Burbidge (@I18@ - line 145) with birth date 11 JUN 1943 (line 149) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
+                        "message": "Family (@F3@ - line 222) has Child Sally Burbidge (@I18@ - line 145) with birth date 11 JUN 1943 (line 149) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I16@"
@@ -3285,7 +3455,7 @@
                             },
                             "xref": "@I15@"
                         },
-                        "message": "Family (@F3@ - line 220) has Child Heather Burbidge (@I19@ - line 151) with birth date 7 SEP 1948 (line 155) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
+                        "message": "Family (@F3@ - line 222) has Child Heather Burbidge (@I19@ - line 151) with birth date 7 SEP 1948 (line 155) and has mother Claire Burbidge (@I16@ - line 133) with no death date and father Andrew Burbidge (@I15@ - line 125) with death date 10 OCT 1995 (line 131).",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I16@"
@@ -3307,7 +3477,7 @@
                             },
                             "xref": "@I10@"
                         },
-                        "message": "Family (@F4@ - line 227) has Child Linda Briand (@I20@ - line 157) with birth date 24 JUL 1972 (line 161) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father Jerry Briand (@I10@ - line 84) with death date 16 MAY 2016 (line 90).",
+                        "message": "Family (@F4@ - line 229) has Child Linda Briand (@I20@ - line 157) with birth date 24 JUL 1972 (line 161) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father Jerry Briand (@I10@ - line 84) with death date 16 MAY 2016 (line 90).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3332,7 +3502,7 @@
                             },
                             "xref": "@I11@"
                         },
-                        "message": "Family (@F5@ - line 233) has Child Jean Watson (@I13@ - line 108) with birth date 3 JUN 1954 (line 112) and has mother Elizabeth Watson (@I12@ - line 100) with death date 4 APR 1997 (line 106) and father Cyril Watson (@I11@ - line 92) with death date 27 FEB 2002 (line 98).",
+                        "message": "Family (@F5@ - line 235) has Child Jean Watson (@I13@ - line 108) with birth date 3 JUN 1954 (line 112) and has mother Elizabeth Watson (@I12@ - line 100) with death date 4 APR 1997 (line 106) and father Cyril Watson (@I11@ - line 92) with death date 27 FEB 2002 (line 98).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 104,
@@ -3357,7 +3527,7 @@
                             },
                             "xref": "@I11@"
                         },
-                        "message": "Family (@F5@ - line 233) has Child Martin Watson (@I14@ - line 118) with birth date 16 DEC 1951 (line 122) and has mother Elizabeth Watson (@I12@ - line 100) with death date 4 APR 1997 (line 106) and father Cyril Watson (@I11@ - line 92) with death date 27 FEB 2002 (line 98).",
+                        "message": "Family (@F5@ - line 235) has Child Martin Watson (@I14@ - line 118) with birth date 16 DEC 1951 (line 122) and has mother Elizabeth Watson (@I12@ - line 100) with death date 4 APR 1997 (line 106) and father Cyril Watson (@I11@ - line 92) with death date 27 FEB 2002 (line 98).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 104,
@@ -3382,7 +3552,7 @@
                             },
                             "xref": "@I22@"
                         },
-                        "message": "Family (@F7@ - line 243) has Child Susan Cunningham (@I26@ - line 195) with birth date 9 SEP 1991 (line 199) and has mother Jean Watson (@I13@ - line 108) with death date 10 AUG 1994 (line 114) and father Brian Mayer (@I22@ - line 169) with death date 12 SEP 1989 (line 175).",
+                        "message": "Family (@F7@ - line 245) has Child Susan Cunningham (@I26@ - line 195) with birth date 9 SEP 1991 (line 199) and has mother Jean Watson (@I13@ - line 108) with death date 10 AUG 1994 (line 114) and father Brian Mayer (@I22@ - line 169) with death date 12 SEP 1989 (line 175).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 112,
@@ -3407,7 +3577,7 @@
                             },
                             "xref": "@I13@"
                         },
-                        "message": "Family (@F8@ - line 249) has Child Lucy Cunningham (@I23@ - line 177) with birth date 7 JUL 1977 (line 181) and has mother Jack Cunningham (@I21@ - line 163) with no death date and father Jean Watson (@I13@ - line 108) with death date 10 AUG 1994 (line 114).",
+                        "message": "Family (@F8@ - line 251) has Child Lucy Cunningham (@I23@ - line 177) with birth date 7 JUL 1977 (line 181) and has mother Jack Cunningham (@I21@ - line 163) with no death date and father Jean Watson (@I13@ - line 108) with death date 10 AUG 1994 (line 114).",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I21@"
@@ -3469,7 +3639,7 @@
                             },
                             "xref": "@I11@"
                         },
-                        "message": "Family (@F5@ - line 233) has Child Wendy Watson (@I3@ - line 32) with birth date 24 NOV 1848 (line 36) and has mother Elizabeth Watson (@I12@ - line 100) with death date 4 APR 1997 (line 106) and father Cyril Watson (@I11@ - line 92) with death date 27 FEB 2002 (line 98).",
+                        "message": "Family (@F5@ - line 235) has Child Wendy Watson (@I3@ - line 32) with birth date 24 NOV 1848 (line 36) and has mother Elizabeth Watson (@I12@ - line 100) with death date 4 APR 1997 (line 106) and father Cyril Watson (@I11@ - line 92) with death date 27 FEB 2002 (line 98).",
                         "mother": {
                             "birth_date": {
                                 "line_number": 104,
@@ -3491,7 +3661,7 @@
                             "birth_date": null,
                             "xref": "@I7@"
                         },
-                        "message": "Family (@F6@ - line 239) has Child Peter Dutton (@I8@ - line 72) with birth date 4 OCT 2003 (line 76) and has mother Keisha Morris (@I4@ - line 42) with no death date and father James Dutton (@I7@ - line 66) with no death date.",
+                        "message": "Family (@F6@ - line 241) has Child Peter Dutton (@I8@ - line 72) with birth date 4 OCT 2003 (line 76) and has mother Keisha Morris (@I4@ - line 42) with no death date and father James Dutton (@I7@ - line 66) with no death date.",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I4@"
@@ -3510,7 +3680,7 @@
                             "birth_date": null,
                             "xref": "@I14@"
                         },
-                        "message": "Family (@F9@ - line 257) has Child Matthew Watson (@I25@ - line 189) with birth date 4 AUG 1975 (line 193) and has mother Helen Trotter (@I24@ - line 183) with no death date and father Martin Watson (@I14@ - line 118) with no death date.",
+                        "message": "Family (@F9@ - line 259) has Child Matthew Watson (@I25@ - line 189) with birth date 4 AUG 1975 (line 193) and has mother Helen Trotter (@I24@ - line 183) with no death date and father Martin Watson (@I14@ - line 118) with no death date.",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I24@"
@@ -3529,7 +3699,7 @@
                             "birth_date": null,
                             "xref": "@I1@"
                         },
-                        "message": "Family (@F10@ - line 263) has Child Angelica Burbidge (@I5@ - line 50) with birth date 23 AUG 1855 (line 54) and has mother Keisha Morris (@I4@ - line 42) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
+                        "message": "Family (@F10@ - line 265) has Child Angelica Burbidge (@I5@ - line 50) with birth date 23 AUG 1855 (line 54) and has mother Keisha Morris (@I4@ - line 42) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I4@"
@@ -3548,7 +3718,7 @@
                             "birth_date": null,
                             "xref": "@I1@"
                         },
-                        "message": "Family (@F10@ - line 263) has Child Phoebe Burbidge (@I6@ - line 59) with birth date 4 SEP 2017 (line 63) and has mother Keisha Morris (@I4@ - line 42) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
+                        "message": "Family (@F10@ - line 265) has Child Phoebe Burbidge (@I6@ - line 59) with birth date 4 SEP 2017 (line 63) and has mother Keisha Morris (@I4@ - line 42) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date.",
                         "mother": {
                             "birth_date": null,
                             "xref": "@I4@"
@@ -3564,6 +3734,28 @@
                 "failed": [
                     {
                         "family": {
+                            "xref": "@F1@"
+                        },
+                        "husband": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "marriage_age": 53.04,
+                            "xref": "@I1@"
+                        },
+                        "message": "Family (@F1@ - line 206) has marriage date 17 JUN 1998 (line 212) with wife Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [married at 5.92 years old] and husband Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [married at 53.04 years old].",
+                        "wife": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "marriage_age": 5.92,
+                            "xref": "@I4@"
+                        }
+                    },
+                    {
+                        "family": {
                             "xref": "@F2@"
                         },
                         "husband": {
@@ -3574,7 +3766,7 @@
                             "marriage_age": 3.88,
                             "xref": "@I2@"
                         },
-                        "message": "Family (@F2@ - line 211) has marriage date 26 MAR 1976 (line 217) with wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 127.42 years old] and husband David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [married at 3.88 years old].",
+                        "message": "Family (@F2@ - line 213) has marriage date 26 MAR 1976 (line 219) with wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 127.42 years old] and husband David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [married at 3.88 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3596,7 +3788,7 @@
                             "marriage_age": 2.39,
                             "xref": "@I10@"
                         },
-                        "message": "Family (@F4@ - line 227) has marriage date 4 SEP 1970 (line 232) with wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 121.86 years old] and husband Jerry Briand (@I10@ - line 84) born 24 JAN 1973 (line 88) [married at 2.39 years old].",
+                        "message": "Family (@F4@ - line 229) has marriage date 4 SEP 1970 (line 234) with wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 121.86 years old] and husband Jerry Briand (@I10@ - line 84) born 24 JAN 1973 (line 88) [married at 2.39 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3618,7 +3810,7 @@
                             "marriage_age": 32.38,
                             "xref": "@I13@"
                         },
-                        "message": "Family (@F8@ - line 249) has marriage date 12 OCT 1986 (line 254) with wife Jack Cunningham (@I21@ - line 163) born 1 AUG 1990 (line 167) [married at 3.81 years old] and husband Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [married at 32.38 years old].",
+                        "message": "Family (@F8@ - line 251) has marriage date 12 OCT 1986 (line 256) with wife Jack Cunningham (@I21@ - line 163) born 1 AUG 1990 (line 167) [married at 3.81 years old] and husband Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [married at 32.38 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 167,
@@ -3626,6 +3818,28 @@
                             },
                             "marriage_age": 3.81,
                             "xref": "@I21@"
+                        }
+                    },
+                    {
+                        "family": {
+                            "xref": "@F10@"
+                        },
+                        "husband": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "marriage_age": 53.04,
+                            "xref": "@I1@"
+                        },
+                        "message": "Family (@F10@ - line 265) has marriage date 17 JUN 1998 (line 271) with wife Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [married at 5.92 years old] and husband Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [married at 53.04 years old].",
+                        "wife": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "marriage_age": 5.92,
+                            "xref": "@I4@"
                         }
                     },
                     {
@@ -3640,7 +3854,7 @@
                             "marriage_age": 28.27,
                             "xref": "@I14@"
                         },
-                        "message": "Family (@F11@ - line 268) has marriage date 18 MAR 1980 (line 272) with wife Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199) [married at 11.48 years old] and husband Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) [married at 28.27 years old].",
+                        "message": "Family (@F11@ - line 272) has marriage date 18 MAR 1980 (line 276) with wife Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199) [married at 11.48 years old] and husband Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) [married at 28.27 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 199,
@@ -3664,7 +3878,7 @@
                             "marriage_age": 32.81,
                             "xref": "@I22@"
                         },
-                        "message": "Family (@F7@ - line 243) has marriage date 19 MAR 1990 (line 248) with wife Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [married at 35.82 years old] and husband Brian Mayer (@I22@ - line 169) born 5 JUN 1957 (line 173) [married at 32.81 years old].",
+                        "message": "Family (@F7@ - line 245) has marriage date 19 MAR 1990 (line 250) with wife Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [married at 35.82 years old] and husband Brian Mayer (@I22@ - line 169) born 5 JUN 1957 (line 173) [married at 32.81 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 112,
@@ -3686,7 +3900,7 @@
                             "marriage_age": 21.39,
                             "xref": "@I14@"
                         },
-                        "message": "Family (@F9@ - line 257) has marriage date 1 MAY 1973 (line 262) with wife Helen Trotter (@I24@ - line 183) born 2 MAY 1993 (line 187) [married at 20.02 years old] and husband Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) [married at 21.39 years old].",
+                        "message": "Family (@F9@ - line 259) has marriage date 1 MAY 1973 (line 264) with wife Helen Trotter (@I24@ - line 183) born 2 MAY 1993 (line 187) [married at 20.02 years old] and husband Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) [married at 21.39 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 187,
@@ -3708,7 +3922,7 @@
                             "marriage_age": 24.89,
                             "xref": "@I25@"
                         },
-                        "message": "Family (@F12@ - line 273) has marriage date 18 JUN 2000 (line 277) with wife Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [married at 46.07 years old] and husband Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193) [married at 24.89 years old].",
+                        "message": "Family (@F12@ - line 277) has marriage date 18 JUN 2000 (line 281) with wife Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [married at 46.07 years old] and husband Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193) [married at 24.89 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 112,
@@ -3730,7 +3944,7 @@
                             "marriage_age": 35.32,
                             "xref": "@I25@"
                         },
-                        "message": "Family (@F13@ - line 278) has marriage date 18 NOV 2010 (line 282) with wife Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199) [married at 19.21 years old] and husband Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193) [married at 35.32 years old].",
+                        "message": "Family (@F13@ - line 282) has marriage date 18 NOV 2010 (line 286) with wife Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199) [married at 19.21 years old] and husband Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193) [married at 35.32 years old].",
                         "wife": {
                             "birth_date": {
                                 "line_number": 199,
@@ -3750,18 +3964,56 @@
                 "failed": [
                     {
                         "bullets": [
-                            "Family (@F2@ - line 211) marriage starts 26 MAR 1976 (line 217) and ends 13 NOV 2012 (line 219) because divorce",
-                            "Family (@F4@ - line 227) marriage starts 4 SEP 1970 (line 232) and ends 12 JUL 1988 (line 38) because wife death"
+                            "Family (@F1@ - line 206) marriage starts 17 JUN 1998 (line 212) and ends never (line N/A) because marriage has not ended",
+                            "Family (@F10@ - line 265) marriage starts 17 JUN 1998 (line 271) and ends never (line N/A) because marriage has not ended"
                         ],
                         "family_1": {
                             "marriage_date": {
-                                "line_number": 217,
+                                "line_number": 212,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "marriage_end": {
+                                "reason": "marriage has not ended",
+                                "story_dict": {
+                                    "line_number": "N/A",
+                                    "line_value": "never"
+                                }
+                            },
+                            "xref": "@F1@"
+                        },
+                        "family_2": {
+                            "marriage_date": {
+                                "line_number": 271,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "marriage_end": {
+                                "reason": "marriage has not ended",
+                                "story_dict": {
+                                    "line_number": "N/A",
+                                    "line_value": "never"
+                                }
+                            },
+                            "xref": "@F10@"
+                        },
+                        "individual": {
+                            "xref": "@I1@"
+                        },
+                        "message": "Individual Adam Burbidge (@I1@ - line 15) has overlapping marriages"
+                    },
+                    {
+                        "bullets": [
+                            "Family (@F2@ - line 213) marriage starts 26 MAR 1976 (line 219) and ends 13 NOV 2012 (line 221) because divorce",
+                            "Family (@F4@ - line 229) marriage starts 4 SEP 1970 (line 234) and ends 12 JUL 1988 (line 38) because wife death"
+                        ],
+                        "family_1": {
+                            "marriage_date": {
+                                "line_number": 219,
                                 "line_value": "26 MAR 1976"
                             },
                             "marriage_end": {
                                 "reason": "divorce",
                                 "story_dict": {
-                                    "line_number": 219,
+                                    "line_number": 221,
                                     "line_value": "13 NOV 2012"
                                 }
                             },
@@ -3769,7 +4021,7 @@
                         },
                         "family_2": {
                             "marriage_date": {
-                                "line_number": 232,
+                                "line_number": 234,
                                 "line_value": "4 SEP 1970"
                             },
                             "marriage_end": {
@@ -3785,17 +4037,55 @@
                             "xref": "@I3@"
                         },
                         "message": "Individual Wendy Watson (@I3@ - line 32) has overlapping marriages"
+                    },
+                    {
+                        "bullets": [
+                            "Family (@F1@ - line 206) marriage starts 17 JUN 1998 (line 212) and ends never (line N/A) because marriage has not ended",
+                            "Family (@F10@ - line 265) marriage starts 17 JUN 1998 (line 271) and ends never (line N/A) because marriage has not ended"
+                        ],
+                        "family_1": {
+                            "marriage_date": {
+                                "line_number": 212,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "marriage_end": {
+                                "reason": "marriage has not ended",
+                                "story_dict": {
+                                    "line_number": "N/A",
+                                    "line_value": "never"
+                                }
+                            },
+                            "xref": "@F1@"
+                        },
+                        "family_2": {
+                            "marriage_date": {
+                                "line_number": 271,
+                                "line_value": "17 JUN 1998"
+                            },
+                            "marriage_end": {
+                                "reason": "marriage has not ended",
+                                "story_dict": {
+                                    "line_number": "N/A",
+                                    "line_value": "never"
+                                }
+                            },
+                            "xref": "@F10@"
+                        },
+                        "individual": {
+                            "xref": "@I4@"
+                        },
+                        "message": "Individual Keisha Morris (@I4@ - line 42) has overlapping marriages"
                     }
                 ],
                 "passed": [
                     {
                         "bullets": [
-                            "Family (@F7@ - line 243) marriage starts 19 MAR 1990 (line 248) and ends 12 SEP 1989 (line 175) because husband death",
-                            "Family (@F8@ - line 249) marriage starts 12 OCT 1986 (line 254) and ends 17 NOV 1978 (line 256) because divorce"
+                            "Family (@F7@ - line 245) marriage starts 19 MAR 1990 (line 250) and ends 12 SEP 1989 (line 175) because husband death",
+                            "Family (@F8@ - line 251) marriage starts 12 OCT 1986 (line 256) and ends 17 NOV 1978 (line 258) because divorce"
                         ],
                         "family_1": {
                             "marriage_date": {
-                                "line_number": 248,
+                                "line_number": 250,
                                 "line_value": "19 MAR 1990"
                             },
                             "marriage_end": {
@@ -3809,13 +4099,13 @@
                         },
                         "family_2": {
                             "marriage_date": {
-                                "line_number": 254,
+                                "line_number": 256,
                                 "line_value": "12 OCT 1986"
                             },
                             "marriage_end": {
                                 "reason": "divorce",
                                 "story_dict": {
-                                    "line_number": 256,
+                                    "line_number": 258,
                                     "line_value": "17 NOV 1978"
                                 }
                             },
@@ -3837,6 +4127,35 @@
                     {
                         "child": {
                             "birth_date": {
+                                "line_number": 54,
+                                "line_value": "23 AUG 1855"
+                            },
+                            "xref": "@I5@"
+                        },
+                        "family": {
+                            "xref": "@F1@"
+                        },
+                        "father": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "xref": "@I1@",
+                            "years_older": 89.88
+                        },
+                        "message": "Family (@F1@ - line 206) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [136.99 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child].",
+                        "mother": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "xref": "@I4@",
+                            "years_older": 136.99
+                        }
+                    },
+                    {
+                        "child": {
+                            "birth_date": {
                                 "line_number": 19,
                                 "line_value": "17 JUN 1945"
                             },
@@ -3853,7 +4172,7 @@
                             "xref": "@I2@",
                             "years_older": 34.67
                         },
-                        "message": "Family (@F2@ - line 211) with child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [96.62 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [34.67 years older than child].",
+                        "message": "Family (@F2@ - line 213) with child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [96.62 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [34.67 years older than child].",
                         "mother": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3882,7 +4201,7 @@
                             "xref": "@I2@",
                             "years_older": 4.33
                         },
-                        "message": "Family (@F2@ - line 211) with child Louise Burbidge (@I9@ - line 78) born 15 OCT 1975 (line 82) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [126.97 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [4.33 years older than child].",
+                        "message": "Family (@F2@ - line 213) with child Louise Burbidge (@I9@ - line 78) born 15 OCT 1975 (line 82) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [126.97 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [4.33 years older than child].",
                         "mother": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3911,7 +4230,7 @@
                             "xref": "@I10@",
                             "years_older": 0.5
                         },
-                        "message": "Family (@F4@ - line 227) with child Linda Briand (@I20@ - line 157) born 24 JUL 1972 (line 161) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [123.75 years older than child] and father Jerry Briand (@I10@ - line 84) born 24 JAN 1973 (line 88) [0.5 years older than child].",
+                        "message": "Family (@F4@ - line 229) with child Linda Briand (@I20@ - line 157) born 24 JUL 1972 (line 161) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [123.75 years older than child] and father Jerry Briand (@I10@ - line 84) born 24 JAN 1973 (line 88) [0.5 years older than child].",
                         "mother": {
                             "birth_date": {
                                 "line_number": 36,
@@ -3920,9 +4239,67 @@
                             "xref": "@I3@",
                             "years_older": 123.75
                         }
+                    },
+                    {
+                        "child": {
+                            "birth_date": {
+                                "line_number": 54,
+                                "line_value": "23 AUG 1855"
+                            },
+                            "xref": "@I5@"
+                        },
+                        "family": {
+                            "xref": "@F10@"
+                        },
+                        "father": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "xref": "@I1@",
+                            "years_older": 89.88
+                        },
+                        "message": "Family (@F10@ - line 265) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [136.99 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child].",
+                        "mother": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "xref": "@I4@",
+                            "years_older": 136.99
+                        }
                     }
                 ],
                 "passed": [
+                    {
+                        "child": {
+                            "birth_date": {
+                                "line_number": 63,
+                                "line_value": "4 SEP 2017"
+                            },
+                            "xref": "@I6@"
+                        },
+                        "family": {
+                            "xref": "@F1@"
+                        },
+                        "father": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "xref": "@I1@",
+                            "years_older": 72.27
+                        },
+                        "message": "Family (@F1@ - line 206) with child Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [25.15 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [72.27 years older than child].",
+                        "mother": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "xref": "@I4@",
+                            "years_older": 25.15
+                        }
+                    },
                     {
                         "child": {
                             "birth_date": {
@@ -3942,7 +4319,7 @@
                             "xref": "@I22@",
                             "years_older": 34.28
                         },
-                        "message": "Family (@F7@ - line 243) with child Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199) has mother Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [37.29 years older than child] and father Brian Mayer (@I22@ - line 169) born 5 JUN 1957 (line 173) [34.28 years older than child].",
+                        "message": "Family (@F7@ - line 245) with child Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199) has mother Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [37.29 years older than child] and father Brian Mayer (@I22@ - line 169) born 5 JUN 1957 (line 173) [34.28 years older than child].",
                         "mother": {
                             "birth_date": {
                                 "line_number": 112,
@@ -3971,7 +4348,7 @@
                             "xref": "@I13@",
                             "years_older": 23.11
                         },
-                        "message": "Family (@F8@ - line 249) with child Lucy Cunningham (@I23@ - line 177) born 7 JUL 1977 (line 181) has mother Jack Cunningham (@I21@ - line 163) born 1 AUG 1990 (line 167) [13.08 years older than child] and father Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [23.11 years older than child].",
+                        "message": "Family (@F8@ - line 251) with child Lucy Cunningham (@I23@ - line 177) born 7 JUL 1977 (line 181) has mother Jack Cunningham (@I21@ - line 163) born 1 AUG 1990 (line 167) [13.08 years older than child] and father Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112) [23.11 years older than child].",
                         "mother": {
                             "birth_date": {
                                 "line_number": 167,
@@ -4000,7 +4377,7 @@
                             "xref": "@I14@",
                             "years_older": 23.65
                         },
-                        "message": "Family (@F9@ - line 257) with child Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193) has mother Helen Trotter (@I24@ - line 183) born 2 MAY 1993 (line 187) [17.76 years older than child] and father Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) [23.65 years older than child].",
+                        "message": "Family (@F9@ - line 259) with child Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193) has mother Helen Trotter (@I24@ - line 183) born 2 MAY 1993 (line 187) [17.76 years older than child] and father Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122) [23.65 years older than child].",
                         "mother": {
                             "birth_date": {
                                 "line_number": 187,
@@ -4008,6 +4385,35 @@
                             },
                             "xref": "@I24@",
                             "years_older": 17.76
+                        }
+                    },
+                    {
+                        "child": {
+                            "birth_date": {
+                                "line_number": 63,
+                                "line_value": "4 SEP 2017"
+                            },
+                            "xref": "@I6@"
+                        },
+                        "family": {
+                            "xref": "@F10@"
+                        },
+                        "father": {
+                            "birth_date": {
+                                "line_number": 19,
+                                "line_value": "17 JUN 1945"
+                            },
+                            "xref": "@I1@",
+                            "years_older": 72.27
+                        },
+                        "message": "Family (@F10@ - line 265) with child Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [25.15 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [72.27 years older than child].",
+                        "mother": {
+                            "birth_date": {
+                                "line_number": 46,
+                                "line_value": "18 JUL 1992"
+                            },
+                            "xref": "@I4@",
+                            "years_older": 25.15
                         }
                     }
                 ]
@@ -4054,10 +4460,10 @@
                         ],
                         "days_apart": 11077,
                         "family": {
-                            "line_number": 211,
+                            "line_number": 213,
                             "xref": "@F2@"
                         },
-                        "message": "Family (@F2@ - line 211) has siblings born more than 8 months apart (11077 days)",
+                        "message": "Family (@F2@ - line 213) has siblings born more than 8 months apart (11077 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 19,
@@ -4082,10 +4488,10 @@
                         ],
                         "days_apart": 7042,
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has siblings born more than 8 months apart (7042 days)",
+                        "message": "Family (@F3@ - line 222) has siblings born more than 8 months apart (7042 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 27,
@@ -4110,10 +4516,10 @@
                         ],
                         "days_apart": 13393,
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has siblings born more than 8 months apart (13393 days)",
+                        "message": "Family (@F3@ - line 222) has siblings born more than 8 months apart (13393 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 27,
@@ -4138,10 +4544,10 @@
                         ],
                         "days_apart": 11478,
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has siblings born more than 8 months apart (11478 days)",
+                        "message": "Family (@F3@ - line 222) has siblings born more than 8 months apart (11478 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 27,
@@ -4166,10 +4572,10 @@
                         ],
                         "days_apart": 6351,
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has siblings born more than 8 months apart (6351 days)",
+                        "message": "Family (@F3@ - line 222) has siblings born more than 8 months apart (6351 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 143,
@@ -4194,10 +4600,10 @@
                         ],
                         "days_apart": 4436,
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has siblings born more than 8 months apart (4436 days)",
+                        "message": "Family (@F3@ - line 222) has siblings born more than 8 months apart (4436 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 143,
@@ -4222,10 +4628,10 @@
                         ],
                         "days_apart": 1915,
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has siblings born more than 8 months apart (1915 days)",
+                        "message": "Family (@F3@ - line 222) has siblings born more than 8 months apart (1915 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 149,
@@ -4250,10 +4656,10 @@
                         ],
                         "days_apart": 38541,
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has siblings born more than 8 months apart (38541 days)",
+                        "message": "Family (@F5@ - line 235) has siblings born more than 8 months apart (38541 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 36,
@@ -4278,10 +4684,10 @@
                         ],
                         "days_apart": 37641,
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has siblings born more than 8 months apart (37641 days)",
+                        "message": "Family (@F5@ - line 235) has siblings born more than 8 months apart (37641 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 36,
@@ -4306,10 +4712,10 @@
                         ],
                         "days_apart": 900,
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has siblings born more than 8 months apart (900 days)",
+                        "message": "Family (@F5@ - line 235) has siblings born more than 8 months apart (900 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 112,
@@ -4334,10 +4740,10 @@
                         ],
                         "days_apart": 59182,
                         "family": {
-                            "line_number": 263,
+                            "line_number": 265,
                             "xref": "@F10@"
                         },
-                        "message": "Family (@F10@ - line 263) has siblings born more than 8 months apart (59182 days)",
+                        "message": "Family (@F10@ - line 265) has siblings born more than 8 months apart (59182 days)",
                         "sibling_one": {
                             "birth_date": {
                                 "line_number": 54,
@@ -4409,10 +4815,10 @@
                             "Sibling Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19)"
                         ],
                         "family": {
-                            "line_number": 211,
+                            "line_number": 213,
                             "xref": "@F2@"
                         },
-                        "message": "Family (@F2@ - line 211) has no more than 5 siblings born on the same date, with 1 sibling born on 17 JUN 1945",
+                        "message": "Family (@F2@ - line 213) has no more than 5 siblings born on the same date, with 1 sibling born on 17 JUN 1945",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4429,10 +4835,10 @@
                             "Sibling Louise Burbidge (@I9@ - line 78) born 15 OCT 1975 (line 82)"
                         ],
                         "family": {
-                            "line_number": 211,
+                            "line_number": 213,
                             "xref": "@F2@"
                         },
-                        "message": "Family (@F2@ - line 211) has no more than 5 siblings born on the same date, with 1 sibling born on 15 OCT 1975",
+                        "message": "Family (@F2@ - line 213) has no more than 5 siblings born on the same date, with 1 sibling born on 15 OCT 1975",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4449,10 +4855,10 @@
                             "Sibling Sally Burbidge (@I18@ - line 145) born 11 JUN 1943 (line 149)"
                         ],
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has no more than 5 siblings born on the same date, with 1 sibling born on 11 JUN 1943",
+                        "message": "Family (@F3@ - line 222) has no more than 5 siblings born on the same date, with 1 sibling born on 11 JUN 1943",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4469,10 +4875,10 @@
                             "Sibling Heather Burbidge (@I19@ - line 151) born 7 SEP 1948 (line 155)"
                         ],
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has no more than 5 siblings born on the same date, with 1 sibling born on 7 SEP 1948",
+                        "message": "Family (@F3@ - line 222) has no more than 5 siblings born on the same date, with 1 sibling born on 7 SEP 1948",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4489,10 +4895,10 @@
                             "Sibling Stanley Burbidge (@I17@ - line 139) born 30 OCT 1960 (line 143)"
                         ],
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has no more than 5 siblings born on the same date, with 1 sibling born on 30 OCT 1960",
+                        "message": "Family (@F3@ - line 222) has no more than 5 siblings born on the same date, with 1 sibling born on 30 OCT 1960",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4509,10 +4915,10 @@
                             "Sibling David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27)"
                         ],
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has no more than 5 siblings born on the same date, with 1 sibling born on 10 FEB 1980",
+                        "message": "Family (@F3@ - line 222) has no more than 5 siblings born on the same date, with 1 sibling born on 10 FEB 1980",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4529,10 +4935,10 @@
                             "Sibling Linda Briand (@I20@ - line 157) born 24 JUL 1972 (line 161)"
                         ],
                         "family": {
-                            "line_number": 227,
+                            "line_number": 229,
                             "xref": "@F4@"
                         },
-                        "message": "Family (@F4@ - line 227) has no more than 5 siblings born on the same date, with 1 sibling born on 24 JUL 1972",
+                        "message": "Family (@F4@ - line 229) has no more than 5 siblings born on the same date, with 1 sibling born on 24 JUL 1972",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4549,10 +4955,10 @@
                             "Sibling Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36)"
                         ],
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has no more than 5 siblings born on the same date, with 1 sibling born on 24 NOV 1848",
+                        "message": "Family (@F5@ - line 235) has no more than 5 siblings born on the same date, with 1 sibling born on 24 NOV 1848",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4569,10 +4975,10 @@
                             "Sibling Martin Watson (@I14@ - line 118) born 16 DEC 1951 (line 122)"
                         ],
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has no more than 5 siblings born on the same date, with 1 sibling born on 16 DEC 1951",
+                        "message": "Family (@F5@ - line 235) has no more than 5 siblings born on the same date, with 1 sibling born on 16 DEC 1951",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4589,10 +4995,10 @@
                             "Sibling Jean Watson (@I13@ - line 108) born 3 JUN 1954 (line 112)"
                         ],
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has no more than 5 siblings born on the same date, with 1 sibling born on 3 JUN 1954",
+                        "message": "Family (@F5@ - line 235) has no more than 5 siblings born on the same date, with 1 sibling born on 3 JUN 1954",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4609,10 +5015,10 @@
                             "Sibling Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76)"
                         ],
                         "family": {
-                            "line_number": 239,
+                            "line_number": 241,
                             "xref": "@F6@"
                         },
-                        "message": "Family (@F6@ - line 239) has no more than 5 siblings born on the same date, with 1 sibling born on 4 OCT 2003",
+                        "message": "Family (@F6@ - line 241) has no more than 5 siblings born on the same date, with 1 sibling born on 4 OCT 2003",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4629,10 +5035,10 @@
                             "Sibling Susan Cunningham (@I26@ - line 195) born 9 SEP 1991 (line 199)"
                         ],
                         "family": {
-                            "line_number": 243,
+                            "line_number": 245,
                             "xref": "@F7@"
                         },
-                        "message": "Family (@F7@ - line 243) has no more than 5 siblings born on the same date, with 1 sibling born on 9 SEP 1991",
+                        "message": "Family (@F7@ - line 245) has no more than 5 siblings born on the same date, with 1 sibling born on 9 SEP 1991",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4649,10 +5055,10 @@
                             "Sibling Lucy Cunningham (@I23@ - line 177) born 7 JUL 1977 (line 181)"
                         ],
                         "family": {
-                            "line_number": 249,
+                            "line_number": 251,
                             "xref": "@F8@"
                         },
-                        "message": "Family (@F8@ - line 249) has no more than 5 siblings born on the same date, with 1 sibling born on 7 JUL 1977",
+                        "message": "Family (@F8@ - line 251) has no more than 5 siblings born on the same date, with 1 sibling born on 7 JUL 1977",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4669,10 +5075,10 @@
                             "Sibling Matthew Watson (@I25@ - line 189) born 4 AUG 1975 (line 193)"
                         ],
                         "family": {
-                            "line_number": 257,
+                            "line_number": 259,
                             "xref": "@F9@"
                         },
-                        "message": "Family (@F9@ - line 257) has no more than 5 siblings born on the same date, with 1 sibling born on 4 AUG 1975",
+                        "message": "Family (@F9@ - line 259) has no more than 5 siblings born on the same date, with 1 sibling born on 4 AUG 1975",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4689,10 +5095,10 @@
                             "Sibling Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54)"
                         ],
                         "family": {
-                            "line_number": 263,
+                            "line_number": 265,
                             "xref": "@F10@"
                         },
-                        "message": "Family (@F10@ - line 263) has no more than 5 siblings born on the same date, with 1 sibling born on 23 AUG 1855",
+                        "message": "Family (@F10@ - line 265) has no more than 5 siblings born on the same date, with 1 sibling born on 23 AUG 1855",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4709,10 +5115,10 @@
                             "Sibling Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63)"
                         ],
                         "family": {
-                            "line_number": 263,
+                            "line_number": 265,
                             "xref": "@F10@"
                         },
-                        "message": "Family (@F10@ - line 263) has no more than 5 siblings born on the same date, with 1 sibling born on 4 SEP 2017",
+                        "message": "Family (@F10@ - line 265) has no more than 5 siblings born on the same date, with 1 sibling born on 4 SEP 2017",
                         "siblings": [
                             {
                                 "birth_date": {
@@ -4770,10 +5176,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 211,
+                            "line_number": 213,
                             "xref": "@F2@"
                         },
-                        "message": "Family (@F2@ - line 211) has 2 siblings"
+                        "message": "Family (@F2@ - line 213) has 2 siblings"
                     },
                     {
                         "bullets": [
@@ -4801,10 +5207,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) has 4 siblings"
+                        "message": "Family (@F3@ - line 222) has 4 siblings"
                     },
                     {
                         "bullets": [
@@ -4817,10 +5223,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 227,
+                            "line_number": 229,
                             "xref": "@F4@"
                         },
-                        "message": "Family (@F4@ - line 227) has one child"
+                        "message": "Family (@F4@ - line 229) has one child"
                     },
                     {
                         "bullets": [
@@ -4843,10 +5249,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
-                        "message": "Family (@F5@ - line 233) has 3 siblings"
+                        "message": "Family (@F5@ - line 235) has 3 siblings"
                     },
                     {
                         "bullets": [
@@ -4859,10 +5265,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 239,
+                            "line_number": 241,
                             "xref": "@F6@"
                         },
-                        "message": "Family (@F6@ - line 239) has one child"
+                        "message": "Family (@F6@ - line 241) has one child"
                     },
                     {
                         "bullets": [
@@ -4875,10 +5281,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 243,
+                            "line_number": 245,
                             "xref": "@F7@"
                         },
-                        "message": "Family (@F7@ - line 243) has one child"
+                        "message": "Family (@F7@ - line 245) has one child"
                     },
                     {
                         "bullets": [
@@ -4891,10 +5297,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 249,
+                            "line_number": 251,
                             "xref": "@F8@"
                         },
-                        "message": "Family (@F8@ - line 249) has one child"
+                        "message": "Family (@F8@ - line 251) has one child"
                     },
                     {
                         "bullets": [
@@ -4907,10 +5313,10 @@
                             }
                         ],
                         "family": {
-                            "line_number": 257,
+                            "line_number": 259,
                             "xref": "@F9@"
                         },
-                        "message": "Family (@F9@ - line 257) has one child"
+                        "message": "Family (@F9@ - line 259) has one child"
                     },
                     {
                         "bullets": [
@@ -4928,37 +5334,37 @@
                             }
                         ],
                         "family": {
-                            "line_number": 263,
+                            "line_number": 265,
                             "xref": "@F10@"
                         },
-                        "message": "Family (@F10@ - line 263) has 2 siblings"
+                        "message": "Family (@F10@ - line 265) has 2 siblings"
                     },
                     {
                         "bullets": [],
                         "children": [],
                         "family": {
-                            "line_number": 268,
+                            "line_number": 272,
                             "xref": "@F11@"
                         },
-                        "message": "Family (@F11@ - line 268) has no children"
+                        "message": "Family (@F11@ - line 272) has no children"
                     },
                     {
                         "bullets": [],
                         "children": [],
                         "family": {
-                            "line_number": 273,
+                            "line_number": 277,
                             "xref": "@F12@"
                         },
-                        "message": "Family (@F12@ - line 273) has no children"
+                        "message": "Family (@F12@ - line 277) has no children"
                     },
                     {
                         "bullets": [],
                         "children": [],
                         "family": {
-                            "line_number": 278,
+                            "line_number": 282,
                             "xref": "@F13@"
                         },
-                        "message": "Family (@F13@ - line 278) has no children"
+                        "message": "Family (@F13@ - line 282) has no children"
                     }
                 ]
             }
@@ -4979,7 +5385,7 @@
                             "xref": "@I1@"
                         },
                         "family": {
-                            "line_number": 211,
+                            "line_number": 213,
                             "xref": "@F2@"
                         },
                         "father": {
@@ -4990,14 +5396,14 @@
                             },
                             "xref": "@I2@"
                         },
-                        "message": "Family (@F2@ - line 211) with father David Burbidge (@I2@ - line 23) and son Adam Burbidge (@I1@ - line 15) have the same surname"
+                        "message": "Family (@F2@ - line 213) with father David Burbidge (@I2@ - line 23) and son Adam Burbidge (@I1@ - line 15) have the same surname"
                     },
                     {
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
-                        "message": "Family (@F3@ - line 220) with male siblings David Burbidge (@I2@ - line 23) and Stanley Burbidge (@I17@ - line 139) have the same surname",
+                        "message": "Family (@F3@ - line 222) with male siblings David Burbidge (@I2@ - line 23) and Stanley Burbidge (@I17@ - line 139) have the same surname",
                         "sibling_one": {
                             "line_number": 23,
                             "name": {
@@ -5025,7 +5431,7 @@
                             "xref": "@I2@"
                         },
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
                         "father": {
@@ -5036,7 +5442,7 @@
                             },
                             "xref": "@I15@"
                         },
-                        "message": "Family (@F3@ - line 220) with father Andrew Burbidge (@I15@ - line 125) and son David Burbidge (@I2@ - line 23) have the same surname"
+                        "message": "Family (@F3@ - line 222) with father Andrew Burbidge (@I15@ - line 125) and son David Burbidge (@I2@ - line 23) have the same surname"
                     },
                     {
                         "child": {
@@ -5048,7 +5454,7 @@
                             "xref": "@I17@"
                         },
                         "family": {
-                            "line_number": 220,
+                            "line_number": 222,
                             "xref": "@F3@"
                         },
                         "father": {
@@ -5059,7 +5465,7 @@
                             },
                             "xref": "@I15@"
                         },
-                        "message": "Family (@F3@ - line 220) with father Andrew Burbidge (@I15@ - line 125) and son Stanley Burbidge (@I17@ - line 139) have the same surname"
+                        "message": "Family (@F3@ - line 222) with father Andrew Burbidge (@I15@ - line 125) and son Stanley Burbidge (@I17@ - line 139) have the same surname"
                     },
                     {
                         "child": {
@@ -5071,7 +5477,7 @@
                             "xref": "@I14@"
                         },
                         "family": {
-                            "line_number": 233,
+                            "line_number": 235,
                             "xref": "@F5@"
                         },
                         "father": {
@@ -5082,7 +5488,7 @@
                             },
                             "xref": "@I11@"
                         },
-                        "message": "Family (@F5@ - line 233) with father Cyril Watson (@I11@ - line 92) and son Martin Watson (@I14@ - line 118) have the same surname"
+                        "message": "Family (@F5@ - line 235) with father Cyril Watson (@I11@ - line 92) and son Martin Watson (@I14@ - line 118) have the same surname"
                     },
                     {
                         "child": {
@@ -5094,7 +5500,7 @@
                             "xref": "@I8@"
                         },
                         "family": {
-                            "line_number": 239,
+                            "line_number": 241,
                             "xref": "@F6@"
                         },
                         "father": {
@@ -5105,7 +5511,7 @@
                             },
                             "xref": "@I7@"
                         },
-                        "message": "Family (@F6@ - line 239) with father James Dutton (@I7@ - line 66) and son Peter Dutton (@I8@ - line 72) have the same surname"
+                        "message": "Family (@F6@ - line 241) with father James Dutton (@I7@ - line 66) and son Peter Dutton (@I8@ - line 72) have the same surname"
                     },
                     {
                         "child": {
@@ -5117,7 +5523,7 @@
                             "xref": "@I25@"
                         },
                         "family": {
-                            "line_number": 257,
+                            "line_number": 259,
                             "xref": "@F9@"
                         },
                         "father": {
@@ -5128,7 +5534,7 @@
                             },
                             "xref": "@I14@"
                         },
-                        "message": "Family (@F9@ - line 257) with father Martin Watson (@I14@ - line 118) and son Matthew Watson (@I25@ - line 189) have the same surname"
+                        "message": "Family (@F9@ - line 259) with father Martin Watson (@I14@ - line 118) and son Matthew Watson (@I25@ - line 189) have the same surname"
                     }
                 ]
             }
@@ -5641,7 +6047,20 @@
             "id": "Anomaly US23",
             "name": "unique_name_and_birth_date",
             "output": {
-                "failed": [],
+                "failed": [
+                    {
+                        "bullets": [
+                            "Identical individuals: Keisha Morris (@I4@ - line 42), Keisha Morris (@I27@ - line 201)"
+                        ],
+                        "message": "Individual Keisha Morris (@I4@ - line 42) is identical to Individual Keisha Morris (@I27@ - line 201)"
+                    },
+                    {
+                        "bullets": [
+                            "Identical individuals: Keisha Morris (@I27@ - line 201), Keisha Morris (@I4@ - line 42)"
+                        ],
+                        "message": "Individual Keisha Morris (@I27@ - line 201) is identical to Individual Keisha Morris (@I4@ - line 42)"
+                    }
+                ],
                 "passed": []
             }
         },

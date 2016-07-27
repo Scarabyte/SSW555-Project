@@ -68,7 +68,7 @@ def family_summary(gedcom_file):
 
 
 def story(id_):
-    """ Function decarator used to find both outcomes of a story, and log and return the results """
+    """ Function decorator used to find both outcomes of a story, and log and return the results """
 
     def story_decorator(func):
         def func_wrapper(gedcom_file):
@@ -861,6 +861,7 @@ def unique_ids(gedcom_file):
     # ...
     # @I1@ and @I27@ are identical
     # @F1@ and @F10@ are identical
+    # Actually... this means we should define two different individuals/families with the same IDs...
     return r
 
 
@@ -877,7 +878,41 @@ def unique_name_and_birth_date(gedcom_file):
     """
     r = {"passed": [], "failed": []}
     # ...
-    # @I1@ and @I27@ are identical
+    # @I4@ and @I27@ are identical
+    r = {"passed": [], "failed": []}
+    msg = {"passed": "No identical individuals found".format,
+           "failed": "Individual {0} is identical to Individual {1}".format}
+    bul = "Identical individuals: {0}, {1}".format
+    # Iterate (recurse?) through each of the individuals in the GEDCOM file.
+    # Compare the names and birth dates
+    for indi in gedcom_file.individuals:
+        # Check Project Overview Assumptions
+        if not indi.has("birth_date"):
+            continue  # Project Overview Assumptions not met
+        if not indi.has("name"):
+            continue  # Project Overview Assumptions not met
+        print indi
+        # print "~AB~ ",gedcom_file.individuals[indi]
+        # TypeError: list indices must be integers, not Individual
+        # So how do I get the index number of the individual?
+        # print index(indi)
+        # Wasn't expecting it to be that easy... I need a Python reference book...
+        # print int(indi)
+        for indi2 in gedcom_file.individuals:
+            # I want this loop to start from 'indi' and go to the end of the list of individuals
+            if indi.xref != indi2.xref:
+                # I guess I could do this temprarily, although it's not the greatest solution.
+                if indi.name.val == indi2.name.val and indi.birth_date.val == indi2.birth_date.val:
+                    print "~AB~ Start"
+                    print indi
+                    print indi2
+                    print "~AB~ End"
+                    # out["message"] =
+                    r["failed"].append({"message": msg["failed"](indi, indi2), "bullets": [bul(indi,indi2)]})
+                    # Okay, this is getting close, but it's not really quite what I want.
+            # pass
+    print gedcom_file.individuals
+    print gedcom_file.individuals[0]
     return r
 
 
@@ -892,9 +927,38 @@ def unique_families_by_spouses(gedcom_file):
     :type gedcom_file: parser.File
 
     """
+    print "~AB~ Test"
     r = {"passed": [], "failed": []}
     # ...
     # @F1@ and @F10@ are identical
+    r = {"passed": [], "failed": []}
+    msg = {"passed": "No identical families found".format,
+           "failed": "Family {0} is identical to Family {1}".format}
+    bul = "Identical families: {0} {1}".format
+    # Iterate (recurse?) through each of the families in the GEDCOM file.
+    # Compare the spouses and marriage dates
+    for fam in gedcom_file.families:
+        # Check the next family to the end of the list
+        for fam2 in gedcom_file.families:
+            # Check Project Overview Assumptions
+            if not fam.has("marriage_date") or not fam2.has("marriage_date"):
+                continue  # Project Overview Assumptions not met
+            if not fam.has("husband") or not fam2.has("husband"):
+                continue  # Project Overview Assumptions not met
+            if not fam.has("wife") or not fam2.has("wife"):
+                continue  # Project Overview Assumptions not met
+            if fam.xref != fam2.xref:
+                if (fam.husband.val == fam2.husband.val and
+                    fam.wife.val == fam2.wife.val and
+                    fam.marriage_date.val == fam2.marriage_date.val):
+                    print "~AB~ ~AB~ US24"
+                    print "~AB~ Start"
+                    print fam
+                    print fam2
+                    print "~AB~ End"
+                    # Okay, again, this is close, but not quite what I want; I don't want to repeat checks already done.
+  
+        pass
     return r
 
 
@@ -1083,7 +1147,7 @@ def reject_illegitimate_dates():
 
 if __name__ == "__main__":
     g = gedcom.File()
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint03.ged"
+    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint04.ged"
     try:
         g.read_file(fname)
     except IOError as e:

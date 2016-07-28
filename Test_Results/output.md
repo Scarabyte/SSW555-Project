@@ -26,7 +26,7 @@
 	 > Keisha Morris (@I4@ - line 42)
 		 * Gender: Female (line 44)
 		 * Birth date: 18 JUL 1992 (line 46)
-		 * Current age: 24.04
+		 * Current age: 24.05
 		 * Spouses: Adam Burbidge (@I1@ - line 15), Adam Burbidge (@I1@ - line 15), James Dutton (@I7@ - line 66)
 		 * Spouse in: Family (@F1@ - line 206), Family (@F10@ - line 265), Family (@F6@ - line 241)
 	 > Angelica Burbidge (@I5@ - line 50)
@@ -49,12 +49,12 @@
 	 > Peter Dutton (@I8@ - line 72)
 		 * Gender: Male (line 74)
 		 * Birth date: 4 OCT 2003 (line 76)
-		 * Current age: 12.82
+		 * Current age: 12.83
 		 * Child in: Family (@F6@ - line 241)
 	 > Louise Burbidge (@I9@ - line 78)
 		 * Gender: Female (line 80)
 		 * Birth date: 15 OCT 1975 (line 82)
-		 * Current age: 40.81
+		 * Current age: 40.82
 		 * Child in: Family (@F2@ - line 213)
 	 > Jerry Briand (@I10@ - line 84)
 		 * Gender: Male (line 86)
@@ -118,7 +118,7 @@
 	 > Heather Burbidge (@I19@ - line 151)
 		 * Gender: Female (line 153)
 		 * Birth date: 7 SEP 1948 (line 155)
-		 * Current age: 67.93
+		 * Current age: 67.94
 		 * Child in: Family (@F3@ - line 222)
 	 > Linda Briand (@I20@ - line 157)
 		 * Gender: Female (line 159)
@@ -141,12 +141,12 @@
 	 > Lucy Cunningham (@I23@ - line 177)
 		 * Gender: Female (line 179)
 		 * Birth date: 7 JUL 1977 (line 181)
-		 * Current age: 39.08
+		 * Current age: 39.09
 		 * Child in: Family (@F8@ - line 251)
 	 > Helen Trotter (@I24@ - line 183)
 		 * Gender: Female (line 185)
 		 * Birth date: 2 MAY 1993 (line 187)
-		 * Current age: 23.25
+		 * Current age: 23.26
 		 * Spouses: Martin Watson (@I14@ - line 118)
 		 * Spouse in: Family (@F9@ - line 259)
 	 > Matthew Watson (@I25@ - line 189)
@@ -162,7 +162,7 @@
 	 > Keisha Morris (@I27@ - line 201)
 		 * Gender: Female (line 203)
 		 * Birth date: 18 JUL 1992 (line 205)
-		 * Current age: 24.04
+		 * Current age: 24.05
 
 ### Summary: Families ###
 	 > Family (@F1@ - line 206)
@@ -227,7 +227,7 @@
 ~~~~
 [failed]
 	 > Individual Phoebe Burbidge (@I6@ - line 59) has a birth date after the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 4 SEP 2017 (line 63)
 ~~~~
 
@@ -386,11 +386,11 @@
 [failed]
 	 > Individual Keisha Morris (@I4@ - line 42) is identical to Individual Keisha Morris (@I27@ - line 201)
 		 * Identical individuals: Keisha Morris (@I4@ - line 42), Keisha Morris (@I27@ - line 201)
-	 > Individual Keisha Morris (@I27@ - line 201) is identical to Individual Keisha Morris (@I4@ - line 42)
-		 * Identical individuals: Keisha Morris (@I27@ - line 201), Keisha Morris (@I4@ - line 42)
 ~~~~
 
 ### Anomaly US24: Unique Families By Spouses ###
 ~~~~
 [failed]
+	 > Family Family (@F1@ - line 206) is identical to Family Family (@F10@ - line 265)
+		 * Identical families: Family (@F1@ - line 206) Family (@F10@ - line 265)
 ~~~~

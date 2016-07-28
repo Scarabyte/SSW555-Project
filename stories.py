@@ -886,33 +886,20 @@ def unique_name_and_birth_date(gedcom_file):
     # Iterate (recurse?) through each of the individuals in the GEDCOM file.
     # Compare the names and birth dates
     for indi in gedcom_file.individuals:
-        # Check Project Overview Assumptions
-        if not indi.has("birth_date"):
-            continue  # Project Overview Assumptions not met
-        if not indi.has("name"):
-            continue  # Project Overview Assumptions not met
-        print indi
-        # print "~AB~ ",gedcom_file.individuals[indi]
-        # TypeError: list indices must be integers, not Individual
-        # So how do I get the index number of the individual?
-        # print index(indi)
-        # Wasn't expecting it to be that easy... I need a Python reference book...
-        # print int(indi)
-        for indi2 in gedcom_file.individuals:
+        for indi2 in gedcom_file.individuals[gedcom_file.individuals.index(indi)+1:]:
             # I want this loop to start from 'indi' and go to the end of the list of individuals
+        # Check Project Overview Assumptions
+            if not indi.has("birth_date") or not indi2.has("birth_date"):
+                continue  # Project Overview Assumptions not met
+            if not indi.has("name") or not indi2.has("name"):
+                continue  # Project Overview Assumptions not met
+
             if indi.xref != indi2.xref:
-                # I guess I could do this temprarily, although it's not the greatest solution.
                 if indi.name.val == indi2.name.val and indi.birth_date.val == indi2.birth_date.val:
-                    print "~AB~ Start"
-                    print indi
-                    print indi2
-                    print "~AB~ End"
+                    # Now define the failing and passing messages
                     # out["message"] =
                     r["failed"].append({"message": msg["failed"](indi, indi2), "bullets": [bul(indi,indi2)]})
-                    # Okay, this is getting close, but it's not really quite what I want.
-            # pass
-    print gedcom_file.individuals
-    print gedcom_file.individuals[0]
+                    # Print the names and birth dates?
     return r
 
 
@@ -933,13 +920,13 @@ def unique_families_by_spouses(gedcom_file):
     # @F1@ and @F10@ are identical
     r = {"passed": [], "failed": []}
     msg = {"passed": "No identical families found".format,
-           "failed": "Family {0} is identical to Family {1}".format}
+           "failed": "{0} is identical to {1}".format}
     bul = "Identical families: {0} {1}".format
     # Iterate (recurse?) through each of the families in the GEDCOM file.
     # Compare the spouses and marriage dates
     for fam in gedcom_file.families:
         # Check the next family to the end of the list
-        for fam2 in gedcom_file.families:
+        for fam2 in gedcom_file.families[gedcom_file.families.index(fam)+1:]:
             # Check Project Overview Assumptions
             if not fam.has("marriage_date") or not fam2.has("marriage_date"):
                 continue  # Project Overview Assumptions not met
@@ -951,14 +938,10 @@ def unique_families_by_spouses(gedcom_file):
                 if (fam.husband.val == fam2.husband.val and
                     fam.wife.val == fam2.wife.val and
                     fam.marriage_date.val == fam2.marriage_date.val):
-                    print "~AB~ ~AB~ US24"
-                    print "~AB~ Start"
-                    print fam
-                    print fam2
-                    print "~AB~ End"
-                    # Okay, again, this is close, but not quite what I want; I don't want to repeat checks already done.
+                    # Define the failure message
+                    r["failed"].append({"message": msg["failed"](fam, fam2), "bullets": [bul(fam,fam2)]})
+                    # Print out the family members etc?
   
-        pass
     return r
 
 

@@ -26,7 +26,7 @@
 	 > Keisha Morris (@I4@ - line 42)
 		 * Gender: Female (line 44)
 		 * Birth date: 18 JUL 1992 (line 46)
-		 * Current age: 24.04
+		 * Current age: 24.05
 		 * Spouses: Adam Burbidge (@I1@ - line 15), Adam Burbidge (@I1@ - line 15), James Dutton (@I7@ - line 66)
 		 * Spouse in: Family (@F1@ - line 206), Family (@F10@ - line 265), Family (@F6@ - line 241)
 	 > Angelica Burbidge (@I5@ - line 50)
@@ -49,12 +49,12 @@
 	 > Peter Dutton (@I8@ - line 72)
 		 * Gender: Male (line 74)
 		 * Birth date: 4 OCT 2003 (line 76)
-		 * Current age: 12.82
+		 * Current age: 12.83
 		 * Child in: Family (@F6@ - line 241)
 	 > Louise Burbidge (@I9@ - line 78)
 		 * Gender: Female (line 80)
 		 * Birth date: 15 OCT 1975 (line 82)
-		 * Current age: 40.81
+		 * Current age: 40.82
 		 * Child in: Family (@F2@ - line 213)
 	 > Jerry Briand (@I10@ - line 84)
 		 * Gender: Male (line 86)
@@ -118,7 +118,7 @@
 	 > Heather Burbidge (@I19@ - line 151)
 		 * Gender: Female (line 153)
 		 * Birth date: 7 SEP 1948 (line 155)
-		 * Current age: 67.93
+		 * Current age: 67.94
 		 * Child in: Family (@F3@ - line 222)
 	 > Linda Briand (@I20@ - line 157)
 		 * Gender: Female (line 159)
@@ -141,12 +141,12 @@
 	 > Lucy Cunningham (@I23@ - line 177)
 		 * Gender: Female (line 179)
 		 * Birth date: 7 JUL 1977 (line 181)
-		 * Current age: 39.08
+		 * Current age: 39.09
 		 * Child in: Family (@F8@ - line 251)
 	 > Helen Trotter (@I24@ - line 183)
 		 * Gender: Female (line 185)
 		 * Birth date: 2 MAY 1993 (line 187)
-		 * Current age: 23.25
+		 * Current age: 23.26
 		 * Spouses: Martin Watson (@I14@ - line 118)
 		 * Spouse in: Family (@F9@ - line 259)
 	 > Matthew Watson (@I25@ - line 189)
@@ -162,7 +162,7 @@
 	 > Keisha Morris (@I27@ - line 201)
 		 * Gender: Female (line 203)
 		 * Birth date: 18 JUL 1992 (line 205)
-		 * Current age: 24.04
+		 * Current age: 24.05
 
 ### Summary: Families ###
 	 > Family (@F1@ - line 206)
@@ -227,149 +227,149 @@
 ~~~~
 [passed]
 	 > Individual Adam Burbidge (@I1@ - line 15) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 17 JUN 1945 (line 19)
 	 > Individual David Burbidge (@I2@ - line 23) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 10 FEB 1980 (line 27)
 	 > Individual David Burbidge (@I2@ - line 23) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 24 AUG 1994 (line 29)
 	 > Individual Wendy Watson (@I3@ - line 32) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 24 NOV 1848 (line 36)
 	 > Individual Wendy Watson (@I3@ - line 32) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 12 JUL 1988 (line 38)
 	 > Individual Keisha Morris (@I4@ - line 42) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 18 JUL 1992 (line 46)
 	 > Individual Angelica Burbidge (@I5@ - line 50) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 23 AUG 1855 (line 54)
 	 > Individual Angelica Burbidge (@I5@ - line 50) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 4 MAY 2006 (line 56)
 	 > Individual James Dutton (@I7@ - line 66) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 26 MAR 1979 (line 70)
 	 > Individual Peter Dutton (@I8@ - line 72) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 4 OCT 2003 (line 76)
 	 > Individual Louise Burbidge (@I9@ - line 78) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 15 OCT 1975 (line 82)
 	 > Individual Jerry Briand (@I10@ - line 84) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 24 JAN 1973 (line 88)
 	 > Individual Jerry Briand (@I10@ - line 84) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 16 MAY 2016 (line 90)
 	 > Individual Cyril Watson (@I11@ - line 92) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 27 MAR 1920 (line 96)
 	 > Individual Cyril Watson (@I11@ - line 92) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 27 FEB 2002 (line 98)
 	 > Individual Elizabeth Watson (@I12@ - line 100) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 14 JAN 1922 (line 104)
 	 > Individual Elizabeth Watson (@I12@ - line 100) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 4 APR 1997 (line 106)
 	 > Individual Jean Watson (@I13@ - line 108) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 3 JUN 1954 (line 112)
 	 > Individual Jean Watson (@I13@ - line 108) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 10 AUG 1994 (line 114)
 	 > Individual Martin Watson (@I14@ - line 118) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 16 DEC 1951 (line 122)
 	 > Individual Andrew Burbidge (@I15@ - line 125) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 8 APR 1918 (line 129)
 	 > Individual Andrew Burbidge (@I15@ - line 125) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 10 OCT 1995 (line 131)
 	 > Individual Claire Burbidge (@I16@ - line 133) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 23 OCT 1918 (line 137)
 	 > Individual Stanley Burbidge (@I17@ - line 139) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 30 OCT 1960 (line 143)
 	 > Individual Sally Burbidge (@I18@ - line 145) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 11 JUN 1943 (line 149)
 	 > Individual Heather Burbidge (@I19@ - line 151) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 7 SEP 1948 (line 155)
 	 > Individual Linda Briand (@I20@ - line 157) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 24 JUL 1972 (line 161)
 	 > Individual Jack Cunningham (@I21@ - line 163) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 1 AUG 1990 (line 167)
 	 > Individual Brian Mayer (@I22@ - line 169) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 5 JUN 1957 (line 173)
 	 > Individual Brian Mayer (@I22@ - line 169) has a death date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Death date is 12 SEP 1989 (line 175)
 	 > Individual Lucy Cunningham (@I23@ - line 177) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 7 JUL 1977 (line 181)
 	 > Individual Helen Trotter (@I24@ - line 183) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 2 MAY 1993 (line 187)
 	 > Individual Matthew Watson (@I25@ - line 189) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 4 AUG 1975 (line 193)
 	 > Individual Susan Cunningham (@I26@ - line 195) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 9 SEP 1991 (line 199)
 	 > Individual Keisha Morris (@I27@ - line 201) has a birth date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 18 JUL 1992 (line 205)
 	 > Family (@F1@ - line 206) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 17 JUN 1998 (line 212)
 	 > Family (@F2@ - line 213) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 26 MAR 1976 (line 219)
 	 > Family (@F2@ - line 213) has a divorce date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Divorce date is 13 NOV 2012 (line 221)
 	 > Family (@F4@ - line 229) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 4 SEP 1970 (line 234)
 	 > Family (@F7@ - line 245) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 19 MAR 1990 (line 250)
 	 > Family (@F8@ - line 251) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 12 OCT 1986 (line 256)
 	 > Family (@F8@ - line 251) has a divorce date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Divorce date is 17 NOV 1978 (line 258)
 	 > Family (@F9@ - line 259) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 1 MAY 1973 (line 264)
 	 > Family (@F10@ - line 265) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 17 JUN 1998 (line 271)
 	 > Family (@F11@ - line 272) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 18 MAR 1980 (line 276)
 	 > Family (@F12@ - line 277) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 18 JUN 2000 (line 281)
 	 > Family (@F13@ - line 282) has a marriage date before the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Marriage date is 18 NOV 2010 (line 286)
 [failed]
 	 > Individual Phoebe Burbidge (@I6@ - line 59) has a birth date after the current date
-		 * Current Date is 27 JUL 2016 (date script ran)
+		 * Current Date is 28 JUL 2016 (date script ran)
 		 * Birth date is 4 SEP 2017 (line 63)
 ~~~~
 
@@ -438,32 +438,32 @@
 ### Error US07: Less Then 150 Years Old ###
 ~~~~
 [passed]
-	 > Individual Adam Burbidge (@I1@ - line 15) was born 17 JUN 1945 (line 19) and is 71.16 years old as of 27 JUL 2016 (current date)
+	 > Individual Adam Burbidge (@I1@ - line 15) was born 17 JUN 1945 (line 19) and is 71.16 years old as of 28 JUL 2016 (current date)
 	 > Individual David Burbidge (@I2@ - line 23) was born 10 FEB 1980 (line 27) and died 14.55 years later on 24 AUG 1994 (line 29)
 	 > Individual Wendy Watson (@I3@ - line 32) was born 24 NOV 1848 (line 36) and died 139.72 years later on 12 JUL 1988 (line 38)
-	 > Individual Keisha Morris (@I4@ - line 42) was born 18 JUL 1992 (line 46) and is 24.04 years old as of 27 JUL 2016 (current date)
-	 > Individual Phoebe Burbidge (@I6@ - line 59) was born 4 SEP 2017 (line 63) and is 1.1 years old as of 27 JUL 2016 (current date)
-	 > Individual James Dutton (@I7@ - line 66) was born 26 MAR 1979 (line 70) and is 37.37 years old as of 27 JUL 2016 (current date)
-	 > Individual Peter Dutton (@I8@ - line 72) was born 4 OCT 2003 (line 76) and is 12.82 years old as of 27 JUL 2016 (current date)
-	 > Individual Louise Burbidge (@I9@ - line 78) was born 15 OCT 1975 (line 82) and is 40.81 years old as of 27 JUL 2016 (current date)
+	 > Individual Keisha Morris (@I4@ - line 42) was born 18 JUL 1992 (line 46) and is 24.05 years old as of 28 JUL 2016 (current date)
+	 > Individual Phoebe Burbidge (@I6@ - line 59) was born 4 SEP 2017 (line 63) and is 1.1 years old as of 28 JUL 2016 (current date)
+	 > Individual James Dutton (@I7@ - line 66) was born 26 MAR 1979 (line 70) and is 37.37 years old as of 28 JUL 2016 (current date)
+	 > Individual Peter Dutton (@I8@ - line 72) was born 4 OCT 2003 (line 76) and is 12.83 years old as of 28 JUL 2016 (current date)
+	 > Individual Louise Burbidge (@I9@ - line 78) was born 15 OCT 1975 (line 82) and is 40.82 years old as of 28 JUL 2016 (current date)
 	 > Individual Jerry Briand (@I10@ - line 84) was born 24 JAN 1973 (line 88) and died 43.34 years later on 16 MAY 2016 (line 90)
 	 > Individual Cyril Watson (@I11@ - line 92) was born 27 MAR 1920 (line 96) and died 81.98 years later on 27 FEB 2002 (line 98)
 	 > Individual Elizabeth Watson (@I12@ - line 100) was born 14 JAN 1922 (line 104) and died 75.27 years later on 4 APR 1997 (line 106)
 	 > Individual Jean Watson (@I13@ - line 108) was born 3 JUN 1954 (line 112) and died 40.21 years later on 10 AUG 1994 (line 114)
-	 > Individual Martin Watson (@I14@ - line 118) was born 16 DEC 1951 (line 122) and is 64.66 years old as of 27 JUL 2016 (current date)
+	 > Individual Martin Watson (@I14@ - line 118) was born 16 DEC 1951 (line 122) and is 64.66 years old as of 28 JUL 2016 (current date)
 	 > Individual Andrew Burbidge (@I15@ - line 125) was born 8 APR 1918 (line 129) and died 77.56 years later on 10 OCT 1995 (line 131)
-	 > Individual Claire Burbidge (@I16@ - line 133) was born 23 OCT 1918 (line 137) and is 97.83 years old as of 27 JUL 2016 (current date)
-	 > Individual Stanley Burbidge (@I17@ - line 139) was born 30 OCT 1960 (line 143) and is 55.78 years old as of 27 JUL 2016 (current date)
-	 > Individual Sally Burbidge (@I18@ - line 145) was born 11 JUN 1943 (line 149) and is 73.18 years old as of 27 JUL 2016 (current date)
-	 > Individual Heather Burbidge (@I19@ - line 151) was born 7 SEP 1948 (line 155) and is 67.93 years old as of 27 JUL 2016 (current date)
-	 > Individual Linda Briand (@I20@ - line 157) was born 24 JUL 1972 (line 161) and is 44.04 years old as of 27 JUL 2016 (current date)
-	 > Individual Jack Cunningham (@I21@ - line 163) was born 1 AUG 1990 (line 167) and is 26.01 years old as of 27 JUL 2016 (current date)
+	 > Individual Claire Burbidge (@I16@ - line 133) was born 23 OCT 1918 (line 137) and is 97.83 years old as of 28 JUL 2016 (current date)
+	 > Individual Stanley Burbidge (@I17@ - line 139) was born 30 OCT 1960 (line 143) and is 55.78 years old as of 28 JUL 2016 (current date)
+	 > Individual Sally Burbidge (@I18@ - line 145) was born 11 JUN 1943 (line 149) and is 73.18 years old as of 28 JUL 2016 (current date)
+	 > Individual Heather Burbidge (@I19@ - line 151) was born 7 SEP 1948 (line 155) and is 67.94 years old as of 28 JUL 2016 (current date)
+	 > Individual Linda Briand (@I20@ - line 157) was born 24 JUL 1972 (line 161) and is 44.04 years old as of 28 JUL 2016 (current date)
+	 > Individual Jack Cunningham (@I21@ - line 163) was born 1 AUG 1990 (line 167) and is 26.01 years old as of 28 JUL 2016 (current date)
 	 > Individual Brian Mayer (@I22@ - line 169) was born 5 JUN 1957 (line 173) and died 32.29 years later on 12 SEP 1989 (line 175)
-	 > Individual Lucy Cunningham (@I23@ - line 177) was born 7 JUL 1977 (line 181) and is 39.08 years old as of 27 JUL 2016 (current date)
-	 > Individual Helen Trotter (@I24@ - line 183) was born 2 MAY 1993 (line 187) and is 23.25 years old as of 27 JUL 2016 (current date)
-	 > Individual Matthew Watson (@I25@ - line 189) was born 4 AUG 1975 (line 193) and is 41.01 years old as of 27 JUL 2016 (current date)
-	 > Individual Susan Cunningham (@I26@ - line 195) was born 9 SEP 1991 (line 199) and is 24.9 years old as of 27 JUL 2016 (current date)
-	 > Individual Keisha Morris (@I27@ - line 201) was born 18 JUL 1992 (line 205) and is 24.04 years old as of 27 JUL 2016 (current date)
+	 > Individual Lucy Cunningham (@I23@ - line 177) was born 7 JUL 1977 (line 181) and is 39.09 years old as of 28 JUL 2016 (current date)
+	 > Individual Helen Trotter (@I24@ - line 183) was born 2 MAY 1993 (line 187) and is 23.26 years old as of 28 JUL 2016 (current date)
+	 > Individual Matthew Watson (@I25@ - line 189) was born 4 AUG 1975 (line 193) and is 41.01 years old as of 28 JUL 2016 (current date)
+	 > Individual Susan Cunningham (@I26@ - line 195) was born 9 SEP 1991 (line 199) and is 24.9 years old as of 28 JUL 2016 (current date)
+	 > Individual Keisha Morris (@I27@ - line 201) was born 18 JUL 1992 (line 205) and is 24.05 years old as of 28 JUL 2016 (current date)
 [failed]
 	 > Individual Angelica Burbidge (@I5@ - line 50) was born 23 AUG 1855 (line 54) and died 150.8 years later on 4 MAY 2006 (line 56)
 ~~~~
@@ -799,12 +799,12 @@
 [failed]
 	 > Individual Keisha Morris (@I4@ - line 42) is identical to Individual Keisha Morris (@I27@ - line 201)
 		 * Identical individuals: Keisha Morris (@I4@ - line 42), Keisha Morris (@I27@ - line 201)
-	 > Individual Keisha Morris (@I27@ - line 201) is identical to Individual Keisha Morris (@I4@ - line 42)
-		 * Identical individuals: Keisha Morris (@I27@ - line 201), Keisha Morris (@I4@ - line 42)
 ~~~~
 
 ### Anomaly US24: Unique Families By Spouses ###
 ~~~~
 [passed]
 [failed]
+	 > Family Family (@F1@ - line 206) is identical to Family Family (@F10@ - line 265)
+		 * Identical families: Family (@F1@ - line 206) Family (@F10@ - line 265)
 ~~~~

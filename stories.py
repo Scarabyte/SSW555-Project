@@ -843,7 +843,40 @@ def correct_gender_for_role(gedcom_file):
     r = {"passed": [], "failed": []}
     # ...
     # @F8@ has the female as husband and male as wife
+    passed_msg = "Family {0} has husband {1} in the family as male and wife {2} in the family as female".format
+    failed_msg = "Family {0} does not have has husband {1} in the family as male and wife {2} in the family as female".format
+
+    for fam in gedcom_file.families:  
+        out = {"family_xref": fam.xref,
+               "husband_xref": fam.husband.xref if fam.has("husband") else None,
+               "wife_xref": fam.wife.xref if fam.has("wife") else None}
+
+        if fam.husband.has("sex") and fam.husband.sex.val == "M":
+            if fam.wife.has("sex") and fam.wife.sex.val == "F" : 
+                out["message"] = passed_msg(fam,fam.wife,fam.husband)
+                r["passed"].append(out)
+            else : 
+                out["message"] = failed_msg(fam,fam.wife,fam.husband)
+                r["failed"].append(out)
+     
     return r
+
+def get_unique_ID(Pass_Arry):
+    Uniq_Arry_Var = list(set(Pass_Arry))
+
+    Uniq_Arr = []
+    Duq_Ary = list(Pass_Arry)
+
+    for Index_Value in Uniq_Arry_Var:
+        Duq_Ary.remove(Index_Value)
+
+    Duq_Ary = list(set(Duq_Ary))
+
+    for Index_Value in Uniq_Arry_Var:
+        if Index_Value not in Duq_Ary:
+            Uniq_Arr.append(Index_Value)
+
+    return list((Uniq_Arry_Var, Uniq_Arr, Duq_Ary))
 
 
 @story("Error US22")
@@ -862,6 +895,30 @@ def unique_ids(gedcom_file):
     # @I1@ and @I27@ are identical
     # @F1@ and @F10@ are identical
     # Actually... this means we should define two different individuals/families with the same IDs...
+    msg = {"passed": "No identical families IDs / Individual IDs found".format,
+           "failed": "Family or Individual is identical to each other".format }
+    bul = "Identical individual: {1}".format
+    bul1 = "Identical Family: {2}".format
+
+    Individual_lst = []
+    Fam_lst = []   
+    
+    for fam in gedcom_file.families:  
+        for indi in gedcom_file.individuals:
+
+           Individual_lst = indi.xref,
+           Fam_lst = fam.xref 
+
+    Indi_lst = get_unique_ID(Individual_lst)
+    Family_lst = get_unique_ID(Fam_lst)
+
+    uniq_indi_values =Indi_lst[1]
+    Dupl_indi_values = Indi_lst[2]
+    
+    uniq_fam_values = Family_lst[1]
+    Dupl_fam_values = Family_lst[2]
+
+    r["failed"].append({"message": msg["failed"], "bullet": [(bul(Dupl_indi_values))],"bullet1" : [(bul1(Dupl_fam_values))]})
     return r
 
 

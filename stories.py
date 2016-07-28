@@ -851,12 +851,11 @@ def correct_gender_for_role(gedcom_file):
                "husband_xref": fam.husband.xref if fam.has("husband") else None,
                "wife_xref": fam.wife.xref if fam.has("wife") else None}
 
-        if fam.husband.has("sex") and fam.husband.sex.val == "M":
-            if fam.wife.has("sex") and fam.wife.sex.val == "F" : 
-                out["message"] = passed_msg(fam,fam.wife,fam.husband)
+        if (fam.husband.has("sex") and fam.husband.sex.val == "M" ) and (fam.wife.has("sex") and fam.wife.sex.val == "F") : 
+                out["message"] = passed_msg(fam,fam.husband,fam.wife)
                 r["passed"].append(out)
-            else : 
-                out["message"] = failed_msg(fam,fam.wife,fam.husband)
+        else : 
+                out["message"] = failed_msg(fam,fam.husband,fam.wife)
                 r["failed"].append(out)
      
     return r

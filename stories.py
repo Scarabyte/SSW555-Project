@@ -843,8 +843,8 @@ def correct_gender_for_role(gedcom_file):
     r = {"passed": [], "failed": []}
     # ...
     # @F8@ has the female as husband and male as wife
-    passed_msg = "Family {0} has husband {1} in the family as male and wife {2} in the family as female".format
-    failed_msg = "Family {0} does not have has husband {1} in the family as male and wife {2} in the family as female".format
+    passed_msg = " {0} has husband {1} as male and wife {2} in the family as female in the family".format
+    failed_msg = " {0} does not have  husband {1} as male and wife {2} as female in the family".format
 
     for fam in gedcom_file.families:  
         out = {"family_xref": fam.xref,

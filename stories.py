@@ -844,7 +844,7 @@ def correct_gender_for_role(gedcom_file):
     # ...
     # @F8@ has the female as husband and male as wife
     passed_msg = " {0} has husband {1} as male and wife {2} in the family as female in the family".format
-    failed_msg = " {0} does not have  husband {1} as male and wife {2} as female in the family".format
+    failed_msg = " {0} does not have husband {1} as male and wife {2} as female in the family".format
 
     for fam in gedcom_file.families:  
         out = {"family_xref": fam.xref,
@@ -894,6 +894,7 @@ def unique_ids(gedcom_file):
     # @I1@ and @I27@ are identical
     # @F1@ and @F10@ are identical
     # Actually... this means we should define two different individuals/families with the same IDs...
+    # @I16@ and @F5@ are defined twice
     msg = {"passed": "No identical families IDs / Individual IDs found".format,
            "failed": "Family or Individual is identical to each other".format }
     bul = "Identical individual: {1}".format
@@ -944,7 +945,7 @@ def unique_name_and_birth_date(gedcom_file):
     for indi in gedcom_file.individuals:
         for indi2 in gedcom_file.individuals[gedcom_file.individuals.index(indi)+1:]:
             # I want this loop to start from 'indi' and go to the end of the list of individuals
-        # Check Project Overview Assumptions
+            # Check Project Overview Assumptions
             if not indi.has("birth_date") or not indi2.has("birth_date"):
                 continue  # Project Overview Assumptions not met
             if not indi.has("name") or not indi2.has("name"):
@@ -970,7 +971,6 @@ def unique_families_by_spouses(gedcom_file):
     :type gedcom_file: parser.File
 
     """
-    print "~AB~ Test"
     r = {"passed": [], "failed": []}
     # ...
     # @F1@ and @F10@ are identical

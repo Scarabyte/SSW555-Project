@@ -172,6 +172,16 @@ class Individual(Base):
 
     @property
     @cachemethod
+    def niece_or_nephew(self):
+        sex = self.sex.val if self.has("sex") else None
+        if sex == "M":
+            return "nephew"
+        if sex == "F":
+            return "niece"
+        return "niece/nephew"
+
+    @property
+    @cachemethod
     def birth(self):
         return self.line.children.find_one("tag", "BIRT")
 

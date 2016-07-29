@@ -813,19 +813,23 @@ def aunts_and_uncles(gedcom_file):
     :type gedcom_file: parser.File
 
     """
-    # @F11@ and @F12@ should fail this
     r = {"passed": [], "failed": []}
-    msg = {"passed": "{0} is not married to niece/nephew {1}".format,
-           "failed": "{0} is married to niece/nephew {1}".format}
+
+    msg = {"passed": "{0} is not married to {1} {2}".format,
+           "failed": "{0} is married to {1} {2}".format}
+
     bul = "Married in {0}".format
+
     for indi in gedcom_file.individuals:
         spouses = list(indi.spouses)
         for aunt_or_uncle in indi.aunts_and_uncles:
             if aunt_or_uncle in spouses:
                 fam = spouses.pop(spouses.index(aunt_or_uncle)).spouse_family
-                r["failed"].append({"message": msg["failed"](aunt_or_uncle, indi), "bullets": [bul(fam)]})
+                r["failed"].append({"message": msg["failed"](aunt_or_uncle, indi.niece_or_nephew, indi),
+                                    "bullets": [bul(fam)]})
             else:
-                r["passed"].append({"message": msg["passed"](aunt_or_uncle, indi)})
+                r["passed"].append({"message": msg["passed"](aunt_or_uncle, indi.niece_or_nephew, indi)})
+
     return r
 
 

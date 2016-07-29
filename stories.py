@@ -889,16 +889,16 @@ def unique_ids(gedcom_file):
     r = {"passed": [], "failed": []}
 
     l = [{"items": gedcom_file.individuals,
-          "msg": {"passed": "{0} individual found with xref {1}",
-                  "failed": "{0} individuals found with xref {1}"}},
+          "msg": {"passed": "{0} individual found with xref {1}".format,
+                  "failed": "{0} individuals found with xref {1}".format}},
          {"items": gedcom_file.families,
-          "msg": {"passed": "{0} family found with xref {1}",
-                  "failed": "{0} families found with xref {1}"}}]
+          "msg": {"passed": "{0} family found with xref {1}".format,
+                  "failed": "{0} families found with xref {1}".format}}]
 
     for d in l:
         for xref, with_xref in iter(sorted(_matches(d["items"]).iteritems(), key=_sort)):
             status = "passed" if len(with_xref) == 1 else "failed"
-            r[status].append({"message": d["msg"][status].format(len(with_xref), xref), "bullets": with_xref})
+            r[status].append({"message": d["msg"][status](len(with_xref), xref), "bullets": with_xref})
 
     return r
 

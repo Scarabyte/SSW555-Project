@@ -182,6 +182,16 @@ class Individual(Base):
 
     @property
     @cachemethod
+    def aunt_or_uncle(self):
+        sex = self.sex.val if self.has("sex") else None
+        if sex == "M":
+            return "uncle"
+        if sex == "F":
+            return "aunt"
+        return "niece/nephew"
+
+    @property
+    @cachemethod
     def birth(self):
         return self.line.children.find_one("tag", "BIRT")
 
@@ -261,9 +271,24 @@ class Individual(Base):
     def aunts_and_uncles(self):
         for fam in self.families("FAMC"):
             for sib in fam.husband.siblings:
+                sib.rel_by = fam.husband
+                sib.rel_by_type = "dad"
                 yield sib
             for sib in fam.wife.siblings:
+                sib.rel_by = fam.wife
+                sib.rel_by_type = "mom"
                 yield sib
+
+    @property
+    @cachemethod
+    def cousins(self):
+        for fam in self.families("FAMC"):
+            for sib in fam.husband.siblings:
+                for child in sib.children:
+                    yield child
+            for sib in fam.wife.siblings:
+                for child in sib.children:
+                    yield child
 
     @property
     @cachemethod

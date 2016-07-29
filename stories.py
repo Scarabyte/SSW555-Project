@@ -797,8 +797,23 @@ def first_cousins_should_not_marry(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
-    # @F13@ should fail this
+
+    msg = {"passed": "{0} is not married to any cousins".format,
+           "failed": "{0} is married to {1} {2}".format}
+
+    bul = "{0} is married to cousin {1} in {2}".format
+
+    for indi in gedcom_file.individuals:
+        spouses = list(indi.spouses)
+        bullets = [bul(indi, c, spouses.pop(spouses.index(c)).spouse_family) for c in indi.cousins if c in spouses]
+        count = len(bullets)
+        if count == 0:
+            r["passed"].append({"message": msg["passed"](indi)})
+        elif count == 1:
+            r["failed"].append({"message": msg["failed"](indi, count, "cousin"), "bullets": bullets})
+        else:
+            r["failed"].append({"message": msg["failed"](indi, count, "cousins"), "bullets": bullets})
+
     return r
 
 
@@ -815,20 +830,22 @@ def aunts_and_uncles(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 
-    msg = {"passed": "{0} is not married to {1} {2}".format,
-           "failed": "{0} is married to {1} {2}".format}
+    msg = {"passed": "{0} is not married to any aunt(s) and/or uncle(s)".format,
+           "failed": "{0} is married to {1} aunt(s) and/or uncle(s)".format}
 
-    bul = "Married in {0}".format
+    bul = "{0} is married to {1} {2} in {3}".format
 
     for indi in gedcom_file.individuals:
         spouses = list(indi.spouses)
-        for aunt_or_uncle in indi.aunts_and_uncles:
-            if aunt_or_uncle in spouses:
-                fam = spouses.pop(spouses.index(aunt_or_uncle)).spouse_family
-                r["failed"].append({"message": msg["failed"](aunt_or_uncle, indi.niece_or_nephew, indi),
-                                    "bullets": [bul(fam)]})
-            else:
-                r["passed"].append({"message": msg["passed"](aunt_or_uncle, indi.niece_or_nephew, indi)})
+        bullets = [bul(indi, x.aunt_or_uncle, x, spouses.pop(spouses.index(x)).spouse_family) for x in
+                   indi.aunts_and_uncles if x in spouses]
+        count = len(bullets)
+        if count == 0:
+            r["passed"].append({"message": msg["passed"](indi)})
+        elif count == 1:
+            r["failed"].append({"message": msg["failed"](indi, count), "bullets": bullets})
+        else:
+            r["failed"].append({"message": msg["failed"](indi, count), "bullets": bullets})
 
     return r
 

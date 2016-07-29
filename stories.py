@@ -841,23 +841,25 @@ def correct_gender_for_role(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
-    # @F8@ has the female as husband and male as wife
-    passed_msg = " {0} has husband {1} as male and wife {2} in the family as female in the family".format
-    failed_msg = " {0} does not have husband {1} as male and wife {2} as female in the family".format
 
-    for fam in gedcom_file.families:  
-        out = {"family_xref": fam.xref,
-               "husband_xref": fam.husband.xref if fam.has("husband") else None,
-               "wife_xref": fam.wife.xref if fam.has("wife") else None}
+    msg = {"passed": "{0} has traditional gender roles".format,
+           "failed": "{0} does not have traditional gender roles".format}
 
-        if (fam.husband.has("sex") and fam.husband.sex.val == "M" ) and (fam.wife.has("sex") and fam.wife.sex.val == "F") : 
-                out["message"] = passed_msg(fam,fam.husband,fam.wife)
-                r["passed"].append(out)
-        else : 
-                out["message"] = failed_msg(fam,fam.husband,fam.wife)
-                r["failed"].append(out)
-     
+    bul = "{0} {1} is {2}".format
+
+    for fam in gedcom_file.families:
+
+        # Check Project Overview Assumptions
+        if not fam.has("wife") or not fam.wife.has("sex"):
+            continue  # Project Overview Assumptions not met
+        if not fam.has("husband") or not fam.husband.has("sex"):
+            continue  # Project Overview Assumptions not met
+
+        status = "passed" if (fam.husband.sex.val == "M") and (fam.wife.sex.val == "F") else "failed"
+        r[status].append({"message": msg[status](fam, fam.husband, fam.wife),
+                          "bullets": [bul("Husband", fam.husband, fam.husband.sex),
+                                      bul("Wife", fam.wife, fam.wife.sex)]})
+
     return r
 
 

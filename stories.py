@@ -706,7 +706,7 @@ def siblings_should_not_marry(gedcom_file):
                 r["passed"].append({"message": passed_msg(indi, len(siblings))})
             else:
                 r["failed"].append({"message": failed_msg(indi, len(b), len(siblings)), "bullets": b})
-                
+
     return r
 
 
@@ -842,7 +842,7 @@ def unique_ids(gedcom_file):
     for d in l:
         for xref, with_xref in iter(sorted(_matches(d["items"]).iteritems(), key=_sort)):
             status = "passed" if len(with_xref) == 1 else "failed"
-            r[status].append({"message": d["msg"][status](len(with_xref), xref), "bullets": with_xref})
+            r[status].append({"message": d["msg"][status](len(with_xref), xref), "bullets": map(str, with_xref)})
 
     return r
 
@@ -880,7 +880,7 @@ def unique_name_and_birth_date(gedcom_file):
                 if indi.name.val == indi2.name.val and indi.birth_date.val == indi2.birth_date.val:
                     # Now define the failing and passing messages
                     # out["message"] =
-                    r["failed"].append({"message": msg["failed"](indi, indi2), "bullets": [bul(indi,indi2)]})
+                    r["failed"].append({"message": msg["failed"](indi, indi2), "bullets": [bul(indi, indi2)]})
                     # Print the names and birth dates?
     return r
 

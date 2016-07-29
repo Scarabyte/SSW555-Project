@@ -481,36 +481,28 @@ def no_bigamy(gedcom_file):
     """
     r = {"passed": [], "failed": []}
 
-    failed_msg = "Individual {0} has overlapping marriages".format
-    passed_msg = "Individual {0} has non-overlapping marriages".format
-    bullet = "{0} marriage starts {1} and ends {2} (line {3}) because {4}".format
+    msg = {"passed": "Individual {0} has overlapping marriages".format,
+           "failed": "Individual {0} has non-overlapping marriages".format}
+
+    bul = "{0} marriage starts {1} and ends {2} (line {3}) because {4}".format
+
     for indi in gedcom_file.individuals:
         # Get all combinations of marriages this individual is or has been in
         for fam_1, fam_2 in combinations(indi.families("FAMS"), 2):
 
             # Check Project Overview Assumptions
-            if not fam_1.has("marriage_date"):
-                continue  # Project Overview Assumptions not met
-            if not fam_2.has("marriage_date"):
+            if (not fam_1.has("marriage_date")) or (not fam_2.has("marriage_date")):
                 continue  # Project Overview Assumptions not met
 
-            start1, end1, start2, end2 = fam_1.marriage_date, fam_1.marriage_end, fam_2.marriage_date, fam_2.marriage_end
-            end1_dt, end2_dt = end1.pop("dt"), end2.pop("dt")
-            out = {"individual": {"xref": indi.xref},
-                   "family_1": {"xref": fam_1.xref, "marriage_date": start1.story_dict, "marriage_end": end1},
-                   "family_2": {"xref": fam_2.xref, "marriage_date": start2.story_dict, "marriage_end": end2},
-                   "bullets": [
-                       bullet(fam_1, start1, end1["story_dict"].get("line_value"), end1["story_dict"]["line_number"],
-                              end1["reason"]),
-                       bullet(fam_2, start2, end2["story_dict"].get("line_value"), end2["story_dict"]["line_number"],
-                              end2["reason"]),
-                   ]}
-            if (start1.dt <= end2_dt) and (end1_dt >= start2.dt):
-                out["message"] = failed_msg(indi)
-                r["failed"].append(out)
-            else:
-                out["message"] = passed_msg(indi)
-                r["passed"].append(out)
+            s1, e1 = fam_1.marriage_date, fam_1.marriage_end
+            s2, e2 = fam_2.marriage_date, fam_2.marriage_end
+
+            b = [bul(fam_1, s1, e1["story_dict"].get("line_value"), e1["story_dict"]["line_number"], e1["reason"]),
+                 bul(fam_2, s2, e2["story_dict"].get("line_value"), e2["story_dict"]["line_number"], e2["reason"])]
+
+            status = "failed" if (s1.dt <= e2["dt"]) and (e1["dt"] >= s2.dt) else "passed"
+            r[status].append({"message": msg[status](indi), "bullets": b})
+
     return r
 
 
@@ -1198,32 +1190,32 @@ if __name__ == "__main__":
     logger.addHandler(stream_handler)
 
     # Sprint 0 - Summaries
-    # individual_summary(g)
-    # family_summary(g)
+    individual_summary(g)
+    family_summary(g)
 
     # Sprint 1 - Stories
-    # dates_before_current_date(g)
-    # birth_before_marriage(g)
-    # birth_before_death(g)
-    # marriage_before_divorce(g)
-    # marriage_before_death(g)
-    # divorce_before_death(g)
+    dates_before_current_date(g)
+    birth_before_marriage(g)
+    birth_before_death(g)
+    marriage_before_divorce(g)
+    marriage_before_death(g)
+    divorce_before_death(g)
 
     # Sprint 2 - Stories
-    # less_then_150_years_old(g)
-    # birth_before_marriage_of_parents(g)
-    # birth_before_death_of_parents(g)
-    # marriage_after_14(g)
-    # no_bigamy(g)
-    # parents_not_too_old(g)
+    less_then_150_years_old(g)
+    birth_before_marriage_of_parents(g)
+    birth_before_death_of_parents(g)
+    marriage_after_14(g)
+    no_bigamy(g)
+    parents_not_too_old(g)
 
     # Sprint 3 - Stories
-    # siblings_spacing(g)
-    # less_than_5_multiple_births(g)
-    # fewer_than_15_siblings(g)
-    # male_last_names(g)
-    # no_marriages_to_descendants(g)
-    # siblings_should_not_marry(g)
+    siblings_spacing(g)
+    less_than_5_multiple_births(g)
+    fewer_than_15_siblings(g)
+    male_last_names(g)
+    no_marriages_to_descendants(g)
+    siblings_should_not_marry(g)
 
     # Sprint 4 - Stories
     first_cousins_should_not_marry(g)

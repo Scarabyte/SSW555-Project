@@ -411,6 +411,7 @@ class Family(Base):
                     "dt": self.wife.death_date.dt,
                     "story_dict": self.wife.death_date.story_dict}
         if self.husband.has("death_date") and not self.wife.has("death_date"):
+
             return {"reason": "husband death",
                     "dt": self.husband.death_date.dt,
                     "story_dict": self.husband.story_dict}

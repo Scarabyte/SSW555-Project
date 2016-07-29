@@ -842,8 +842,6 @@ def aunts_and_uncles(gedcom_file):
         count = len(bullets)
         if count == 0:
             r["passed"].append({"message": msg["passed"](indi)})
-        elif count == 1:
-            r["failed"].append({"message": msg["failed"](indi, count), "bullets": bullets})
         else:
             r["failed"].append({"message": msg["failed"](indi, count), "bullets": bullets})
 

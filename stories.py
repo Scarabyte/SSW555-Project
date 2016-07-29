@@ -5,7 +5,7 @@ import logging
 import sys
 from datetime import datetime
 from itertools import combinations, groupby
-
+from gedcom.tools import human_sort
 import gedcom
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
@@ -860,23 +860,6 @@ def correct_gender_for_role(gedcom_file):
      
     return r
 
-def get_unique_ID(Pass_Arry):
-    Uniq_Arry_Var = list(set(Pass_Arry))
-
-    Uniq_Arr = []
-    Duq_Ary = list(Pass_Arry)
-
-    for Index_Value in Uniq_Arry_Var:
-        Duq_Ary.remove(Index_Value)
-
-    Duq_Ary = list(set(Duq_Ary))
-
-    for Index_Value in Uniq_Arry_Var:
-        if Index_Value not in Duq_Ary:
-            Uniq_Arr.append(Index_Value)
-
-    return list((Uniq_Arry_Var, Uniq_Arr, Duq_Ary))
-
 
 @story("Error US22")
 def unique_ids(gedcom_file):
@@ -889,36 +872,32 @@ def unique_ids(gedcom_file):
     :type gedcom_file: parser.File
 
     """
+
+    def _matches(a):
+        m = {}
+        [m[b.xref].append(b) if b.xref in m else m.update({b.xref: [b]}) for b in a]
+        return m
+
+    def _sort(x):
+        try:
+            return int(x[0][2:].replace("@", ""))
+        except ValueError:
+            return x
+
     r = {"passed": [], "failed": []}
-    # ...
-    # @I1@ and @I27@ are identical
-    # @F1@ and @F10@ are identical
-    # Actually... this means we should define two different individuals/families with the same IDs...
-    # @I16@ and @F5@ are defined twice
-    msg = {"passed": "No identical families IDs / Individual IDs found".format,
-           "failed": "Family or Individual is identical to each other".format }
-    bul = "Identical individual: {1}".format
-    bul1 = "Identical Family: {2}".format
 
-    Individual_lst = []
-    Fam_lst = []   
-    
-    for fam in gedcom_file.families:  
-        for indi in gedcom_file.individuals:
+    l = [{"items": gedcom_file.individuals,
+          "msg": {"passed": "{0} individual found with xref {1}",
+                  "failed": "{0} individuals found with xref {1}"}},
+         {"items": gedcom_file.families,
+          "msg": {"passed": "{0} family found with xref {1}",
+                  "failed": "{0} families found with xref {1}"}}]
 
-           Individual_lst = indi.xref,
-           Fam_lst = fam.xref 
+    for d in l:
+        for xref, with_xref in iter(sorted(_matches(d["items"]).iteritems(), key=_sort)):
+            status = "passed" if len(with_xref) == 1 else "failed"
+            r[status].append({"message": d["msg"][status].format(len(with_xref), xref), "bullets": with_xref})
 
-    Indi_lst = get_unique_ID(Individual_lst)
-    Family_lst = get_unique_ID(Fam_lst)
-
-    uniq_indi_values =Indi_lst[1]
-    Dupl_indi_values = Indi_lst[2]
-    
-    uniq_fam_values = Family_lst[1]
-    Dupl_fam_values = Family_lst[2]
-
-    r["failed"].append({"message": msg["failed"], "bullet": [(bul(Dupl_indi_values))],"bullet1" : [(bul1(Dupl_fam_values))]})
     return r
 
 

@@ -846,6 +846,21 @@ def unique_ids(gedcom_file):
     return r
 
 
+def matches(a, key):
+    """ Group Matches """
+    m = {}
+    for b in a:
+        try:
+            k = key(b)
+        except AttributeError as e:
+            #logger.warning("{0} does not meet project standards".format(b))
+            pass
+        else:
+            m[k].append(b) if k in m else m.update({k: [b]})
+    for key, items in sorted(m.iteritems()):
+        yield key, items, len(items)
+
+
 @story("Anomaly US23")
 def unique_name_and_birth_date(gedcom_file):
     """ No more than one individual with the same name and birth date should appear in a GEDCOM file
@@ -858,26 +873,14 @@ def unique_name_and_birth_date(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = {"passed": "No identical individuals found".format,
-           "failed": "Individual {0} is identical to Individual {1}".format}
-    bul = "Identical individuals: {0}, born on {1}".format
-
-    for indi in gedcom_file.individuals:
-        for indi2 in gedcom_file.individuals[gedcom_file.individuals.index(indi)+1:]:
-            # Check Project Overview Assumptions
-            if not indi.has("birth_date") or not indi2.has("birth_date"):
-                continue  # Project Overview Assumptions not met
-            if not indi.has("name") or not indi2.has("name"):
-                continue  # Project Overview Assumptions not met
-
-            if indi.xref != indi2.xref:
-                if indi.name.val == indi2.name.val and indi.birth_date.val == indi2.birth_date.val:
-                    r["failed"].append({"message": msg["failed"](indi, indi2),
-                                        "bullets": [bul(indi, indi.birth_date.val),
-                                                    bul(indi2, indi2.birth_date.val)]})
-
-    if len(r["failed"]) == 0:
-        r["passed"].append({"message": msg["passed"]})
+    msg = {"passed": "{0} individual found with the name {1} and birth date {2}".format,
+           "failed": "{0} individuals found with the name {1} and birth date {2}".format}
+    bul = "{0.xref} - Name: {0.name} Birth Date: {0.birth_date}".format
+    
+    for key, items, count in matches(gedcom_file.individuals, lambda x: (x.name.val, x.birth_date.val)):
+        status = "passed" if count == 1 else "failed"
+        r[status].append({"message": msg[status](count, key[0], key[1]),
+                          "bullets": map(bul, items)})
     return r
 
 
@@ -893,30 +896,14 @@ def unique_families_by_spouses(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = {"passed": "{0} is not identical to {1}".format,
-           "failed": "{0} is identical to {1}".format}
-    bul = ["Marriage Date: {0} {1} {2}".format,
-           "Husband Name: {0} {1} {2}".format,
-           "Wife Name: {0} {1} {2}".format]
-    cmp_ = {True: "is equal to", False: "is not equal to "}
+    msg = {"passed": "{0} family found with the wife name {1}, husband name {2} and marriage date {3}".format,
+           "failed": "{0} families found with the wife name {1}, husband name {2} and marriage date {3}".format}
+    bul = "{0.xref} - Wife Name: {0.wife.name}, Husband Name: {0.husband.name}, Marriage Date: {0.marriage_date}".format
 
-    for fam1, fam2 in combinations(gedcom_file.families, 2):
-
-        # Check Project Overview Assumptions
-        if not fam1.has("marriage_date") or not fam2.has("marriage_date"):
-            continue  # Project Overview Assumptions not met
-        if not fam1.has("husband") or not fam2.has("husband") or not fam1.has("wife") or not fam2.has("wife"):
-            continue  # Project Overview Assumptions not met
-
-        same_marr = fam1.marriage_date == fam2.marriage_date
-        same_husb = fam1.husband.name == fam2.husband.name
-        same_wife = fam1.wife.name == fam2.wife.name
-        status = "failed" if same_husb and same_wife and same_marr else "passed"
-
-        r[status].append({"message": msg[status](fam1, fam2),
-                          "bullets": [bul[0](fam1.marriage_date, cmp_[same_marr], fam2.marriage_date),
-                                      bul[1](fam1.husband, cmp_[same_husb], fam2.husband),
-                                      bul[2](fam1.wife, cmp_[same_wife], fam2.wife)]})
+    for key, items, count in matches(gedcom_file.families, lambda f: (f.marriage_date.val, f.husband.name.val, f.wife.name.val)):
+        status = "passed" if count == 1 else "failed"
+        r[status].append({"message": msg[status](count, key[1], key[2], key[0]),
+                          "bullets": map(bul, items)})
 
     return r
 

@@ -60,7 +60,9 @@ class Sex(Base):
 
 class Name(Base):
     def __str__(self):
-        return self.val.replace("/", "")
+        n = self.val.replace("/", "")
+        return "{0} (line {1})".format(n, self.ln)
+
 
     def __eq__(self, other):
         return str(self) == str(other)

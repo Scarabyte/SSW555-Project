@@ -457,17 +457,17 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 ### Anomaly US23: Unique Name And Birth Date ###
 ~~~~
 [failed]
-	 > Individual Keisha Morris (@I4@ - line 42) is identical to Individual Keisha Morris (@I27@ - line 213)
-		 * Identical individuals: Keisha Morris (@I4@ - line 42), born on 18 JUL 1992
-		 * Identical individuals: Keisha Morris (@I27@ - line 213), born on 18 JUL 1992
+	 > 2 individuals found with the name Keisha /Morris/ and birth date 18 JUL 1992
+		 * @I4@ - Name: Keisha Morris (line 43) Birth Date: 18 JUL 1992 (line 46)
+		 * @I27@ - Name: Keisha Morris (line 214) Birth Date: 18 JUL 1992 (line 217)
 ~~~~
 
 ### Anomaly US24: Unique Families By Spouses ###
 ~~~~
 [failed]
-	 > Family (@F1@ - line 218) is identical to Family (@F10@ - line 284)
-		 * Identical families: Family (@F1@ - line 218) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998
-		 * Identical families: Family (@F10@ - line 284) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998
+	 > 2 families found with the husband name Adam /Burbidge/, wife name Keisha /Morris/ and marriage date 17 JUN 1998
+		 * @F1@ - Husband Name: Adam Burbidge (line 16), Wife Name: Keisha Morris (line 43), Marriage Date: 17 JUN 1998 (line 224)
+		 * @F10@ - Husband Name: Adam Burbidge (line 16), Wife Name: Keisha Morris (line 43), Marriage Date: 17 JUN 1998 (line 290)
 ~~~~
 Successfully saved output to Test_Results/output.md
 Successfully saved debug output to Test_Results/output.debug.md

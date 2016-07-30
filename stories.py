@@ -896,9 +896,9 @@ def unique_families_by_spouses(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = {"passed": "{0} family found with the wife name {1}, husband name {2} and marriage date {3}".format,
-           "failed": "{0} families found with the wife name {1}, husband name {2} and marriage date {3}".format}
-    bul = "{0.xref} - Wife Name: {0.wife.name}, Husband Name: {0.husband.name}, Marriage Date: {0.marriage_date}".format
+    msg = {"passed": "{0} family found with the husband name {1}, wife name {2} and marriage date {3}".format,
+           "failed": "{0} families found with the husband name {1}, wife name {2} and marriage date {3}".format}
+    bul = "{0.xref} - Husband Name: {0.husband.name}, Wife Name: {0.wife.name}, Marriage Date: {0.marriage_date}".format
 
     for key, items, count in matches(gedcom_file.families, lambda f: (f.marriage_date.val, f.husband.name.val, f.wife.name.val)):
         status = "passed" if count == 1 else "failed"

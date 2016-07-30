@@ -1116,17 +1116,89 @@
 ### Anomaly US23: Unique Name And Birth Date ###
 ~~~~
 [passed]
+	 > 1 individual found with the name Adam /Burbidge/ and birth date 17 JUN 1945
+		 * @I1@ - Name: Adam Burbidge (line 16) Birth Date: 17 JUN 1945 (line 19)
+	 > 1 individual found with the name Andrew /Burbidge/ and birth date 8 APR 1918
+		 * @I15@ - Name: Andrew Burbidge (line 129) Birth Date: 8 APR 1918 (line 132)
+	 > 1 individual found with the name Angelica /Burbidge/ and birth date 23 AUG 1855
+		 * @I5@ - Name: Angelica Burbidge (line 51) Birth Date: 23 AUG 1855 (line 54)
+	 > 1 individual found with the name Brian /Mayer/ and birth date 5 JUN 1957
+		 * @I22@ - Name: Brian Mayer (line 178) Birth Date: 5 JUN 1957 (line 181)
+	 > 1 individual found with the name Claire /Burbidge/ and birth date 23 OCT 1918
+		 * @I16@ - Name: Claire Burbidge (line 137) Birth Date: 23 OCT 1918 (line 140)
+	 > 1 individual found with the name Cyril /Watson/ and birth date 27 MAR 1920
+		 * @I11@ - Name: Cyril Watson (line 94) Birth Date: 27 MAR 1920 (line 97)
+	 > 1 individual found with the name David /Burbidge/ and birth date 10 FEB 1980
+		 * @I2@ - Name: David Burbidge (line 24) Birth Date: 10 FEB 1980 (line 27)
+	 > 1 individual found with the name Elizabeth /Watson/ and birth date 14 JAN 1922
+		 * @I12@ - Name: Elizabeth Watson (line 102) Birth Date: 14 JAN 1922 (line 105)
+	 > 1 individual found with the name Heather /Burbidge/ and birth date 7 SEP 1948
+		 * @I19@ - Name: Heather Burbidge (line 160) Birth Date: 7 SEP 1948 (line 163)
+	 > 1 individual found with the name Helen /Trotter/ and birth date 2 MAY 1993
+		 * @I24@ - Name: Helen Trotter (line 192) Birth Date: 2 MAY 1993 (line 195)
+	 > 1 individual found with the name Jack /Cunningham/ and birth date 1 AUG 1990
+		 * @I21@ - Name: Jack Cunningham (line 172) Birth Date: 1 AUG 1990 (line 175)
+	 > 1 individual found with the name James /Dutton/ and birth date 26 MAR 1979
+		 * @I7@ - Name: James Dutton (line 67) Birth Date: 26 MAR 1979 (line 70)
+	 > 1 individual found with the name Jean /Watson/ and birth date 3 JUN 1954
+		 * @I13@ - Name: Jean Watson (line 110) Birth Date: 3 JUN 1954 (line 113)
+	 > 1 individual found with the name Jerry /Briand/ and birth date 24 JAN 1973
+		 * @I10@ - Name: Jerry Briand (line 87) Birth Date: 24 JAN 1973 (line 90)
+	 > 1 individual found with the name Linda /Briand/ and birth date 24 JUL 1972
+		 * @I20@ - Name: Linda Briand (line 166) Birth Date: 24 JUL 1972 (line 169)
+	 > 1 individual found with the name Louise /Burbidge/ and birth date 15 OCT 1975
+		 * @I9@ - Name: Louise Burbidge (line 80) Birth Date: 15 OCT 1975 (line 83)
+	 > 1 individual found with the name Lucy /Cunningham/ and birth date 7 JUL 1977
+		 * @I23@ - Name: Lucy Cunningham (line 186) Birth Date: 7 JUL 1977 (line 189)
+	 > 1 individual found with the name Martin /Watson/ and birth date 16 DEC 1951
+		 * @I14@ - Name: Martin Watson (line 121) Birth Date: 16 DEC 1951 (line 124)
+	 > 1 individual found with the name Matthew /Watson/ and birth date 4 AUG 1975
+		 * @I25@ - Name: Matthew Watson (line 198) Birth Date: 4 AUG 1975 (line 201)
+	 > 1 individual found with the name Peter /Dutton/ and birth date 4 OCT 2003
+		 * @I8@ - Name: Peter Dutton (line 73) Birth Date: 4 OCT 2003 (line 76)
+	 > 1 individual found with the name Phoebe /Burbidge/ and birth date 4 SEP 2017
+		 * @I6@ - Name: Phoebe Burbidge (line 60) Birth Date: 4 SEP 2017 (line 63)
+	 > 1 individual found with the name Rachel /Mohr/ and birth date 17 JUN 1948
+		 * @I16@ - Name: Rachel Mohr (line 143) Birth Date: 17 JUN 1948 (line 146)
+	 > 1 individual found with the name Sally /Burbidge/ and birth date 11 JUN 1943
+		 * @I18@ - Name: Sally Burbidge (line 154) Birth Date: 11 JUN 1943 (line 157)
+	 > 1 individual found with the name Stanley /Burbidge/ and birth date 30 OCT 1960
+		 * @I17@ - Name: Stanley Burbidge (line 148) Birth Date: 30 OCT 1960 (line 151)
+	 > 1 individual found with the name Susan /Cunningham/ and birth date 9 SEP 1991
+		 * @I26@ - Name: Susan Cunningham (line 206) Birth Date: 9 SEP 1991 (line 209)
+	 > 1 individual found with the name Wendy /Watson/ and birth date 24 NOV 1848
+		 * @I3@ - Name: Wendy Watson (line 33) Birth Date: 24 NOV 1848 (line 36)
 [failed]
-	 > Individual Keisha Morris (@I4@ - line 42) is identical to Individual Keisha Morris (@I27@ - line 213)
-		 * Identical individuals: Keisha Morris (@I4@ - line 42), born on 18 JUL 1992
-		 * Identical individuals: Keisha Morris (@I27@ - line 213), born on 18 JUL 1992
+	 > 2 individuals found with the name Keisha /Morris/ and birth date 18 JUL 1992
+		 * @I4@ - Name: Keisha Morris (line 43) Birth Date: 18 JUL 1992 (line 46)
+		 * @I27@ - Name: Keisha Morris (line 214) Birth Date: 18 JUL 1992 (line 217)
 ~~~~
 
 ### Anomaly US24: Unique Families By Spouses ###
 ~~~~
 [passed]
+	 > 1 family found with the husband name Martin /Watson/, wife name Helen /Trotter/ and marriage date 1 MAY 1973
+		 * @F9@ - Husband Name: Martin Watson (line 121), Wife Name: Helen Trotter (line 192), Marriage Date: 1 MAY 1973 (line 283)
+	 > 1 family found with the husband name Jean /Watson/, wife name Jack /Cunningham/ and marriage date 12 OCT 1986
+		 * @F8@ - Husband Name: Jean Watson (line 110), Wife Name: Jack Cunningham (line 172), Marriage Date: 12 OCT 1986 (line 275)
+	 > 1 family found with the husband name Matthew /Watson/, wife name Jean /Watson/ and marriage date 18 JUN 2000
+		 * @F12@ - Husband Name: Matthew Watson (line 198), Wife Name: Jean Watson (line 110), Marriage Date: 18 JUN 2000 (line 302)
+	 > 1 family found with the husband name Martin /Watson/, wife name Susan /Cunningham/ and marriage date 18 MAR 1980
+		 * @F11@ - Husband Name: Martin Watson (line 121), Wife Name: Susan Cunningham (line 206), Marriage Date: 18 MAR 1980 (line 295)
+	 > 1 family found with the husband name Matthew /Watson/, wife name Susan /Cunningham/ and marriage date 18 NOV 2010
+		 * @F13@ - Husband Name: Matthew Watson (line 198), Wife Name: Susan Cunningham (line 206), Marriage Date: 18 NOV 2010 (line 309)
+	 > 1 family found with the husband name Brian /Mayer/, wife name Jean /Watson/ and marriage date 19 MAR 1990
+		 * @F7@ - Husband Name: Brian Mayer (line 178), Wife Name: Jean Watson (line 110), Marriage Date: 19 MAR 1990 (line 269)
+	 > 1 family found with the husband name Cyril /Watson/, wife name Elizabeth /Watson/ and marriage date 20 OCT 1942
+		 * @F5@ - Husband Name: Cyril Watson (line 94), Wife Name: Elizabeth Watson (line 102), Marriage Date: 20 OCT 1942 (line 254)
+	 > 1 family found with the husband name David /Burbidge/, wife name Peter /Dutton/ and marriage date 26 MAR 1976
+		 * @F2@ - Husband Name: David Burbidge (line 24), Wife Name: Peter Dutton (line 73), Marriage Date: 26 MAR 1976 (line 231)
+	 > 1 family found with the husband name Louise /Burbidge/, wife name Wendy /Watson/ and marriage date 4 SEP 1970
+		 * @F4@ - Husband Name: Louise Burbidge (line 80), Wife Name: Wendy Watson (line 33), Marriage Date: 4 SEP 1970 (line 246)
+	 > 1 family found with the husband name Stanley /Burbidge/, wife name Phoebe /Burbidge/ and marriage date 5 NOV 1978
+		 * @F5@ - Husband Name: Stanley Burbidge (line 148), Wife Name: Phoebe Burbidge (line 60), Marriage Date: 5 NOV 1978 (line 259)
 [failed]
-	 > Family (@F1@ - line 218) is identical to Family (@F10@ - line 284)
-		 * Identical families: Family (@F1@ - line 218) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998
-		 * Identical families: Family (@F10@ - line 284) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998
+	 > 2 families found with the husband name Adam /Burbidge/, wife name Keisha /Morris/ and marriage date 17 JUN 1998
+		 * @F1@ - Husband Name: Adam Burbidge (line 16), Wife Name: Keisha Morris (line 43), Marriage Date: 17 JUN 1998 (line 224)
+		 * @F10@ - Husband Name: Adam Burbidge (line 16), Wife Name: Keisha Morris (line 43), Marriage Date: 17 JUN 1998 (line 290)
 ~~~~

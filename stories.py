@@ -876,11 +876,11 @@ def unique_name_and_birth_date(gedcom_file):
     msg = {"passed": "{0} individual found with the name {1} and birth date {2}".format,
            "failed": "{0} individuals found with the name {1} and birth date {2}".format}
     bul = "{0.xref} - Name: {0.name} Birth Date: {0.birth_date}".format
-    
+
     for key, items, count in matches(gedcom_file.individuals, lambda x: (x.name.val, x.birth_date.val)):
         status = "passed" if count == 1 else "failed"
-        r[status].append({"message": msg[status](count, key[0], key[1]),
-                          "bullets": map(bul, items)})
+        r[status].append({"message": msg[status](count, key[0], key[1]), "bullets": map(bul, items)})
+        
     return r
 
 
@@ -902,8 +902,7 @@ def unique_families_by_spouses(gedcom_file):
 
     for key, items, count in matches(gedcom_file.families, lambda f: (f.marriage_date.val, f.husband.name.val, f.wife.name.val)):
         status = "passed" if count == 1 else "failed"
-        r[status].append({"message": msg[status](count, key[1], key[2], key[0]),
-                          "bullets": map(bul, items)})
+        r[status].append({"message": msg[status](count, key[1], key[2], key[0]), "bullets": map(bul, items)})
 
     return r
 

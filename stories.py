@@ -5,7 +5,6 @@ import logging
 import sys
 from datetime import datetime
 from itertools import combinations, groupby
-from gedcom.tools import human_sort
 import gedcom
 
 __author__ = "Adam Burbidge, Constantine Davantzis, Vibha Ravi"
@@ -894,30 +893,31 @@ def unique_families_by_spouses(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    msg = {"passed": "No identical families found".format,
+    msg = {"passed": "{0} is not identical to {1}".format,
            "failed": "{0} is identical to {1}".format}
-    bul = "Identical families: {0} with Husband {1} and Wife {2} married on {3}".format
+    bul = ["Marriage Date: {0} {1} {2}".format,
+           "Husband Name: {0} {1} {2}".format,
+           "Wife Name: {0} {1} {2}".format]
+    cmp_ = {True: "is equal to", False: "is not equal to "}
 
-    for fam in gedcom_file.families:
-        for fam2 in gedcom_file.families[gedcom_file.families.index(fam)+1:]:
-            # Check Project Overview Assumptions
-            if not fam.has("marriage_date") or not fam2.has("marriage_date"):
-                continue  # Project Overview Assumptions not met
-            if not fam.has("husband") or not fam2.has("husband"):
-                continue  # Project Overview Assumptions not met
-            if not fam.has("wife") or not fam2.has("wife"):
-                continue  # Project Overview Assumptions not met
+    for fam1, fam2 in combinations(gedcom_file.families, 2):
 
-            if fam.xref != fam2.xref:
-                if (fam.husband == fam2.husband and
-                    fam.wife == fam2.wife and
-                    fam.marriage_date.val == fam2.marriage_date.val):
-                    r["failed"].append({"message": msg["failed"](fam, fam2),
-                                        "bullets": [bul(fam, fam.husband, fam.wife, fam.marriage_date.val),
-                                                    bul(fam2,fam2.husband,fam2.wife,fam2.marriage_date.val)]})
+        # Check Project Overview Assumptions
+        if not fam1.has("marriage_date") or not fam2.has("marriage_date"):
+            continue  # Project Overview Assumptions not met
+        if not fam1.has("husband") or not fam2.has("husband") or not fam1.has("wife") or not fam2.has("wife"):
+            continue  # Project Overview Assumptions not met
 
-    if len(r["failed"]) == 0:
-        r["passed"].append({"message": msg["passed"]})
+        same_marr = fam1.marriage_date == fam2.marriage_date
+        same_husb = fam1.husband.name == fam2.husband.name
+        same_wife = fam1.wife.name == fam2.wife.name
+        status = "failed" if same_husb and same_wife and same_marr else "passed"
+
+        r[status].append({"message": msg[status](fam1, fam2),
+                          "bullets": [bul[0](fam1.marriage_date, cmp_[same_marr], fam2.marriage_date),
+                                      bul[1](fam1.husband, cmp_[same_husb], fam2.husband),
+                                      bul[2](fam1.wife, cmp_[same_wife], fam2.wife)]})
+
     return r
 
 

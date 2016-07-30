@@ -59,6 +59,16 @@ class Sex(Base):
 
 
 class Name(Base):
+    def __str__(self):
+        return self.val.replace("/", "")
+
+    def __eq__(self, other):
+        return str(self) == str(other)
+
+    def __ne__(self, other):
+        return str(self) != str(other)
+
+
     @property
     @cachemethod
     def surname(self):

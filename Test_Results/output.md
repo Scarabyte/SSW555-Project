@@ -4,7 +4,7 @@
 		 * Gender: Male (line 17)
 		 * Birth date: 17 JUN 1945 (line 19)
 		 * Current age: 71.17
-		 * Spouses: Peter Dutton (@I8@ - line 72), Keisha Morris (@I4@ - line 42)
+		 * Spouses: Keisha Morris (@I4@ - line 42), Keisha Morris (@I4@ - line 42)
 		 * Spouse in: Family (@F1@ - line 218), Family (@F10@ - line 284)
 		 * Child in: Family (@F2@ - line 225)
 	 > David Burbidge (@I2@ - line 23)
@@ -12,7 +12,7 @@
 		 * Birth date: 10 FEB 1980 (line 27)
 		 * Death date: 24 AUG 1994 (line 29)
 		 * Age at death: 14.55
-		 * Spouses: Wendy Watson (@I3@ - line 32)
+		 * Spouses: Peter Dutton (@I8@ - line 72)
 		 * Spouse in: Family (@F2@ - line 225)
 		 * Child in: Family (@F3@ - line 234)
 	 > Wendy Watson (@I3@ - line 32)
@@ -20,14 +20,14 @@
 		 * Birth date: 24 NOV 1848 (line 36)
 		 * Death date: 12 JUL 1988 (line 38)
 		 * Age at death: 139.72
-		 * Spouses: David Burbidge (@I2@ - line 23), Louise Burbidge (@I9@ - line 79)
+		 * Spouses: David Burbidge (@I2@ - line 23), Peter Dutton (@I8@ - line 72), Louise Burbidge (@I9@ - line 79)
 		 * Spouse in: Family (@F2@ - line 225), Family (@F4@ - line 241)
 		 * Child in: Family (@F5@ - line 247)
 	 > Keisha Morris (@I4@ - line 42)
 		 * Gender: Female (line 44)
 		 * Birth date: 18 JUL 1992 (line 46)
 		 * Current age: 24.05
-		 * Spouses: Adam Burbidge (@I1@ - line 15), Peter Dutton (@I8@ - line 72), Adam Burbidge (@I1@ - line 15), James Dutton (@I7@ - line 66)
+		 * Spouses: Adam Burbidge (@I1@ - line 15), Adam Burbidge (@I1@ - line 15), James Dutton (@I7@ - line 66)
 		 * Spouse in: Family (@F1@ - line 218), Family (@F10@ - line 284), Family (@F6@ - line 260)
 	 > Angelica Burbidge (@I5@ - line 50)
 		 * Gender: Female (line 52)
@@ -50,8 +50,8 @@
 		 * Gender: Male (line 74)
 		 * Birth date: 4 OCT 2003 (line 76)
 		 * Current age: 12.83
-		 * Spouses: Adam Burbidge (@I1@ - line 15)
-		 * Spouse in: Family (@F1@ - line 218)
+		 * Spouses: David Burbidge (@I2@ - line 23)
+		 * Spouse in: Family (@F2@ - line 225)
 		 * Child in: Family (@F6@ - line 260)
 	 > Louise Burbidge (@I9@ - line 79)
 		 * Gender: Female (line 81)
@@ -177,12 +177,12 @@
 ### Summary: Families ###
 	 > Family (@F1@ - line 218)
 		 * Husband: Adam Burbidge (@I1@ - line 15)
-		 * Wife: Peter Dutton (@I8@ - line 72)
+		 * Wife: Keisha Morris (@I4@ - line 42)
 		 * Child 1: Angelica Burbidge (@I5@ - line 50)
 		 * Child 2: Phoebe Burbidge (@I6@ - line 59)
 	 > Family (@F2@ - line 225)
 		 * Husband: David Burbidge (@I2@ - line 23)
-		 * Wife: Wendy Watson (@I3@ - line 32)
+		 * Wife: Peter Dutton (@I8@ - line 72)
 		 * Child 1: Adam Burbidge (@I1@ - line 15)
 		 * Child 2: Louise Burbidge (@I9@ - line 79)
 	 > Family (@F3@ - line 234)
@@ -311,8 +311,6 @@
 ### Error US09: Birth Before Death Of Parents ###
 ~~~~
 [failed]
-	 > Family (@F2@ - line 225) has Child Adam Burbidge (@I1@ - line 15) with birth date 17 JUN 1945 (line 19) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29).
-	 > Family (@F2@ - line 225) has Child Louise Burbidge (@I9@ - line 79) with birth date 15 OCT 1975 (line 83) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29).
 	 > Family (@F3@ - line 234) has Child David Burbidge (@I2@ - line 23) with birth date 10 FEB 1980 (line 27) and has mother Claire Burbidge (@I16@ - line 136) with no death date and father Andrew Burbidge (@I15@ - line 128) with death date 10 OCT 1995 (line 134).
 	 > Family (@F3@ - line 234) has Child Stanley Burbidge (@I17@ - line 147) with birth date 30 OCT 1960 (line 151) and has mother Claire Burbidge (@I16@ - line 136) with no death date and father Andrew Burbidge (@I15@ - line 128) with death date 10 OCT 1995 (line 134).
 	 > Family (@F3@ - line 234) has Child Sally Burbidge (@I18@ - line 153) with birth date 11 JUN 1943 (line 157) and has mother Claire Burbidge (@I16@ - line 136) with no death date and father Andrew Burbidge (@I15@ - line 128) with death date 10 OCT 1995 (line 134).
@@ -328,10 +326,10 @@
 ~~~~
 [failed]
 	 > Family (@F1@ - line 218) has marriage date 17 JUN 1998 (line 224)
-		 * Wife Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [married at 5.3 years old]
+		 * Wife Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [married at 5.92 years old]
 		 * Husband Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [married at 53.04 years old]
 	 > Family (@F2@ - line 225) has marriage date 26 MAR 1976 (line 231)
-		 * Wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 127.42 years old]
+		 * Wife Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [married at 27.54 years old]
 		 * Husband David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [married at 3.88 years old]
 	 > Family (@F4@ - line 241) has marriage date 4 SEP 1970 (line 246)
 		 * Wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 121.86 years old]
@@ -367,9 +365,7 @@
 ### Anomaly US12: Parents Not Too Old ###
 ~~~~
 [failed]
-	 > Family (@F1@ - line 218) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [148.21 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child].
-	 > Family (@F2@ - line 225) with child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [96.62 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [34.67 years older than child].
-	 > Family (@F2@ - line 225) with child Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [126.97 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [4.33 years older than child].
+	 > Family (@F1@ - line 218) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [136.99 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child].
 	 > Family (@F4@ - line 241) with child Linda Briand (@I20@ - line 165) born 24 JUL 1972 (line 169) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [123.75 years older than child] and father Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83) [3.23 years older than child].
 	 > Family (@F5@ - line 247) with child Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) has mother Elizabeth Watson (@I12@ - line 101) born 14 JAN 1922 (line 105) [73.19 years older than child] and father Cyril Watson (@I11@ - line 93) born 27 MAR 1920 (line 97) [71.38 years older than child].
 	 > Family (@F10@ - line 284) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [136.99 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child].
@@ -400,8 +396,9 @@
 [failed]
 	 > Individual Wendy Watson (@I3@ - line 32) is married to 1 of 5 descendants
 		 * Married to child Louise Burbidge (@I9@ - line 79) in Family (@F4@ - line 241)
-	 > Individual Keisha Morris (@I4@ - line 42) is married to 1 of 3 descendants
-		 * Married to child Peter Dutton (@I8@ - line 72) in Family (@F1@ - line 218)
+	 > Individual Keisha Morris (@I4@ - line 42) is married to 2 of 6 descendants
+		 * Married to grandchild Adam Burbidge (@I1@ - line 15) in Family (@F1@ - line 218)
+		 * Married to grandchild Adam Burbidge (@I1@ - line 15) in Family (@F10@ - line 284)
 ~~~~
 
 ### Anomaly US18: Siblings Should Not Marry ###
@@ -430,8 +427,8 @@
 ### Error US21: Correct Gender For Role ###
 ~~~~
 [failed]
-	 > Family (@F1@ - line 218) does not have traditional gender roles
-		 * Husband Adam Burbidge (@I1@ - line 15) is Male (line 17)
+	 > Family (@F2@ - line 225) does not have traditional gender roles
+		 * Husband David Burbidge (@I2@ - line 23) is Male (line 25)
 		 * Wife Peter Dutton (@I8@ - line 72) is Male (line 74)
 	 > Family (@F4@ - line 241) does not have traditional gender roles
 		 * Husband Louise Burbidge (@I9@ - line 79) is Female (line 81)
@@ -464,6 +461,6 @@
 ~~~~
 [failed]
 	 > Family (@F1@ - line 218) is identical to Family (@F10@ - line 284)
-		 * Identical families: Family (@F1@ - line 218) with Husband None and Wife None married on 17 JUN 1998
-		 * Identical families: Family (@F10@ - line 284) with Husband None and Wife None married on 17 JUN 1998
+		 * Identical families: Family (@F1@ - line 218) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998
+		 * Identical families: Family (@F10@ - line 284) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998
 ~~~~

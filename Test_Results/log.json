@@ -60,20 +60,20 @@
                     }
                 ],
                 "wife": [
-                    "@I8@",
+                    "@I4@",
                     {
                         "birth_date": {
-                            "line_number": 76,
-                            "line_value": "4 OCT 2003"
+                            "line_number": 46,
+                            "line_value": "18 JUL 1992"
                         },
-                        "line_number": 72,
+                        "line_number": 42,
                         "name": {
-                            "line_number": 73,
-                            "line_value": "Peter /Dutton/"
+                            "line_number": 43,
+                            "line_value": "Keisha /Morris/"
                         },
                         "sex": {
-                            "line_number": 74,
-                            "line_value": "M"
+                            "line_number": 44,
+                            "line_value": "F"
                         }
                     }
                 ]
@@ -139,20 +139,20 @@
                     }
                 ],
                 "wife": [
-                    "@I3@",
+                    "@I8@",
                     {
                         "birth_date": {
-                            "line_number": 36,
-                            "line_value": "24 NOV 1848"
+                            "line_number": 76,
+                            "line_value": "4 OCT 2003"
                         },
-                        "line_number": 32,
+                        "line_number": 72,
                         "name": {
-                            "line_number": 33,
-                            "line_value": "Wendy /Watson/"
+                            "line_number": 73,
+                            "line_value": "Peter /Dutton/"
                         },
                         "sex": {
-                            "line_number": 34,
-                            "line_value": "F"
+                            "line_number": 74,
+                            "line_value": "M"
                         }
                     }
                 ]
@@ -2065,7 +2065,7 @@
                 ],
                 "passed": [
                     {
-                        "message": "Family (@F2@ - line 225) with husband David Burbidge (@I2@ - line 23) and wife Wendy Watson (@I3@ - line 32) has marriage on 26 MAR 1976 (line 231) before divorce on 13 NOV 2012 (line 233)"
+                        "message": "Family (@F2@ - line 225) with husband David Burbidge (@I2@ - line 23) and wife Peter Dutton (@I8@ - line 72) has marriage on 26 MAR 1976 (line 231) before divorce on 13 NOV 2012 (line 233)"
                     },
                     {
                         "message": "Family (@F11@ - line 291) with husband Martin Watson (@I14@ - line 120) and wife Susan Cunningham (@I26@ - line 205) has marriage on 18 MAR 1980 (line 295) before divorce on 28 SEP 1985 (line 297)"
@@ -2090,7 +2090,7 @@
                 ],
                 "passed": [
                     {
-                        "message": "Family (@F2@ - line 225) with marriage on 26 MAR 1976 (line 231) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) after marriage and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) after marriage"
+                        "message": "Family (@F2@ - line 225) with marriage on 26 MAR 1976 (line 231) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) after marriage"
                     },
                     {
                         "message": "Family (@F4@ - line 241) with marriage on 4 SEP 1970 (line 246) has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) after marriage"
@@ -2115,7 +2115,7 @@
                 ],
                 "passed": [
                     {
-                        "message": "Family (@F2@ - line 225) with divorce on 13 NOV 2012 (line 233) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) before divorce and has wife Wendy Watson (@I3@ - line 32) with death 12 JUL 1988 (line 38) before divorce"
+                        "message": "Family (@F2@ - line 225) with divorce on 13 NOV 2012 (line 233) has husband David Burbidge (@I2@ - line 23) with death 24 AUG 1994 (line 29) before divorce"
                     },
                     {
                         "message": "Family (@F12@ - line 298) with divorce on 17 NOV 2005 (line 304) has wife Jean Watson (@I13@ - line 109) with death 10 AUG 1994 (line 115) before divorce"
@@ -2272,12 +2272,6 @@
             "output": {
                 "failed": [
                     {
-                        "message": "Family (@F2@ - line 225) has Child Adam Burbidge (@I1@ - line 15) with birth date 17 JUN 1945 (line 19) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29)."
-                    },
-                    {
-                        "message": "Family (@F2@ - line 225) has Child Louise Burbidge (@I9@ - line 79) with birth date 15 OCT 1975 (line 83) and has mother Wendy Watson (@I3@ - line 32) with death date 12 JUL 1988 (line 38) and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29)."
-                    },
-                    {
                         "message": "Family (@F3@ - line 234) has Child David Burbidge (@I2@ - line 23) with birth date 10 FEB 1980 (line 27) and has mother Claire Burbidge (@I16@ - line 136) with no death date and father Andrew Burbidge (@I15@ - line 128) with death date 10 OCT 1995 (line 134)."
                     },
                     {
@@ -2307,10 +2301,16 @@
                 ],
                 "passed": [
                     {
-                        "message": "Family (@F1@ - line 218) has Child Angelica Burbidge (@I5@ - line 50) with birth date 23 AUG 1855 (line 54) and has mother Peter Dutton (@I8@ - line 72) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date."
+                        "message": "Family (@F1@ - line 218) has Child Angelica Burbidge (@I5@ - line 50) with birth date 23 AUG 1855 (line 54) and has mother Keisha Morris (@I4@ - line 42) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date."
                     },
                     {
-                        "message": "Family (@F1@ - line 218) has Child Phoebe Burbidge (@I6@ - line 59) with birth date 4 SEP 2017 (line 63) and has mother Peter Dutton (@I8@ - line 72) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date."
+                        "message": "Family (@F1@ - line 218) has Child Phoebe Burbidge (@I6@ - line 59) with birth date 4 SEP 2017 (line 63) and has mother Keisha Morris (@I4@ - line 42) with no death date and father Adam Burbidge (@I1@ - line 15) with no death date."
+                    },
+                    {
+                        "message": "Family (@F2@ - line 225) has Child Adam Burbidge (@I1@ - line 15) with birth date 17 JUN 1945 (line 19) and has mother Peter Dutton (@I8@ - line 72) with no death date and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29)."
+                    },
+                    {
+                        "message": "Family (@F2@ - line 225) has Child Louise Burbidge (@I9@ - line 79) with birth date 15 OCT 1975 (line 83) and has mother Peter Dutton (@I8@ - line 72) with no death date and father David Burbidge (@I2@ - line 23) with death date 24 AUG 1994 (line 29)."
                     },
                     {
                         "message": "Family (@F5@ - line 247) has Child Wendy Watson (@I3@ - line 32) with birth date 24 NOV 1848 (line 36) and has mother Elizabeth Watson (@I12@ - line 101) with death date 4 APR 1997 (line 107) and father Cyril Watson (@I11@ - line 93) with death date 27 FEB 2002 (line 99)."
@@ -2337,14 +2337,14 @@
                 "failed": [
                     {
                         "bullets": [
-                            "Wife Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [married at 5.3 years old]",
+                            "Wife Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [married at 5.92 years old]",
                             "Husband Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [married at 53.04 years old]"
                         ],
                         "message": "Family (@F1@ - line 218) has marriage date 17 JUN 1998 (line 224)"
                     },
                     {
                         "bullets": [
-                            "Wife Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [married at 127.42 years old]",
+                            "Wife Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [married at 27.54 years old]",
                             "Husband David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [married at 3.88 years old]"
                         ],
                         "message": "Family (@F2@ - line 225) has marriage date 26 MAR 1976 (line 231)"
@@ -2503,13 +2503,7 @@
             "output": {
                 "failed": [
                     {
-                        "message": "Family (@F1@ - line 218) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [148.21 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child]."
-                    },
-                    {
-                        "message": "Family (@F2@ - line 225) with child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [96.62 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [34.67 years older than child]."
-                    },
-                    {
-                        "message": "Family (@F2@ - line 225) with child Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [126.97 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [4.33 years older than child]."
+                        "message": "Family (@F1@ - line 218) with child Angelica Burbidge (@I5@ - line 50) born 23 AUG 1855 (line 54) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [136.99 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [89.88 years older than child]."
                     },
                     {
                         "message": "Family (@F4@ - line 241) with child Linda Briand (@I20@ - line 165) born 24 JUL 1972 (line 169) has mother Wendy Watson (@I3@ - line 32) born 24 NOV 1848 (line 36) [123.75 years older than child] and father Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83) [3.23 years older than child]."
@@ -2523,7 +2517,13 @@
                 ],
                 "passed": [
                     {
-                        "message": "Family (@F1@ - line 218) with child Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63) has mother Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [13.93 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [72.27 years older than child]."
+                        "message": "Family (@F1@ - line 218) with child Phoebe Burbidge (@I6@ - line 59) born 4 SEP 2017 (line 63) has mother Keisha Morris (@I4@ - line 42) born 18 JUL 1992 (line 46) [25.15 years older than child] and father Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) [72.27 years older than child]."
+                    },
+                    {
+                        "message": "Family (@F2@ - line 225) with child Adam Burbidge (@I1@ - line 15) born 17 JUN 1945 (line 19) has mother Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [58.34 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [34.67 years older than child]."
+                    },
+                    {
+                        "message": "Family (@F2@ - line 225) with child Louise Burbidge (@I9@ - line 79) born 15 OCT 1975 (line 83) has mother Peter Dutton (@I8@ - line 72) born 4 OCT 2003 (line 76) [27.99 years older than child] and father David Burbidge (@I2@ - line 23) born 10 FEB 1980 (line 27) [4.33 years older than child]."
                     },
                     {
                         "message": "Family (@F5@ - line 247) with child Jean Watson (@I13@ - line 109) born 3 JUN 1954 (line 113) has mother Elizabeth Watson (@I12@ - line 101) born 14 JAN 1922 (line 105) [32.41 years older than child] and father Cyril Watson (@I11@ - line 93) born 27 MAR 1920 (line 97) [34.21 years older than child]."
@@ -2892,9 +2892,10 @@
                     },
                     {
                         "bullets": [
-                            "Married to child Peter Dutton (@I8@ - line 72) in Family (@F1@ - line 218)"
+                            "Married to grandchild Adam Burbidge (@I1@ - line 15) in Family (@F1@ - line 218)",
+                            "Married to grandchild Adam Burbidge (@I1@ - line 15) in Family (@F10@ - line 284)"
                         ],
-                        "message": "Individual Keisha Morris (@I4@ - line 42) is married to 1 of 3 descendants"
+                        "message": "Individual Keisha Morris (@I4@ - line 42) is married to 2 of 6 descendants"
                     }
                 ],
                 "passed": [
@@ -3269,10 +3270,10 @@
                 "failed": [
                     {
                         "bullets": [
-                            "Husband Adam Burbidge (@I1@ - line 15) is Male (line 17)",
+                            "Husband David Burbidge (@I2@ - line 23) is Male (line 25)",
                             "Wife Peter Dutton (@I8@ - line 72) is Male (line 74)"
                         ],
-                        "message": "Family (@F1@ - line 218) does not have traditional gender roles"
+                        "message": "Family (@F2@ - line 225) does not have traditional gender roles"
                     },
                     {
                         "bullets": [
@@ -3292,10 +3293,10 @@
                 "passed": [
                     {
                         "bullets": [
-                            "Husband David Burbidge (@I2@ - line 23) is Male (line 25)",
-                            "Wife Wendy Watson (@I3@ - line 32) is Female (line 34)"
+                            "Husband Adam Burbidge (@I1@ - line 15) is Male (line 17)",
+                            "Wife Keisha Morris (@I4@ - line 42) is Female (line 44)"
                         ],
-                        "message": "Family (@F2@ - line 225) has traditional gender roles"
+                        "message": "Family (@F1@ - line 218) has traditional gender roles"
                     },
                     {
                         "bullets": [
@@ -3645,8 +3646,8 @@
                 "failed": [
                     {
                         "bullets": [
-                            "Identical families: Family (@F1@ - line 218) with Husband None and Wife None married on 17 JUN 1998",
-                            "Identical families: Family (@F10@ - line 284) with Husband None and Wife None married on 17 JUN 1998"
+                            "Identical families: Family (@F1@ - line 218) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998",
+                            "Identical families: Family (@F10@ - line 284) with Husband Adam Burbidge (@I1@ - line 15) and Wife Keisha Morris (@I4@ - line 42) married on 17 JUN 1998"
                         ],
                         "message": "Family (@F1@ - line 218) is identical to Family (@F10@ - line 284)"
                     }

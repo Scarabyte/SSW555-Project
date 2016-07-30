@@ -909,12 +909,12 @@ def unique_families_by_spouses(gedcom_file):
                 continue  # Project Overview Assumptions not met
 
             if fam.xref != fam2.xref:
-                if (fam.husband.val == fam2.husband.val and
-                    fam.wife.val == fam2.wife.val and
+                if (fam.husband == fam2.husband and
+                    fam.wife == fam2.wife and
                     fam.marriage_date.val == fam2.marriage_date.val):
                     r["failed"].append({"message": msg["failed"](fam, fam2),
-                                        "bullets": [bul(fam, fam.husband.val, fam.wife.val, fam.marriage_date.val),
-                                                    bul(fam2,fam2.husband.val,fam2.wife.val,fam2.marriage_date.val)]})
+                                        "bullets": [bul(fam, fam.husband, fam.wife, fam.marriage_date.val),
+                                                    bul(fam2,fam2.husband,fam2.wife,fam2.marriage_date.val)]})
 
     if len(r["failed"]) == 0:
         r["passed"].append({"message": msg["passed"]})

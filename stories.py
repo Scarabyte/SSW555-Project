@@ -859,17 +859,12 @@ def unique_name_and_birth_date(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
-    # @I4@ and @I27@ are identical
-    r = {"passed": [], "failed": []}
     msg = {"passed": "No identical individuals found".format,
            "failed": "Individual {0} is identical to Individual {1}".format}
-    bul = "Identical individuals: {0}, {1}".format
-    # Iterate (recurse?) through each of the individuals in the GEDCOM file.
-    # Compare the names and birth dates
+    bul = "Identical individuals: {0}, born on {1}".format
+
     for indi in gedcom_file.individuals:
         for indi2 in gedcom_file.individuals[gedcom_file.individuals.index(indi)+1:]:
-            # I want this loop to start from 'indi' and go to the end of the list of individuals
             # Check Project Overview Assumptions
             if not indi.has("birth_date") or not indi2.has("birth_date"):
                 continue  # Project Overview Assumptions not met
@@ -878,10 +873,12 @@ def unique_name_and_birth_date(gedcom_file):
 
             if indi.xref != indi2.xref:
                 if indi.name.val == indi2.name.val and indi.birth_date.val == indi2.birth_date.val:
-                    # Now define the failing and passing messages
-                    # out["message"] =
-                    r["failed"].append({"message": msg["failed"](indi, indi2), "bullets": [bul(indi, indi2)]})
-                    # Print the names and birth dates?
+                    r["failed"].append({"message": msg["failed"](indi, indi2),
+                                        "bullets": [bul(indi, indi.birth_date.val),
+                                                    bul(indi2, indi2.birth_date.val)]})
+
+    if len(r["failed"]) == 0:
+        r["passed"].append({"message": msg["passed"]})
     return r
 
 
@@ -897,16 +894,11 @@ def unique_families_by_spouses(gedcom_file):
 
     """
     r = {"passed": [], "failed": []}
-    # ...
-    # @F1@ and @F10@ are identical
-    r = {"passed": [], "failed": []}
     msg = {"passed": "No identical families found".format,
            "failed": "{0} is identical to {1}".format}
-    bul = "Identical families: {0} {1}".format
-    # Iterate (recurse?) through each of the families in the GEDCOM file.
-    # Compare the spouses and marriage dates
+    bul = "Identical families: {0} with Husband {1} and Wife {2} married on {3}".format
+
     for fam in gedcom_file.families:
-        # Check the next family to the end of the list
         for fam2 in gedcom_file.families[gedcom_file.families.index(fam)+1:]:
             # Check Project Overview Assumptions
             if not fam.has("marriage_date") or not fam2.has("marriage_date"):
@@ -915,14 +907,17 @@ def unique_families_by_spouses(gedcom_file):
                 continue  # Project Overview Assumptions not met
             if not fam.has("wife") or not fam2.has("wife"):
                 continue  # Project Overview Assumptions not met
+
             if fam.xref != fam2.xref:
                 if (fam.husband.val == fam2.husband.val and
                     fam.wife.val == fam2.wife.val and
                     fam.marriage_date.val == fam2.marriage_date.val):
-                    # Define the failure message
-                    r["failed"].append({"message": msg["failed"](fam, fam2), "bullets": [bul(fam,fam2)]})
-                    # Print out the family members etc?
-  
+                    r["failed"].append({"message": msg["failed"](fam, fam2),
+                                        "bullets": [bul(fam, fam.husband.val, fam.wife.val, fam.marriage_date.val),
+                                                    bul(fam2,fam2.husband.val,fam2.wife.val,fam2.marriage_date.val)]})
+
+    if len(r["failed"]) == 0:
+        r["passed"].append({"message": msg["passed"]})
     return r
 
 

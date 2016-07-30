@@ -80,8 +80,8 @@ def run(gedcom_file, show_passed=False):
 if __name__ == "__main__":
     g = File()
     # Request file name from user
-    #fname = raw_input('Enter the file name to open: ')
-    fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint04.ged"
+    fname = raw_input('Enter the file name to open: ')
+    #fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint04.ged"
 
     try:
         g.read_file(fname)

@@ -43,7 +43,7 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 	 > Phoebe Burbidge (@I6@ - line 59)
 		 * Gender: Female (line 61)
 		 * Birth date: 4 SEP 2017 (line 63)
-		 * Current age: 1.1
+		 * Current age: 1.09
 		 * Child in: Family (@F1@ - line 218), Family (@F10@ - line 284)
 	 > James Dutton (@I7@ - line 66)
 		 * Gender: Male (line 68)
@@ -54,7 +54,7 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 	 > Peter Dutton (@I8@ - line 72)
 		 * Gender: Male (line 74)
 		 * Birth date: 4 OCT 2003 (line 76)
-		 * Current age: 12.83
+		 * Current age: 12.84
 		 * Spouses: David Burbidge (@I2@ - line 23)
 		 * Spouse in: Family (@F2@ - line 225)
 		 * Child in: Family (@F6@ - line 260)
@@ -129,7 +129,7 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 	 > Heather Burbidge (@I19@ - line 159)
 		 * Gender: Female (line 161)
 		 * Birth date: 7 SEP 1948 (line 163)
-		 * Current age: 67.94
+		 * Current age: 67.95
 		 * Child in: Family (@F3@ - line 234)
 	 > Linda Briand (@I20@ - line 165)
 		 * Gender: Female (line 167)
@@ -152,12 +152,12 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 	 > Lucy Cunningham (@I23@ - line 185)
 		 * Gender: Female (line 187)
 		 * Birth date: 7 JUL 1977 (line 189)
-		 * Current age: 39.09
+		 * Current age: 39.1
 		 * Child in: Family (@F8@ - line 270)
 	 > Helen Trotter (@I24@ - line 191)
 		 * Gender: Female (line 193)
 		 * Birth date: 2 MAY 1993 (line 195)
-		 * Current age: 23.26
+		 * Current age: 23.27
 		 * Spouses: Martin Watson (@I14@ - line 120)
 		 * Spouse in: Family (@F9@ - line 278)
 	 > Matthew Watson (@I25@ - line 197)
@@ -245,7 +245,7 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 ~~~~
 [failed]
 	 > Individual Phoebe Burbidge (@I6@ - line 59) has a birth date after the current date
-		 * Current Date is 30 JUL 2016 (date script ran)
+		 * Current Date is 31 JUL 2016 (date script ran)
 		 * Birth date is 4 SEP 2017 (line 63)
 ~~~~
 
@@ -457,7 +457,7 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 ### Anomaly US23: Unique Name And Birth Date ###
 ~~~~
 [failed]
-	 > 2 individuals found with the name Keisha /Morris/ and birth date 18 JUL 1992
+	 > 2 individuals found with the name Keisha Morris and birth date 18 JUL 1992
 		 * @I4@ - Name: Keisha Morris (line 43) Birth Date: 18 JUL 1992 (line 46)
 		 * @I27@ - Name: Keisha Morris (line 214) Birth Date: 18 JUL 1992 (line 217)
 ~~~~
@@ -465,7 +465,7 @@ Enter the file name to open: Test_Files/My-Family-20-May-2016-697-Simplified-Wit
 ### Anomaly US24: Unique Families By Spouses ###
 ~~~~
 [failed]
-	 > 2 families found with the husband name Adam /Burbidge/, wife name Keisha /Morris/ and marriage date 17 JUN 1998
+	 > 2 families found with the husband name Adam Burbidge, wife name Keisha Morris and marriage date 17 JUN 1998
 		 * @F1@ - Husband Name: Adam Burbidge (line 16), Wife Name: Keisha Morris (line 43), Marriage Date: 17 JUN 1998 (line 224)
 		 * @F10@ - Husband Name: Adam Burbidge (line 16), Wife Name: Keisha Morris (line 43), Marriage Date: 17 JUN 1998 (line 290)
 ~~~~

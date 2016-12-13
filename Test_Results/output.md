@@ -3,7 +3,7 @@
 	 > Adam Burbidge (@I1@ - line 15)
 		 * Gender: Male (line 17)
 		 * Birth date: 17 JUN 1945 (line 19)
-		 * Current age: 71.17
+		 * Current age: 71.53
 		 * Spouses: Keisha Morris (@I4@ - line 41)
 		 * Spouse in: Family (@F1@ - line 223)
 		 * Child in: Family (@F2@ - line 230)
@@ -26,7 +26,7 @@
 	 > Keisha Morris (@I4@ - line 41)
 		 * Gender: Female (line 43)
 		 * Birth date: 18 JUL 1992 (line 45)
-		 * Current age: 24.05
+		 * Current age: 24.41
 		 * Spouses: Adam Burbidge (@I1@ - line 15), James Dutton (@I7@ - line 64)
 		 * Spouse in: Family (@F1@ - line 223), Family (@F6@ - line 265)
 	 > Angelica Burbidge (@I5@ - line 48)
@@ -38,25 +38,25 @@
 	 > Phoebe Burbidge (@I6@ - line 57)
 		 * Gender: Female (line 59)
 		 * Birth date: 4 SEP 2017 (line 61)
-		 * Current age: 1.09
+		 * Current age: 0.73
 		 * Child in: Family (@F1@ - line 223), Family (@F10@ - line 289)
 	 > James Dutton (@I7@ - line 64)
 		 * Gender: Male (line 66)
 		 * Birth date: 26 MAR 1979 (line 68)
-		 * Current age: 37.38
+		 * Current age: 37.74
 		 * Spouses: Keisha Morris (@I4@ - line 41)
 		 * Spouse in: Family (@F6@ - line 265)
 	 > Peter Dutton (@I8@ - line 70)
 		 * Gender: Male (line 72)
 		 * Birth date: 4 OCT 2003 (line 74)
-		 * Current age: 12.84
+		 * Current age: 13.19
 		 * Spouses: David Burbidge (@I2@ - line 22)
 		 * Spouse in: Family (@F2@ - line 230)
 		 * Child in: Family (@F6@ - line 265)
 	 > Louise Burbidge (@I9@ - line 77)
 		 * Gender: Female (line 79)
 		 * Birth date: 15 OCT 1975 (line 81)
-		 * Current age: 40.82
+		 * Current age: 41.18
 		 * Spouses: Wendy Watson (@I3@ - line 31)
 		 * Spouse in: Family (@F4@ - line 246)
 		 * Child in: Family (@F2@ - line 230)
@@ -90,7 +90,7 @@
 	 > Martin Watson (@I14@ - line 118)
 		 * Gender: Male (line 120)
 		 * Birth date: 16 DEC 1951 (line 122)
-		 * Current age: 64.67
+		 * Current age: 65.03
 		 * Spouses: Helen Trotter (@I24@ - line 189), Susan Cunningham (@I26@ - line 203)
 		 * Spouse in: Family (@F9@ - line 283), Family (@F11@ - line 296)
 		 * Child in: Family (@F5@ - line 252)
@@ -104,37 +104,37 @@
 	 > Claire Burbidge (@I16@ - line 134)
 		 * Gender: Female (line 136)
 		 * Birth date: 23 OCT 1918 (line 138)
-		 * Current age: 97.84
+		 * Current age: 98.2
 		 * Spouses: Andrew Burbidge (@I15@ - line 126)
 		 * Spouse in: Family (@F3@ - line 239)
 	 > Rachel Mohr (@I16@ - line 140)
 		 * Gender: Female (line 142)
 		 * Birth date: 17 JUN 1948 (line 144)
-		 * Current age: 68.17
+		 * Current age: 68.53
 	 > Stanley Burbidge (@I17@ - line 145)
 		 * Gender: Male (line 147)
 		 * Birth date: 30 OCT 1960 (line 149)
-		 * Current age: 55.79
+		 * Current age: 56.15
 		 * Child in: Family (@F3@ - line 239)
 	 > Sally Burbidge (@I18@ - line 151)
 		 * Gender: Female (line 153)
 		 * Birth date: 11 JUN 1943 (line 155)
-		 * Current age: 73.19
+		 * Current age: 73.55
 		 * Child in: Family (@F3@ - line 239)
 	 > Heather Burbidge (@I19@ - line 157)
 		 * Gender: Female (line 159)
 		 * Birth date: 7 SEP 1948 (line 161)
-		 * Current age: 67.95
+		 * Current age: 68.3
 		 * Child in: Family (@F3@ - line 239)
 	 > Linda Briand (@I20@ - line 163)
 		 * Gender: Female (line 165)
 		 * Birth date: 24 JUL 1972 (line 167)
-		 * Current age: 44.05
+		 * Current age: 44.41
 		 * Child in: Family (@F4@ - line 246)
 	 > Jack Cunningham (@I21@ - line 169)
 		 * Gender: Male (line 171)
 		 * Birth date: 1 AUG 1990 (line 173)
-		 * Current age: 26.02
+		 * Current age: 26.38
 		 * Spouses: Jean Watson (@I13@ - line 107)
 		 * Spouse in: Family (@F8@ - line 275)
 	 > Brian Mayer (@I22@ - line 175)
@@ -147,38 +147,38 @@
 	 > Lucy Cunningham (@I23@ - line 183)
 		 * Gender: Female (line 185)
 		 * Birth date: 7 JUL 1977 (line 187)
-		 * Current age: 39.1
+		 * Current age: 39.45
 		 * Child in: Family (@F8@ - line 275)
 	 > Helen Trotter (@I24@ - line 189)
 		 * Gender: Female (line 191)
 		 * Birth date: 2 MAY 1993 (line 193)
-		 * Current age: 23.27
+		 * Current age: 23.62
 		 * Spouses: Martin Watson (@I14@ - line 118)
 		 * Spouse in: Family (@F9@ - line 283)
 	 > Matthew Watson (@I25@ - line 195)
 		 * Gender: Male (line 197)
 		 * Birth date: 4 AUG 1975 (line 199)
-		 * Current age: 41.02
+		 * Current age: 41.38
 		 * Spouses: Jean Watson (@I13@ - line 107), Susan Cunningham (@I26@ - line 203)
 		 * Spouse in: Family (@F12@ - line 303), Family (@F13@ - line 310)
 		 * Child in: Family (@F9@ - line 283)
 	 > Susan Cunningham (@I26@ - line 203)
 		 * Gender: Female (line 205)
 		 * Birth date: 9 SEP 1991 (line 207)
-		 * Current age: 24.91
+		 * Current age: 25.27
 		 * Spouses: Martin Watson (@I14@ - line 118), Matthew Watson (@I25@ - line 195)
 		 * Spouse in: Family (@F11@ - line 296), Family (@F13@ - line 310)
 		 * Child in: Family (@F7@ - line 269)
 	 > Keisha Morris (@I27@ - line 211)
 		 * Gender: Female (line 213)
 		 * Birth date: 18 JUL 1992 (line 215)
-		 * Current age: 24.05
+		 * Current age: 24.41
 		 * Spouses: Adam Burbidge (@I28@ - line 217)
 		 * Spouse in: Family (@F10@ - line 289)
 	 > Adam Burbidge (@I28@ - line 217)
 		 * Gender: Male (line 219)
 		 * Birth date: 17 JUN 1945 (line 221)
-		 * Current age: 71.17
+		 * Current age: 71.53
 		 * Spouses: Keisha Morris (@I27@ - line 211)
 		 * Spouse in: Family (@F10@ - line 289)
 
@@ -248,7 +248,7 @@
 ~~~~
 [failed]
 	 > Individual Phoebe Burbidge (@I6@ - line 57) has a birth date after the current date
-		 * Current Date is 31 JUL 2016 (date script ran)
+		 * Current Date is 09 DEC 2016 (date script ran)
 		 * Birth date is 4 SEP 2017 (line 61)
 ~~~~
 

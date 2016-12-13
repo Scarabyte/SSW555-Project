@@ -78,17 +78,17 @@ def run(gedcom_file, show_passed=False):
 
 
 if __name__ == "__main__":
-    g = File()
+    gedcom_file = File()
     # Request file name from user
     fname = raw_input('Enter the file name to open: ')
     #fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint04.ged"
 
     try:
-        g.read_file(fname)
+        gedcom_file.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
-    run(g, show_passed=False)
+    run(gedcom_file, show_passed=False)
 
     print "Successfully saved output to {0}".format('Test_Results/output.md')
     print "Successfully saved debug output to {0}".format('Test_Results/output.debug.md')

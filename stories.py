@@ -1091,10 +1091,10 @@ def reject_illegitimate_dates():
 
 
 if __name__ == "__main__":
-    g = gedcom.File()
+    gedcom_file = gedcom.File()
     fname = "Test_Files/My-Family-20-May-2016-697-Simplified-WithErrors-Sprint04.ged"
     try:
-        g.read_file(fname)
+        gedcom_file.read_file(fname)
     except IOError as e:
         sys.exit("Error Opening File - {0}: '{1}'".format(e.strerror, e.filename))
 
@@ -1104,37 +1104,37 @@ if __name__ == "__main__":
     logger.addHandler(stream_handler)
 
     # Sprint 0 - Summaries
-    individual_summary(g)
-    family_summary(g)
+    individual_summary(gedcom_file)
+    family_summary(gedcom_file)
 
     # Sprint 1 - Stories
-    dates_before_current_date(g)
-    birth_before_marriage(g)
-    birth_before_death(g)
-    marriage_before_divorce(g)
-    marriage_before_death(g)
-    divorce_before_death(g)
+    dates_before_current_date(gedcom_file)
+    birth_before_marriage(gedcom_file)
+    birth_before_death(gedcom_file)
+    marriage_before_divorce(gedcom_file)
+    marriage_before_death(gedcom_file)
+    divorce_before_death(gedcom_file)
 
     # Sprint 2 - Stories
-    less_then_150_years_old(g)
-    birth_before_marriage_of_parents(g)
-    birth_before_death_of_parents(g)
-    marriage_after_14(g)
-    no_bigamy(g)
-    parents_not_too_old(g)
+    less_then_150_years_old(gedcom_file)
+    birth_before_marriage_of_parents(gedcom_file)
+    birth_before_death_of_parents(gedcom_file)
+    marriage_after_14(gedcom_file)
+    no_bigamy(gedcom_file)
+    parents_not_too_old(gedcom_file)
 
     # Sprint 3 - Stories
-    siblings_spacing(g)
-    less_than_5_multiple_births(g)
-    fewer_than_15_siblings(g)
-    male_last_names(g)
-    no_marriages_to_descendants(g)
-    siblings_should_not_marry(g)
+    siblings_spacing(gedcom_file)
+    less_than_5_multiple_births(gedcom_file)
+    fewer_than_15_siblings(gedcom_file)
+    male_last_names(gedcom_file)
+    no_marriages_to_descendants(gedcom_file)
+    siblings_should_not_marry(gedcom_file)
 
     # Sprint 4 - Stories
-    first_cousins_should_not_marry(g)
-    aunts_and_uncles(g)
-    correct_gender_for_role(g)
-    unique_ids(g)
-    unique_name_and_birth_date(g)
-    unique_families_by_spouses(g)
+    first_cousins_should_not_marry(gedcom_file)
+    aunts_and_uncles(gedcom_file)
+    correct_gender_for_role(gedcom_file)
+    unique_ids(gedcom_file)
+    unique_name_and_birth_date(gedcom_file)
+    unique_families_by_spouses(gedcom_file)

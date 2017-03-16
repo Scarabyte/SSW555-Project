@@ -38,10 +38,10 @@ def parse_line(s):
     if not m:
         raise SyntaxError('gedcom_line "{0}" does not have syntax '.format(s) +
                           '"level + delim + [optional_xref_ID] + tag + [optional_line_value] + terminator"')
-    d = m.groupdict()
-    d['isTagSupported'] = d['tag'] in SUPPORTED_TAGS
-    d['level'] = int(d['level'])
-    return d
+    gedcom_line_dict = m.groupdict()
+    gedcom_line_dict['isTagSupported'] = gedcom_line_dict['tag'] in SUPPORTED_TAGS
+    gedcom_line_dict['level'] = int(gedcom_line_dict['level'])
+    return gedcom_line_dict
 
 
 class File(object):

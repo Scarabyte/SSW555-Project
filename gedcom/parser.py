@@ -24,19 +24,19 @@ SUPPORTED_TAGS = ["INDI", "NAME", "SEX", "BIRT", "DEAT", "FAMC", "FAMS", "FAM",
 """A list of tags supported by the project."""
 
 
-def parse_line(s):
+def parse_line(gedcom_line_str):
     """ Parse GEDCOM line into dictionary
 
-    :param s: A GEDCOM line
-    :type s: str
+    :param gedcom_line_str: A GEDCOM line
+    :type gedcom_line_str: str
 
     :returns: Dictionary of GEDCOM line
     :rtype: dict
 
     """
-    m = regex_line.match(s)
+    m = regex_line.match(gedcom_line_str)
     if not m:
-        raise SyntaxError('gedcom_line "{0}" does not have syntax '.format(s) +
+        raise SyntaxError('gedcom_line "{0}" does not have syntax '.format(gedcom_line_str) +
                           '"level + delim + [optional_xref_ID] + tag + [optional_line_value] + terminator"')
     gedcom_line_dict = m.groupdict()
     gedcom_line_dict['isTagSupported'] = gedcom_line_dict['tag'] in SUPPORTED_TAGS

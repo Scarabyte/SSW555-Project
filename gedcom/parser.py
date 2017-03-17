@@ -16,7 +16,7 @@ import tools
 
 __author__ = "Constantine Davantzis"
 
-regex_line = re.compile(r"(?P<level>[0-9]|[1-9][0-9])\s(?P<xref_ID>@\S+@)?\s?(?P<tag>\S+)\s*(?P<line_value>(.+))?")
+gedcom_line_regex = re.compile(r"(?P<level>[0-9]|[1-9][0-9])\s(?P<xref_ID>@\S+@)?\s?(?P<tag>\S+)\s*(?P<line_value>(.+))?")
 """Regular Expression Object: Compiled regular expression object used for matching GEDCOM lines."""
 
 SUPPORTED_TAGS = ["INDI", "NAME", "SEX", "BIRT", "DEAT", "FAMC", "FAMS", "FAM",
@@ -34,11 +34,11 @@ def parse_line(gedcom_line_str):
     :rtype: dict
 
     """
-    m = regex_line.match(gedcom_line_str)
-    if not m:
+    gedcom_line_matches_format = gedcom_line_regex.match(gedcom_line_str)
+    if not gedcom_line_matches_format:
         raise SyntaxError('gedcom_line "{0}" does not have syntax '.format(gedcom_line_str) +
                           '"level + delim + [optional_xref_ID] + tag + [optional_line_value] + terminator"')
-    gedcom_line_dict = m.groupdict()
+    gedcom_line_dict = gedcom_line_matches_format.groupdict()
     gedcom_line_dict['isTagSupported'] = gedcom_line_dict['tag'] in SUPPORTED_TAGS
     gedcom_line_dict['level'] = int(gedcom_line_dict['level'])
     return gedcom_line_dict

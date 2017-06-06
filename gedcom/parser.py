@@ -299,8 +299,8 @@ class Line(dict):
         # a dictionary
         try:
             self.update(**parse_line(self.__text))
-        except SyntaxError as e:
-            sys.exit("line number {0}: {1}".format(line_number, e.msg))
+        except SyntaxError as errorSyntax:
+            sys.exit("line number {0}: {1}".format(line_number, errorSyntax.msg))
 
         # Add line number to the dictionary. This is more useful on continuously checking
         # where this object is in a list of Line objects

@@ -134,13 +134,13 @@ class File(object):
         Currently this determines which lines are parents and children of one another.
 
         :note: Currently this only needs to be called when the class is initiated, however
-        if we want to support adding and removing line, this class will need to be called again.
+        if we want to support adding and removing lines, this class will need to be called again.
 
         """
         [d.refresh() for d in self.lines]
 
     def find(self, key, value):
-        """ Finds ALL lines in file that have a matching key and value
+        """ Finds aLL lines in file that have a matching key and value
 
         :param key: The key to match
         :type key: str
@@ -165,7 +165,7 @@ class File(object):
         return SubFile(list_of_matching_lines)
 
     def find_one(self, key, value):
-        """ Finds FIRST line in file that have a matching key and value
+        """ Finds FIRST line in file that has a matching key and value
 
         :param key: The key to match
         :type key: str
@@ -230,12 +230,11 @@ class File(object):
 class SubFile(File):
     """GEDCOM SubFile Class
 
-    :warning: This object should only be called on a list of objects that were initiated by the File class,
-    this is due to the line objects having access the the rest of the file, and there line numbers updated.
+    :warning: This object should only be called on a list of objects that were initiated by the File class;
+    this is due to the line objects having access to the rest of the file, and their line numbers updated.
 
     A representation of a part of a GEDCOM file as a list of lines.
-    This class is used to give a list of Line objects the same features
-    of the File object.
+    This class is used to give a list of Line objects the same features of the File object.
 
     For example without this class we wouldn't be able to call the "find" or the "find_one" method on the results
     of the "find" or the "find_one" method, because the results would just be a normal line.
@@ -254,12 +253,11 @@ class SubFile(File):
     def __init__(self, lines):
         """GEDCOM SubFile Class
 
-        This initialization override the initialization of the File object so instead of passing in
-        the location of a GEDCOM object to open a file all you need is to pass in a list of GEDCOM
-        Lines.
+        This initialization overrides the initialization of the File object so that instead of passing in
+        the location of a GEDCOM object to open a file, all you need is to pass in a list of GEDCOM Lines.
 
-        :warning: This object should only be called on a list of objects that were initiated by the File class,
-        this is due to the line objects having access the the rest of the file, and there line numbers updated.
+        :warning: This object should only be called on a list of objects that were initiated by the File class;
+        this is due to the line objects having access the the rest of the file, and their line numbers updated.
 
         """
         self.lines = lines
@@ -268,9 +266,8 @@ class SubFile(File):
 class Line(dict):
     """GEDCOM Line Class
 
-    This class is a subclass of dict. This class was made to give extra
-    features to dictionaries to make them more suitable for representing
-    GEDCOM Lines.
+    This class is a subclass of dict. This class was made to give extra features to dictionaries to make them more
+    suitable for representing GEDCOM Lines.
 
     """
 
@@ -283,7 +280,7 @@ class Line(dict):
 
         :param file_class: The instance of the File object that created this line
         :type file_class: File
-        :note file_class: This allows the line object to access the instance of the File that crated it.
+        :note file_class: This allows the line object to access the instance of the File that created it.
 
         :param line_number: The line number of this line
         :type file_class: int
@@ -313,12 +310,11 @@ class Line(dict):
     def text(self):
         """Print GEDCOM Line as Text
 
-        :note: this method currently returns the text string that was initially
-        passed to create this object. This function may need to be updated to
-        represent the string based on the dictionary if we want to support alteration
-        to the GEDCOM file.
+        :note: This method currently returns the text string that was initially passed to create this object.
+        This function may need to be updated to represent the string based on the dictionary if we want to support
+        alterations to the GEDCOM file.
 
-        :note: this function also provides a way of preventing the user from changing self.text
+        :note: This function also provides a way of preventing the user from changing self.text
 
         :returns: GEDCOM line as text
         :rtype: string

@@ -224,9 +224,6 @@ class File(object):
         return [tag.Date(line) for line in self.find("tag", "DATE")]
 
 
-
-
-
 class SubFile(File):
     """GEDCOM SubFile Class
 
@@ -519,6 +516,6 @@ def demo(gedcom_file):
     print gedcom_file.find_one('tag', 'HUSB')
     print gedcom_file.find_one('tag', 'a_value_that_will_never_be_found')
 
+
 if __name__ == "__main__":
     pass
-

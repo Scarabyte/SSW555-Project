@@ -317,7 +317,6 @@ class Individual(Base):
             for child in fam.children:
                 yield fam, child
 
-
     @property
     @cachemethod
     def children(self):
@@ -340,7 +339,6 @@ class Individual(Base):
                         checked.append(child)
                         new.append(child)
             return new + get_d(new, checked, i+1) if len(new) > 0 else new
-
 
         return get_d([self])
 
@@ -464,4 +462,3 @@ class Family(Base):
         return self.xref, {"husband": self.husband.summary if self.has("husband") else None,
                            "wife": self.wife.summary if self.has("wife") else None,
                            "children": map(lambda c: c.summary, self.children)}
-

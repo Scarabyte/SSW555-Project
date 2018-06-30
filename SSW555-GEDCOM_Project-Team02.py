@@ -36,7 +36,6 @@ def run(gedcom_file, show_passed=False):
     debug_output.setLevel(logging.DEBUG)
     stories.logger.addHandler(debug_output)
 
-
     log = {
         "individuals": stories.individual_summary(gedcom_file),
         "families": stories.family_summary(gedcom_file),
@@ -93,4 +92,3 @@ if __name__ == "__main__":
     print "Successfully saved output to {0}".format('Test_Results/output.md')
     print "Successfully saved debug output to {0}".format('Test_Results/output.debug.md')
     print "Successfully saved log to {0}".format('Test_Results/log.json')
-

@@ -60,4 +60,3 @@ def human_sort(s, _re=re.compile('([0-9]+)')):
         return [int(x) if x.isdigit() else x.lower() for x in re.split(_re, s)]
     except:
         return s
-
